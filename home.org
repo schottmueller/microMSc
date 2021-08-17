@@ -6,6 +6,7 @@
 - The material below is very preliminary still subject to change.
 * Course setup
   *Lecture:* Fridays, 08:00-09:30 (100/01/HS XII)
+  
   *Exercise session:* Thursdays, 14:00-15:30  (100/01/HS XII)
 
   For the time being,  both lecture and exercise session are planned on campus. (Aug 17)
