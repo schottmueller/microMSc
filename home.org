@@ -10,8 +10,14 @@
 
   For the time being,  both lecture and exercise session are planned on campus. (Aug 17)
 
-  Prerequisites: You are expected to know basic game theory (normal form games, dominant strategies, Nash equilibrium, game trees, subgame perfect Nash equilibrium) and generally microeconomics at Bachelor level (preferences, indifference curves, utility functions, consumer problem, Pareto efficiency). The schedule contains detailed prerequisites for each lecture in terms of economics and mathematics.
+  Prerequisites: You are expected to know basic game theory (normal form games, dominant strategies, Nash equilibrium, game trees, subgame perfect Nash equilibrium) and generally microeconomics at Bachelor level (preferences, indifference curves, utility functions, consumer problem, Pareto efficiency). The [[https://github.com/schottmueller/microMSc/blob/main/schedule.org][schedule]] contains detailed prerequisites for each lecture in terms of economics and mathematics.
 * Material  
  - slides
- - exercises
- - schedule
+   - social choice [[https://github.com/schottmueller/microMSc/blob/main/slides/socialChoice.org][org]]
+   - markets [[https://github.com/schottmueller/microMSc/blob/main/slides/markets.org][org]]
+   - choice under uncertainty [[https://github.com/schottmueller/microMSc/blob/main/slides/vNM.org][org]]
+   - Bayesian Nash equilibrium [[https://github.com/schottmueller/microMSc/blob/main/slides/bne.org][org]]
+   - auctions [[https://github.com/schottmueller/microMSc/blob/main/slides/auctions.org][org]]
+   - adverse selection [[https://github.com/schottmueller/microMSc/blob/main/slides/lemons.org][org]]
+ - exercises [[https://web.tresorit.com/l/Qo4h7#k9w136JGBVYuzX4D_hW5Cg][pdf]]
+ - schedule [[https://github.com/schottmueller/microMSc/blob/main/schedule.org][org]]
