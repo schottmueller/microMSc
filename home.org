@@ -1,0 +1,17 @@
+#+TITLE: Microeconomics (MSc Economics)
+#+AUTHOR: Christoph Schottmüller
+#+Options: toc:nil H:2
+
+* News
+- The material below is very preliminary still subject to change.
+* Course setup
+  *Lecture:* Fridays, 08:00-09:30 (100/01/HS XII)
+  *Exercise session:* Thursdays, 14:00-15:30  (100/01/HS XII)
+
+  For the time being,  both lecture and exercise session are planned on campus. (Aug 17)
+
+  Prerequisites: You are expected to know basic game theory (normal form games, dominant strategies, Nash equilibrium, game trees, subgame perfect Nash equilibrium) and generally microeconomics at Bachelor level (preferences, indifference curves, utility functions, consumer problem, Pareto efficiency). The schedule contains detailed prerequisites for each lecture in terms of economics and mathematics.
+* Material  
+ - slides
+ - exercises
+ - schedule

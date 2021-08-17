@@ -1,0 +1,108 @@
+#+Options: toc:nil H:2
+#+Latex_Header: \usepackage{natbib}
+
+* Social choice
+** aggregating preferences and Arrow's theorem
+   - prerequisites economics: preferences (completeness, transitivity) 
+   - Voting, Condorcet paradox, Borda count
+   - properties of Arrows' theorem
+   - Arrow's impossibility theorem
+   - reading: cite:jehle2001advanced ch. 6.1-6.2
+
+**  domain restrictions and cardinal utility
+   - prerequisites economics:  Leontief preferences, representation of preferences by a utility function, utility functions
+   - prerequisites mathematics: maximization subject to equality constraint; continuity, monotonicity, linearity and concavity of real functions  
+   - domain restrictions: single peaked preferences  
+   - cardinal utility: utilitarianism, Rawls
+   - Outlook: manipulability and Gibbard Satterthwaite theorem
+   - reading: cite:jehle2001advanced ch. 6.3-6.5  
+
+* Markets
+** Markets and general equilibrium
+    - prerequisites economics: consumer problem (utility maximizing consumption choice subject to budget constraint), marginal rate of substitution
+    - prerequisites mathematics:  theorem of the maximum, Weierstrass extreme value theorem, quasi-concavity of real functions, compactness of a set
+    - first fundamental theorem of welfare economics
+    - Edgeworth box    
+    - policies in the light of the fundamental theorems of welfare economics
+    - reading cite:hayek1945use, cite:jehle2001advanced ch. 5.1-5.2      
+
+* Static Bayesian games and auctions
+
+** Decision making under uncertainty
+    - prerequisites maths: discrete probability distributions, expected value of a discrete random variable, concavity and convexity of real functions  
+    - expected utility theorem
+    - risk preferences
+    - reading: cite:mas1995microeconomic ch. 6.A-6.C (or cite:jehle2001advanced ch. 2.4 )
+  
+** BNE
+*** Examples and definition
+    - prerequisites economics: static games of complete information, mixed strategies, Nash equilibrium
+    - prerequisites maths: probability distributions (discrete and continuous), expected value of continuous random variables
+    - Bayes' rule, Venn diagram
+    - examples for tests/signals and belief updating
+    - games of incomplete information
+    - Bayesian Nash equilibrium
+    - binary public good game
+** Auctions
+*** IPV setup and auctions
+    - prerequisites maths: inverse functions and their derivative, linear differential equation of first order
+    - relevance of auctions 
+    - 4 standard auctions  
+    - symmetric, strictly increasing equilibrium in first price auction with uniformly distributed values
+    - Vickrey auction
+    - reading: ch.1 section 1.1 cite:klemperer2004auctions, ch. 9.1 and 9.2 in cite:jehle2001advanced
+*** Revenue equivalence theorem
+    - envelope theorem
+    - using revenue equivalence to solve for equilibria in auctions (e.g. all pay auction)
+    - Appendix 1.A of ch.1  in cite:klemperer2004auctions (or ch. 9.3 in cite:jehle2001advanced)
+*** auction design
+    - robustness to collusion vs. robustness to informational assumptions 
+    - good auction design: stimulate entry and fight collusion
+    - knock out auction as collusive device
+    - example behavioral bidding (embarrassment from overbidding)
+    - risk aversion
+    - (almost) common value auction
+*** Market power and markets as auctions
+    - revenue maximization by reserve price -> inefficiency due to market power
+    - double auction with many bidders: almost efficient mechanism in dominant strategies
+
+** Adverse selection
+    - asymmetric info can create market incompleteness
+    - countermeasures to complete the market 
+    - reading:  p.115-122 in cite:einav2011selection, cite:Ake70       
+* Dynamic Bayesian games
+** wPBE
+   -  definition, simple discrete examples (market entry games)
+   -  bargaining
+   -  exercise: Selten's horse
+** Signaling
+   - job market signaling
+   - effect of taxes  
+   - exercises: discrete signaling (mafia, pirates etc.)
+
+# * Principal agent problems 
+# ** Moral hazard
+#   - incentivizing a worker
+#     - risk neutrality leads to selling the firm
+#     - risk aversion trade-off
+#     - discussion whether markets with many agents would resolve inefficiency (insurance, moral hazard etc.)
+# ** Screening with 2-types (maybe skip as nothing economically after auctions)
+#   - information rent
+#   - distortion of low type's contract to extract rent  
+
+# * Matching 
+# ** Deferred Acceptance
+#   - marriage market
+#   - stability
+#   - efficiency vs. stability  
+
+# * Books
+#  - G.A. Jehle and P.J. Reny, "Advanced Microeconomic Theory", Pearson 2011
+#  - P. Klemperer, "Auctions: Theory and Practice", Princeton 2004, https://doi.org/10.1515/9780691186290
+#  - A. Mas-Colell, M.D. Whinston and J.R. Green, "Microeconomic Theory", Oxford University Press 1995
+
+* Bibliography
+bibliographystyle:chicago
+bibliography:/home/christoph/stuff/bibliography/references.bib
+
+

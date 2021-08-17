@@ -1,0 +1,238 @@
+#+TITLE: Bayes Nash equilibrium
+#+AUTHOR:    Christoph Schottmüller
+#+DATE:       
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger]
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl,sgamevar,tikz}}
+#+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+#+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+#+LATEX_HEADER: \newcommand{\Ra}{\Rightarrow} \newcommand{\ra}{\rightarrow} \newcommand{\Lra}{\Leftrightarrow}
+
+** Introduction
+- so far
+  - need to look at games of incomplete information (preference aggregation when preferences are private, auctions)
+  - under certain assumptions decision makers can be modeled as expected utility maximizers
+- still missing
+  - how to react to information?
+  - strategic interaction under uncertainty
+
+
+* Bayes' rule
+** Bayes' rule: A simple example
+   - I know someone who lives in Munich. What is the probability that this person is male?
+   - I know someone who lives in Munich and who is 1.90 m tall. What is the probability that this person is male?
+   - I know someone who lives in Munich and has green eyes. What is the probability that this person is male?
+# about 1/2, definitely higher than 1/2 as there are more men than women with this height, about 1/2 as the fraction of mean and women with green eyes is about the same
+# eye color does not give more information on gender while height does; in statistics eye color and gender would be called independent while height and gender a correlated
+** Bayes' rule
+*** Bayes' rule
+   For two events $A$ and $B$
+   $$P(A|B)=\frac{P(B|A) P(A)}{P(B)}.$$
+   
+*** :B_ignoreheading:BMCOL:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :BEAMER_col: 0.4
+    :END:
+- easier to remember as $P(A|B)P(B)=P(B|A)P(A)$ which is also equal to $P(A\cap B)$
+- hence, $P(A|B)=P(A\cap B)/P(B)$  
+
+#+BEGIN_SRC latex   
+  \begin{figure}   
+  \begin{tikzpicture}[scale=0.7]
+  \draw[thick] (0,0) rectangle (3,3) ;
+  \draw [blue] (1,1.2) circle [radius=0.9];
+  \draw[red] (1,1.2) rectangle (2.5,2.5) ;
+   \node[right,red] at (2.4,2.5) {$A$};
+  \node[right,blue] at (1.6,0.6) {$B$};
+  \node at (1.42,1.45) {\tiny$A\cap B$}; 
+  \end{tikzpicture}
+  \end{figure}
+#+End_SRC
+
+** Bayes' rule: example
+   - an antigen test for a certain virus is 70% reliable at detecting an illness and 99.5% reliable at correctly reporting that somebody is healthy
+   - suppose about 80.000 people are currently infected with the virus
+   - suppose 80 million people live in Germany
+   - if a random person is takes a test and the test is positive, what is the probability that this person is infected?
+     # P(infect)= 80.000/80mil = 0.001 , P(pos test| infect)=0.7, P(pos test)=0.001*0.7+0.999*0.005=
+     # P(infect|pos test) = 0.7*0.001/(0.005695)=0.1229 i.e. 12 %
+** Bayes' rule: comments
+   - calculations are reasonably simple
+   - intuition often goes wrong when the prior is extremely skewed
+   - make sure to understand it as it will often loom in the background
+** Independence
+*** Independence
+    Two random variables $X$ and $Y$ are independent if
+     $$P(X=x,Y=y)=P(X=x)P(Y=y).$$
+
+*** :B_ignoreheading:BMCOL:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :BEAMER_col: 0.4
+    :END:
+
+   - by Bayes' rule, $P(X=x|Y=y)=P(X=x)$ if $X$ and $Y$ are independent
+     - knowing $Y$ does not affect my belief about $X$ 
+
+   - independence will often be assumed to keep the models simple   
+* Games of incomplete information
+** Games of incomplete information I: an example
+- an incumbent decides whether to build a new plant (I for invest)  at cost $c$
+- entrant simultaneously decides whether to enter (E)
+- entrant does not know whether $c$ is "low" (/l/) or "high" (/h/)
+
+#+Caption: Payoffs with $c=h$
+|    | E    | NE  |
+|----+------+-----|
+| /  | <    |     |
+| I  | 0,-1 | 2,0 |
+| NI | 2,1  | 3,0 |
+#+Caption: Payoffs with $c=l$
+|    | E      | NE    |
+|----+--------+-------|
+| /  | <      |       |
+| I  | 1.5,-1 | 3.5,0 |
+| NI | 2,1    | 3,0   |
+
+- how to solve this game?
+
+** Games of incomplete information II: an example 
+   - entrant has to think about
+     - how likely is it that incumbent has low cost or high cost?
+     - what will incumbent do if he has high cost? what if he has low cost?
+     - what should I do?
+       
+   - incumbent with low cost has to think about
+     - what will entrant do?
+       - partly depends on what he thinks I would do if I had high costs...
+
+   - we will return to this example later on!
+** Games of incomplete information III: general thoughts
+   - say two firms do not know the cost of the respective other firm
+   - the main trick:
+     - add beliefs about costs of other firm (i.e. a probability distribution over possible costs)
+     - maximize expected utility
+   - we might want to allow this belief to depend on own costs
+     - e.g. a high cost firm may think it is more likely that the other firm has also high costs
+
+** Games of incomplete information IV: formal description
+   - finite set of players: $i=1,\dots,N$
+   - each player has a set of pure strategies $S_i$
+   - to capture uncertainty of other players:
+     - player $i$ has a *type* $t_i$ from a set $T_i$
+     - player $i$ knows his own type $t_i$ but other players do not
+   - player $i$ maximizes expected utility with Bernoulli utility function $u_i:S\times T\ra\Re$
+     - $T=\times_{i=1}^N T_i$ is set of all type profiles
+     - $S=\times_{i=1}^N S_i$ is set of all strategy profiles
+     - actions and types of all players can affect $i$'s payoff
+   - each type of each player has a belief $p_i(t_{-i}|t_i)$ about other players' types
+     - $p_i(t_{-i}|t_i)\in[0,1]$
+     - $\sum_{t_{-i}\in T_{-i}}p_i(t_{-i}|t_i)=1$ where $T_{-i}$ is the set of type profiles of all players but $i$
+# use notation on example game
+** Games of incomplete information V:  formal description (short)
+   A /N/-player game of incomplete information can be denoted as $G=(S_i,T_i,p_i,u_i)_{i=1}^N$ where
+     - $S_i$ is the strategy set of player $i$
+     - $T_i$ is the type set of player $i$
+     - $p_i$ assigns to each $t_i\in T_i$ a belief over $T_{-i}$
+     - $u_i:S\times T\ra\Re$ is player $i$'s utility function.
+  If all $S_i$ and $T_i$ are finite, the $G$ is called a /finite game of incomplete information./     
+
+** Games of incomplete information VI: assumptions on beliefs
+   - usually, it is assumed that types have a joint distribution $p$ (over $T$) and beliefs are derived using Bayes' rule:
+    $$p_i(t_{-i}|t_i)=\frac{p(t_i,t_{-i})}{\sum_{t_{-i}'\in T_{-i}}p(t_i,t_{-i}')}$$
+    then $p$ is called the /common prior/
+   - often we assume independence of types, i.e. the belief $p_i(t_{-i}|t_i)$ is the same for all $t_i$
+* Bayesian Nash equilibrium
+
+** Bayesian Nash equilibrium I
+    each player maximizes expected utility given his type and others strategies\linebreak
+    $\ra$ trick:
+     - think of each type of every type as an own player maximizing expected utility (with utility function $u_i$ and beliefs $p_i(t_{-i}|t_i)$)
+     - a Bayesian Nash equilibrium consists of one strategy for each type of each player such that
+       - the strategy of type $t_i$ maximizes expected utility of player $i$ given the strategies of the others and the belief $p_i(\cdot|t_i)$
+
+** Bayesian Nash equilibrium II (formal)
+   For Bayesian game $G=(S_i,T_i,p_i,u_i)_{i=1}^N$, define the auxiliary game of complete information $G'$:
+       - set of players is $T_1\cup T_2\cup \dots\cup T_N$
+       - strategy set of player $t_i$ is $S_i$
+       - von Neumann-Morgenstern utility $v_{t_i}(s)=\mathbb{E}_{t_{-i}\in T_{-i}}[u_i(s(t_1),\dots,s(t_N),t,\dots,t_N)]$
+         - where $s(t_i)$ is the strategy of player $t_i$ and $s=(s(t_1),\dots,s(t_N))$
+	 - where expectation is take using the belief $p_i(\cdot|t_i)$
+
+*** Definition: Bayesian Nash equilibrium (BNE)
+    A (mixed) Bayesian Nash equilibrium of game $G$ is a (mixed) Nash equilibrium of the corresponding auxiliary game $G'$.
+
+** Bayesian Nash equilibrium III: back to example
+   - assume the belief $p_E(l)=p_E(h)=1/2$
+
+#+Caption: Payoffs with $c=h$
+|    | E    | NE  |
+|----+------+-----|
+| /  | <    |     |
+| I  | 0,-1 | 2,0 |
+| NI | 2,1  | 3,0 |
+#+Caption: Payoffs with $c=l$
+|    | E      | NE    |
+|----+--------+-------|
+| /  | <      |       |
+| I  | 1.5,-1 | 3.5,0 |
+| NI | 2,1    | 3,0   |
+
+- what is the optimal strategy for type $h$?
+- if type $l$ invests with probability $s(l)$, what is the entrant's best response?
+- if the entrant enters with probability $s(e)$, what is type $l$'s best response?
+
+** public good example I
+   - $N$ guests at a garden party
+   - each guest has to decide whether to bring a speaker to play music, $S_i=\{0,1\}$
+   - payoff of player $i$:
+     - zero if no one brings a speaker
+     - $t_i$ if someone else brought a speaker
+     - $t_i-1/2$ if person $i$ brought a speaker
+   - $t_i$ are independently distributed and $1$ (high) with probability $2/3$ and $0$ (low) with probability $1/3$
+   - we want to find a /symmetric BNE/, i.e. one where all high types use one strategy and all low types use one other strategy
+
+** public good example II
+   - what is the optimal strategy of a low type?
+     # do not bring speaker
+   - suppose all high types bring a speaker with probability $\alpha$
+     - for player $i$: what is the probability that no one else brings a speaker?
+     # prob that j brings speaker is 2\alpha/3 -> (1-2\alpha/3)^(N-1)
+     - what is the expected payoff for a high type of player $i$ when bringing the speaker?
+     # 1-1/2=1/2
+     - what is the expected payoff for a high type of player $i$ when not bringing the speaker?
+     # 1-(1-2\alpha/3)^(N-1)
+   - which value of $\alpha$ gives a BNE?
+     # 1/2=1-(1-2\alpha/3)^(N-1), i.e. (1/2)^(1/(N-1))=1-2\alpha/3 or \alpha = 3/2[1-(1/2)^(1/(N-1))]
+     \vspace*{0.5cm}
+#+BEGIN_SRC latex   
+      \begin{figure}   
+      \begin{tikzpicture}
+      \draw[<->,thick] (1,1) -- (1,0) -- (10,0);
+      \draw[thick,domain=2:10, blue] plot (\x,{1.5*(1-(0.5)^(1/(\x-1)))});
+      \node[left] at (1,1.1) {$\alpha$};
+      \node[right] at (10,0) {$N$};
+      \node[below] at (5,0){5};
+      \node[below] at (2,0){2};
+    \node[below] at (10,0){10};
+    \node[left] at (1,0.5){\tiny 1/2};
+     \draw (0.95,0.5)--(1.05,0.5);
+     \draw (0.95,0.75)--(1.05,0.75);
+  \node[left] at (1,0.75){\tiny 3/4};
+      \end{tikzpicture}
+      \end{figure}
+#+End_SRC
+

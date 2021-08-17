@@ -1,0 +1,224 @@
+#+TITLE: Decision making under uncertainty
+#+AUTHOR:    Christoph Schottmüller
+#+DATE:       
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger]
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl,sgamevar,tikz}}
+#+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+#+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+#+LATEX_HEADER: \newcommand{\Ra}{\Rightarrow} \newcommand{\ra}{\rightarrow} \newcommand{\Lra}{\Leftrightarrow}
+
+* Decision making under uncertainty
+** Introduction
+   - so far:
+     - preference aggregation:
+       - what if preferences are private information and have to be elicited?
+       - possibilities for gaming the system
+       - proper analysis: incomplete information
+     - market equilibrium:
+       - auction metaphor
+       - auction: game with incomplete information
+   - today:
+     - how to model decision making under uncertainty
+** Motivation: game theory
+
+  \begin{table}[h]
+\centering
+\begin{tabular}{l|l|l}
+       & C & D\\ \hline
+C   &2,2   & 0,3   \\
+D   &3,0   & 1,1  
+\end{tabular}
+\caption{prisoner's dilemma}
+\label{tab:pris_dil}
+\end{table}
+-  What do the numbers in the game table actually mean?
+- What if the other player plays $C$ and $D$ with 50% probability? How to evaluate that?
+- can we model a rational decision maker as utility maximizer?
+
+** Setup I
+- today: no game, just decision problem of 1 decision maker under uncertainty
+- basic setup: a decision maker has to choose among lotteries over outcomes in a set $C$
+  
+  - set of \emph{outcomes} $C=\{c_1,c_2\dots c_n\}$
+  - a \emph{simple lottery} $L$ is a probability distribution $(p_1,p_2\dots p_n)$ with $p_i\geq0$ and $\sum_{i=1}^np_i=1$ where $p_i$ is the probability of outcome $c_i$
+*** vacation lottery
+      You book a vacation in the south. Depending on the weather your vacation has the outcomes\linebreak $C=\{\text{lying on the beach}, \text{ stuck in the hotel room}\}$.\linebreak Given the weather forecast you assign probabilities $(0.9,0.1)$ to the two possible outcomes.
+   
+** Setup II
+  - we start from preferences 
+  - the decision maker has a \emph{complete and transitive} preference relation $\succeq$  on the set of all simple lotteries
+** Compound lotteries I
+*** vacation lottery II
+ - third outcome: ``being stuck at home'', i.e.  $C=\{\text{lying on the beach, stuck in hotel room, stuck at home}\}$
+ - probabiltiy 0.2 that your tour operator goes bankrupt before you go on holidays (and 0.8 that your holiday goes through)
+ - compound lottery:  with probability $\alpha_1=0.8$ you get the vacation lottery; with probability $0.2$ you get the ``lottery'' that puts all probability on the outcome ``stuck at home''
+** Compound lotteries II
+A \emph{compound lotteries} $(L_1,\dots,L_K;\alpha_1,\dots,\alpha_K)$ yields with probability $\alpha_k$ the simple lottery $L_k$ ($\alpha_k\geq 0$ and $\sum_{k=1}^{K} \alpha_k=1$)
+
+
+- What is the probability that you lie on the beach?
+- Is there a simple lottery that is similar to the compound lottery (same outcome probabilities)? (``reduced lottery'')
+
+
+*** Assumption
+   The decision maker evaluates compound lotteries like their \emph{reduced lotteries}, i.e. the decision maker is indifferent between a compound lottery and the corresponding reduced lottery.
+
+** axioms for preference relation $\succeq$: continuity
+
+*** continuity axiom:
+    for all lotteries $L,L',L''$, the sets
+$$ \{\alpha\in[0,1]: \alpha L+(1-\alpha)L'\succeq L''\}$$
+and
+$$\{\alpha\in[0,1]: L''\succeq \alpha L+(1-\alpha) L'\}$$
+are closed.
+
+*** :B_ignoreheading:BMCOL:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :BEAMER_col: 0.4
+    :END:
+
+ - no sudden jumps in preferences
+ - best understood as (mild) mathematical regularity assumption
+
+** axioms for preference relation $\succeq$: independence
+*** independence axiom
+    for all lotteries $L,L',L''$ and $\alpha\in(0,1)$ we have
+$$L\succeq L' \quad\text{ if and only if }\quad \alpha L+(1-\alpha) L''\succeq \alpha L'+(1-\alpha) L''$$
+
+*** :B_ignoreheading:BMCOL:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :BEAMER_col: 0.4
+    :END:
+
+
+- main assumption for what follows
+- appealing but some experimental violations are known
+      
+** Example
+    There are three prices:
+  \begin{enumerate}
+  \item 2.500.000 \$
+  \item 500.000 \$
+  \item 0 \$
+  \end{enumerate}
+An individual prefers the lottery $L_1=(0.1,0.8,0.1)$ to the lottery $L_1'=(0,1,0)$.\\
+If the independence axiom is satisfied (as well as transitivity and monotonicity), can we say which of the following lotteries the individual prefers?\\
+$L_2=(0.55,0.4,0.05)\qquad L_2'=(0.5,0.5,0)$
+
+# Answer: $L_1\succ L_1'$ hence $0.5 L_1+0.5 L_3\succ 0.5 L_1'+0.5 L_3$; now take $L_3=(1,0,0)$, then the last expression says $L_2\succ L_2'$.
+
+** Some implications I
+*** Lemma
+Assume the independence axiom holds for the preference relation $\succeq$ on the set of lotteries $\mathcal{L}$. Then the following holds:
+$$L\sim L' \quad\text{ if and only if }\quad \alpha L+(1-\alpha) L''\sim \alpha L'+(1-\alpha) L''$$
+$$L\succ L' \quad\text{ if and only if }\quad \alpha L+(1-\alpha) L''\succ \alpha L'+(1-\alpha) L''$$
+*** Proof (indifference)
+ - let $L\sim L'$
+  - then $L\succeq L'$
+    \vspace*{0.5cm}
+    # by independence axiom equivalent to $\alpha L+(1-\alpha) L''\succeq \alpha L'+(1-\alpha) L''$
+  - then $L'\succeq L$
+    \vspace*{0.5cm}
+    # by independence axiom equivalent to $ \alpha L'+(1-\alpha) L''\succeq \alpha L+(1-\alpha) L''$
+ # combined: $\alpha L+(1-\alpha) L''\sim \alpha L'+(1-\alpha) L''$   
+   
+** Some implications II
+*** Lemma
+   If $L\sim L'$ and $L''\sim L'''$ and the independence axiom holds, then $\alpha L + (1-\alpha)L''\sim \alpha L' + (1-\alpha)L'''$ where $\alpha\in [0,1]$.
+*** Proof 
+    By the independence axiom, $L\sim L'$ implies
+ $$\alpha L+ (1-\alpha) L''\sim \alpha L'+(1-\alpha) L''.$$
+ Also by the independence axiom, $L''\sim L'''$ implies 
+ $$\alpha L'+ (1-\alpha) L''\sim \alpha L'+(1-\alpha) L'''.$$
+ Finally, use transitivity to get the result.
+
+** Utility representation
+*** Definition
+  A utility function representing the preferences $\succeq$ on $\mathcal{L}$ is a function $U:\mathcal{L}\ra \Re$ such that $U(L)\geq U(L')$ whenever $L\succeq L'$ for $L,L'\in\mathcal{L}$.
+
+** von Neumann-Morgenstern utility
+*** Definition (von Neumann-Morgenstern utility)
+   The utility function $U:\mathcal{L}\ra \Re$ has expected utility form if there is an assignment of numbers $(u_1,\dots,u_n)$ to the $n$ outcomes in $C$ such that for any simple lottery $(p_1,\dots,p_n)$ 
+$$U(L)=u_1 p_1+\dots+u_n p_n.$$
+Such a utility function $U$ is called von Neumann-Morgenstern utility function.
+
+*** :B_ignoreheading:BMCOL:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :BEAMER_col: 0.4
+    :END:
+
+The idea is that outcome (with certainty) $c_i$ yields utility $u_i$. To evaluate lotteries, we take the expected utility (i.e. expectation over those $u_i$).
+
+** Expected utility theorem
+*** Theorem
+      Assume that the preference relation $\succeq$ satisfies transitivity, completeness, the continuity axiom and the independence axiom. Then $\succeq$ can be represented by a von Neumann-Morgenstern utility function $U: \mathcal{L}\ra \Re$, i.e. there exists a utility function of the form $U(L)=\sum_{i=1}^nu_i p_i$ such that
+$$ L\succeq L' \quad\text{ if and only if }U(L)\geq U(L').$$
+
+*** Proof
+    somewhat lengthy, see ch. 6B in Mas-Colell, Whinston and Green (1995) or Jehle and Reny (2011) ch. 2.4.2
+
+*** :B_ignoreheading:BMCOL:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :BEAMER_col: 0.4
+    :END:    
+
+- under our assumptions a decision maker maximizes expected utility
+- $U$: "von Neumann-Morgenstern utility function"
+- $u_i$: "Bernoulli utilities"
+* Risk preferences
+** Risk preferences
+   - suppose the outcomes are amounts of money
+   - instead of $u_i$,  function  $u:\Re\ra\Re$
+   - risk preferences
+     - take lottery arbitrary lottery $L$ with expected payout $\mu$
+     - risk aversion: decision maker prefers getting $\mu$ (for sure!) to $L$
+     - risk love: decision maker prefers $L$ to $\mu$
+
+*** Proposition       
+A decision maker is risk averse if and only if his Bernoulli utility function $u$ is concave.\linebreak
+A decision maker is risk loving if and only if his Bernoulli utility function $u$ is convex.
+
+** Risk preferences: graph
+- let $L$ pay $x_1$ with probability $\alpha$ and $x_2$ with $1-\alpha$
+- expected payout $\mu=\alpha x_1+(1-\alpha)x_2$
+- line connecting $(x_1,u(x_1))$ and $(x_2,u(x_2))$ contains point $(\mu,\alpha u(x_1)+(1-\alpha)u(x_2))$  
+#+BEGIN_SRC latex   
+  \begin{figure}   
+  \begin{tikzpicture}
+  \draw[<->,thick] (5,0) -- (0,0) -- (0,5);
+  \draw[thick,domain=0:5] plot (\x,{2*sqrt(\x)});
+  \draw [fill,blue] (0.12,0.5) circle [radius=0.05];
+  \draw [fill,blue] (4,4) circle [radius=0.05];
+  \draw [fill,orange] (2,2.22) circle [radius=0.05];
+  \draw [fill,green] (2,2.85) circle [radius=0.05];
+  \draw[dashed] (0.12,0.5)--(4,4);
+  \node[below] at (0.2,0) {$x_1$};
+  \node[below] at (4,0) {$x_2$};
+  \node[below] at (2,0) {$\mu$};
+  \node[left] at (0,0.5) {$u(x_1)$};
+  \node[left] at (0,4) {$u(x_2)$};
+  \node[left] at (0,2.22) {$\alpha u(x_1)+(1-\alpha)u(x_2)$};
+  \node[left] at (0,2.85) {$u(\mu)$};
+  \node[right] at (5,4.5) {$u$};
+  \node[right] at (5,0) {money};
+  \node[left] at (0,5) {utility};
+  \end{tikzpicture}
+  \end{figure}
+#+End_SRC

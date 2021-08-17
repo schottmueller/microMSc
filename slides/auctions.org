@@ -1,0 +1,612 @@
+#+TITLE: Auctions
+#+AUTHOR:    Christoph Schottmüller\thanks{I want to thank Ole Jann (CERGE EI) for giving me access to his lecture slides. Many of the following slides are based on his material.}
+#+DATE:       
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:t ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger]
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl,sgamevar,tikz}}
+#+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+#+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+#+LATEX_HEADER: \newcommand{\Ra}{\Rightarrow} \newcommand{\ra}{\rightarrow} \newcommand{\Lra}{\Leftrightarrow}
+
+* Introduction to auctions
+
+**  Auctions are used in many contexts I
+  - privatization of companies, drilling rights, mining rights, mobile phone spectrum, ...
+  - art, furniture, fresh ﬂowers, ﬁsh, houses,...
+  - treasury bills, bonds, other debts,... \linebreak \Rightarrow billions of dollars every week!
+  - public and private procurement (reverse auction: lowest price wins)
+  - historical examples: auction of the Roman empire in 193 AD, bidding for wives in Babylonia[fn::\tiny Though famous, it is controversial whether Herodotus' account is historically accurate, see, for instance, https://www.jstor.org/stable/4436038.],...
+  - Google (and others) ad auctions ($\approx$ 150 billion \(\$\) in 2020)
+  - electricity wholesale markets
+**  Auctions are used in many contexts II   
+  - many other situations can be thought of as auctions:
+    - take-over battles for a company
+    - queuing for something, lobbying politicians, advertising (“all-pay auction” or “war of attrition”)
+    - markets...
+      
+** Auction design matters
+
+- most visible application of auction theory in recent decades: Mobile spectrum auctions
+- starting in the late 90s, all developed countries sold off mobile spectrum to companies to be used for mobile internet
+- countries differed in size, number of incumbent companies, number of available licenses ...\linebreak \Rightarrow  all used slightly different auction formats
+- per capita revenue 3G spectrum auctions:
+  - €650 in the UK
+  - €615 in Germany
+  - €170 in the Netherlands
+  - €20 in Switzerland
+- “economic theorists deserve some of the blame” (Klemperer 2003)
+
+** Auctions: A theory and a tool
+
+# - The theory of mechanism design was a highly abstract way to think about the world
+- auctions are both a theoretical concept and a practical tool
+  - thinking about their theoretical properties has larger beneﬁts for our understanding of economics ...
+  - ... but it also helps inform their practical use
+  - practical tool that has been used for millennia to allocate goods
+  - thinking about their practical use requires theory, but also detailed knowledge and “street smarts”
+- our plan:
+  1. What are the most common auction formats? Which one maximizes revenue?
+  2. What are the advantages and disadvantages of different auction formats?
+
+* Auction formats
+** Private values framework
+   - $I$ bidders and one object to be sold
+   - bidder $i$ has valuation $v_i$ for the object
+   - $v_i$ is private information of bidder $i$ (his /type/)
+   - all $v_i$ are identically and independently distributed on $[\underline v,\bar v]$ with cdf $F$
+     - for simplicity: uniform distribution on $[0,1]$
+   - bidder $i$'s payoff is
+     - valuation $v_i$ minus payment if he gets object
+     - minus payment (if any) if he does not get the object
+   - we denote $i$'s bid as $b_i$
+     - $i$'s bidding strategy is a function $b_i:\,[\underline v,\bar v]\ra \Re_+$
+
+**  Common auction formats for a single object
+
+- sealed-bid auctions:
+  - first-price sealed-bid: Every bidder submits their offer, the highest bidder wins and pays his bid
+  - second-price sealed-bid: Every bidder submits their offer, the highest bidder wins and pays the second-highest bidder’s bid
+- Open auctions:
+  - descending ("Dutch"): The auctioneer announces a high price and then slowly decreases it, until a bidder says that he wants to buy at that price
+  - ascending ("English"): The auctioneer starts with a low price and announces higher prices, until only one bidder remains and pays the last announced price
+Which one will bring the highest revenue? \linebreak We need to understand how bidders will behave!
+
+** First-price sealed-bid auction (FPA)
+
+- Every bidder submits their offer, the highest bidder wins and pays his bid.
+- If your valuation is $v_i$ , should you bid $v_i$ ?
+  \pause
+- basic trade-off for any bidder:
+  - higher bid increases chance of winning...
+  - ...but decreases surplus in case of winning
+- $\Ra$ ”bid shading”: In equilibrium, every bid $b_i$ will be below bidder’s value $v_i$.
+
+** Descending (“Dutch”) auction
+
+- The auctioneer announces a high price and then slowly decreases it, until a bidder says that he wants to buy at that price.
+- Once announced price p is below $v_i$, there is a basic trade-off:
+  - agreeing to pay earlier increases chance of winning (i.e. nobody else agrees before)...
+  - ...but decreases surplus in case of winning
+- $\Ra$ ”Bid shading”
+- FPA and Dutch auction require the same considerations
+- FPA and Dutch auction are actually strategically equivalent:
+  - same strategy set $S_i=\Re_+$
+  - same payoff $u_i(s)$ for every given strategy profile $s$
+  - same Bayesian game!
+
+** Second-price sealed-bid auction (SPA)
+
+- Every bidder submits their offer, the highest bidder wins and pays the second-highest bidder’s bid.
+- With value $v_i$ , should you ever submit bid $b_i > v_i$ instead of $b_i = v_i$ ?
+  - only changes the outcome if second-highest bid $b_j$ is between $v_i$ and $b_i$
+    - if $b_j > b_i$ you don’t win either way
+    - if $b_j < v_i$ you win and pay $b_j$ either way
+  - But then you win and pay $b_j > v_i$ and make negative surplus $\Ra$  better to bid $b_i = v_i$
+    \pause
+- Should you ever bid $b_i < v_i$ instead of $b_i = v_i$ ?
+    - only changes the outcome if $b_j \in (b_i , v_i )$
+      - if $b_j > v_i$ you don’t win either way
+      - if $b_j < b_i$ you win and pay $b_j$ either way
+    - But then you lose, whereas with $b_i = v_i$ you would have won and made positive surplus $\Ra$ better to bid $b_i = v_i$
+- $\Ra$ It is a weakly dominant strategy to bid $b_i = v_i$    
+
+** Ascending (“English”) auction
+
+- The auctioneer starts with a low price and announces higher prices, until only one bidder remains and pays the last announced price.
+- Should you ever leave the bidding while announced price $p$ is below $v_i$ ?
+  - No: stay and either win at some $p < v_i$ (positive surplus), or leave at $v_i$ (zero surplus)
+    \pause
+- Should you ever stay in the bidding when announced price $p$ is above $v_i$ ?
+  - No: leaving guarantees zero surplus while staying in might lead to negative surplus (and never to positive)
+- $\Ra$ weakly dominant strategy to stay in the auction until $p = v_i$
+- (with independent values) SPA and English auction are strategically equivalent
+
+** Optimal bidder behavior in the ﬁrst-price auction I
+
+- What is the equilibrium strategy $b_i:[\underline v,\bar v]\ra\Re_+$ in a FPA (or in a Dutch) auction?
+- We will consider a simple case:
+  - two bidders have with $v_i$ independently and uniformly distributed on $[0, 1]$
+- Assume that there exists a symmetric bidding equilibrium where everybody follows the increasing bidding strategy $\beta: [\underline v,\bar v]\ra\Re_+$.
+- If $j$ follows strategy $\beta$, $i$'s expected payoff from bidding $b_i$ is
+\begin{multline*}
+Pr[b_i>\beta(v_j)]*(v_i-b_i) \\+ Pr[b_i=\beta(v_j)]\frac{1}{2}*(v_i-b_i)+Pr[b_i<\beta(v_j)]*0
+\end{multline*}
+
+** Optimal bidder behavior in the ﬁrst-price auction II
+- If $j$ follows strategy $\beta$, $i$'s expected payoff from bidding $b_i$ is
+\begin{multline*}Pr[b_i>\beta(v_j)]*(v_i-b_i)= Pr[v_j<\beta^{-1}(b_i)]*(v_i-b_i)\\
+= \beta^{-1}(b_i)*(v_i-b_i)
+\end{multline*}
+\vspace*{-0.5cm}
+- first order condition of maximizing payoff over bid $b_i$
+$$ {\beta^{-1}}'(b_i)*(v_i-b_i)-\beta^{-1}(b_i)=0$$
+$$\Lra \frac{1}{\beta'(\beta^{-1}(b_i))}*(v_i-b_i)-\beta^{-1}(b_i)=0$$
+- if $\beta$ is equilibrium, maximum is achieved at $b_i=\beta(v_i)$ and therefore
+  $$\frac{v_i-\beta(v_i)}{\beta'(v_i)}-v_i=0$$
+- this differential equation is solved by $$\beta(v_i)=v_i/2$$
+
+** Optimal bidder behavior in the ﬁrst-price auction III  
+- both players bidding according to the strategy $\beta(v_i)=v_i/2$ is equilibrium!
+  - derivation maybe tricky but... 
+  - ...make sure you understand that bidding $v_i/2$ is type $v_i$'s best response if $j$ uses the strategy $b_j(v_j)=v_j/2$
+- a lot of bid shading in equilibrium!
+  - with $I$ players (and iid uniformly distributed values) the equilibrium is
+  $$\beta(v_i)=\frac{I-1}{I}v_i$$
+  - $\Ra$ bid shading decreases with number of bidders
+  
+** Which auction yields higher revenue?
+
+- For $v_1 , v_2$ uniformly iid on $[0,1]$, which auction gives the higher revenue?
+- revenue of the FPA
+  - expected revenue from bidder $i$:
+    $$\int_0^1 Pr[v_j<v_i]\frac{v_i}{2}\,dv_i=\int_0^1 v_i\frac{v_i}{2}\,dv_i=\frac{1}{6} $$
+  - total expected revenue: $2*1/6=1/3$
+- revenue of the SPA
+  - expected revenue from bidder $i$:
+    $$\int_0^1 Pr[v_j<v_i]\mathbb{E}[v_j|v_j<v_i]\,dv_i=\int_0^1 v_i \frac{v_i}{2}\,dv_i=\frac{1}{6} $$
+  - total expected revenue: $2*1/6=1/3$
+
+** Conclusions so far
+   - with independent private values
+     - first price sealed bid and Dutch auction are strategically equivalent
+     - second price sealed bid and ascending auction are strategically equivalent
+   - with independent private values and uniformly distributed types
+     - both auctions are efficient (bidder with highest valuation gets the good)
+     - both auctions yield the same expected revenue 
+    
+* Revenue equivalence
+** Revenue equivalence theorem (RET)
+*** Revenue equivalence theorem   
+Suppose that valuations are identically and independently distributed with strictly positive density on $[\underline v,\bar v]$ and that bidders are risk neutral.\linebreak
+Then, every /(auction format, equilibrium)/ pair such that in equilibrium
+- the object is won by the bidder with the highest valuation and
+- a bidder of type $\underline v$ has zero expected utility
+gives the same revenue to the seller and the same expected utility to all types.
+
+*** :B_ignoreheading:BMCOL:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :BEAMER_col: 0.4
+    :END:
+
+
+- revenue equivalence is much more general (regardless of distribution, auction type etc.)
+
+** Revenue equivalence theorem: theoretical relevance 
+- RET as a theoretical tool
+  - can help us think through changes in auction format and whether they will have an effect or not
+  - helps us understand complicated auctions by relating strategies and outcomes to simpler auctions
+  - can be used to derive equilibria in a simple manner (example for this later on)
+  - is a starting point for further analysis
+    - how does the comparison of revenue change if assumptions of RET fail?
+
+** Revenue equivalence theorem: economic relevance 
+- RET as an economic insight
+  - Does it mean that in real life, all auction formats will have the same revenue? No!
+  - But there is no a priori reason to expect that any auction format would always be better than others ...
+  - ... or that any format would be better for some people than another format.
+  - One weak formulation with real-life relevance:
+    - If we change the rule to increase expected payment for a given bid $b_i$, bidders will lower their bids $b_i$ to compensate for that
+    - $\Ra$ Under idealized conditions, these effects exactly cancel each other out
+
+** Revenue equivalence theorem: proof I
+   - take an (equilibrium, auction format) pair and assume that assumptions of RET are satisfied
+   - define $U_i(v_i)=v_i P(v_i)- T_i(v_i)$ where
+     - $U_i$ is expected utility of player $i$ in equilibrium
+     - $P$ is probability that all other bidders have a lower type than $v_i$, i.e. $P(v_i)=F(v_i)^{I-1}$
+     - $T_i$ is the expected amount of money $i$ pays to the auctioneer in equilibrium if he has type $v_i$
+** Revenue equivalence theorem: proof II
+   - define $U_i(v_i)=v_i P(v_i)- T_i(v_i)$
+   - *envelope theorem:* $U_i'(v_i)=P(v_i)$
+     - in equilibrium type $v_i'$ prefers his bid to the bid of type $v_i''$
+       $$U_i(v_i')\geq v_i' P(v_i'') -T_i(v_i'')=U_i(v_i'')+(v'-v'')P(v_i'')$$
+     - in equilibrium type $v_i''$ prefers his bid to the bid of type $v_i'$
+       $$U_i(v_i'')\geq v_i'' P(v_i') -T_i(v_i')=U_i(v_i')-(v'-v'')P(v_i')$$
+     - taking these two inequalities together (and let $v_i'>v_i''$)
+       $$P(v_i')\geq \frac{U_i(v_i')-U_i(v_i'')}{v_i'-v_i''}\geq P(v_i'')$$
+     - taking limit $v_i''\rightarrow v_i'$ gives (as $P$ is continuous)
+       $$U_i'(v_i')=P(v_i)$$
+** Revenue equivalence theorem: proof III
+   - envelope theorem: $U_i'(v_i)=P(v_i)$
+   - hence,
+     \begin{multline*}U_i(v_i)=U_i(\underline v) + U_i(v_i)-U_i(\underline v)=U_i(\underline v)+\int_{\underline v}^{v_i}U_i'(v)\,dv\\=U_i(\underline v)+\int_{\underline v}^{v_i}P(v)\,dv=\int_{\underline v}^{v_i}P(v)\,dv= \int_{\underline v}^{v_i}F(v)^{I-1}\,dv\end{multline*}
+   - expected utility of player $i$ of type $v_i$ does not depend on specific auction format or equilibrium!
+   - same is true for expected payment of type $v_i$ of player $i$:
+     $$T_i(v_i)=v_i P(v_i) -U_i(v_i)=v_i F(v_i)^{I-1} -\int_{\underline v}^{v_i}F(v)^{I-1}\,dv$$
+   - expected revenue is just $\sum_{i=1}^I \mathbb{E}[T_i(v_i)]$ which therefore also does not depend on auction format or equilibrium\qed
+
+** Revenue equivalence theorem: proof idea
+   - the envelope theorem states that the derivative of bidder utility only depends on the type distribution (given that the highest type wins)
+   - assumption that the lowest type has zero utility
+   - together this implies that the utility of every type depends only on the type distribution (and not the auction format, equilibrium strategies etc.)
+   - bidder utility only depends on the type distribution!
+   - welfare (defined as expected valuation of the person who get the good) is the same in all auctions as the highest bidder always gets the good
+   - revenue is difference between welfare and bidder utility...done!
+   - note: envelope theorem does all the real work!
+
+** Applying RET I
+- Consider the following auction formats:
+  - English (i.e. ascending) auction
+  - The highest bidder gets the object and pays twice her bid
+  - The highest bidder gets the object and pays the sum of her bid and the next-highest bid
+  - An ascending auction is held until only two bidders remain. Then these two are asked to submit sealed bids; the highest bidder gets the object and pays her bid (“Anglo-Dutch Auction”)
+- Which one will give the highest expected revenue?
+  \pause
+  - It seems reasonable that there are symmetric equilibria in strictly increasing strategies.
+  - They will all give the same expected revenue (and in expectation make the bidders equally well off)!
+
+** Applying RET IIa
+- 2 companies are engaged in a legal battle
+- each company chooses how much money to spend on lawyers
+- company that invests the more wins the battle and gets a value of $v_i$ , where $v_i$ are iid and uniform on $[0,1]$
+- This is an all-pay auction: Every company chooses a bid (= how much to pay for lawyers) and pays this for sure, but only the one who pays more wins the prize.
+- How will each company spend on lawyers in equilibrium, if it only knows its own valuation $v_i$?
+- Calculating this directly would be slightly more complicated than solving a FPA ...
+- ...but the RET can help us!
+
+** Applying RET IIb
+   - consider the corresponding SPA: equilibrium to bid own valuation
+   - if $i$ wins with bid $b_i=v_i$, the expected bid of $j$ is $\mathbb{E}[v_j|v_j<v_i]=v_i/2$
+   - expected payment of type $v_i$ in SPA is probability of winning, i.e. $v_i$, times expected payment when winning
+     $$T_i(v_i)=\mathbb{E}[v_j|v_j<v_i]Pr[v_j<v_i]=v_i/2 * v_i=v_i^2/2$$
+   - assume the all pay auction has a symmetric equilibrium in which the highest type wins
+     - wining probability same as in SPA for every type
+     - expected payment must be the same for every type as in SPA by RET
+     - equilibrium bid in all pay auction must be $v_i^2/2$! done!
+     
+* Choosing the right auction format
+
+** Challenges in practical auction design
+- theoretical:
+  - understanding and solving the auction
+- competition policy:
+  - collusion among bidders
+  - enough bidders must enter
+  - predatory behavior by powerful/rich bidders
+- behavioral:
+  - bidding is done by actual humans (or companies) with image concerns etc.
+  - solving for equilibria can be hard (cognitive constraints)
+  - risk-aversion, or other non-standard utility functions
+- context/institutional:
+  - credibility and commitment of auctioneer
+  - political pressures on auction designer
+- We will today discuss some examples of the above.
+
+** Collusion in SPA
+- consider a second-price auction
+- If bidders can ﬁgure out that $i$ has the highest valuation, the
+following is an equilibrium:
+  - i bids $v_i$ , everybody else bids 0
+  - $\Ra$ $i$ gets the object at price 0
+- Bidders can accomplish this by forming a bidding ring and running a pre-auction knock-out.
+
+** Pre-auction knockout I
+
+- Consider the following mechanism:
+  1. ring organizer asks each member to report their valuation $v_i$
+  2. member with the highest announced valuation $\hat v_i$ “represents” the ring and submits his actual bid; everybody else drops out or bids 0
+  3. if $i$ wins the auction, he pays the amount\linebreak
+     (price without ring) - (price with ring) $\geq 0$ \linebreak
+     to the ring organizer
+  4. organizer pays $t_i$ to all ring members, where\linebreak
+     $t_i$ = ($i$'s expected payment without ring)-($i$'s expected payment with ring)
+
+** Pre-auction knockout II
+   - is efficient (i.e. bidder with highest valuation wins)
+   - makes ring members better off (as they sometimes get a positive payoff even when losing)
+   - participation in ring and truthful bidding is an equilibrium
+     - implicit assumption: within ring transfers are enforceable
+   - divert expected revenue from the seller to the ring members
+     - effect similar to reducing the numbers of bidders
+       \pause
+   - pre-auction knockouts exist(ed) in real-life and were one reason for the development of antitrust legislation
+   - FPA seems less vulnerable to collusion (via pre-auction knockout)
+     - higher incentives to cheat on the ring if ring bidder bids very low
+     - if ring bidder bids not very low, he has to pay his bid
+
+** Asymmetric bidders I
+   - two bidders
+   - bidder one: $v_1$ distributed uniformly on $[0,1]$
+   - bidder two: $v_2$ distributed uniformly on $[1,2]$
+   - what is outcome of second price auction? what is expected revenue?
+     # bidding own valuation, expected revenue is expected valuation of bidder 1, i.e. 1/2
+   \vspace*{0.3cm}
+   - is the first price auction efficient (i.e. does the bidder with the highest valuation win in equilibrium)?
+     # normally not: bid of 1 is not optimal for bidder 2 (if bidder 1 does not bid above his valuation) but then bidder 1 will win with some probability if his valuation is close to 1.
+     # (note that there is also some equilibrium of the form: bidder 1 bids 1-epsilon and bidder 2 bids 1 for all types but bidder 1 uses a weakly dominated strategy for almost all types which seems unreasonable)
+   - does revenue equivalence hold between FPA and SPA?
+     # no different allocations in equilibrium, i.e. different prob of getting good for some types
+** Asymmetric bidders II
+- one equilibrium of the first price auction:
+  $$b_1(v_1)=\begin{cases}v_1 & \text{ if }v_1<2/3\\v_1/2+1/3& \text{ else }\end{cases}$$
+  $$b_2(v_2)=\begin{cases}v_2/2+1/6 & \text{ if }v_2<4/3\\ 5/6& \text{ else }\end{cases}$$
+- check that this is an equilibrium (exercise!)
+- note:
+  - bidder 1 has zero probability of winning iff $v_1\leq 2/3$
+  - bidder 2 has probability 1 of winning iff $v_2\geq 4/3$
+  - $b_2(1)<1$, i.e. all types of bidder 2 shade their bids!
+- what happens if $v_1=1$ and $v_2=1.1$?
+  # person with lower valuation gets good!
+- is expected revenue lower or higher than in the second price auction?
+  # higher: with prob 2/3 bidder 2 wins with the bid 5/6; i.e expected revenue is higher than 10/18>1/2
+  
+** Encouraging entry
+   - higher number of bidders increases revenue
+     - higher probability of having one/two bidders with high values
+     - less bid shading in first price auction
+   - sometimes argued that first price sealed bid auction encourages entry
+     - low value bidders can win against high value bidders (when those sufficiently shade their bids)
+     - impossible in an ascending auction (see "asymmetric bidders")
+   - encouraging even low value bidders to participate in auction can be important
+     - design focus on low cost of entry
+       - easy access, simple design, information provision, possibly bidding subsidy...
+** Behavioral considerations
+
+- Many of our game-theoretic results have to be taken with a grain of salt.
+- For example, the sealed-bid FPA and the Dutch auction often give different results if played with the same people (and the same $v_i$ ).
+- Risk-aversion and similar assumptions also mean the RET does not apply. 
+- Another consideration:
+  - People may derive utility from winning (or resent losing).
+  - People may be embarrassed if they win an auction and overpay $\Ra$ further bid shading.    
+
+** Risk aversion
+   - bidder $i$ derives utility $u(v_i-p)$ from the object when winning at price $p$ (and $u(-p)$ if he does not win)
+     - $u:\Re\rightarrow\Re$ is strictly increasing and strictly concave 
+     - assume $u(0)=0$ and $u'(0)=1$ for comparison with risk neutrality
+   - SPA:
+     - still optimal to bid valuation (same argument as before combined with $u$ strictly increasing)
+   - FPA:
+     - expected utility: $Pr(b_i>b_j)u(v_i-b_i)$
+     - effect of increasing bid
+       - increase $Pr(b_i>b_j)$
+       - decrease $v_i-b_i$ and therefore $u(v_i-b_i)$
+     - by concavity of $u$ and $u'(0)=1$, $u'(v_i-b_i)<1$ \linebreak $\Ra$ second effect is weaker than under risk neutrality
+     - indeed risk aversion leads typically to higher equilibrium bids than risk neutrality in FPA
+     - $\Ra$ more revenue in FPA than in SPA 
+
+** Example: Embarrassment from overbidding I
+
+- sealed-bid FPA in a standard private values model
+- after the auction ends all bids are revealed
+- winning bidder could be said to be “overpaying” by $b_i -max_{j\neq i} b_ j$
+- assume that the winning bidder’s utility is
+  $$v_i - b_i -\gamma (b_ i - max_{j\neq i} b_ j)$$
+- How does this inﬂuence each bidder’s expected revenue?
+- How does it inﬂuence expected revenue?
+** Example: Embarrassment from overbidding II
+  $$v_i - b_i -\gamma (b_ i - max_{j\neq i} b_ j)$$
+- “Embarrassment cost” is like an extra payment for the winning bidder.
+- RET applies but "revenue" is overall expenditure by all bidders, including resources “spent” on embarrassment!
+- RET: The expected utility of each bidder is the same as in an FPA (or SPA) without the embarrassment cost.
+- RET: revenue including embarrassment costs is the same as in an FPA (or SPA) without the embarrassment cost.
+- $\Ra$ expected revenue for the seller is lower due to embarrassment costs
+- Running an ascending auction (where there is no overbidding embarrassment) will increase seller revenue!
+
+** Common-value auctions 
+
+- So far, we have assumed that each bidder has their own privately known valuation $v_ i$.
+- alternative assumption: The object has the same value $v$ for all, but $v$ is unknown
+- simple case: The wallet auction
+  - two bidders; bidder i observes $t_i$
+  - value of the object is $v = t_1 + t_2$. i.e. each bidder knows only part of the value (Examples: Oil ﬁelds, company takeovers, ...)
+-  equilibrium in an ascending auction: \linebreak stay in the bidding until $2t_i$:
+  - if other player does so and you stay in the bidding for $p > 2t_i$ and win, you overpay $p = 2t_j > t_j + t_i$
+  - if you leave bidding at a lower price you might not win at $p= 2t_j < t_ i+t_j$
+  - (all other cases: deviation does not change payoff)
+
+** Common-value auctions: winner's curse
+   - calculating equilibrium of FPA is somewhat tricky (we will not do it!)
+   - with independent private values: bidding your valuation yields zero payoff in FPA
+   - what is your expected valuation of the good if...
+     - ...you observe $t_1$ and
+     - ...$t_2$ is distributed, independently from $t_1$, uniformly on $[0,1]$?
+       \pause
+       # t_1+1/2
+   - is your expected payoff also zero if you bid your expected valuation in a common value auction?
+     # no: other bidder is probably using an increasing bidding strategy -> winning the auction means that 2 was bidding low -> 2 has a low t_2 -> expected t_2 is less than 1/2 conditional on winning
+    
+** Almost common value auctions
+
+- Now imagine that the object has a slightly higher value for 1 than for 2, i.e. $v_ 1 = t_ 1 + t_ 2 + \varepsilon$ and $v_ 2 = t_ 1 + t_ 2$.
+- Is there an equilibrium in which 2 wins an ascending auction?
+  - No: If 2 is willing to pay a price $p$, then 1 should also be willing to pay that price (and a bit more).
+- In equilibrium, 2 never wins the auction!
+- Slight modiﬁcation completely changes the result $\Ra$ 2 has no reason to even enter the auction!
+- It can be shown that first price auctions are much less affected (i.e. a change in $\varepsilon$ in 1’s valuation leads to a similarly-sized change in bidding strategies ⇒ winning probabilities do not change much).    
+
+** Almost common value auctions: Application
+
+- If two bidders compete to take over a company (= common value)...
+  - ...but one of them already owns a small stake of the company...
+  - ...we have precisely this situation!
+- The problem: Takeover battles are by their nature ascending auctions.
+- Example: In Britain in the late 1990s, BSkyB (a TV company) tried to buy a stake in Manchester United.
+  - TV licenses (for football broadcasts) are sold in an auction and the money is then distributed to the football clubs.
+  - If a TV station owns a bit of a football club, they have an $\varepsilon$ advantage in bidding.
+  - $\Ra$ In an ascending auction, this can make all the difference!
+
+
+** What is the right auction format?
+- It depends!
+- Second-price (and ascending) auctions:
+  - appealing properties and are easy to understand (only require dominant strategies!)
+  - more robust to distributional assumptions, concerns about secrecy
+  - susceptible to collusion, small asymmetries...
+- First-price auctions:
+  - need more sophisticated bidders, sensitive to distributional assumptions etc (require Bayesian NE!)
+  - often more robust to collusion and small asymmetries
+- Competition between enough bidders can be more important than any theoretical details!
+- Klemperer (2002): “Good auction design is really good undergraduate industrial organization; the two issues that really matter are attracting entry and preventing collusion.”
+   
+* Reserve prices: market power    
+** Reserve price I
+   - independent private value setting
+   - can the seller obtain more expected revenue than in SPA/FPA?
+   - consider reserve price $\bar b$ in a SPA
+     - if winning bid is below $\bar b$ seller keeps the good
+     - if second highest bid but not winning bid is below $\bar b$, the winner has to pay $\bar b$
+   - effectively as if the seller was additional bidder bidding $\bar b$ 
+   - still weakly dominant to bid true value
+   - can expected revenue be increased by a properly chosen reserve price?
+
+** Reserve price II (intuition)
+   - start from $\bar b=0$, i.e. no reserve price
+   - what is effect of increasing reserve price slightly to $\varepsilon>0$?
+     - less revenue if all bidders have value below $\varepsilon$
+       - probability: $F(\varepsilon)^I$
+     - more revenue if all but one bidder have value below $\varepsilon$
+       - probability: $I F(\varepsilon)^{I-1} (1-F(\varepsilon))^1$
+   - gain is more likely than loss (for $\varepsilon$ small)
+   - (of course size of gain/loss matters as well but the probability effect can be shown to dominate for small \varepsilon)
+     
+** Reserve price III (example)
+   - two bidders with valuation uniformly and independently distributed on $[0,1]$
+   - expected revenue without reserve price: $1/3$
+   - reserve price of $\bar b$
+   - expected revenue from bidder i:
+\begin{multline*}
+\hspace*{-0.15cm}Pr(v_j<\bar b)*Pr(\bar b<v_i)*\bar b+\int_{\bar b}^1 Pr(\bar b\leq v_j<v_i)\mathbb{E}[v_j|\bar b\leq v_j<v_i]\,dv_i\\
+=\bar b*(1-\bar b)*\bar b+\int_{\bar b}^1 (v_i-\bar b)\frac{v_i+\bar b}{2}\, dv_i\\
+= (1-\bar b)\bar b^2+\int_{\bar b}^1\frac{v_i^2-\bar b^2}{2}\,dv_i\\
+= (1-\bar b)\bar b^2+ \frac{1}{6}-\frac{\bar b^3}{6}-\frac{(1-\bar b)\bar b^2}{2}=\frac{(1-\bar b)\bar b^2}{2}+\frac{1-\bar b^3}{6}\\
+=\frac{-4\bar b^3+3\bar b^2+1}{6}
+\end{multline*}
+** Reserve price III (example)
+   - expected revenue from bidder i:
+     $$\frac{-4\bar b^3+3\bar b^2+1}{6}$$
+   - maximal for $\bar b=1/2$ with maximum $5/24$
+   - maximal revenue: $2*5/24=5/12>1/3$
+   - note:
+     - inefficiency: seller does not value good but good is not sold with probability $1/4$
+     - similar to monopoly distortion: reduce probability/quantity below efficient level to increase prices and expected profits
+     - market incompleteness: monopoly power!
+
+** Reserve prices and RET
+   - RET assumption "the object is won by the bidder with the highest valuation and" no longer holds with reserve price
+   - however, can be substituted by "the probability of getting a good as a function of type $P_i(v_i)$ is the same in the compared (auction format, equilibrium) pairs" \linebreak (proof works similarly)
+   - hence, a version of RET also holds with reserve prices (though the reserve prices may have to differ between, e.g., SPA and FPA to get the same $P_i(v_i)$)
+     
+* Position auctions
+** Position auction I
+   - ad position auction (as for Google ads)
+   - $S$ ad slots on a website
+   - slot $s$ has a click through rate of $x_s>0$ where $x_1\geq x_2\geq\dots\geq x_S$ (and define $x_{S+1}=0$ for notational convenience)
+   - $I>S$ bidders with independent private values for an ad slot for a given search term (say "hotel in Cologne")
+   - value of slot $s$ for bidder $i$ is $v_i*x_s$
+     - value per click is $v_i$
+     \vspace*{0.5cm}
+   - new: several slots/prizes of differing prominence
+** Position auction II
+   - consider the following (Vickrey style) auction
+     - /s/-highest bidder gets slot $s$
+     - and pays $\sum_{t=s+1}^{S+1} (x_{t-1}-x_{t})b_t$ where $b_t$ is the $t$ highest bid
+     - interpretation: the price of increasing the click through rate from $x_t$ to $x_{t-1}$ is the bid of the /t/-highest bidder
+   - claim: bidding $v_i$ is weakly dominant strategy
+     - bidding above $v_i$: risk of overpaying, i.e. paying more than $v_i$ for the last few clicks if someone bids between $v_i$ and your bid
+     - bidding below $v_i$: risk of missing out, i.e. if the next highest bid is below $v_i$, a deviation to $v_i$ would yield additional clicks at a price less than $v_i$
+
+** Position auction III
+   - in practice:
+     - click through rates depend on ads (or ad "relevance" to the search term)
+     - assign to each advertiser a quality factor $q_i$
+     - rank advertisers according to $score_i=b_i*q_i$, i.e. the advertiser with the $s$ highest score $b_i*q_i$ gets slot $s$
+     - prices are directly per actual click
+     - used to be:\linebreak price per click of /s/-highest bidder equals $score_{s+1}/q_s$ (where subscript /s/ refers to /s/-highest bidder etc.)
+** Position auction IV
+     - price per click of /s/-highest bidder equals $score_{s+1}/q_s$
+     - suppose click through rate of ad $i$ in position $s$ is $q_i*x_s$
+     - bidding $v_i$ is not a dominant strategy:
+       - say this leads to slot /s/ and payoff $(v_i-b_{s+1}*q_{s+1}/q_i)x_s q_i=x_s(v_iq_i-b_{s+1}q_{s+1})$
+       - deviating to higher bids and getting a better position $t<s$ is not profitable: deviation payoff $x_t(v_iq_i-b_tq_t)$ where $b_t$ is the /t/-highest bid under equilibrium bidding; deviation is negative as $b_tq_t$ is a higher score than $b_s=v_i q_i$
+       - deviating to lower bids and getting a worse position $t>s$:
+	 - deviation payoff $x_t(v_iq_i-b_{t+1}q_{t+1})$ may be higher than $x_s(v_iq_i-b_{s+1}q_{s+1})$ (think, for example, of $t=s+1$ and $x_{s}\approx x_{t}$)
+       - $\Ra$ bid shading
+     - $\Ra$ industry has moved to first price bidding, i.e. price per click is own bid
+	 
+* Markets as double auctions  
+** Markets as auctions I
+   - how is a market price determined?
+   - stock market:
+     - buyers state a bid price 
+     - sellers state an ask price
+     - assume unit demand/supply (otherwise split a buyer who demands $q$ units up into $q$ unit demand buyers etc.)
+     - stock exchange executes as many trades as possible such that bid price of buyer is above ask price of seller
+       - how do you determine which trades to execute?
+
+** Markets as auctions II	 
+- how do you determine which trades to execute?
+       - order buyers according to bid price:
+	 $$b_1\geq b_2\geq\dots\geq b_I$$
+       - order sellers according to ask price:
+	 $$a_1\leq a_2\leq\dots\leq a_J$$
+       - execute trades 1 to /k/ where $k$ is the last index where $b_k\geq a_k$
+       - reminds you of anything?
+# draw suppply demand
+
+** Markets as auctions III
+  - what is the trading price?
+    - most natural: $(a_k+b_k)/2$
+    - bidding game like first price auction
+    - bid shading:
+      - bidding true valuation ensures that a buyer (seller) trades if and only if the trading price is below (above) valuation
+      - but: positive probability that own bid determines trading price
+      - $\Ra$ buyers (sellers) bid below (above) their valuation to affect trading price favorably in this case
+      - if number of buyers and sellers is large, the chance of being buyer/seller $k$ is small $\Ra$ hardly any bid shading
+      - with bid shading: possible inefficiency as, e.g., trade $k+1$ may be efficient
+    - equilibrium strategies can be determined similar to first price auction but somewhat involved
+
+** Markets as auctions IV	
+can we do something like a second price auction?
+  - hopefully simpler bidding strategies etc.
+  - first try:
+    - buyers pay $b_{k+1}$ and sellers receive $a_{k+1}$
+    - upside: bids of trading players do not affect price
+    - $\Ra$ no incentive for bid shading
+    - problem: as $a_{k+1}>b_{k+1}$, there is a deficit!
+
+** Markets as auctions V	
+can we do something like a second price auction?
+  - second try:
+    - execute only trades 1 to $k-1$
+    - buyers pay $b_k$
+    - sellers receive $a_k$
+    - now: possibly surplus (say, profit of the stock exchange)
+    - weakly dominant strategy to bid true valuation\linebreak for buyer:
+      - if trading price (after truthful bid) above valuation no deviation can bring price down $\Ra$ no profitable deviation
+      - if trading price (after truthful bid) below valuation, any deviation would either not affect outcome or lead to not trading $\Ra$ no profitable deviation
+  - inefficiency: trade $k$ not executed
+    - if many buyers and sellers $a_k$ and $b_k$ are close $\Ra$ inefficiency small
+    - for large number of buyers and sellers: no market power $\Ra$ complete market
+      

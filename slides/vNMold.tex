@@ -1,0 +1,391 @@
+\documentclass[slidestop,serif,compress]{beamer}    %slidestop=title in up-left corner (with "slidescentered" centered); compress=navigation bars as small as possible
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+%\usepackage[ugm]{mathdesign} %use Garamond font
+
+%gets rid of bottom navigation bars and puts slide numbers right bottom
+\setbeamertemplate{footline}[frame number]{}
+
+%alternative footer: name, institute, page number
+%\setbeamertemplate{footline}
+%{%
+%  \leavevmode%
+%  \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fill,rightskip=.3cm]{author in head/foot}%
+%    \usebeamerfont{author in head/foot}\insertshortauthor
+%  \end{beamercolorbox}%
+%  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+%    \usebeamerfont{title in head/foot}\insertshortinstitute \hfill \insertframenumber \,/\,\inserttotalframenumber
+%  \end{beamercolorbox}}%
+%  \vskip0pt%
+%}
+
+%gets rid of navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+
+%%complete themes (not recommended)
+%%\usetheme{Madrid}             %"Berkeley":lhs navigation bar; 1st alternative: "Madrid" without a navigation bar but with a footer including name (institution), title, date page numbering (but then \institute{Univ. ...}); 2nd alternative: defaults without all the extras; 3rd alternative "Dresden": two bottom lines)
+%%"Dresden is possibly easy to adapt to UvT colors
+%instead of using a complete theme inner and outer themes can be specified in isolation
+%inner theme:
+\useinnertheme{rounded} %actually not necessary but nice for theorem boxes etc. but enumerate listings look a bit stupid! Alternative: default = just comment it out
+%outer themes:
+%\useoutertheme[subsection=false,footline=authorinstitutetitlepage]{miniframes} %other options for footer see beamer user guide p. 153
+
+
+%%complete color themes: (ok but inner outer styles below are better)
+%%\usecolortheme{albatross}    % background is colored (in blue) in albatross; the option [overlystylish] installs a background canva which is definitely too stylish for an economics department
+%%\usecolortheme{seagull}   %for greyscale (black and white)
+%%default is not bad!!!
+
+%alternative to complete color schemes one can define an inner and outer color scheme
+%inner color themes
+%\usecolortheme{orchid} %deep color in box(theorem etc.) background fits with outer color scheme "whale"
+\usecolortheme{rose} % less aggressive slight grey shading background (in boxes/theorems etc.) fits nicely with outer color scheme \usecolortheme{seahorse}
+%outer color theme
+\usecolortheme{dolphin}   %alternative to seahorse: "whale" but only if inner scheme is "orchid"
+%
+%\usefonttheme{structurebold}       %titles, headlines, foodlines and sidebars are bold
+
+\usepackage{amsmath, eurosym, textcomp, graphicx, amsthm, amssymb, hyperref,tikz,xcolor}
+
+%\usepackage{comment}
+%\newcommand{\com}{\comment}
+%\newcommand{\ecom}{\endcomment}
+
+%\usepackage{ngerman}
+\setlength {\parindent}{0cm}
+\newcommand {\bi}{\begin{itemize}}
+\newcommand {\ei}{\end{itemize}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\Lra}{\Leftrightarrow}
+\newcommand{\del}{\partial}
+\newcommand{\bea}{\begin{eqnarray*}}
+\newcommand{\eea}{\end{eqnarray*}}
+
+\renewcommand{\Re}{\mathbb{R}}
+
+\theoremstyle{plain}
+\newtheorem{prop}{Proposition}
+%\newtheorem{theorem}{Theorem}
+\newtheorem{assumption}{Assumption}
+%\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{observation}{Observation}
+%\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{ex}{Example}
+\newtheorem{exercise}{Exercise}
+%\newtheorem{definition}{Definition}
+
+%\setlength{\parskip}{1.5ex plus 0.5ex minus 0.5ex}
+\author{Christoph Schottmüller}
+\title{ Decision making under uncertainty and expected utility theorem}
+\date{}
+
+\newcommand{\fr}{\frame[allowframebreaks]}
+\newcommand{\ft}{\frametitle}
+
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}}
+}
+
+\begin{document}
+
+\begin{frame}   % Cover slide
+\titlepage
+\end{frame}
+
+\section[Outline]{}
+\frame{\ft{Outline}\tableofcontents}
+
+
+\section{Decision making under uncertainty} 
+\fr{\ft{Decision making under uncertainty}
+Motivation:
+  \begin{table}[h]
+\centering
+\begin{tabular}{l|l|l}
+       & C & D\\ \hline
+C   &2,2   & 0,3   \\
+D   &3,0   & 1,1  
+\end{tabular}
+\caption{prisoner's dilemma}
+\label{tab:pris_dil}
+\end{table}
+\begin{itemize}
+\item  What do the numbers in the game table actually mean?
+\item What if the other player plays $C$ and $D$ with 50\% probability? How to evaluate that?
+ \item can we model a rational decision maker as utility maximizer?
+\end{itemize}
+
+\framebreak
+
+\begin{itemize}
+\item today: no game, just decision problem of 1 decision maker under uncertainty
+\item basic setup: a decision maker has to choose among lotteries over outcomes in a set $C$
+  \begin{itemize}
+  \item set of \emph{outcomes} $C=\{c_1,c_2\dots c_n\}$
+  \item a \emph{simple lottery} $L$ is a probability distribution $(p_1,p_2\dots p_n)$ with $p_i\geq0$ and $\sum_{i=1}^np_i=1$ where $p_i$ is the probability of outcome $c_i$
+    \begin{ex}[vacation lottery]
+      You book a vacation in the south. Depending on the weather your vacation has the outcomes\\ $C=\{\text{lying on the beach}, \text{ stuck in the hotel room}\}$. Given the weather forecast you assign probabilities $(0.9,0.1)$ to the two possible outcomes.
+    \end{ex}
+
+\framebreak
+
+  \item we start from preferences (rationality seems to imply that you know what you want)
+  \item the decision maker has a \emph{complete and transitive} preference relation $\succeq$  on the set of all simple lotteries
+  \end{itemize}
+\end{itemize}
+
+\framebreak
+
+\begin{ex}[vacation lottery 2]
+  \begin{itemize}
+  \item third outcome: ``being stuck at home'', i.e.  $C=\{\text{lying on the beach, stuck in hotel room, stuck at home}\}$
+ \item probabiltiy 0.2 that your tour operator goes bankrupt before you go on holidays (and 0.8 that your holiday goes through)
+ \item compound lottery:  with probability $\alpha_1=0.8$ you get the vacation lottery; with probability $0.2$ you get the ``lottery'' that puts all probability on the outcome ``stuck at home''
+  \end{itemize}
+\end{ex}
+
+A \emph{compound lotteries} $(L_1,\dots,L_K;\alpha_1,\dots,\alpha_K)$ yields with probability $\alpha_k$ the simple lottery $L_k$ ($\alpha_k\geq 0$ and $\sum_{k=1}^{K} \alpha_k=1$)
+
+\begin{itemize}
+\item What is the probability that you lie on the beach?
+\item Is there a simple lottery that is similar to the compound lottery (same outcome probabilities)? (``reduced lottery'')
+\end{itemize}
+
+\begin{assumption}
+   The decision maker evaluates compound lotteries like their \emph{reduced lotteries}, i.e. the decision maker is indifferent between a compound lottery and the corresponding reduced lottery.
+\end{assumption}
+
+\framebreak
+axioms preference relation $\succeq$:
+\begin{itemize}
+\item \textbf{continuity axiom:} for all lotteries $L,L',L''$, the sets
+$$ \{\alpha\in[0,1]: \alpha L+(1-\alpha)L'\succeq L''\}$$
+and
+$$\{\alpha\in[0,1]: L''\succeq \alpha L+(1-\alpha) L'\}$$
+are closed.
+\item \textbf{independence axiom:} for all lotteries $L,L',L''$ and $\alpha\in(0,1)$ we have
+$$L\succeq L' \quad\text{ if and only if }\quad \alpha L+(1-\alpha) L''\succeq \alpha L'+(1-\alpha) L''$$
+\end{itemize}
+
+
+
+% Continuity means that small changes in probabilities do not change the nature of preference ordering between lotteries.(if lying on the beach is better than staying at home, then you still go on holidays even if there is a small chance of rain which would result in being stuck in the hotel room)\\
+% What has that to do with closedness? Say, you prefer lying on the beach for sure to being stuck at home for sure. If you prefer being stuck at home to the lottery $(1-\alpha,\alpha )$ over lying on the beach and stuck in hotel room for all $\alpha>0$, then you violate continuity and the set of $\alpha$ above would be $(0,1]$ which is not closed.
+% \par
+%  Independence means that the preference ordering between two lotteries is preserved if one mixes both in the same way with a third lottery. For example, if you prefer lying on the beach to being stuck at home, then you also prefer a lottery where you are on the beach with 70\% and in the hotel room with 30\% to a lottery where you are at home with 70\% and in a hotel room with 30\%.
+
+%  \begin{ex}[lexicographic preferences]
+%    Continuity is violated in lexicographic preferences: You strictly prefer a consumption bundle $x$ consisting of $x_1$ oranges and $x_2$ bananas to a consumption bundle $y=(y_1,y_2)$ if $x_1>y_1$ or if $x_1=y_1$ and $x_2>y_2$. \\
+% To see that this violated continuity, note that $(1,1)\succ (1-\varepsilon ,10)$ for any $\varepsilon >0$ but $(1,10)\succ (1,1)$.
+%  \end{ex}
+
+\begin{exercise}
+  There are three prices:
+  \begin{enumerate}
+  \item 2.500.000 \$
+  \item 500.000 \$
+  \item 0 \$
+  \end{enumerate}
+An individual prefers the lottery $L_1=(0.1,0.8,0.1)$ to the lottery $L_1'=(0,1,0)$.\\
+If the independence axiom is satisfied (as well as transitivity and monotonicity), can we say which of the following lotteries the individual prefers?\\
+$L_2=(0.55,0.4,0.05)\qquad L_2'=(0.5,0.5,0)$
+\par
+% Answer: $L_1\succ L_1'$ hence $0.5 L_1+0.5 L_3\succ 0.5 L_1'+0.5 L_3$; now take $L_3=(1,0,0)$, then the last expression says $L_2\succ L_2'$.
+\end{exercise}
+
+\begin{lemma}
+Assume the independence axiom holds for the preference relation $\succeq$ on the set of lotteries $\mathcal{L}$. Then the following holds:
+$$L\sim L' \quad\text{ if and only if }\quad \alpha L+(1-\alpha) L''\sim \alpha L'+(1-\alpha) L''$$
+$$L\succ L' \quad\text{ if and only if }\quad \alpha L+(1-\alpha) L''\succ \alpha L'+(1-\alpha) L''$$
+\end{lemma}
+\textbf{Proof. } (for indifference)
+
+\framebreak
+
+ \begin{lemma}\label{lem:exp_utility_indif}
+   If $L\sim L'$ and $L''\sim L'''$ and the independence axiom holds, then $\alpha L + (1-\alpha)L''\sim \alpha L' + (1-\alpha)L'''$ where $\alpha\in [0,1]$.
+ \end{lemma}
+ \textbf{Proof. }%By the independence axiom, $L\sim L'$ implies
+% $$\alpha L+ (1-\alpha) L''\sim \alpha L'+(1-\alpha) L''.$$
+% Also by the independence axiom, $L''\sim L'''$ implies 
+% $$\alpha L'+ (1-\alpha) L''\sim \alpha L'+(1-\alpha) L'''.$$
+% Transitivity implies that we can take the last two expression together to get
+% $$\alpha L + (1-\alpha)L''\sim \alpha L' + (1-\alpha)L'''.$$\qed
+
+}
+
+
+\fr{\ft{Expected utility theorem}
+
+\begin{definition}
+  A \textbf{utility function representing the preferences $\succeq$ on $\mathcal{L}$} is a function $U:\mathcal{L}\ra \Re$ such that $U(L)\geq U(L')$ whenever $L\succeq L'$ for $L,L'\in\mathcal{L}$.
+\end{definition}
+
+ \begin{definition}[von Neumann-Morgenstern utility]
+   The utility function $U:\mathcal{L}\ra \Re$ has expected utility form if there is an assignment of numbers $(u_1,\dots,u_n)$ to the $n$ outcomes in $C$ such that for any simple lottery $(p_1,\dots,p_n)$ we have
+$$U(L)=u_1 p_1+\dots+u_n p_n.$$
+Such a utility function $U$ is called von Neumann-Morgenstern utility function.
+ \end{definition}
+The idea is that outcome (with certainty) $c_i$ yields utility $u_i$. To evaluate lotteries, we take the expected utility (i.e. expectation over those $u_i$).
+\framebreak
+\begin{theorem}[expected utility theorem]
+  Assume that the preference relation $\succeq$ satisfies transitivity, completeness, the continuity axiom and the independence axiom. Then $\succeq$ can be represented by a von Neumann-Morgenstern utility function $U: \mathcal{L}\ra \Re$, i.e. there exists a utility function of the form $U(L)=\sum_{i=1}^nu_i p_i$ such that
+$$ L\succeq L' \quad\text{ if and only if }U(L)\geq U(L').$$
+\end{theorem}
+
+\framebreak
+
+\textbf{Proof idea. }
+\begin{itemize}
+\item show that there is a worst lottery  $\underline{L}$ and a best lottery $\bar{L}$
+\item assign the worst lottery utility 0 and the best lottery utility 1, i.e. $U(\underline{L})=0$ and $U(\bar{L})=1$
+\item $L$ is assigned $U(L)=\alpha$ where $\alpha$ is determined by $L\sim \alpha \bar{L}+(1-\alpha)\underline{L}$
+\end{itemize}
+
+
+Say, ``beach'' $\succ$ ``stuck at home'' $\succ$ ``stuck in the hotel room''. Then $u(beach)=1$ and $u(hotel)=0$.\\
+$u(\text{home})=\alpha$ where $\alpha$ is such that\\
+\begin{center}
+  $\alpha$"beach'' $+\;(1-\alpha)$''hotel''$\;\sim\;$''home''
+\end{center}
+
+
+\framebreak
+
+\textbf{Proof sketch. } (following MWG; not done in detail here)\\
+\emph{Step 0: There is a best and worst lottery.}
+\begin{itemize}
+\item lotteries putting probability 1 on one outcome
+\item best/worst of those are better/worse than mixed lotteries (independence axiom!)
+\end{itemize}
+
+%  We first focus on certain lotteries, i.e. lotteries that put all probability mass on one outcome. As we have a finite number of outcomes, a best and worst lottery exists on this set and we call those $\bar{L}$ and $\underline{L}$. The independece axiom now implies that no lottery can be worse than $\underline{L}$: Every lottery can be written as compound lottery of certain lotteries which are all better than $\underline{L}$. To illustrate take $L=\alpha L_1+ (1-\alpha) L_2$ where $L_i$ is the certain lottery putting all weight on outcome $c_i$. Then
+% $$L=\alpha L_1+ (1-\alpha) L_2\succ \alpha \underline{L}+ (1-\alpha) L_2\succ \alpha \underline{L}+ (1-\alpha) \underline{L}=\underline{L}.$$
+% The same method works for lotteries putting weight on more than 2 ceratin outcomes.  A similar argument holds for $\bar{L}$.
+\par
+\emph{Step 1: If $L\succ L'$, then $L\succ \gamma L+(1-\gamma) L'\succ L'$ for any $\gamma\in (0,1)$.} 
+% This follows from the independence axiom:
+% $$L=\gamma L+(1-\gamma)L\succ \gamma L +(1-\gamma) L'\succ\gamma L'+(1-\gamma)L'=L'$$
+\par
+\emph{Step 2: Take $\alpha,\beta\in (0,1)$. Then $\beta \bar{L}+(1-\beta) \underline{L}\succ \alpha \bar{L}+(1-\alpha) \underline{L}$ if and only if $\beta>\alpha$.}
+\begin{itemize}
+\item trick: $\gamma=(\beta-\alpha)/(1-\alpha)$
+\end{itemize}
+%  Take $\beta>\alpha$ and note that we can write
+% $$\beta \bar{L}+(1-\beta) \underline{L}=\gamma \bar{L}+(1-\gamma)( \alpha \bar{L}+(1-\alpha) \underline{L})$$
+% with $\gamma=(\beta-\alpha)/(1-\alpha)$. Then by step 1 (using $\bar{L}$ as L and $ \alpha \bar{L}+(1-\alpha) \underline{L}$ as $L'$), we get that 
+% $$\beta \bar{L}+(1-\beta) \underline{L}=\gamma \bar{L}+(1-\gamma)( \alpha \bar{L}+(1-\alpha) \underline{L})\succ  \alpha \bar{L}+(1-\alpha) \underline{L} $$
+% which proves the claim.
+\par
+\emph{Step 3: For every lottery, there is an $\alpha$ such that $[\alpha \bar{L}+(1-\alpha)\underline{L}]\sim L$.}
+\begin{itemize}
+\item use closedness of the preferences
+\end{itemize}
+%  This is implied by the continuity of the preferences which says that the sets 
+% $$\{\alpha\in[0,1]: \alpha \bar{L}+(1-\alpha)\underline{L}\succeq L\}$$
+% and 
+% $$\{\alpha\in[0,1]: \alpha \bar{L}+(1-\alpha)\underline{L}\preceq L\}$$
+% are closed. Every number in $[0,1]$ has to belong to one of the two sets and the closedness then implies that one number has to belong to both sets.
+\par
+\emph{Step 4: The utility function $U(L)=\alpha_L$ represents the preference relation.} 
+\begin{itemize}
+\item use step 2
+\end{itemize}
+% Take any two lotteries $L$ and $L'$ with $L\succeq L'$ then by step 3
+% $$ \alpha_L \bar{L}+(1-\alpha_L)\underline{L}\sim L\succeq L'\sim   \alpha_{L'} \bar{L}+(1-\alpha_{L'})\underline{L}$$
+% and therefore by step 2 $\alpha_L\geq \alpha_{L'}$.
+\par
+\emph{Step 5: The utility function $U(L)=\alpha_L$ is linear, i.e. it is a von Neumann-Morgenstern utility function.}
+\begin{itemize}
+\item $$U^{vNM}(L)=p_1 U(L_1)+p_2 U(L_2)+\dots+p_n U(L_n)$$ where I write $L_i$ for the lottery putting all weight on $c_i$ and $L=(p_1,p_2,\dots,p_n)$\qed
+\end{itemize}
+% A von Neumann-Morgenstern utility function has the form 
+% $$U^{vNM}(L)=p_1 U(L_1)+p_2 U(L_2)+\dots+p_n U(L_n)$$
+% where I write $L_i$ for the lottery putting all weight on $c_i$ and $L=(p_1,p_2,\dots,p_n)$. With our utility function this is
+% $$U^{vNM}(L)=p_1 \alpha_1+p_2 \alpha_2+\dots+p_n \alpha_n$$
+% where $\alpha_i$ is the $\alpha$ of lottery $L_i$. What we have to check is whether $U^{vNM}$ and our $U(L)$ above assign the same utility to any lottery $L$. Now it is uesfull to see that\footnote{I use lemma \ref{lem:exp_utility_indif} for the indifference step.}
+% \begin{eqnarray*}
+% L&=&p_1 L_1+p_2 L_2+\dots p_n L_n\\
+% &\sim& p_1 (\alpha_1 \bar{L}+\left[1-\alpha_1)\underline{L}\right]+p_2 \left[\alpha_2 \bar{L}+(1-\alpha_2)\underline{L}\right]+\dots+p_n\left[ \alpha_n \bar{L}+(1-\alpha_n)\underline{L}\right]\\
+% &=&(p_1\alpha_1+p_2\alpha_2+\dots +p_n\alpha_n)\bar{L}+(p_1(1-\alpha_1)+p_2(1-\alpha_2)+\dots p_n(1-\alpha_n))\underline{L}.  
+% \end{eqnarray*}
+% This means that our utility function above will give the utility $U(L)=p_1\alpha_1+p_2\alpha_2+\dots +p_n\alpha_n$ which is exactly the same value that $U^{vNM}$ gives. Hence, the two are identical.
+
+
+\framebreak
+
+
+\begin{exercise}
+  There are three prices:
+  \begin{enumerate}
+  \item 2.500.000 \$
+  \item 500.000 \$
+  \item 0 \$
+  \end{enumerate}
+An individual prefers the lottery $L_1=(0.1,0.89,0.01)$ to the lottery $L_1'=(0,1,0)$.\\
+If the individual is an expected utility maximizer (i.e. has a vN-M utility function), can we say which of the following lotteries the individual prefers?\\
+$L_2=(0,0.11,0.89)\qquad L_2'=(0.1,0,0.9)$
+% \par
+% Answer: $U(L_1)>U(L_1')$ means that $0.1 u_{25}+0.89 u_5+0.01 u_0> u_5$; let's add $0.89 u_0-0.89 u_{5}$ to both sides and we get $0.1 u_{25}+0.9 u_0>0.89 u_0+0.11 u_5$. hence, $L_2'\succ L_2$.
+\end{exercise}
+
+
+
+
+
+\end{document}
+
+
+
+\begin{ex}[dice throw]
+$L_1$ be throwing a fair dice: $C=\{1,2,3,4,5,6\}$, $p_i=1/6$ for $i=1,\dots,6$\\
+$L_2$ be throwing an ``unfair dice'': $p_1=p_2=1/4$ and $p_3=p_4=p_5=p_6=1/8$\\
+an example of a compound lottery is $(L_1,L_2;1/2,1/2)$\\
+interpretation: Throw a fair coin. If heads, play $L_1$. If tails, play $L_2$.
+\end{ex}
+
+\emph{reduced lottery}:\\
+What is the probability that the outcome ``1'' occurs? (dice example)\\ $\alpha_1*1/6+\alpha_2*1/4=1/12+1/8=5/24$\\
+Computing in this way, we get that the reduced lottery is $(5/24,5/24,7/48,7/48,7/48,7/48)$.
+
+
+\begin{exercise}
+  There are three prices:
+  \begin{enumerate}
+  \item 2.500.000 \$
+  \item 500.000 \$
+  \item 0 \$
+  \end{enumerate}
+An individual prefers the lottery $L_1=(0.1,0.8,0.1)$ to the lottery $L_1'=(0,1,0)$.\\
+If the independence axiom is satisfied (as well as transitivity and monotonicity), can we say which of the following lotteries the individual prefers?\\
+$L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
+\par
+% Answer: $L_1\succ L_1'$ hence $0.5 L_1+0.5 L_3\succ 0.5 L_1'+0.5 L_3$; now take $L_3=(0.6,0.4,0)$, then the last expression says $L_2\succ L_2'$.
+\end{exercise}
+
+
+
+
+
+
+
+
+to show items one by one it is easiest to insert a "\pause" command before the \item command
+
+hyperlinks: \hyperlink{targetname}{\beamergotobutton{Text in button}} }
+    to define a target insert the option [label=targetname] after the \frame command: \frame[label=targetname]{\ft{title}...}
+    alternative the command \hypertarget{targetname}{} can be used
+    To go back there exists a \beamerreturnbutton{text in button}

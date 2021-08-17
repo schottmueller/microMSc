@@ -1,0 +1,160 @@
+% Created 2021-08-17 Tue 16:03
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{natbib}
+\author{Christoph Schottmüller}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={Christoph Schottmüller},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.2 (Org mode 9.4.4)}, 
+ pdflang={English}}
+\begin{document}
+
+
+\section{Social choice}
+\label{sec:org676e43f}
+\subsection{aggregating preferences and Arrow's theorem}
+\label{sec:org83c1087}
+\begin{itemize}
+\item prerequisites economics: preferences (completeness, transitivity)
+\item Voting, Condorcet paradox, Borda count
+\item properties of Arrows' theorem
+\item Arrow's impossibility theorem
+\item reading: \cite{jehle2001advanced} ch. 6.1-6.2
+\end{itemize}
+
+\subsection{domain restrictions and cardinal utility}
+\label{sec:orgc9219bc}
+\begin{itemize}
+\item prerequisites economics:  Leontief preferences, representation of preferences by a utility function, utility functions
+\item prerequisites mathematics: maximization subject to equality constraint; continuity, monotonicity, linearity and concavity of real functions
+\item domain restrictions: single peaked preferences
+\item cardinal utility: utilitarianism, Rawls
+\item Outlook: manipulability and Gibbard Satterthwaite theorem
+\item reading: \cite{jehle2001advanced} ch. 6.3-6.5
+\end{itemize}
+
+\section{Markets}
+\label{sec:org81b2eb1}
+\subsection{Markets and general equilibrium}
+\label{sec:org1f3fd61}
+\begin{itemize}
+\item prerequisites economics: consumer problem (utility maximizing consumption choice subject to budget constraint), marginal rate of substitution
+\item prerequisites mathematics:  theorem of the maximum, Weierstrass extreme value theorem, quasi-concavity of real functions, compactness of a set
+\item first fundamental theorem of welfare economics
+\item Edgeworth box
+\item policies in the light of the fundamental theorems of welfare economics
+\item reading \cite{hayek1945use}, \cite{jehle2001advanced} ch. 5.1-5.2
+\end{itemize}
+
+\section{Static Bayesian games and auctions}
+\label{sec:org8a20e2d}
+
+\subsection{Decision making under uncertainty}
+\label{sec:org57cd972}
+\begin{itemize}
+\item prerequisites maths: discrete probability distributions, expected value of a discrete random variable, concavity and convexity of real functions
+\item expected utility theorem
+\item risk preferences
+\item reading: \cite{mas1995microeconomic} ch. 6.A-6.C (or \cite{jehle2001advanced} ch. 2.4 )
+\end{itemize}
+
+\subsection{BNE}
+\label{sec:orgb4986bd}
+\begin{enumerate}
+\item Examples and definition
+\label{sec:org5d04de6}
+\begin{itemize}
+\item prerequisites economics: static games of complete information, mixed strategies, Nash equilibrium
+\item prerequisites maths: probability distributions (discrete and continuous), expected value of continuous random variables
+\item Bayes' rule, Venn diagram
+\item examples for tests/signals and belief updating
+\item games of incomplete information
+\item Bayesian Nash equilibrium
+\item binary public good game
+\end{itemize}
+\end{enumerate}
+\subsection{Auctions}
+\label{sec:org4713f37}
+\begin{enumerate}
+\item IPV setup and auctions
+\label{sec:orgda5ccfc}
+\begin{itemize}
+\item prerequisites maths: inverse functions and their derivative, linear differential equation of first order
+\item relevance of auctions
+\item 4 standard auctions
+\item symmetric, strictly increasing equilibrium in first price auction with uniformly distributed values
+\item Vickrey auction
+\item reading: ch.1 section 1.1 \cite{klemperer2004auctions}, ch. 9.1 and 9.2 in \cite{jehle2001advanced}
+\end{itemize}
+\item Revenue equivalence theorem
+\label{sec:org380581c}
+\begin{itemize}
+\item envelope theorem
+\item using revenue equivalence to solve for equilibria in auctions (e.g. all pay auction)
+\item Appendix 1.A of ch.1  in \cite{klemperer2004auctions} (or ch. 9.3 in \cite{jehle2001advanced})
+\end{itemize}
+\item auction design
+\label{sec:org16a970c}
+\begin{itemize}
+\item robustness to collusion vs. robustness to informational assumptions
+\item good auction design: stimulate entry and fight collusion
+\item knock out auction as collusive device
+\item example behavioral bidding (embarrassment from overbidding)
+\item risk aversion
+\item (almost) common value auction
+\end{itemize}
+\item Market power and markets as auctions
+\label{sec:org69fdb11}
+\begin{itemize}
+\item revenue maximization by reserve price -> inefficiency due to market power
+\item double auction with many bidders: almost efficient mechanism in dominant strategies
+\end{itemize}
+\end{enumerate}
+
+\subsection{Adverse selection}
+\label{sec:org0ad1b25}
+\begin{itemize}
+\item asymmetric info can create market incompleteness
+\item countermeasures to complete the market
+\item reading:  p.115-122 in \cite{einav2011selection}, \cite{Ake70}
+\end{itemize}
+\section{Dynamic Bayesian games}
+\label{sec:org22c5264}
+\subsection{wPBE}
+\label{sec:orgac92d4d}
+\begin{itemize}
+\item definition, simple discrete examples (market entry games)
+\item bargaining
+\item exercise: Selten's horse
+\end{itemize}
+\subsection{Signaling}
+\label{sec:org0e5d101}
+\begin{itemize}
+\item job market signaling
+\item effect of taxes
+\item exercises: discrete signaling (mafia, pirates etc.)
+\end{itemize}
+
+\section{Bibliography}
+\label{sec:org910dd11}
+\bibliographystyle{chicago}
+\bibliography{../stuff/bibliography/references}
+\end{document}

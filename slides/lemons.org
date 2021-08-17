@@ -1,0 +1,214 @@
+#+TITLE: Adverse selection
+#+AUTHOR:    Christoph Schottmüller
+#+DATE:       
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger]
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl,sgamevar,tikz}}
+#+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+#+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+#+LATEX_HEADER: \newcommand{\Ra}{\Rightarrow} \newcommand{\ra}{\rightarrow} \newcommand{\Lra}{\Leftrightarrow}
+
+
+* Introduction
+** Introduction
+   - markets can efficiently aggregate (private) information on willingness to pay and costs
+   - today:
+     - private information on product feature
+     - buyers cannot distinguish products with different features at the time of purchase
+     - market incompleteness: goods with distinct features are traded on same market
+     - first fundamental theorem of welfare economics does not apply
+** Adverse selection: basic idea I
+- sellers of used cars know something about the quality of their car that buyers do not know
+- sellers' reservation price for a high quality car is higher than for a low quality car
+- at every market price $p$ only $S(p)$ /worst/ cars will be offered ("adverse selection")
+- buyers' anticipate adverse selection
+  - willing to pay is low as anticipated quality is low
+  - market breakdown as sellers are not willing to sell at these low prices
+
+** Adverse selection: basic idea II
+- details of market breakdown logic:
+  - say $S$ worst cars are offered
+  - expected quality is average quality of offered cars
+  - willingness to pay is average willingness to pay for cars of offered qualities
+  - marginal seller (i.e. highest offered quality) may rather keep his car at such low price
+    - $\Ra$ $S-1$ cars offered
+    - $\Ra$ average quality even lower
+    - $\Ra$ willingness to pay even lower
+    - $\Ra$ another seller may decide not to sell 
+    - \dots
+* Simple model
+** Simple model 
+
+- continuum of sellers 
+  - uniform distribution on $[0,1]$
+  - each seller $i\in[0,1]$ owns 1 car of quality $i$
+  - reservation utility of seller $i$ equals $i$
+- continuum of buyers
+  - mass 1 of risk neutral buyers
+  - each buyer $j$ wants to buy 1 car
+  - willingness to pay for a car of quality $i$ equals $\alpha i$ with $\alpha>1$
+- seller $i$ knows the quality of his car
+- buyers cannot distinguish qualities at the time of purchase
+- equilibrium: a price $p$ such that supply equals demand at this price
+
+** Analysis: supply and demand
+*Supply:*
+- at price $p$, all sellers $i\leq p$ offer their car 
+$$S(p)=\begin{cases}p&\text{ if }p\in[0,1]\\1&\text{ if }p>1\end{cases}$$ 
+- average offered quality at price $p$ equals $Q(p)=p/2$
+
+
+*Demand:*
+- at price $p\in[0,1]$ quality offered equals $Q(p)=p/2$
+  - willingness to pay is above price if $\alpha p/2\geq p$
+  - at price $p>1$ average quality equals $Q(p)=1/2$ 
+\begin{equation*}
+D(p) = \begin{cases}1 & \text{ if }\alpha \geq 2 \text{ and }p\leq \alpha/2\\ 0 & \text{ else. } \end{cases}
+\end{equation*}
+
+** Analysis: equilibrium
+   - If $\alpha\geq 2$, any $p\in[1,\alpha/2]$ is an equilibrium price at which all cars are sold.
+   - If $\alpha<2$, no car is sold in equilibrium as demand is zero at any price. \linebreak
+     $\Ra$ $p=0$ is the equilibrium price at which demand and supply equal 0
+
+
+** Results and discussion 
+
+- asymmetric information on product features can lead to market failure (if gains from trade are not too large)
+- it is not clear how a government could beneficially intervene in such a failed market unless the government knows the qualities of the cars
+- key assumption: sellers are most reluctant to sell those cars that buyers value most
+  # (high quality is associated with high reservation price and high willingness to pay)
+- what practical measures are or could be taken in used car/goods markets to avoid market failure due to asymmetric information?
+#  - warranties
+#  - quality check by experts (trusted third parties)
+#  - renting out (leasing) the good instead of selling it
+# - application: abusive drivers/consumers in ride hailing services like Uber,Lift etc.. What countermeasures did platforms take to reduce information asymmetries on the quality of the driver/consumer? (ratings, selfies to identify driver, GPS tracking and payment through platform)
+
+* Insurance market model
+** Insurance market: basic idea
+- who has the higher willingness to pay for comprehensive health insurance: a chronically ill person (diabetes, HIV\dots) or a healthy person?
+  \pause 
+- at any premium $p$, the $D(p)$ least healthy people will buy insurance
+- the least healthy cause the highest costs to insurance companies
+- "death spiral of health insurance":
+  - healthiest do not buy insurance
+  - average cost for insurance go up 
+  - premium increase
+  - healthiest of the still insured cancel their insurance
+  - repeat
+
+** Insurance market: model I
+- market for full insurance (all health care expenditures are covered 100%)
+- continuum of consumers
+  - mass 1
+  - consumer $i$ has expected health care expenditures (when insured) of $i$
+  - consumer values insurance $\alpha i$ with $\alpha>1$ (due to risk aversion)
+  - consumers are distributed on $[i_l,i_h]$ with distribution $F$ (and density $f$)
+- perfectly competitive insurance market
+  - insurances have no administrative or other fixed costs
+  - insurances maximize profit
+  - $\Ra$ an insurance's profit from insuring consumer $i$ at premium $p$ equals $p-i$
+** Insurance market: model II
+- /information:/
+  - consumers observe their risk $i$
+  - insurances do not observe $i$
+- /equilibrium:/
+  - premium $p$ equals average cost of insured (due to perfect competition among insurance companies)
+  - insured are those consumers whose value is above premium
+
+** Insurance market: analysis
+
+/Demand:/
+- at premium $p$ all consumers $i$ for which $\alpha i\geq p$ buy insurance
+  $$D(p)=1-F(p/\alpha)$$
+- expected costs of insured are $\mathbb{E}[i|i\geq p/\alpha]$
+  - note: $\mathbb{E}[i|i\geq p/\alpha]$ is increasing in $p$ ("adverse selection")
+
+/Equilibrium:/
+- in equilibrium
+  $$p=\mathbb{E}[i|i\geq p/\alpha]$$
+  solving this equation for $p$ yields the equilibrium price $p^*$
+
+- let $\hat i=p^*/\alpha$ be the marginal consumer
+  - if $\alpha i_l<\mathbb{E}[i]$, then some consumers will not buy insurance
+
+
+/Welfare:/
+- welfare maximizing to have everyone insured
+- adverse selection leads to underinsurance if $\alpha i_l<\mathbb{E}[i]$
+** Insurance market: graph I
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=3]
+\draw[<->] (1,0)--(0,0)--(0,1);
+\node[right] at (1,0) {$p$};
+\draw[red] (0,.375)--(1,0.73);
+\node[right] at (1,0.73) {$\mathbb{E}[i|i\geq p/\alpha]$};
+\node[left] at (0,1) {$1$}; 
+\node[left] at (0,0) {$0$};
+\node[left] at (0,0.58) {$p^*$};
+\node[below] at (1,0) {$1$};
+\node[below] at (0.58,0) {$p^*$};
+\draw[dotted] (0.58,0)--(0.58,0.58)--(0,0.58);
+\draw[dotted] (0,0)--(1,1);
+\node[right] at (1,1) {\footnotesize$45^\circ$};
+\end{tikzpicture}
+%
+% \caption{Figure for $i$ uniformly distributed on $[1/4,3/4]$ and $\alpha=3/2$ implying $\mathbb{E}[i|i\geq\alpha p]=3/8+p/3$, $MC(q)=3/4-q/2$, $P(q)=1.125-3q/4$, $AC(q)=3/4-q/4$. Equilibrium: $p=9/16$, $\hat i=3/8$, $q=3/4$.}
+\end{figure}
+
+** Insurance market: graph II
+similar to regular supply and demand diagram:
+  - marginal cost when quantity $q$ is traded: $MC(q)=F^{-1}(1-q)$
+  - average cost: $AC(q)=\mathbb{E}[i|i\geq F^{-1}(1-q)]$
+  - inverse demand (i.e willingness to pay of marginal consumer): $P(q)=\alpha F^{-1}(1-q)$
+  - equilibrium is intersection of $P$ and $AC$
+  - where is the welfare loss due to underinsurance depicted?
+# area between MC and P between q^* and 1
+\begin{figure}
+\begin{tikzpicture}[scale=2.75]
+\draw[<->] (1,0)--(0,0)--(0,1.2);
+\node[left] at (0,1.2) {$p$};
+\node[right] at (1,0) {$q$};
+\draw[blue] (0,1.125)--(1,0.375);
+\node[right,blue] at (0.2,1) {$P(q)$};
+\draw[red] (0,0.75)--(1,0.5);
+\node[right,red] at (1,0.5) {$AC$};
+\draw[orange,dashed] (0,0.75)--(1,0.25);
+\node[right,orange] at (1,0.25) {$MC$};
+\node[left] at (0,1) {$1$}; 
+\node[left] at (0,0) {$0$};
+\node[left] at (0,0.5625) {$p^*$}; %{$9/16$};
+\node[below] at (1,0) {$1$};
+\node[below] at (0.75,0) {$q^*$}; %{$3/4$};
+\draw[dotted,gray] (0.75,0)--(0.75,0.5625);
+\draw[dotted,gray] (0.75,0.5625)--(0,0.5625);
+\end{tikzpicture}
+% \caption{Figure for $i$ uniformly distributed on $[1/4,3/4]$ and $\alpha=3/2$ implying $\mathbb{E}[i|i\geq\alpha p]=3/8+p/3$, $MC(q)=3/4-q/2$, $P(q)=1.125-3q/4$, $AC(q)=3/4-q/4$. Equilibrium: $p=9/16$, $\hat i=3/8$, $q=3/4$.}
+\end{figure}
+
+** Insurance market: policy
+- Who will benefit/lose from /mandatory insurance/ at premium $\mathbb{E}[i]$?
+  # Everyone that was insured in the market solution gains and some that were uninsured because the premium is lower, the very low risks will lose as they have to pay more than their willingness to pay as a premium.
+  - Does this fit the lines of support for mandatory health insurance in the US?
+    # Which important features of the health insurance market are we missing with our model in case the answer is no?
+- Governments often /subsidize/ health insurance (using tax revenue).
+  - How does a subsidy affect welfare?
+  - Does this per se justify such subsidies?
+# move P(q) upwards parallely -> raise q^* closer to efficient level
+# taxation distorts other parts of economy, i.e. only justified if costs of taxation are not exceeding benefit
+- The Affordable Care Act in the US originally included /financial penalties/ for those not buying health insurance.
+  - What are the effects of this policy in our model?
+    # also shifts P(q) parallel up, i.e. same effect but no tax revenue spend
