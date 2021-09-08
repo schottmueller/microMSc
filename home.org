@@ -3,7 +3,7 @@
 #+Options: toc:nil H:2
 
 * News
-- The material below is very preliminary still subject to change.
+- The material below is very preliminary and still subject to change.
 * Course setup
   *Lecture:* Fridays, 08:00-09:30 (100/01/HS XII)
   
@@ -20,5 +20,7 @@
    - Bayesian Nash equilibrium [[https://github.com/schottmueller/microMSc/blob/main/slides/bne.org][org]]
    - auctions [[https://github.com/schottmueller/microMSc/blob/main/slides/auctions.org][org]]
    - adverse selection [[https://github.com/schottmueller/microMSc/blob/main/slides/lemons.org][org]]
+   - weak perfect Bayesian equilibrium [[https://github.com/schottmueller/microMSc/blob/main/slides/wpbe.org][org]]
+     
  - exercises [[https://web.tresorit.com/l/Qo4h7#k9w136JGBVYuzX4D_hW5Cg][pdf]]
  - schedule [[https://github.com/schottmueller/microMSc/blob/main/schedule.org][org]] [[https://web.tresorit.com/l/M1vPF#qsgBnSpLwC1xwq2yNER_jA][pdf]]

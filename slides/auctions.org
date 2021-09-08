@@ -185,7 +185,22 @@ $$\Lra \frac{1}{\beta'(\beta^{-1}(b_i))}*(v_i-b_i)-\beta^{-1}(b_i)=0$$
    - with independent private values and uniformly distributed types
      - both auctions are efficient (bidder with highest valuation gets the good)
      - both auctions yield the same expected revenue 
-    
+
+** Aside: Information rents and commitment
+   - for a moment, suppose the seller knows the bidders' valuations
+     - how will he maximize revenue?
+       # offer the good to buyer with highest valuation and charge a price equal to wtp
+     - what is the expected utility of a buyer?
+   - how does this compare to expected buyer utility when the seller does not observe buyer valuations?
+     \pause
+   - private information creates an "information rent"
+   - the seller can infer valuations from bids in auction
+     - incentive to cancel auction and switch to procedure above...
+     - ...but buyers anticipating would then not participate in auction (or bid lower)
+     - importance of /commitment/
+       - seller will not change auction rules midway
+
+   
 * Revenue equivalence
 ** Revenue equivalence theorem (RET)
 *** Revenue equivalence theorem   

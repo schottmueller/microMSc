@@ -72,14 +72,17 @@
     - reading:  p.115-122 in cite:einav2011selection, cite:Ake70       
 * Dynamic Bayesian games
 ** wPBE
-   -  definition, simple discrete examples (market entry games)
-   -  bargaining
-   -  exercise: Selten's horse
+   - prerequisites game theory: game trees, subgame perfect Nash equilibrium
+   - definition, simple discrete examples (market entry games)
+   - examples of Coasian dynamics and behavior based price discrimination
+
 ** Signaling
    - job market signaling
    - effect of taxes  
    - exercises: discrete signaling (mafia, pirates etc.)
 
+* tba
+  
 # * Principal agent problems 
 # ** Moral hazard
 #   - incentivizing a worker

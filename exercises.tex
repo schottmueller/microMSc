@@ -193,7 +193,7 @@ $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
     % The 4 incumbents have an advantage as they can utilize their existing infrastructure. (Also there is a common value component suggesting that the advantage might matter a lot.) The ascending auction is similar to a SPA and a weaker bidder will never win there. With 4 licenses, it would therefore unlikely that one could motivate new entrants to bid. With 5 licenses motivating firms to enter the auction is not a problem as at least one entrant will get a license. The Anglo Dutch design tries to stimulate entry by having a FPA feature which gives weaker bidders a small chance of winning. Why not simply a sealed bid auction? The problem is that this can yield inefficient outcomes if bidders are asymmetric which they definitely were (entrants vs. incumbents etc.). There is a small risk of inefficiency in the Anglo-Dutch design (the fifth best bidder may get a license instead of the fourth best bidder) but this risk was judged to be small compared to the risk of having no serious entry (and very low revenue).
 \end{enumerate}
 
-\section{Adverse Selection}
+\section{Adverse selection}
 \label{sec:adverse-selection}
 
 \begin{enumerate}
@@ -212,6 +212,156 @@ $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
     (\emph{Hint:} This is not really a calculation exercise. You should think about and discuss the effects of the change.)
     % If the insurance pool stays the same and the number of babys per year remains stable, total costs would be 200*1000/2=100 000 and therefore raising the premium by 1 € would be profit neutral. However, you may expect the composition of the insurance pool to change as an effect of adding the course as a benefit, i.e. young women being or expecting to becoming pregnant find the insurance more attractive and others find it less attractive due to the increased premium. Hence, one should expect the share of mothers taking the course in the insured pool to increase as a response to the policy change. This means that the premium has to be increased by more than 1 € to keep profits constant. (There is a problem that this might trigger more non-mothers to leave the insurance etc., i.e. it is by no means clear that a profit neutral inclusion is possible.)
     % other decisions: suppose a political party (or other institution) changes an important policy stand: some opposing the change will leave and others welcoming the change will join the party, i.e. the fraction of party members welcoming the change will ex post be larger than ex ante (e.g. suppose the Catholic church allowed women to become priests etc. or the green party recategorised nuclear energy as "climate friendly" and supported it); think about a car manufacturer asking its customers whether they would buy an electric car -> after introducing it customer profile changes...
+\end{enumerate}
+
+\section{Weak perfect Bayesian equilibrium}
+\label{sec:weak-perf-bayes}
+
+\begin{enumerate}
+\item Determine two pure strategy wPBE in the game depicted in figure \ref{fig:ex1}. Which of the two is a PBE?
+  % Strategies: (L,A,l) belief: (1,0)
+  % other  wPBE: (R,A,r) and belief (0,1)is  not a PBE as it does not induce a wPBE in the subgame starting at P2 (P3's belief has to be 1,0 there as only A is sequentially rational for P2)
+  \begin{figure}[h]
+\centering
+% First, set the overall layout of the tree
+% You might need to play with these sizes to ensure nothing overlaps.
+\tikzstyle{level 1}=[level distance=1.5cm, sibling distance=3.5cm]
+\tikzstyle{level 2}=[level distance=1.5cm, sibling distance=3.5cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=2cm]
+\tikzstyle{level 4}=[level distance=1.5cm, sibling distance=1.5cm]
+\begin{tikzpicture}
+%Start with the parent node, and slowly build out the tree
+% with each "child" representing a new level of the diagram
+% each "node" represents a labelled (or unlabeled if you 
+% want) node in the diagram.
+\node{P1}
+    child{
+             node{P2}
+             child{
+               node(a){P3}
+                  child{
+               node{5,4,1}
+               edge from parent
+               node[left]{l}
+               }
+             child{
+               node{1,1,0}
+               edge from parent
+               node[right]{r}
+               }
+               edge from parent
+               node[left]{A}
+               }
+             child{
+               node(b){P3}
+                  child{
+               node{0,0,0}
+               edge from parent
+               node[left]{l}
+               }
+             child{
+               node{0,0,1}
+               edge from parent
+               node[right]{r}
+               }
+               edge from parent
+               node[right]{B}
+               }
+           edge from parent
+           node[left]{L}
+           }
+    child{
+         node{3,3,3}
+         edge from parent
+         node[right]{R}
+         };
+\draw [dashed](a)--(b);
+\end{tikzpicture}
+\caption{Exercise 1}
+\label{fig:ex1}
+\end{figure}
+
+  \item This exercise deals with the game of figure \ref{fig:selten_ex} which Reinhard Selten -- the only Nobel laureate in economics from Germany -- introduced to illustrate that subgame perfection was not enough to rule out non-credible threats.
+    \begin{enumerate}
+    \item Transform this game into its ``normal form'' (i.e. a game table) and find a pure strategy Nash equilibrium. Show that this equilibrium is subgame perfect. Show that this NE is, however, not sequentially rational. 
+    \item Find a wPBE using mixed strategies.\\ (\emph{Hints:} What action is sequentially rational for player 2? For which belief is player 3 willing to mix? Under which circumstances is player 1 willing to mix?)
+    \end{enumerate}
+    \begin{figure}[h]
+\centering
+% First, set the overall layout of the tree
+% You might need to play with these sizes to ensure nothing overlaps.
+\tikzstyle{level 1}=[level distance=0.75cm, sibling distance=6cm]
+\tikzstyle{level 2}=[level distance=1.5cm, sibling distance=2.5cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=2cm]
+\tikzstyle{level 4}=[level distance=1.5cm, sibling distance=1.5cm]
+\begin{tikzpicture}
+%Start with the parent node, and slowly build out the tree
+% with each "child" representing a new level of the diagram
+% each "node" represents a labelled (or unlabeled if you 
+% want) node in the diagram.
+\node{1}
+    child{
+             node{2}
+             child{
+               node{0,0,0}
+             edge from parent
+             node[left]{$L_2$}}
+             child{
+               node(b){3}
+                  child{
+               node{4,4,0}
+               edge from parent
+               node[left]{l}
+               }
+             child{
+               node{0,2,1}
+               edge from parent
+               node[right]{r}
+               }
+                edge from parent
+                node[right]{$R_2$}
+               }
+           edge from parent
+           node[left,above]{$L_1$}
+           }
+    child{
+           child{
+               node(c){3}
+                  child{
+               node{1,1,1}
+               edge from parent
+               node[left]{l}
+               }
+             child{
+               node{1,1,0}
+               edge from parent
+               node[right]{r}
+               }
+               }
+         edge from parent
+         node[right,above]{$R_1$}
+         };
+\draw [dashed](c)--(b);
+\end{tikzpicture}
+\caption{Selten's horse}
+\label{fig:selten_ex}
+\end{figure}
+
+\item Take the model of ``Coasian dynamics'' on the slides but assume that $\delta=1/2$.
+  \begin{enumerate}
+  \item Show that the wPBE from the lecture is no longer a wPBE if $\delta=1/2$.
+    % seller could deviate p_1=p_2=8 and sell in period 2 only to high value types which yields an exp. payoff of 0.5*(0.5*8)=2>1 and is therefore profitable. Hence seq rat is violated.  
+  \item Verify that the other strategy profile on the slides (where $p_1=8$ and $p_2=1$) is also not a wPBE.
+    % type 9 buyer could profitably deviate by choosing not to buy in period 1 but only int period 2 which gives an expected payoff of 0.5*(9-1)=4>1
+  \item Determine a wPBE in mixed strategies.\\
+    (\emph{Hint:} For which belief would the seller be willing to mix over prices in period 2? How would the buyer of type 9 have to mix in period 1 to justify this belief? Under which circumstances would a type 9 buyer be willing to mix in period 1?)
+    % seller is indifferent for \mu_2=1/8; if low value buyer does not buy in period 1 and the high value buyer buys with probability 6/7 then in \mu_2=0.5*1/7/(0.5*1/7+0.5*1)=1/8
+    % To make type 9 indifferent in period 1: p_1=8 while in period 2 seller chooses p_1=8 with probability q such that 9-8=0.5*(q*(9-8)+(1-q)*(9-1)), i.e. q=6/7.
+    % wPBE:
+       %seller: p_1=8 while p_2=8 with prob 6/7; \mu_2=1/8
+       %buyer: type 2 buys whenever price is 1, type 9 buys whenever price is 1 and with prob 6/7 in period 1 if p_1=8 and at any price in period 2
+  % note that this is seq. rational for seller, i.e. his expected profits in eq. are 8*0.5*6/7+0.5*(1*(0.5+0.5*1/7))=26/7 while deviating in period 1 to p_1=1 would yield 1  
+  \end{enumerate}
 \end{enumerate}
 
 \newpage
