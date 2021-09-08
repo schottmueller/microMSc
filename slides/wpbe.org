@@ -1,0 +1,578 @@
+#+Title: (weak) Perfect Bayesian equilibrium
+#+AUTHOR:    Christoph Schottmüller
+#+Date: 
+
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: 
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl}\usepackage{sgame,tikz}\usetikzlibrary{trees}}
+#+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+#+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+
+* Introduction
+** Introduction
+   - previous lecture: market can breakdown if only sellers know product attributes
+   - possible countermeasure: try to demonstrate good quality (independent tests etc.)
+     - /dynamic/ games of incomplete information
+       - dynamic: players take (partially observed) actions sequentially
+     - new solution concepts
+       - with complete information: dynamics \rightarrow /subgame perfect/ Nash equilibrium (SPNE)
+       - with incomplete information: dynamics \rightarrow /(weak) perfect/ Bayesian Nash equilibrium
+   - we introduce equilibrium concept with simpler examples this time and return to motivation next time
+       
+* Weak PBE
+
+** When SPNE is too weak
+\begin{figure}[h]
+\centering
+% First, set the overall layout of the tree
+% You might need to play with these sizes to ensure nothing overlaps.
+\tikzstyle{level 1}=[level distance=1.5cm, sibling distance=3.0cm]
+\tikzstyle{level 2}=[level distance=2.0cm, sibling distance=1.5cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=1.5cm]
+\tikzstyle{level 4}=[level distance=1.5cm, sibling distance=1.5cm]
+\begin{tikzpicture}
+%Start with the parent node, and slowly build out the tree
+% with each "child" representing a new level of the diagram
+% each "node" represents a labelled (or unlabeled if you 
+% want) node in the diagram.
+     \node{E}
+             child{
+               node(a){I}
+                  child{
+               node{-1,-1}
+               edge from parent
+               node[left]{fight}
+               }
+             child{
+               node{3,0}
+               edge from parent
+               node[right]{acc.}
+               }
+               edge from parent
+               node[left]{in1}
+               }
+             child{
+               node(b){I}
+                  child{
+               node{-1,-1}
+               edge from parent
+               node[left]{fight}
+               }
+             child{
+               node{2,1}
+               edge from parent
+               node[right]{acc.}
+               }
+               edge from parent
+               node[right]{in2}
+               }
+	     child{
+	     node{0,2}
+	     edge from parent
+               node[right]{out}
+	     };
+\draw [dashed](a)--(b);
+\end{tikzpicture}
+\end{figure}
+
+- entrant can enter with two technologies (in1 and in2)
+- what are the (SP)NE? 
+# (in1, acc), (out,fight)
+- which SPNE is a (not so) reasonable prediction?
+# acc. is a better response than fight for any belief, i.e. I does better with acc. when reaching his info set; sequential rationality suggests I should play acc. but only subgame of game is game itself; hence SPNE has no bite
+
+** Beliefs 
+- at every information set $H$ the acting player has to have a "belief" over the nodes in $H$
+  - the players assigns probabilities to all decision nodes in his information set
+  - these probabilities sum to 1
+    
+*** System of beliefs
+ A system of beliefs $\mu$ assigns to every node $x$ in an extensive form game $\Gamma_E$ a probability $\mu(x)\in[0,1]$ such that $\sum_{y\in H(x)}\mu(y)=1$ (where $H(x)$  is the information set in which $x$ lies).
+
+** Sequential rationality
+
+- sequentially rational: no player wants to change his behavior in some information set given his beliefs and strategies of the other players
+  - each player's strategy maximizes expected utility at every information set
+  - expected utility is calculated using
+    - own beliefs at the information set and
+    - strategies of all players
+
+*** Sequential rationality
+A strategy profile $\sigma$ is sequentially rational given system of beliefs $\mu$ if for every information set $H$, the player acting at $H$ cannot increase his expected utility by deviating from $\sigma_i$ at $H$:
+$$\mathbb{E}[u_i(\sigma_i,\sigma_{-i})|H,\mu]\geq \mathbb{E}[u_i(\tilde\sigma_i,\sigma_{-i})|H,\mu]$$
+for all $\tilde\sigma_i$ differing from $\sigma_i$ only at $H$.
+
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+- which strategy profile is sequentially rational in the previous example game (for which system of beliefs)?
+
+** Why sequential rationality may not be enough
+
+\begin{figure}[h]
+\centering
+% First, set the overall layout of the tree
+% You might need to play with these sizes to ensure nothing overlaps.
+\tikzstyle{level 1}=[level distance=1.5cm, sibling distance=3.0cm]
+\tikzstyle{level 2}=[level distance=2.0cm, sibling distance=1.5cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=1.5cm]
+\tikzstyle{level 4}=[level distance=1.5cm, sibling distance=1.5cm]
+\begin{tikzpicture}
+%Start with the parent node, and slowly build out the tree
+% with each "child" representing a new level of the diagram
+% each "node" represents a labelled (or unlabeled if you 
+% want) node in the diagram.
+     \node{P1}
+             child{
+               node(a){P2}
+                  child{
+               node{-1,1}
+               edge from parent
+               node[left]{l}
+               }
+             child{
+               node{3,0}
+               edge from parent
+               node[right]{r}
+               }
+               edge from parent
+               node[left]{L}
+               }
+             child{
+               node(b){P2}
+                  child{
+               node{1,-1}
+               edge from parent
+               node[left]{l}
+               }
+             child{
+               node{4,1}
+               edge from parent
+               node[right]{r}
+               }
+               edge from parent
+               node[right]{R}
+               	     };
+\draw [dashed](a)--(b);
+\end{tikzpicture}
+\end{figure}
+
+- is there a belief system such that $(R,l)$ is sequentially rational? 
+# yes $\mu=(1,0)$. Problem: not even a Nash equilibrium!
+
+** Weak perfect Bayesian Nash equilibrium
+- beliefs should be consistent with the strategies used
+   - $prob(x|H,\sigma)=\frac{prob(x|\sigma)}{\sum_{x'\in H}prob(x'|\sigma)}$ if $\sum_{x'\in H}prob(x'|\sigma)>0$ and $x\in H$
+   - arbitrary $\mu_H$ if $\sum_{x'\in H}prob(x'|\sigma)=0$
+
+*** Weak perfect Bayesian Nash equilibrium (weak PBE)
+A profile of strategies $\sigma$ together with a system of beliefs $\mu$ is a weak PBE in an extensive form game $\Gamma_E$ if 
+- $\sigma$ is sequentially rational given $\mu$,
+- $\mu$ is derived from $\sigma$ using Bayes' rule at all information sets reached with positive probability under $\sigma$.
+
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+- weak PBE in previous example?
+
+** incomplete information and Harsanyi's trick I
+   - so far: "imperfect information" (i.e. do not observe another player's prior actions)
+   - what about "incomplete information" (i.e. do not observe another player's "type")?
+   - example
+     - buyer has private information about his valuation for one indivisible good
+       - valuation is either $v_h$ or $v_l$ (both with probability 1/2)
+     - monopoly seller with zero costs sets a price $p\in\{p_h,p_l\}$
+     - after observing $p$ buyer decides whether to buy or not
+   - Harsanyi's trick: introduce artificial player "nature"
+     - nature chooses type of buyer (each with probability 1/2)
+     - seller chooses price without observing nature's choice
+     - buyer chooses to buy or not observing all prior choices
+     - taking nature's strategy as fixed, we have a game as before and use wPBE as before
+
+
+**  incomplete information and Harsanyi's trick II
+
+\begin{figure}[h]
+\centering
+\hspace*{-1cm}
+% First, set the overall layout of the tree
+% You might need to play with these sizes to ensure nothing overlaps.
+\tikzstyle{level 1}=[level distance=1.25cm, sibling distance=6cm]
+\tikzstyle{level 2}=[level distance=1.25cm, sibling distance=3cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=1.5cm]
+\tikzstyle{level 4}=[level distance=1.5cm, sibling distance=1.5cm]
+\begin{tikzpicture}
+%Start with the parent node, and slowly build out the tree
+% with each "child" representing a new level of the diagram
+% each "node" represents a labelled (or unlabeled if you 
+% want) node in the diagram.
+\node{N}
+    child{
+             node(s1){S}
+             child{
+               node(a){B}
+                  child{
+               node{$p_h$,$v_l-p_h$}
+               edge from parent
+               node[left]{buy}
+               }
+             child{
+               node{0,0}
+               edge from parent
+               node[right]{not}
+               }
+               edge from parent
+               node[left]{$p_h$}
+               }
+             child{
+               node(b){B}
+                  child{
+               node{$p_l$,$v_l-p_l$}
+               edge from parent
+               node[left]{buy}
+               }
+             child{
+               node{$0$,$0$}
+               edge from parent
+               node[right]{not}
+               }
+               edge from parent
+               node[right]{$p_l$}
+               }
+           edge from parent
+           node[left]{$v_l$}
+           }
+    child{
+         node(s2){S}
+             child{
+               node(c){B}
+                  child{
+               node{$p_h$,$v_h-p_h$}
+               edge from parent
+               node[left]{buy}
+               }
+             child{
+               node{0,0}
+               edge from parent
+               node[right]{not}
+               }
+               edge from parent
+               node[left]{$p_h$}
+               }
+             child{
+               node(d){B}
+                  child{
+               node{$p_l$,$v_h-p_l$}
+               edge from parent
+               node[left]{buy}
+               }
+             child{
+               node{0,0}
+               edge from parent
+               node[right]{not}
+               }
+               edge from parent
+               node[right]{$p_l$}
+               }
+           edge from parent
+           node[right]{$v_h$}
+         };
+\draw [dashed](s1)--(s2);
+\end{tikzpicture}
+%\caption{extensive form game with imperfect information}
+%\label{fig:ext_game_imperf_info}
+\end{figure}
+
+- assuming $v_h=9$, $v_l=2$, $p_h=8$ and $p_l=1$, determine wPBE
+  # seq rationality B: type v_l buys only if p_l while type v_h always buys
+  # belief: by Bayes' rule: 1/2, 1/2
+  # seq rationality S: expected payoff of $p_h$ is 8/2=4 while of p_l it is 1, hence only p_h is seq rational
+
+* Example: "Coasian dynamics"
+** "Coasian dynamics" I
+     - we use the same buyer/seller example but now we have 2 periods
+       - buyer wants to buy only 1 unit (either in period 1 or in period 2)
+       - seller can charge different prices in periods 1 and 2
+       - discounting: payoffs realized in period 2 are discounted with discount factor $\delta=0.2$
+   
+** "Coasian dynamics" II
+   - timeline
+     - nature chooses buyer's type $v\in\{2,9\}$ (each with prob 1/2)
+     - seller chooses $p_1\in\{1,8\}$ (not observing $v$)
+     - buyer decides whether to buy at price $p_1$, i.e. $b_1\in\{0,1\}$
+     - if buyer does not buy ($b_1=0$), seller posts price $p_2$ and buyer decides whether to buy at this price
+   - wPBE components
+     - seller strategy: $p_1$ and $p_2$ 
+     - buyer strategy: $b_1(p_1)$ and $b_2(p_1,p_2)$
+     - seller beliefs: $\mu_1$ and $\mu_2(p_1)$ 
+** "Coasian dynamics" III
+   - sequential rationality: in period 2 buyer buys if and only if the price is below the valuation
+   - $\rightarrow$ sequential rationality: $p_2=8$ if and only if $\mu_2\geq 1/8$
+   - why is the following not a wPBE?
+     - seller: $p_1=8$ and $p_2=1$
+     - buyer:
+       - type 9 buys in period 1 at both prices while type 2 buys only if $p_1=1$
+       - both types buy in period 2 if price is below valuation
+     - belief: $\mu_1=1/2$ and $\mu_2=0$
+   # not seq rat: high type buyer would benefit from not buying in period 1 and waiting to period 2  as 0.2*(9-1)>9-8
+   \pause
+   - wPBE:
+     - seller: $p_1=1$ and $p_2=8$
+     - buyer:
+       - both types buy in period 1 if $p_1=1$ and do not buy if $p_1=8$
+       - both types buy in period 2 if price is below valuation
+     - belief: $\mu_1=1/2$ and $\mu_2=1/2$ (other $\mu_2$ possible as well)
+ # seq rat: seller does not want to change to p_1=8 as then no one buys and his profits are 0.2*4<1
+** "Coasian dynamics" IV
+   - profits are lower than without possibility to make a second offer later on!
+     - commitment problem: seller cannot commit to not cut the price
+     - seller competes with himself (in the future)
+   - what can companies do to avoid this problem?
+# leasing instead of selling durable goods; (short term/myopic sales personal that do not care about the future)...    
+       
+* Example: behavior based price discrimination  
+
+** Behavior based price discrimination 
+  - we use the same buyer/seller example with 2 periods
+    - in /each period/ the buyer can buy one unit (repeat purchases!)
+    - the buyer's valuation is the same in both periods
+    - seller does not know valuation but knows in the second period whether the buyer bought in the first period
+    - no discounting, payoffs from two periods are just added
+  
+** Behavior based price discrimination (setup)
+- timeline:
+    - nature chooses buyer's type $v\in\{2,9\}$ (each with prob 1/2)
+    - seller chooses $p_1\in\{1,8\}$ (not observing $v$)
+    - buyer decides whether to buy at price $p_1$, i.e. $b_1\in\{0,1\}$
+    - seller observes $b_1$ and sets $p_2\in\{1,8\}$
+    - buyer decides whether to buy at price $p_2$, i.e. $b_2\in\{0,1\}$
+
+- wPBE components   
+   - seller strategy: $p_1$ and $p_2(p_1,b_1)$ 
+   - buyer strategy: $b_1(p_1)$ and $b_2(p_1,p_2,b_1)$
+   - seller beliefs: $\mu_1$ and $\mu_2(p_1,b_1)$
+
+** Behavior based price discrimination  (analysis I)
+   - it cannot be seq. rational for buyer type $2$ to buy at price $8$ in any period
+     # if he did his payoff would be at most 2+2-8-1<0 which is worse than never buying
+   - if the seller charges $p_1=1$, the only seq. rational action for type $v=9$ is to buy
+     # if he buys his payoff is at least 9-1+1>9-1 which is the maximal payoff he could get in case of not buying   
+   - suppose the seller charged $p_1=1$ and the buyer bought ($b_1=1$)
+     - what belief $\mu_2$ would the seller naturally have then?
+     - what price $p_2$ would he then charge?
+   # as the high type always buys at this price mu_2 should be at least 1/2 (it seems natural that the low type also buys at the low price in which case mu_2=1/2); in any case p_2=8 is  optimal for mu_2\geq 1/2   
+   - suppose the seller charged $p_1=8$ and the buyer bought ($b_1=1$) 
+     - what belief $\mu_2$ would the seller naturally have then?
+     - what price $p_2$ would he then charge?
+  # as a low type never buys at a high price, the natural belief would be mu_2=1 and therefore p_2=8 would be optimal
+** Behavior based price discrimination (analysis II)
+  - why is the following not a wPBE?
+    - seller strategy: $p_1=8$ and $p_2=8$ if $b_1=1$ while $p_2=1$ is $b_1=0$
+    - buyer strategy:
+      - type 2 buys in each period iff the price is 1
+      - type 9 buys in both periods no matter what the price is
+    - seller beliefs: $\mu_1=1/2$ and $\mu_2=1$ if $b_1=1$ while $\mu_2=0$ if $b_1=0$ 
+# not sequentially rational for type v=9: better not buy in period 1 and get low price in second period
+\pause
+  - wPBE
+    - seller strategy: $p_1=1$, $p_2(p_1,b_1)=8$ regardless of $b_1$ and $p_1$ 
+    - buyer strategy (both types):
+      - $b_1=1$ if and only if $p_1=1$
+      - $b_2=1$ if $p_2$ is below valuation
+    - seller belief: $\mu_1=\mu_2(1,b_1)=1/2$ regardless of $b_1$ \linebreak (for completeness: $\mu_2(8,1)=1$ and $\mu_2(8,0)=1/2$ though other beliefs are possible here as well)
+# beliefs are derived from Bayes' rule wherever possible and sequential rationality is true: if seller deviates to high price in first period, no one buys in first period and his period 2 profits are the same as without the deviation
+** Behavior based price discrimination (results)
+  - profits are less than 2 times the one-period profits!
+    - commitment problem: seller cannot commit to not cutting the price for those not buying in period 1
+      # always wants to cut price for those not buying in period 1 but then high value types do not buy in first period
+  - what can firms do to avoid this commitment problem?
+    # most favored nation clauses: if we cut the pricefor anyone we reimburse the difference for all previous customers. Note that this policy is actuall ydetrimental to consumers though it might look nice at first sight! 
+      
+* PBE
+
+** Why "weak" PBE is (sometimes too) weak: unreasonable beliefs
+   \hspace*{1cm}\includegraphics[width=8.25cm]{pbeUnreasonableBelief}  \linebreak \tiny{Source: MasColell, Whinston, Green; "Microeconomic Theory", Oxford University Press (1995); Fig. 9.C.4}
+
+- \normalsize{why is P2's belief inconsistent?}
+# P2's info set reached if P1 plays y but as P1 doe snot know nature's move this has to be equally probable after each of nature's moves -> reasonable belief is 1/2,1/2
+\pause
+- \normalsize{(add requirement: some strategy profile leading to off path beliefs has to exist; "structural consistency")}
+
+** Why "weak" PBE is (sometimes too) weak: unreasonable beliefs
+
+\begin{figure}[h]
+\centering
+\hspace*{-1cm}
+% First, set the overall layout of the tree
+% You might need to play with these sizes to ensure nothing overlaps.
+\tikzstyle{level 1}=[level distance=1.25cm, sibling distance=6cm]
+\tikzstyle{level 2}=[level distance=1.25cm, sibling distance=3cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=1.5cm]
+\tikzstyle{level 4}=[level distance=1.5cm, sibling distance=1.5cm]
+\begin{tikzpicture}
+%Start with the parent node, and slowly build out the tree
+% with each "child" representing a new level of the diagram
+% each "node" represents a labelled (or unlabeled if you 
+% want) node in the diagram.
+\node{N}
+    child{
+             node(s1){P1}
+             child{
+               node{$1,10$}
+               edge from parent
+               node[left]{$x$}
+               }
+             child{
+               node(b){P2}
+                  child{
+               node{$0,5$}
+               edge from parent
+               node[left]{$z$}
+               }
+             child{
+               node{$5$,$3$}
+               edge from parent
+               node[right]{$w$}
+               }
+               edge from parent
+               node[right]{$y$}
+               }
+           edge from parent
+           node[left]{$\frac{1}{2}$}
+           }
+    child{
+         node(s2){P1}
+             child{
+               node(c){P2}
+                  child{
+               node{$0$,$5$}
+               edge from parent
+               node[left]{$z$}
+               }
+             child{
+               node{5,20}
+               edge from parent
+               node[right]{$w$}
+               }
+               edge from parent
+               node[left]{$y$}
+               }
+             child{
+               node{$1,10$}
+               edge from parent
+               node[right]{$x$}
+               }
+           edge from parent
+           node[right]{$\frac{1}{2}$}
+         };
+\draw [dashed](s1)--(s2);
+\draw [dashed](b)--(c);
+\end{tikzpicture}
+%\caption{extensive form game with imperfect information}
+%\label{fig:ext_game_imperf_info}
+\end{figure}
+- one wPBE:
+  - strategies: $x$ and $z$
+  - beliefs: $\mu_1=(1/2  ,1/2)$, $\mu_2=(0.9,0.1)$
+- why is P2's belief inconsistent?
+# P2's info set reached if P1 plays y but as P1 doe snot know nature's move this has to be equally probable after each of nature's moves -> reasonable belief is 1/2,1/2
+\pause
+- \normalsize{(add requirement: some strategy profile leading to off path beliefs has to exist; "structural consistency")}
+
+
+** Why "weak" PBE is (sometimes too) weak: not subgame perfect
+ \begin{figure}[h]
+\centering
+% First, set the overall layout of the tree
+% You might need to play with these sizes to ensure nothing overlaps.
+\tikzstyle{level 1}=[level distance=1.25cm, sibling distance=3.5cm]
+\tikzstyle{level 2}=[level distance=1.25cm, sibling distance=4.25cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=1.5cm]
+\tikzstyle{level 4}=[level distance=1.5cm, sibling distance=1.5cm]
+\begin{tikzpicture}
+%Start with the parent node, and slowly build out the tree
+% with each "child" representing a new level of the diagram
+% each "node" represents a labelled (or unlabeled if you 
+% want) node in the diagram.
+\node{E}
+    child{
+             node{E}
+             child{
+               node(a){I}
+                  child{
+               node{-3,-1}
+               edge from parent
+               node[left]{fight}
+               }
+             child{
+               node{1,-2}
+               edge from parent
+               node[right]{accommodate}
+               }
+               edge from parent
+               node[left]{fight}
+               }
+             child{
+               node(b){I}
+                  child{
+               node{-2,-1}
+               edge from parent
+               node[left]{fight}
+               }
+             child{
+               node{3,1}
+               edge from parent
+               node[right]{accomodate}
+               }
+               edge from parent
+               node[right]{accomodate}
+               }
+           edge from parent
+           node[left]{in}
+           }
+    child{
+         node{0,2}
+         edge from parent
+         node[right]{out}
+         };
+\draw [dashed](a)--(b);
+\end{tikzpicture}
+%\caption{extensive form game with imperfect information}
+%\label{fig:ext_game_imperf_info}
+\end{figure}
+
+- with which belief system would (out+accommodate, fight) be a weak PBE? 
+- is (out+accommodate, fight) subgame perfect NE?
+\pause
+- (add requirement "weak PBE in every subgame")
+
+** Perfect Bayesian equilibrium
+   - caution: different authors use different ways of defining /perfect Bayesian equilibrium/
+***  perfect Bayesian equilibrium    (PBE)
+A perfect Bayesian equilibrium is a weak perfect Bayesian equilibrium which \linebreak
+(i) induces a weak perfect Bayesian equilibrium in every subgame \linebreak
+(ii) satisfies structural consistency, i.e. beliefs at every information set are such that a strategy profile consistent with these beliefs exists.
+
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+- PBE in previous example?
+
+
+* Examples
