@@ -77,9 +77,10 @@
    - examples of Coasian dynamics and behavior based price discrimination
 
 ** Signaling
+   - discrete signaling
    - job market signaling
-   - effect of taxes  
-   - exercises: discrete signaling (mafia, pirates etc.)
+   - simple refinement
+   - effect of taxes
 
 * tba
   

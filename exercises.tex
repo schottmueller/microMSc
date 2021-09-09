@@ -364,6 +364,27 @@ $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
   \end{enumerate}
 \end{enumerate}
 
+\section{Signaling}
+\label{sec:signaling}
+
+\begin{enumerate}
+\item In the job market signaling model assume $c(e,\theta )=(1-\theta) e^2/6$ together with $\lambda=1/2$, $\theta _h=3/4$ and $\theta _l=1/4$.
+  \begin{enumerate}
+  \item Determine the least cost separating equilibrium.
+    % rearranging 1/4=3/4-0.75*e^2/6 gives \tilde e=2 while e_l=0, w(0)=1/4, w(\tilde e)=3/4. Example mu: \mu(e)=0 if e<\tilde e and \mu(e)=1 else
+  \item Determine all separating equilibria.
+    % rearranging 1/4=3/4-0.25 e^2/6 gives \bar e=\sqrt{12}. Any e_h\in[\tilde e,\bar e] together with e_l=0 and \mu(e)=0 for e< e_h and \mu(e)=1 else is sep eq.
+  \item Determine all pooling equilibria.
+    % E[\theta]=1/2; rearranging 1/4=1/2-0.75 e^2/6 gives e'=\sqrt{2}, hence any e_p\in[0,e'] with \mu(e)=0 for e< e_p and \mu(e)=\lambda else is pooling eq
+  \item Now concentrate on the least cost separating equilibrium. Assume a revenue neutral tax scheme with a tax on high incomes of $1/20$ is introduced. What is the subsidy on for low incomes to make the scheme revenue neutral? What is the equilibrium education level with the tax? Are high types better or worse off with the tax?
+    % s=t*0.5/0.5=t=0.05; rearranging  1/4+0.05=3/4-0.05-0.75 e^2/6 gives e_h^t=\sqrt{3.2}; payoff of high type without tax: 3/4-0.25*4/6=7/12 while with the tax their payoff is 3/4-0.05-0.25*3.2/6=0.7-2/15=17/30<7/12 and therefore high types are better off without the tax
+  \item Again focusing on least cost separating equilibria, for which values of $\lambda$ are high types better off without a tax of $t=0.05$?
+    % s=0.05*\lambda/(1-\lambda). Define r=\lambda/(1-\lambda), then e_h^t is determined by 1/4+0.05r =3/4-0.05-0.75 e^2/6 or e_h^t=\sqrt{3.6-0.4r} and consequently the payoff of a high type is 3/4-0.05-0.25*(3.6-0.4r)/6=0.55+r/60; equating this with the payoff without tax, i.e. 7/12, yields the critical r=2 or equivalently the critical lambda=2/3. Hence, theta_h is better off with the tax if \lambda>2/3 and better off without the tax otherwise
+  \end{enumerate}
+\item Suppose you want to signal that you are physically strong. What could be suitable signals?
+  % not suitable: gym membership card as anyone can get this or having a triathlon starting number on your arm; suitable: carrying around dumbbells 
+\end{enumerate}
+
 \newpage
 \bibliographystyle{chicago}
 \bibliography{/home/christoph/stuff/bibliography/references.bib}

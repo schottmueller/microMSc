@@ -92,7 +92,7 @@ Payoffs:
 - information
   - $\theta$ is worker's private information
   - market views $\theta$ (ex ante) as being $\theta _h$ with probability $\lambda\in(0,1)$
-  - market might infer $\theta$ from education choice (and therefore update initial belief from $\lambda$)
+  - market might infer $\theta$ from education choice (and therefore update initial belief $\lambda$)
 - payoff worker: $w-c(e,\theta)$
 
 ** 2 Model interpretations
@@ -100,10 +100,10 @@ either
 - 1 worker with privately known $\theta$
 - mass 1 of workers with share $\lambda$ of $\theta_h$ types
 - competitive market: either many homogenous firms or at least two firms in Bertrand competition on the labor market
-- note: education does not change productivity in this model, i.e. no positive welfare effect!
+- note: education does not change productivity in this model, i.e. education is wasteful!
   - extreme assumption to focus entirely on signaling aspect! 
 
-** equilibrium in job market signaling
+** Equilibrium in job market signaling
 - market belief $\mu(e)$:
   - the probability that $\theta=\theta_h$ if education level $e$ is observed
 - worker's strategy optimal given belief $\mu$
@@ -296,7 +296,7 @@ $$\theta_l=\theta_h-c(\tilde e,\theta_l)$$
 - note: $\tilde e$ in pooling equilibrium satisfies
 $$\mathbb{E}[\theta]-c(e^*,\theta_l)=\theta_h-c(\tilde e,\theta_l)$$
 
-** income tax
+** Income tax
 - assume least cost separating equilibrium
 - suppose a revenue neutral income tax is introduced
   - wage of $\theta_l$ is subsidized by $s>0$
@@ -368,7 +368,7 @@ $$\mathbb{E}[\theta]-c(e^*,\theta_l)=\theta_h-c(\tilde e,\theta_l)$$
 \end{minipage}
 \end{figure}
 
-** mechanics of signaling summarized
+** Mechanics of signaling summarized
 - both types prefer higher wage (and less education)
 - market is willing to pay higher wage to high types
 - education is (marginally) more costly for lower type
@@ -377,6 +377,6 @@ $$\mathbb{E}[\theta]-c(e^*,\theta_l)=\theta_h-c(\tilde e,\theta_l)$$
 - high types can signal their high type by obtaining education
 
 
-** can you think of examples for signaling in practice?
+** Can you think of examples for signaling in practice?
    # Mafia and face-tatoos or killing someone to become a member
    # it takes a Nixon to go to China (or a Schröder to reform unemployment insurance)
