@@ -1,0 +1,382 @@
+#+Title: Signaling
+#+AUTHOR:    Christoph Schottmüller
+#+Date: 
+
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: 
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl}\usepackage{sgame,tikz}\usetikzlibrary{trees}}
+#+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+#+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+
+* Pirates
+
+** Signaling example: Jolly Roger
+\begin{center}
+    \includegraphics[width=6cm]{jollyrodger}
+\end{center}
+
+(story based on Leeson, "The invisible hook: the hidden economics of pirates", Princeton University Press, 2011)
+
+\tiny{Flag image: By Oren neu dag [CC BY-SA 3.0] from Wikimedia Commons}
+
+** Leeson's story I
+   - pirates
+     - completely outside the law
+     - hanged when caught
+     - adopted policy: victims are left alive if they surrender and are killed if they (initially) fought/fled
+   - commissioned ships
+     - commissioned to plunder other countries' ships
+     - more treated like prisoners of war (not hanged!) when caught
+     - lose this status if (i) kill surrendering prisoners or (ii) use a pirate flag ("jolly roger")
+   - pirates rarely had to fight as most merchants surrendered upon seeing jolly roger
+   - commissioned ships met more opposition
+
+** Leeson's story II
+   - important features to make this an "equilibrium"?
+     - pirates and commissioned ships have same preferences over merchants behavior
+     - merchants prefer different behavior against pirates and commissioned ships 
+     - using jolly roger is more costly for commissioned ships
+     
+** Pirate model
+timing:  
+   1. nature chooses attacker type: Pirate (P) with prob $p$ , commissioned (C) with $1-p$
+   2. attacker chooses between Jolly Roger (J) and other flag (F)
+   3. defender decides whether to surrender (s) or fight (f)
+
+Payoffs:
+|           | Pirate (J or F) | commissioned (F) | commissioned (J) |
+| /         | <               |                  |                  |
+|-----------+-----------------+------------------+------------------|
+| surrender | -1,3            | -1,3             |  -1,3-X          |
+| fight     | -3,1            | 0,1              | 0,1-X            |
+
+
+** Pirate analysis
+|           | Pirate (J or F) | commissioned (F) | commissioned (J) |
+| /         | <               |                  |                  |
+|-----------+-----------------+------------------+------------------|
+| surrender | -1,3            | -1,3             |  -1,3-X          |
+| fight     | -3,1            | 0,1              | 0,1-X            |
+
+
+
+- if $X\geq 2$, then "separating" equilibrium:
+   - P play J
+   - C play F
+   - defenders surrender iff J is played and fights otherwise
+
+- "pooling" equilibrium
+   - P and C play F
+   - defender always surrenders (fights) if $p\geq 1/3$ ($p\leq 1/3$)
+
+* Spence job market signaling
+** Job market signaling
+- worker has type $\theta\in\{\theta_l,\theta_h\}$ with $\theta_h>\theta_l>0$
+  - interpret $\theta$ as productivity/ability
+- worker chooses education level $e$ at cost $c(e,\theta )$ with  - education is costly: $c_e>0$
+  - marginal costs are increasing: $c_{ee}>0$
+  - no education has no costs: $c(0,\theta)=0$
+  - higher $\theta$ (productivity/ability) implies lower marginal costs: $c_{e\theta }<0$
+- competitive market offers wage equal to expected productivity $\theta$
+- information
+  - $\theta$ is worker's private information
+  - market views $\theta$ (ex ante) as being $\theta _h$ with probability $\lambda\in(0,1)$
+  - market might infer $\theta$ from education choice (and therefore update initial belief from $\lambda$)
+- payoff worker: $w-c(e,\theta)$
+
+** 2 Model interpretations
+either
+- 1 worker with privately known $\theta$
+- mass 1 of workers with share $\lambda$ of $\theta_h$ types
+- competitive market: either many homogenous firms or at least two firms in Bertrand competition on the labor market
+- note: education does not change productivity in this model, i.e. no positive welfare effect!
+  - extreme assumption to focus entirely on signaling aspect! 
+
+** equilibrium in job market signaling
+- market belief $\mu(e)$:
+  - the probability that $\theta=\theta_h$ if education level $e$ is observed
+- worker's strategy optimal given belief $\mu$
+- market belief $\mu(e)$ derived by Bayes rule whenever $e$ is in the support of one of the types' strategy
+- off equilibrium path choices of $e$:
+  - some arbitrary $\mu(e)\in[0,1]$
+
+\vspace*{0.5cm}
+- note: wage with education level $e$, i.e. $w(e)$, equals $\mu(e)\theta_h+(1-\mu(e))\theta_l$
+
+** Preliminaries
+-  $\theta _h$ has flatter indifference curve than $\theta_l$ ("single crossing")
+- wage $w(e) \in[\theta_l,\theta_h]$
+
+** Separating equilibria I
+- separating: two types have different education choices
+*** Lemma							    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+In a separating equilibrium, $w(e(\theta_l))=\theta_l$ and $w(e(\theta_h))=\theta_h$. Furthermore, $e(\theta_l)=0$.
+
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+- what education levels are possible for $\theta_h$ in a separating equilibrium?
+
+\begin{tikzpicture}[scale=3] 
+\draw [<->](0,1) -- (0,0) -- (1,0) ;
+\node[left] at (0,1){$w$};
+\node[right] at (1,0){$e$};
+\node[left]  at (0,.8) {$\theta_h$};
+\draw[dashed] (0,0.8)--(1,0.8);
+\node[left]  at (0,.2) {$\theta_l$};
+\draw[dashed] (0,0.2)--(1,0.2);
+\draw[blue,thick,domain=0:0.46] plot(\x,{3*\x^2+0.2});
+\draw[red,thick,domain=0:0.85] plot(\x,{.9*\x^2+0.2});
+\node[below] at (0.44,0) {$\tilde e$};
+\node[below] at (0.81,0) {$\bar e$};
+\node[below] at (-.01,0.01) {$0$};
+\node[below,red] at (0.81,1.02) {$\bar u(\theta_h)$};
+\node[below,blue] at (0.44,1.03) {$\bar u(\theta_l)$};
+\draw[help lines,dashed] (0.44,0.0)--(0.44,.8);
+\draw[help lines,dashed] (0.81,0.0)--(0.81,.8);
+\end{tikzpicture}
+# $\tilde e$ up to $\bar e$
+
+** Separating equilibria II
+
+- what kind of beliefs (i.e. wage offers) sustain such an equilibrium?
+
+\begin{tikzpicture}[scale=3] 
+\draw [<->](0,1) -- (0,0) -- (1,0) ;
+\node[left] at (0,1){$w$};
+\node[right] at (1,0){$e$};
+\node[left]  at (0,.8) {$\theta_h$};
+\draw[dashed] (0,0.8)--(1,0.8);
+\node[left]  at (0,.2) {$\theta_l$};
+\draw[dashed] (0,0.2)--(1,0.2);
+\draw[blue,thick,domain=0:0.47] plot(\x,{3*\x^2+0.2});
+\draw[red,thick,domain=0:0.85] plot(\x,{.9*\x^2+0.2});
+\node[below] at (0.44,0) {$\tilde e$};
+\node[below] at (0.81,0) {$\bar e$};
+\node[below] at (-.01,0.01) {$0$};
+%\node[below,red] at (0.81,1.02) {$\bar u(\theta_h)$};
+%\node[below,blue] at (0.44,1.03) {$\bar u(\theta_l)$};
+%\draw[help lines,dashed] (0.44,0.0)--(0.44,.8);
+%\draw[help lines,dashed] (0.81,0.0)--(0.81,.8);
+\draw[red,thick,domain=0:0.7] plot(\x,{.9*\x^2+0.4});
+\node[below] at (0.66,0) {$e^*$};
+\draw[help lines,dashed] (0.66,0.0)--(0.66,.8);
+\draw[black,thick] (0,0.2)--(0.3,0.2)--(0.4,0.45)--(0.5,0.35)--(0.667,0.8)--(0.99,0.7);
+\node[right] at (0.99,0.7){$w(e)$};
+\end{tikzpicture}
+- $\mu(e)=(w(e)-\theta_l)/(\theta_h-\theta_l)\in[0,1]$
+
+- among separating equilibria, which are Pareto efficient?
+# $e^*=\tilde e$
+
+** Pooling equilibria I
+
+- pooling: both types exert same education level $e^*$
+- $\mu(e^*)=\lambda$ and $w(e^*)=\mathbb{E}[\theta]=\lambda\theta_h+(1-\lambda)\theta_l$
+- which education levels can be sustained in a pooling equilibrium?
+\begin{tikzpicture}[scale=3] 
+\draw [<->](0,1) -- (0,0) -- (1,0) ;
+\node[left] at (0,1){$w$};
+\node[right] at (1,0){$e$};
+\node[left]  at (0,.8) {$\theta_h$};
+\draw[dashed] (0,0.8)--(1,0.8);
+\node[left]  at (0,.2) {$\theta_l$};
+\draw[dashed] (0,0.2)--(1,0.2);
+\node[left] at (0,0.55) {$\mathbb{E}[\theta]$};
+\draw[dashed] (0,0.55)--(1,0.55);
+\draw[blue,thick,domain=0:0.46] plot(\x,{3*\x^2+0.2});
+\draw[red,thick,domain=0:0.85] plot(\x,{.9*\x^2+0.2});
+\node[below] at (0.44,0) {$\tilde e$};
+\node[below] at (0.81,0) {$\bar e$};
+\node[below] at (-.01,0.01) {$0$};
+\node[below] at (0.34,0) {$e'$};
+\node[below,red] at (0.81,1.02) {$\bar u(\theta_h)$};
+\node[below,blue] at (0.44,1.03) {$\bar u(\theta_l)$};
+\draw[help lines,dashed] (0.44,0.0)--(0.44,.8);
+\draw[help lines,dashed] (0.81,0.0)--(0.81,.8);
+\draw[help lines,dashed] (0.34,0.0)--(0.34,.8);
+\end{tikzpicture}
+# any between 0 and e'
+
+** Pooling equilibria II
+\begin{tikzpicture}[scale=3] 
+\draw [<->](0,1) -- (0,0) -- (1,0) ;
+\node[left] at (0,1){$w$};
+\node[right] at (1,0){$e$};
+\node[left]  at (0,.8) {$\theta_h$};
+\draw[dashed] (0,0.8)--(1,0.8);
+\node[left]  at (0,.2) {$\theta_l$};
+\draw[dashed] (0,0.2)--(1,0.2);
+\node[left] at (0,0.55) {$\mathbb{E}[\theta]$};
+\draw[dashed] (0,0.55)--(1,0.55);
+\draw[blue,thick,domain=0:0.46] plot(\x,{3*\x^2+0.4});
+\draw[red,thick,domain=0:0.7] plot(\x,{.9*\x^2+0.505});
+%\node[below] at (0.36,0) {$e'$};
+\node[below] at (0.22,0) {$e^*$};
+\node[below] at (-.01,0.01) {$0$};
+%\node[below,red] at (0.81,1.02) {$\bar u(\theta_h)$};
+%\node[below,blue] at (0.44,1.03) {$\bar u(\theta_l)$};
+%\draw[help lines,dashed] (0.44,0.0)--(0.44,.8);
+\draw[help lines,dashed] (0.225,0.0)--(0.225,.8);
+%\draw[help lines,dashed] (0.34,0.0)--(0.34,.8);
+\draw[black,thick] (0,0.2)--(0.1,0.3)--(0.225,0.55)--(0.4,0.5)--(0.667,0.7)--(0.99,0.75);
+\node[right] at (0.99,0.75){$w(e)$};
+\end{tikzpicture}
+
+** Welfare
+- what is equilibrium without signaling possibility?
+- who is better/worse off due to signaling possibility?
+# note depending on $\lambda$ and $c$, even high types can be worse off in separating; e.g. if $\lambda$ is sufficiently high and E[\theta] therefore close to \theta_h
+
+
+** Refinements I
+- multiplicity of equilibria supported by off path beliefs that can be freely chosen
+- are these beliefs reasonable?
+
+\begin{tikzpicture}[scale=3] 
+\draw [<->](0,1) -- (0,0) -- (1,0) ;
+\node[left] at (0,1){$w$};
+\node[right] at (1,0){$e$};
+\node[left]  at (0,.8) {$\theta_h$};
+\draw[dashed] (0,0.8)--(1,0.8);
+\node[left]  at (0,.2) {$\theta_l$};
+\draw[dashed] (0,0.2)--(1,0.2);
+\draw[blue,thick,domain=0:0.47] plot(\x,{3*\x^2+0.2});
+\draw[red,thick,domain=0:0.85] plot(\x,{.9*\x^2+0.2});
+%\node[below] at (0.44,0) {$\tilde e$};
+%\node[below] at (0.81,0) {$\bar e$};
+%\node[below,red] at (0.81,1.02) {$\bar u(\theta_h)$};
+%\node[below,blue] at (0.44,1.03) {$\bar u(\theta_l)$};
+%\draw[help lines,dashed] (0.44,0.0)--(0.44,.8);
+%\draw[help lines,dashed] (0.81,0.0)--(0.81,.8);
+\draw[red,thick,domain=0:0.7] plot(\x,{.9*\x^2+0.4});
+\node[below] at (0.66,0) {$e^*$};
+\draw[help lines,dashed] (0.66,0.0)--(0.66,.8);
+\draw[black,thick] (0,0.2)--(0.3,0.2)--(0.4,0.45)--(0.5,0.35)--(0.667,0.8)--(0.99,0.7);
+\node[right] at (0.99,0.7){$w(e)$};
+\end{tikzpicture}
+
+** Refinements II
+
+- let $e_l$ be the equilibrium education of type $\theta_l$
+- let $\tilde e$ be the education level such that $\theta_l$ is indifferent between his equilibrium payoff and $(w,e)= (\theta_h,\tilde e)$
+  $$w(e_l)-c(e_l,\theta_l)=\theta_h-c(\tilde e),\theta_l)$$
+   
+- equilibrium refinement: $\mu(e)$ equals 1 for all $e>\tilde{e}$
+
+*** Lemma
+The only equilibrium satisfying the equilibrium refinement is the "least cost separating equilibrium", i.e. the separating equilibrium in which $e(\theta_h)=\tilde e$.
+
+
+*** 							    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+
+
+- note: $\tilde e$ in separating equilibrium satisfies
+$$\theta_l=\theta_h-c(\tilde e,\theta_l)$$
+- note: $\tilde e$ in pooling equilibrium satisfies
+$$\mathbb{E}[\theta]-c(e^*,\theta_l)=\theta_h-c(\tilde e,\theta_l)$$
+
+** income tax
+- assume least cost separating equilibrium
+- suppose a revenue neutral income tax is introduced
+  - wage of $\theta_l$ is subsidized by $s>0$
+  - wage of $\theta_h$ is taxed by amount $t=\frac{1-\lambda}{\lambda}s$
+\begin{figure}
+\begin{minipage}{.5\textwidth}
+\begin{tikzpicture}[scale=3] 
+\draw [<->](0,1) -- (0,0) -- (1,0) ;
+\node[left] at (0,1){$w$};
+\node[right] at (1,0){$e$};
+\node[left]  at (0,.8) {$\theta_h$};
+\node[left]  at (0,.65) {$\theta_h-t$};
+\draw[dotted] (0,0.65)--(0.32,0.65);
+\draw[dashed] (0,0.8)--(1,0.8);
+\node[left]  at (0,.2) {$\theta_l$};
+\node[left]  at (0,.35) {$\theta_l+s$};
+\draw[dashed] (0,0.2)--(1,0.2);
+\draw[blue,thick,domain=0:0.48] plot(\x,{3*\x^2+0.2});
+\draw[blue,thick,dashed,domain=0:0.42] plot(\x,{3*\x^2+0.35});
+\draw[red,thick,domain=0:0.53] plot(\x,{.9*\x^2+0.62});
+%\draw[red,thick,dashed,domain=0:0.47] plot(\x,{.9*\x^2+0.666});
+\node[below] at (0.44,0) {$\tilde e$};
+%\node[below] at (0.81,0) {$\bar e$};
+\node[below] at (-.01,0.01) {$0$};
+%\node[below,red] at (0.81,1.02) {$\bar u(\theta_h)$};
+%\node[below,blue] at (0.44,1.03) {$\bar u(\theta_l)$};
+%\draw[help lines,dashed] (0.44,0.0)--(0.44,.8);
+%\draw[help lines,dashed] (0.81,0.0)--(0.81,.8);
+%\draw[red,thick,domain=0:0.7] plot(\x,{.9*\x^2+0.4});
+\node[below] at (0.32,0) {$e^t_h$};
+\draw[help lines,dotted] (0.32,0.0)--(0.32,.65);
+%\draw[black,thick] (0,0.2)--(0.3,0.2)--(0.4,0.45)--(0.5,0.35)--(0.667,0.8)--(0.99,0.7);
+%\node[right] at (0.99,0.7){$w(e)$};
+\end{tikzpicture}
+\captionof{figure}{low $\lambda$}
+\label{fig:taxL}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\begin{tikzpicture}[scale=3] 
+\draw [<->](0,1) -- (0,0) -- (1,0) ;
+\node[left] at (0,1){$w$};
+\node[right] at (1,0){$e$};
+\node[left]  at (0,.83) {$\theta_h$};
+\node[left]  at (0,.73) {$\theta_h-t$};
+\draw[dotted] (0,0.77)--(0.37,0.77);
+\draw[dashed] (0,0.8)--(1,0.8);
+\node[left]  at (0,.2) {$\theta_l$};
+\node[left]  at (0,.35) {$\theta_l+s$};
+\draw[dashed] (0,0.2)--(1,0.2);
+\draw[blue,thick,domain=0:0.48] plot(\x,{3*\x^2+0.2});
+\draw[blue,thick,dashed,domain=0:0.42] plot(\x,{3*\x^2+0.35});
+\draw[red,thick,domain=0:0.53] plot(\x,{.9*\x^2+0.62});
+%\draw[red,thick,dashed,domain=0:0.47] plot(\x,{.9*\x^2+0.666});
+\node[below] at (0.44,0) {$\tilde e$};
+%\node[below] at (0.81,0) {$\bar e$};
+\node[below] at (-.01,0.01) {$0$};
+%\node[below,red] at (0.81,1.02) {$\bar u(\theta_h)$};
+%\node[below,blue] at (0.44,1.03) {$\bar u(\theta_l)$};
+%\draw[help lines,dashed] (0.44,0.0)--(0.44,.8);
+%\draw[help lines,dashed] (0.81,0.0)--(0.81,.8);
+%\draw[red,thick,domain=0:0.7] plot(\x,{.9*\x^2+0.4});
+\node[below] at (0.36,0) {$e^t_h$};
+\draw[help lines,dotted] (0.375,0.0)--(0.375,.78);
+%\draw[black,thick] (0,0.2)--(0.3,0.2)--(0.4,0.45)--(0.5,0.35)--(0.667,0.8)--(0.99,0.7);
+%\node[right] at (0.99,0.7){$w(e)$};
+\end{tikzpicture}
+\captionof{figure}{high $\lambda$}
+\label{fig:taxH}
+\end{minipage}
+\end{figure}
+
+** mechanics of signaling summarized
+- both types prefer higher wage (and less education)
+- market is willing to pay higher wage to high types
+- education is (marginally) more costly for lower type
+  - wage increase $\theta_h-\theta_l$ is more than cost of education for high type
+  - wage increase $\theta_h-\theta_l$ is less than cost of education for low type
+- high types can signal their high type by obtaining education
+
+
+** can you think of examples for signaling in practice?
+   # Mafia and face-tatoos or killing someone to become a member
+   # it takes a Nixon to go to China (or a Schröder to reform unemployment insurance)
