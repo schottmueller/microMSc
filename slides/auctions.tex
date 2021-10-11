@@ -1,4 +1,4 @@
-% Created 2021-08-17 Tue 12:01
+% Created 2021-08-20 Fr 16:04
 % Intended LaTeX compiler: pdflatex
 \documentclass[bigger]{beamer}
 \usepackage[utf8]{inputenc}
@@ -35,9 +35,9 @@
 \maketitle
 
 \section{Introduction to auctions}
-\label{sec:org22b17f4}
+\label{sec:org938fe33}
 
-\begin{frame}[label={sec:org4e4a376}]{Auctions are used in many contexts I}
+\begin{frame}[label={sec:orge66a8d1}]{Auctions are used in many contexts I}
 \begin{itemize}
 \item privatization of companies, drilling rights, mining rights, mobile phone spectrum, \ldots{}
 \item art, furniture, fresh ﬂowers, ﬁsh, houses,\ldots{}
@@ -48,7 +48,7 @@
 \item electricity wholesale markets
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org14490de}]{Auctions are used in many contexts II}
+\begin{frame}[label={sec:orgc0687a6}]{Auctions are used in many contexts II}
 \begin{itemize}
 \item many other situations can be thought of as auctions:
 \begin{itemize}
@@ -59,7 +59,7 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgcd9f73b}]{Auction design matters}
+\begin{frame}[label={sec:orgb8892c9}]{Auction design matters}
 \begin{itemize}
 \item most visible application of auction theory in recent decades: Mobile spectrum auctions
 \item starting in the late 90s, all developed countries sold off mobile spectrum to companies to be used for mobile internet
@@ -75,7 +75,7 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org88cd049}]{Auctions: A theory and a tool}
+\begin{frame}[label={sec:org66791c9}]{Auctions: A theory and a tool}
 \begin{itemize}
 \item auctions are both a theoretical concept and a practical tool
 \begin{itemize}
@@ -93,8 +93,8 @@
 \end{frame}
 
 \section{Auction formats}
-\label{sec:org6253901}
-\begin{frame}[label={sec:orge7b91b3}]{Private values framework}
+\label{sec:org2b4d17e}
+\begin{frame}[label={sec:orge7ff8d6}]{Private values framework}
 \begin{itemize}
 \item \(I\) bidders and one object to be sold
 \item bidder \(i\) has valuation \(v_i\) for the object
@@ -115,7 +115,7 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org63c6fe1}]{Common auction formats for a single object}
+\begin{frame}[label={sec:orgf1fe4b9}]{Common auction formats for a single object}
 \begin{itemize}
 \item sealed-bid auctions:
 \begin{itemize}
@@ -131,7 +131,7 @@
 Which one will bring the highest revenue? \linebreak We need to understand how bidders will behave!
 \end{frame}
 
-\begin{frame}[label={sec:org1139fb1}]{First-price sealed-bid auction (FPA)}
+\begin{frame}[label={sec:org94b85ab}]{First-price sealed-bid auction (FPA)}
 \begin{itemize}
 \item Every bidder submits their offer, the highest bidder wins and pays his bid.
 \item If your valuation is \(v_i\) , should you bid \(v_i\) ?
@@ -145,7 +145,7 @@ Which one will bring the highest revenue? \linebreak We need to understand how b
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org067166d}]{Descending (“Dutch”) auction}
+\begin{frame}[label={sec:org93b0686}]{Descending (“Dutch”) auction}
 \begin{itemize}
 \item The auctioneer announces a high price and then slowly decreases it, until a bidder says that he wants to buy at that price.
 \item Once announced price p is below \(v_i\), there is a basic trade-off:
@@ -164,7 +164,7 @@ Which one will bring the highest revenue? \linebreak We need to understand how b
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org88be864}]{Second-price sealed-bid auction (SPA)}
+\begin{frame}[label={sec:org0ba46aa}]{Second-price sealed-bid auction (SPA)}
 \begin{itemize}
 \item Every bidder submits their offer, the highest bidder wins and pays the second-highest bidder’s bid.
 \item With value \(v_i\) , should you ever submit bid \(b_i > v_i\) instead of \(b_i = v_i\) ?
@@ -190,7 +190,7 @@ Which one will bring the highest revenue? \linebreak We need to understand how b
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org1630fd8}]{Ascending (“English”) auction}
+\begin{frame}[label={sec:org16cc35f}]{Ascending (“English”) auction}
 \begin{itemize}
 \item The auctioneer starts with a low price and announces higher prices, until only one bidder remains and pays the last announced price.
 \item Should you ever leave the bidding while announced price \(p\) is below \(v_i\) ?
@@ -207,7 +207,7 @@ Which one will bring the highest revenue? \linebreak We need to understand how b
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org8d5e134}]{Optimal bidder behavior in the ﬁrst-price auction I}
+\begin{frame}[label={sec:org28b4086}]{Optimal bidder behavior in the ﬁrst-price auction I}
 \begin{itemize}
 \item What is the equilibrium strategy \(b_i:[\underline v,\bar v]\ra\Re_+\) in a FPA (or in a Dutch) auction?
 \item We will consider a simple case:
@@ -222,7 +222,7 @@ Pr[b_i>\beta(v_j)]*(v_i-b_i) \\+ Pr[b_i=\beta(v_j)]\frac{1}{2}*(v_i-b_i)+Pr[b_i<
 \end{multline*}
 \end{frame}
 
-\begin{frame}[label={sec:orga3badb0}]{Optimal bidder behavior in the ﬁrst-price auction II}
+\begin{frame}[label={sec:orgdf3f7b5}]{Optimal bidder behavior in the ﬁrst-price auction II}
 \begin{itemize}
 \item If \(j\) follows strategy \(\beta\), \(i\)'s expected payoff from bidding \(b_i\) is
 \end{itemize}
@@ -242,7 +242,7 @@ $$\frac{v_i-\beta(v_i)}{\beta'(v_i)}-v_i=0$$
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org6e5cd79}]{Optimal bidder behavior in the ﬁrst-price auction III}
+\begin{frame}[label={sec:org83df89c}]{Optimal bidder behavior in the ﬁrst-price auction III}
 \begin{itemize}
 \item both players bidding according to the strategy \(\beta(v_i)=v_i/2\) is equilibrium!
 \begin{itemize}
@@ -260,7 +260,7 @@ $$\beta(v_i)=\frac{I-1}{I}v_i$$
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgf552767}]{Which auction yields higher revenue?}
+\begin{frame}[label={sec:org5060006}]{Which auction yields higher revenue?}
 \begin{itemize}
 \item For \(v_1 , v_2\) uniformly iid on \([0,1]\), which auction gives the higher revenue?
 \item revenue of the FPA
@@ -278,7 +278,7 @@ $$\int_0^1 Pr[v_j<v_i]\mathbb{E}[v_j|v_j<v_i]\,dv_i=\int_0^1 v_i \frac{v_i}{2}\,
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org2cfed01}]{Conclusions so far}
+\begin{frame}[label={sec:org50fabf2}]{Conclusions so far}
 \begin{itemize}
 \item with independent private values
 \begin{itemize}
@@ -293,9 +293,32 @@ $$\int_0^1 Pr[v_j<v_i]\mathbb{E}[v_j|v_j<v_i]\,dv_i=\int_0^1 v_i \frac{v_i}{2}\,
 \end{itemize}
 \end{frame}
 
+\begin{frame}[label={sec:org02405fc}]{Aside: Information rents and commitment}
+\begin{itemize}
+\item for a moment, suppose the seller knows the bidders' valuations
+\begin{itemize}
+\item how will he maximize revenue?
+\item what is the expected utility of a buyer?
+\end{itemize}
+\item how does this compare to expected buyer utility when the seller does not observe buyer valuations?
+\pause
+\item private information creates an "information rent"
+\item the seller can infer valuations from bids in auction
+\begin{itemize}
+\item incentive to cancel auction and switch to procedure above\ldots{}
+\item \ldots{}but buyers anticipating would then not participate in auction (or bid lower)
+\item importance of \emph{commitment}
+\begin{itemize}
+\item seller will not change auction rules midway
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
 \section{Revenue equivalence}
-\label{sec:orgaff8e3c}
-\begin{frame}[label={sec:org8c79933}]{Revenue equivalence theorem (RET)}
+\label{sec:orgf103267}
+\begin{frame}[label={sec:org7c3703d}]{Revenue equivalence theorem (RET)}
 \begin{block}{Revenue equivalence theorem}
 Suppose that valuations are identically and independently distributed with strictly positive density on \([\underline v,\bar v]\) and that bidders are risk neutral.\linebreak
 Then, every \emph{(auction format, equilibrium)} pair such that in equilibrium
@@ -311,7 +334,7 @@ gives the same revenue to the seller and the same expected utility to all types.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org1f05b00}]{Revenue equivalence theorem: theoretical relevance}
+\begin{frame}[label={sec:org38affd5}]{Revenue equivalence theorem: theoretical relevance}
 \begin{itemize}
 \item RET as a theoretical tool
 \begin{itemize}
@@ -326,7 +349,7 @@ gives the same revenue to the seller and the same expected utility to all types.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org2186384}]{Revenue equivalence theorem: economic relevance}
+\begin{frame}[label={sec:org94fb9a8}]{Revenue equivalence theorem: economic relevance}
 \begin{itemize}
 \item RET as an economic insight
 \begin{itemize}
@@ -342,7 +365,7 @@ gives the same revenue to the seller and the same expected utility to all types.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org6fb3b5e}]{Revenue equivalence theorem: proof I}
+\begin{frame}[label={sec:orgf2db9cf}]{Revenue equivalence theorem: proof I}
 \begin{itemize}
 \item take an (equilibrium, auction format) pair and assume that assumptions of RET are satisfied
 \item define \(U_i(v_i)=v_i P(v_i)- T_i(v_i)\) where
@@ -353,7 +376,7 @@ gives the same revenue to the seller and the same expected utility to all types.
 \end{itemize}
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:orgb16cfb4}]{Revenue equivalence theorem: proof II}
+\begin{frame}[label={sec:orgabb4e34}]{Revenue equivalence theorem: proof II}
 \begin{itemize}
 \item define \(U_i(v_i)=v_i P(v_i)- T_i(v_i)\)
 \item \alert{envelope theorem:} \(U_i'(v_i)=P(v_i)\)
@@ -369,7 +392,7 @@ $$U_i'(v_i')=P(v_i)$$
 \end{itemize}
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org66631a2}]{Revenue equivalence theorem: proof III}
+\begin{frame}[label={sec:orgafbb00b}]{Revenue equivalence theorem: proof III}
 \begin{itemize}
 \item envelope theorem: \(U_i'(v_i)=P(v_i)\)
 \item hence,
@@ -381,7 +404,7 @@ $$T_i(v_i)=v_i P(v_i) -U_i(v_i)=v_i F(v_i)^{I-1} -\int_{\underline v}^{v_i}F(v)^
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org5774cf2}]{Revenue equivalence theorem: proof idea}
+\begin{frame}[label={sec:org4d3d658}]{Revenue equivalence theorem: proof idea}
 \begin{itemize}
 \item the envelope theorem states that the derivative of bidder utility only depends on the type distribution (given that the highest type wins)
 \item assumption that the lowest type has zero utility
@@ -393,7 +416,7 @@ $$T_i(v_i)=v_i P(v_i) -U_i(v_i)=v_i F(v_i)^{I-1} -\int_{\underline v}^{v_i}F(v)^
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org1552da2}]{Applying RET I}
+\begin{frame}[label={sec:org94f5caf}]{Applying RET I}
 \begin{itemize}
 \item Consider the following auction formats:
 \begin{itemize}
@@ -411,7 +434,7 @@ $$T_i(v_i)=v_i P(v_i) -U_i(v_i)=v_i F(v_i)^{I-1} -\int_{\underline v}^{v_i}F(v)^
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org87f1b85}]{Applying RET IIa}
+\begin{frame}[label={sec:org203af10}]{Applying RET IIa}
 \begin{itemize}
 \item 2 companies are engaged in a legal battle
 \item each company chooses how much money to spend on lawyers
@@ -423,7 +446,7 @@ $$T_i(v_i)=v_i P(v_i) -U_i(v_i)=v_i F(v_i)^{I-1} -\int_{\underline v}^{v_i}F(v)^
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgf46d12b}]{Applying RET IIb}
+\begin{frame}[label={sec:org6175575}]{Applying RET IIb}
 \begin{itemize}
 \item consider the corresponding SPA: equilibrium to bid own valuation
 \item if \(i\) wins with bid \(b_i=v_i\), the expected bid of \(j\) is \(\mathbb{E}[v_j|v_j<v_i]=v_i/2\)
@@ -439,9 +462,9 @@ $$T_i(v_i)=\mathbb{E}[v_j|v_j<v_i]Pr[v_j<v_i]=v_i/2 * v_i=v_i^2/2$$
 \end{frame}
 
 \section{Choosing the right auction format}
-\label{sec:org80fe3e1}
+\label{sec:orgbd5f19a}
 
-\begin{frame}[label={sec:org34663bd}]{Challenges in practical auction design}
+\begin{frame}[label={sec:org519cb39}]{Challenges in practical auction design}
 \begin{itemize}
 \item theoretical:
 \begin{itemize}
@@ -468,7 +491,7 @@ $$T_i(v_i)=\mathbb{E}[v_j|v_j<v_i]Pr[v_j<v_i]=v_i/2 * v_i=v_i^2/2$$
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org204ef57}]{Collusion in SPA}
+\begin{frame}[label={sec:orgfa6f882}]{Collusion in SPA}
 \begin{itemize}
 \item consider a second-price auction
 \item If bidders can ﬁgure out that \(i\) has the highest valuation, the
@@ -483,7 +506,7 @@ following is an equilibrium:
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org722f56b}]{Pre-auction knockout I}
+\begin{frame}[label={sec:org9aacaf4}]{Pre-auction knockout I}
 \begin{itemize}
 \item Consider the following mechanism:
 \begin{enumerate}
@@ -498,7 +521,7 @@ to the ring organizer
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org5080175}]{Pre-auction knockout II}
+\begin{frame}[label={sec:orgf04fb56}]{Pre-auction knockout II}
 \begin{itemize}
 \item is efficient (i.e. bidder with highest valuation wins)
 \item makes ring members better off (as they sometimes get a positive payoff even when losing)
@@ -520,7 +543,7 @@ to the ring organizer
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org15e1085}]{Asymmetric bidders I}
+\begin{frame}[label={sec:orgc6d206f}]{Asymmetric bidders I}
 \begin{itemize}
 \item two bidders
 \item bidder one: \(v_1\) distributed uniformly on \([0,1]\)
@@ -533,7 +556,7 @@ to the ring organizer
 \item does revenue equivalence hold between FPA and SPA?
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org52f862a}]{Asymmetric bidders II}
+\begin{frame}[label={sec:org830a9f3}]{Asymmetric bidders II}
 \begin{itemize}
 \item one equilibrium of the first price auction:
 $$b_1(v_1)=\begin{cases}v_1 & \text{ if }v_1<2/3\\v_1/2+1/3& \text{ else }\end{cases}$$
@@ -550,7 +573,7 @@ $$b_2(v_2)=\begin{cases}v_2/2+1/6 & \text{ if }v_2<4/3\\ 5/6& \text{ else }\end{
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgd11c170}]{Encouraging entry}
+\begin{frame}[label={sec:org5ba2309}]{Encouraging entry}
 \begin{itemize}
 \item higher number of bidders increases revenue
 \begin{itemize}
@@ -571,7 +594,7 @@ $$b_2(v_2)=\begin{cases}v_2/2+1/6 & \text{ if }v_2<4/3\\ 5/6& \text{ else }\end{
 \end{itemize}
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:orgc8db019}]{Behavioral considerations}
+\begin{frame}[label={sec:orgb7c8e44}]{Behavioral considerations}
 \begin{itemize}
 \item Many of our game-theoretic results have to be taken with a grain of salt.
 \item For example, the sealed-bid FPA and the Dutch auction often give different results if played with the same people (and the same \(v_i\) ).
@@ -584,7 +607,7 @@ $$b_2(v_2)=\begin{cases}v_2/2+1/6 & \text{ if }v_2<4/3\\ 5/6& \text{ else }\end{
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgf1cd78c}]{Risk aversion}
+\begin{frame}[label={sec:orgfb3d48f}]{Risk aversion}
 \begin{itemize}
 \item bidder \(i\) derives utility \(u(v_i-p)\) from the object when winning at price \(p\) (and \(u(-p)\) if he does not win)
 \begin{itemize}
@@ -610,7 +633,7 @@ $$b_2(v_2)=\begin{cases}v_2/2+1/6 & \text{ if }v_2<4/3\\ 5/6& \text{ else }\end{
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org8349f65}]{Example: Embarrassment from overbidding I}
+\begin{frame}[label={sec:org3ead307}]{Example: Embarrassment from overbidding I}
 \begin{itemize}
 \item sealed-bid FPA in a standard private values model
 \item after the auction ends all bids are revealed
@@ -621,7 +644,7 @@ $$v_i - b_i -\gamma (b_ i - max_{j\neq i} b_ j)$$
 \item How does it inﬂuence expected revenue?
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org88fb033}]{Example: Embarrassment from overbidding II}
+\begin{frame}[label={sec:org1a0747a}]{Example: Embarrassment from overbidding II}
 $$v_i - b_i -\gamma (b_ i - max_{j\neq i} b_ j)$$
 \begin{itemize}
 \item “Embarrassment cost” is like an extra payment for the winning bidder.
@@ -633,7 +656,7 @@ $$v_i - b_i -\gamma (b_ i - max_{j\neq i} b_ j)$$
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org0b6e315}]{Common-value auctions}
+\begin{frame}[label={sec:org584aa1e}]{Common-value auctions}
 \begin{itemize}
 \item So far, we have assumed that each bidder has their own privately known valuation \(v_ i\).
 \item alternative assumption: The object has the same value \(v\) for all, but \(v\) is unknown
@@ -651,7 +674,7 @@ $$v_i - b_i -\gamma (b_ i - max_{j\neq i} b_ j)$$
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orge77d62d}]{Common-value auctions: winner's curse}
+\begin{frame}[label={sec:orgb518afa}]{Common-value auctions: winner's curse}
 \begin{itemize}
 \item calculating equilibrium of FPA is somewhat tricky (we will not do it!)
 \item with independent private values: bidding your valuation yields zero payoff in FPA
@@ -665,7 +688,7 @@ $$v_i - b_i -\gamma (b_ i - max_{j\neq i} b_ j)$$
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgac030c3}]{Almost common value auctions}
+\begin{frame}[label={sec:org19b344f}]{Almost common value auctions}
 \begin{itemize}
 \item Now imagine that the object has a slightly higher value for 1 than for 2, i.e. \(v_ 1 = t_ 1 + t_ 2 + \varepsilon\) and \(v_ 2 = t_ 1 + t_ 2\).
 \item Is there an equilibrium in which 2 wins an ascending auction?
@@ -678,7 +701,7 @@ $$v_i - b_i -\gamma (b_ i - max_{j\neq i} b_ j)$$
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org870d356}]{Almost common value auctions: Application}
+\begin{frame}[label={sec:orge283db5}]{Almost common value auctions: Application}
 \begin{itemize}
 \item If two bidders compete to take over a company (= common value)\ldots{}
 \begin{itemize}
@@ -696,7 +719,7 @@ $$v_i - b_i -\gamma (b_ i - max_{j\neq i} b_ j)$$
 \end{frame}
 
 
-\begin{frame}[label={sec:org3f98fbf}]{What is the right auction format?}
+\begin{frame}[label={sec:orgb6a796d}]{What is the right auction format?}
 \begin{itemize}
 \item It depends!
 \item Second-price (and ascending) auctions:
@@ -716,8 +739,8 @@ $$v_i - b_i -\gamma (b_ i - max_{j\neq i} b_ j)$$
 \end{frame}
 
 \section{Reserve prices: market power}
-\label{sec:org19b2b69}
-\begin{frame}[label={sec:orgc407194}]{Reserve price I}
+\label{sec:orge09caf0}
+\begin{frame}[label={sec:org13c0110}]{Reserve price I}
 \begin{itemize}
 \item independent private value setting
 \item can the seller obtain more expected revenue than in SPA/FPA?
@@ -732,7 +755,7 @@ $$v_i - b_i -\gamma (b_ i - max_{j\neq i} b_ j)$$
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org0ff1e36}]{Reserve price II (intuition)}
+\begin{frame}[label={sec:org6952565}]{Reserve price II (intuition)}
 \begin{itemize}
 \item start from \(\bar b=0\), i.e. no reserve price
 \item what is effect of increasing reserve price slightly to \(\varepsilon>0\)?
@@ -751,7 +774,7 @@ $$v_i - b_i -\gamma (b_ i - max_{j\neq i} b_ j)$$
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org9dbd0e9}]{Reserve price III (example)}
+\begin{frame}[label={sec:org9f4b548}]{Reserve price III (example)}
 \begin{itemize}
 \item two bidders with valuation uniformly and independently distributed on \([0,1]\)
 \item expected revenue without reserve price: \(1/3\)
@@ -766,7 +789,7 @@ $$v_i - b_i -\gamma (b_ i - max_{j\neq i} b_ j)$$
 =\frac{-4\bar b^3+3\bar b^2+1}{6}
 \end{multline*}
 \end{frame}
-\begin{frame}[label={sec:orge37fe04}]{Reserve price III (example)}
+\begin{frame}[label={sec:org4cacff0}]{Reserve price III (example)}
 \begin{itemize}
 \item expected revenue from bidder i:
 $$\frac{-4\bar b^3+3\bar b^2+1}{6}$$
@@ -781,7 +804,7 @@ $$\frac{-4\bar b^3+3\bar b^2+1}{6}$$
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orge312213}]{Reserve prices and RET}
+\begin{frame}[label={sec:org9ef106f}]{Reserve prices and RET}
 \begin{itemize}
 \item RET assumption "the object is won by the bidder with the highest valuation and" no longer holds with reserve price
 \item however, can be substituted by "the probability of getting a good as a function of type \(P_i(v_i)\) is the same in the compared (auction format, equilibrium) pairs" \linebreak (proof works similarly)
@@ -790,8 +813,8 @@ $$\frac{-4\bar b^3+3\bar b^2+1}{6}$$
 \end{frame}
 
 \section{Position auctions}
-\label{sec:org4af1ff4}
-\begin{frame}[label={sec:orgea816ef}]{Position auction I}
+\label{sec:orga32357d}
+\begin{frame}[label={sec:orga48f3ef}]{Position auction I}
 \begin{itemize}
 \item ad position auction (as for Google ads)
 \item \(S\) ad slots on a website
@@ -805,7 +828,7 @@ $$\frac{-4\bar b^3+3\bar b^2+1}{6}$$
 \item new: several slots/prizes of differing prominence
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:orgc5a8295}]{Position auction II}
+\begin{frame}[label={sec:org050c125}]{Position auction II}
 \begin{itemize}
 \item consider the following (Vickrey style) auction
 \begin{itemize}
@@ -821,7 +844,7 @@ $$\frac{-4\bar b^3+3\bar b^2+1}{6}$$
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgcae954f}]{Position auction III}
+\begin{frame}[label={sec:orgb65d6b8}]{Position auction III}
 \begin{itemize}
 \item in practice:
 \begin{itemize}
@@ -833,7 +856,7 @@ $$\frac{-4\bar b^3+3\bar b^2+1}{6}$$
 \end{itemize}
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org946a71c}]{Position auction IV}
+\begin{frame}[label={sec:org74d693f}]{Position auction IV}
 \begin{itemize}
 \item price per click of \emph{s}-highest bidder equals \(score_{s+1}/q_s\)
 \item suppose click through rate of ad \(i\) in position \(s\) is \(q_i*x_s\)
@@ -852,8 +875,8 @@ $$\frac{-4\bar b^3+3\bar b^2+1}{6}$$
 \end{frame}
 
 \section{Markets as double auctions}
-\label{sec:orgc3da72d}
-\begin{frame}[label={sec:orgb3df2df}]{Markets as auctions I}
+\label{sec:org74c28a9}
+\begin{frame}[label={sec:org8abcf6c}]{Markets as auctions I}
 \begin{itemize}
 \item how is a market price determined?
 \item stock market:
@@ -869,7 +892,7 @@ $$\frac{-4\bar b^3+3\bar b^2+1}{6}$$
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org2ef8c57}]{Markets as auctions II}
+\begin{frame}[label={sec:org7ed7e3f}]{Markets as auctions II}
 \begin{itemize}
 \item how do you determine which trades to execute?
 \begin{itemize}
@@ -883,7 +906,7 @@ $$a_1\leq a_2\leq\dots\leq a_J$$
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org97a7019}]{Markets as auctions III}
+\begin{frame}[label={sec:org1f8ce68}]{Markets as auctions III}
 \begin{itemize}
 \item what is the trading price?
 \begin{itemize}
@@ -902,7 +925,7 @@ $$a_1\leq a_2\leq\dots\leq a_J$$
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org8cbd572}]{Markets as auctions IV}
+\begin{frame}[label={sec:orga967796}]{Markets as auctions IV}
 can we do something like a second price auction?
 \begin{itemize}
 \item hopefully simpler bidding strategies etc.
@@ -916,7 +939,7 @@ can we do something like a second price auction?
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org105a2b2}]{Markets as auctions V}
+\begin{frame}[label={sec:orgf137815}]{Markets as auctions V}
 can we do something like a second price auction?
 \begin{itemize}
 \item second try:

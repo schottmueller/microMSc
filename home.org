@@ -3,7 +3,7 @@
 #+Options: toc:nil H:2
 
 * News
-- The material below is very preliminary and still subject to change.
+- The material below is preliminary and still subject to change.
 - Preliminary exam dates: Feb. 23, 2022, 9:00 (B) and March 30, 2022, 15:00 (A1)
 
 
@@ -11,7 +11,7 @@
 * Course setup
   *Lecture:* Fridays, 08:00-09:30 (101/EG/27 HS XXV)
   
-  *Exercise session:* Thursdays, 14:00-15:30 (zoom)
+  *Exercise session:* Thursdays, 14:00-15:30 (zoom, room 999 6261 7147, pw six2263four)
 
   Prerequisites: You are expected to know basic game theory (normal form games, dominant strategies, Nash equilibrium, game trees, subgame perfect Nash equilibrium) and microeconomics at Bachelor level (preferences, indifference curves, utility functions, consumer problem, Pareto efficiency). The [[https://github.com/schottmueller/microMSc/blob/main/schedule.org][schedule]] contains detailed prerequisites for each lecture in terms of economics and mathematics.
 * Material  
