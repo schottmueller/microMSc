@@ -11,7 +11,7 @@
 * Course setup
   *Lecture:* Fridays, 08:00-09:30 (101/EG/27 HS XXV)
   
-  *Exercise session:* Thursdays, 14:00-15:30 (zoom, room 999 6261 7147, pw six2263four)
+  *Exercise session:* Thursdays, 14:00-15:30 (zoom, room 999 6261 7147, pw six2263four) *Note that there is no exercise session on Oct. 14!*
 
   Prerequisites: You are expected to know basic game theory (normal form games, dominant strategies, Nash equilibrium, game trees, subgame perfect Nash equilibrium) and microeconomics at Bachelor level (preferences, indifference curves, utility functions, consumer problem, Pareto efficiency). The [[https://github.com/schottmueller/microMSc/blob/main/schedule.org][schedule]] contains detailed prerequisites for each lecture in terms of economics and mathematics.
 * Material  
