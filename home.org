@@ -3,13 +3,13 @@
 #+Options: toc:nil H:2
 
 * News
-- The material below is preliminary and still subject to change.
+- To clarify: I do not use ILIAS (as I prefer openly accessible material and dislike parts of the terms of service) and all material for this course is available on this website.
 - Preliminary exam dates: Feb. 23, 2022, 9:00 (B) and March 30, 2022, 15:00 (A1)
 
 
   
 * Course setup
-  *Lecture:* Fridays, 08:00-09:30 (101/EG/27 HS XXV)
+  *Lecture:* Fridays, 08:00-09:30 (101/EG/27 HS XXV) (no online live stream, please study the slides and the readings indicated in the schedule if you are unable to attend)
   
   *Exercise session:* Thursdays, 14:00-15:30 (zoom, room 999 6261 7147, pw six2263four) *Note that there is no exercise session on Oct. 14!*
 
