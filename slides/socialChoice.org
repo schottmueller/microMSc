@@ -259,20 +259,15 @@ Let preferences be single peaked and $i$ be a median agent, then $x^*(i)$ is a C
     An alternative $x$ is /Pareto efficient/ if there is no alternative $y$ that Pareto dominates $x$. 
 # insert example
 ** Cardinal utility IV
-*** Proposition
-    If social welfare function $W$ is strictly increasing, then Pareto dominating alternatives are socially preferred to the alternatives they dominate.
-*** Proof
-    - let $W$ be strictly increasing and $x$ Pareto dominate $y$
-      - then $u_i(x)\geq u_i(y)$ for all $i$ and strictly so for at least one agent
-      - hence the utility vector u(x)>u(y)
-      - hence $W(u(x))> W(u(y))$ as $W$ is strictly increasing \qed
+*** Pareto criterion and $W$
+    Pareto dominating alternatives are socially preferred to the alternatives they dominate if social welfare function $W$ is such that $W(u)>W(u')$ for any two vectors $u=(u_1, u_2,\dots,u_N)$ and $u'=(u_1',\dots,u_N')$ with $u_i\geq u_i'$ for all $i=1,\dots N$ and strict inequality for at least one $i$.
 *** :B_ignoreheading:BMCOL:
     :PROPERTIES:
     :BEAMER_env: ignoreheading
     :BEAMER_col: 0.4
     :END:
 
-note: *weak* Pareto criterion is satisfied if $W$ is such that for any two vectors $u=(u_1, u_2,\dots,u_N)$ and $u'=(u_1',\dots,u_N')$ such that $u_i>u_i'$ for all $i=1,\dots N$, we have $W(u)>W(u')$.
+note: *weak* Pareto criterion is satisfied if $W$ is such that for any two vectors $u=(u_1, u_2,\dots,u_N)$ and $u'=(u_1',\dots,u_N')$ such that *$u_i>u_i'$* for all $i=1,\dots N$, we have $W(u)>W(u')$.
     
 ** Cardinal utility V: Rawlsian welfare
    $$W_{Rawls}(u_1,\dots,u_N)=\min[u_1,\dots,u_N]$$
