@@ -1,4 +1,4 @@
-% Created 2021-07-19 Mo 14:32
+% Created 2021-10-21 Do 17:05
 % Intended LaTeX compiler: pdflatex
 \documentclass[bigger]{beamer}
 \usepackage[utf8]{inputenc}
@@ -38,14 +38,14 @@
 
 
 \section{Aggregating Preferences}
-\label{sec:org3cfc89a}
-\begin{frame}[label={sec:org78dc6ae}]{Motivation}
+\label{sec:org51ec6be}
+\begin{frame}[label={sec:org3360cd7}]{Motivation}
 \begin{itemize}
 \item people have different preferences
 \item how should societal decisions be taken?
 \begin{itemize}
 \item navigate conflicts of preferences
-\item respecting preferences
+\item respecting individual preferences
 \end{itemize}
 \item Examples:
 \begin{itemize}
@@ -59,14 +59,14 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org57b9ac0}]{Social choice theory}
+\begin{frame}[label={sec:orgf93a0b8}]{Social choice theory}
 \begin{itemize}
 \item make ethical premises explicit
 \item derive solutions consistent with these premises
 \item normative (!)
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:orgb67bb36}]{Example: Majority voting}
+\begin{frame}[label={sec:org0392099}]{Example: Majority voting}
 \begin{itemize}
 \item society (\(N>2\) people) has to choose one of 2 alternatives/candidates (\(x\) and \(y\))
 \item assumption for simplicity: everyone has a strict preference over alternatives
@@ -78,9 +78,9 @@
 \item what normative premises underlie this \emph{social welfare function}?
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org8d863ab}]{Some criteria (for 2 alternatives)}
+\begin{frame}[label={sec:org1f3ece0}]{Some criteria (for 2 alternatives)}
 \begin{block}{Anonymity}
-A social choice function is \emph{anonymous} if the names of the agents do not matter, i.e. if a permutation of preferences across agents does not change the social preference.
+A social welfare function is \emph{anonymous} if the names of the agents do not matter, i.e. if a permutation of preferences across agents does not change the social preference.
 \end{block}
 
 \begin{block}{Neutrality}
@@ -88,11 +88,11 @@ A social welfare function is \emph{neutral} if the names of the alternatives do 
 \end{block}
 
 \begin{block}{Positive responsiveness}
-A social welfare function is \emph{positively responsive} if the following holds: if one alternative, say \(x\), is weakly socially preferred although \(y\succ_i x\) for some \(i\in\{1,\dots,N\}\), then \(x\) is strictly socially preferred if we change \(i\)'s preferences (without changing anyone else's preferences).
+A social welfare function is \emph{positively responsive} if the following holds: if one alternative \(x\) is weakly socially preferred to \(y\) although \(y\succ_i x\) for some \(i\in\{1,\dots,N\}\), then \(x\) is strictly socially preferred if we change \(i\)'s preferences (without changing anyone else's preferences).
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org58e187d}]{A first theorem}
+\begin{frame}[label={sec:orgdced17f}]{A first theorem}
 \begin{itemize}
 \item didn't I claim that social choice starts with premises and then derives solutions?
 \end{itemize}
@@ -103,12 +103,12 @@ If there are two alternatives, a social welfare function satisfies anonymity, ne
 \begin{block}{Proof sketch ("only if" for even \(N\))}
 \begin{itemize}
 \item Anonymity: only number of people preferring alternative \(x\) over \(y\) matters for \(\succeq_S\).
-\item Neutrality: if \(N/2\) people prefer \(x\) over \(y\), then \(x\approx_S y\).
+\item Neutrality: if \(N/2\) people prefer \(x\) over \(y\) and \(N/2\) prefer \(y\) over \(x\), then \(x\approx_S y\).
 \item Positive responsiveness: if more than \(N/2\) people prefer \(x\) over \(y\), \(x\succ_S y\) and vice versa.
 \end{itemize}
 \end{block}
 \end{frame}
-\begin{frame}[label={sec:orgda31ac1}]{Majority voting with more than 2 alternatives}
+\begin{frame}[label={sec:org695ec98}]{Majority voting with more than 2 alternatives}
 \begin{itemize}
 \item How to generalize majority voting with more than 2 alternatives?
 \end{itemize}
@@ -132,9 +132,9 @@ Which alternative is Condorcet winner?
 
 
 \section{Formal model and criteria}
-\label{sec:orgbef9198}
+\label{sec:org9f17f2d}
 
-\begin{frame}[label={sec:orgba292e2}]{Model}
+\begin{frame}[label={sec:org12b0677}]{Model}
 \begin{itemize}
 \item finite set \(X=\{x_1,x_2,\dots,x_K\}\) of alternatives
 \item \(N\geq 2\) agents, each has a complete and transitive preference relation over \(X\)
@@ -147,7 +147,7 @@ A social welfare function assigns to each profile of preferences \((\succeq_1,\s
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org854372b}]{Examples: social welfare function}
+\begin{frame}[label={sec:org65547e7}]{Examples: social welfare function}
 Are the following social welfare functions desirable?
 \begin{itemize}
 \item The preferences of agent 1 are the social preferences: \(\succeq_S (\succeq_1,\succeq_2,\dots,\succeq_N)=\succeq_1\)
@@ -156,11 +156,11 @@ Are the following social welfare functions desirable?
 \begin{itemize}
 \item turn every agent's preference order into points: the \(k\) most preferred alternative receives \(k\) points
 \item for every alternative, sum the points it gets from all agents
-\item order alternatives according to points
+\item order alternatives according to points (less points are better)
 \end{itemize}
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:orga41fd6a}]{Borda and Olympic Ice Skating  competition I}
+\begin{frame}[label={sec:orgaa13bde}]{Borda and Olympic Ice Skating  competition I}
 \begin{itemize}
 \item judging in sports is similar to our problem
 \begin{itemize}
@@ -176,9 +176,9 @@ Are the following social welfare functions desirable?
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org1f7819e}]{Borda and Olympic Ice Skating  competition II}
+\begin{frame}[label={sec:org1fa179e}]{Borda and Olympic Ice Skating  competition II}
 \begin{itemize}
-\item say, first rank gives 3 points, second 2 and third 1
+\item table contains the ranks that the 7 judges assign to the three skaters
 \end{itemize}
 \begin{center}
 \begin{tabular}{l|rrr}
@@ -197,12 +197,12 @@ Points &  &  & \\
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org35f6974}]{Minimal (?) normative criteria}
+\begin{frame}[label={sec:org4907224}]{Minimal (?) normative criteria}
 \begin{block}{Weak Pareto principle (unanimity)}
 If \(x\succ_i y\) for all \(i=1,2,\dots,N\), then \(x\succ_S y\).
 \end{block}
 \begin{block}{Non-dictatorship}
-There is no individual \(i\) such that \(x\succeq_S y\) if and only if \(x\succeq_i y\). (no matter what other agents preferences are)
+There is no individual \(i\) such that \(x\succeq_S y\) if and only if \(x\succeq_i y\). (no matter what other agents' preferences are)
 \end{block}
 \begin{block}{Independence of irrelevant alternatives}
 Take two profiles of preferences \((\succeq_1,\succeq_2,\dots,\succeq_N)\) and \((\succeq_1',\succeq_2',\dots,\succeq_N')\). If for every agent \(i\) the ranking of \(x\) and \(y\) is the same under \(\succeq_i\) and \(\succeq_i'\), then the social ranking of \(x\) and \(y\) must be the same under these two preference profiles.\footnote{More formally, let the two preference profiles be such that for all agents $i$ $x\succeq_i y$ if and only if $x\succeq_i' y$. Then $x\succeq_S y$ if and only if $x \succeq_S' y$.}
@@ -210,15 +210,15 @@ Take two profiles of preferences \((\succeq_1,\succeq_2,\dots,\succeq_N)\) and \
 \end{frame}
 
 \section{Arrow's  impossibility theorem}
-\label{sec:org95f26a1}
-\begin{frame}[label={sec:orgdc770d1}]{Arrow's impossibility theorem}
+\label{sec:org8ee989e}
+\begin{frame}[label={sec:orgf9bd553}]{Arrow's impossibility theorem}
 \begin{block}{Theorem}
-Let there be at least be 3 alternatives in \(X\). There exists no social welfare function that satisfies all 3 criteria (weak Pareto principle, non-dictatorship and independence of irrelevant alternatives). 
+Let there be at least 3 alternatives in \(X\). There exists no social welfare function that satisfies all 3 criteria (weak Pareto principle, non-dictatorship and independence of irrelevant alternatives). 
 \end{block}
 
 Proof is somewhat lengthy (see textbook)
 \end{frame}
-\begin{frame}[label={sec:org2dc464f}]{Consequences  of Arrow's theorem}
+\begin{frame}[label={sec:orgf3e6af3}]{Consequences  of Arrow's theorem}
 \begin{itemize}
 \item no social welfare function satisfies even minimal criteria
 \item we have to give up even some of these minimal criteria if we want to proceed!
@@ -242,10 +242,10 @@ Proof is somewhat lengthy (see textbook)
 \end{itemize}
 \end{frame}
 \section{Domain restrictions}
-\label{sec:orged7b172}
-\begin{frame}[label={sec:orgff35be5}]{Domain restriction: Single peaked preferences I}
+\label{sec:org2cf6683}
+\begin{frame}[label={sec:org10db029}]{Domain restriction: Single peaked preferences I}
 \begin{itemize}
-\item imagine alternatives are ordered on a real line \(x_1<x_2<\dots <x_K\)
+\item imagine alternatives are ordered on the real line: \(x_1<x_2<\dots <x_K\)
 \item assumptions:
 \begin{itemize}
 \item common ordering of alternatives
@@ -263,13 +263,13 @@ Proof is somewhat lengthy (see textbook)
 \item if we represent preferences by utility function, this function is "single peaked"
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org29e2b87}]{Domain restriction: Single peaked preferences II}
+\begin{frame}[label={sec:org9a0fe86}]{Domain restriction: Single peaked preferences II}
 \begin{block}{Median agent for single peaked preferences}
 An agent \(i\) is a \emph{median agent} if\linebreak (i) there are at least \(N/2\) agents with most preferred alternatives weakly above \(x^*(i)\) and\linebreak (ii) there are at least \(N/2\) agents with most preferred alternatives weakly below \(x^*(i)\).
 \end{block}
 Note: a median agent always exists.
 \end{frame}
-\begin{frame}[label={sec:org8fb7ead}]{Domain restriction: Single peaked preferences II}
+\begin{frame}[label={sec:orgc2814c4}]{Domain restriction: Single peaked preferences II}
 \begin{block}{Proposition}
 Let preferences be single peaked and \(i\) be a median agent, then \(x^*(i)\) is a Condorcet winner.
 \end{block}
@@ -284,7 +284,7 @@ Let preferences be single peaked and \(i\) be a median agent, then \(x^*(i)\) is
 \end{itemize}
 \end{block}
 \end{frame}
-\begin{frame}[label={sec:org9930e0f}]{Domain restriction: Single peaked preferences III}
+\begin{frame}[label={sec:org2ab3d0e}]{Domain restriction: Single peaked preferences III}
 \begin{itemize}
 \item consider pairwise majority voting between arbitrary alternatives, i.e. say \(x_k\) is socially preferred to \(x_m\) if \(x_k\) wins in a majority vote over \(x_k\) and \(x_m\)
 \end{itemize}
@@ -293,14 +293,19 @@ If preferences are single peaked, pairwise majority voting induces a social welf
 \end{block}
 \begin{block}{Proof}
 to show: resulting preferences are complete and transitive
+\begin{itemize}
+\item As \(N\) is odd and preferences are strict, pairwise majority voting yields a strict winner between any two alternatives.\linebreak
+\(\Rightarrow\) social preference ordering resulting from pairwise majority voting is complete and strict.
+\item Transitivity: let \(x_m\succ_S x_k\) and \(x_k\succ_S x_l\) \dots{}
+\end{itemize}
 
 \vspace*{2cm}
 \end{block}
 \end{frame}
 
 \section{Cardinal utility}
-\label{sec:orgb937a82}
-\begin{frame}[label={sec:org1bdfdb0}]{Cardinal utility I}
+\label{sec:orgcc9060c}
+\begin{frame}[label={sec:org8227f98}]{Cardinal utility I}
 Reminder:
 \begin{block}{Representation by a utility function}
 A complete preference relation \(\succeq\) over a set \(X\) is represented by the utility function \(u:X\rightarrow\Re\) if and only if
@@ -310,7 +315,7 @@ If \(u\) represents \(\succeq\), then \(\psi(u)\) also represents \(\succeq\) wh
 \end{frame}
 
 
-\begin{frame}[label={sec:orgabae04e}]{Cardinal utility II}
+\begin{frame}[label={sec:org4cc0d3b}]{Cardinal utility II}
 \begin{itemize}
 \item suppose we have 2 agents and \(x\succ_1 y\) while \(y\succ_2 x\)
 \item we choose utility functions for the two agents
@@ -321,7 +326,7 @@ If \(u\) represents \(\succeq\), then \(\psi(u)\) also represents \(\succeq\) wh
 \item which alternative should society prefer?
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org5457fb7}]{Cardinal utility II}
+\begin{frame}[label={sec:org36ed370}]{Cardinal utility II}
 \begin{itemize}
 \item if we assign meaning to utility, social welfare function is not invariant to strictly monotone transformations
 \item allows to get around Arrow's impossibility theorem
@@ -337,7 +342,7 @@ If \(u\) represents \(\succeq\), then \(\psi(u)\) also represents \(\succeq\) wh
 \end{itemize}
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org4673e0b}]{Cardinal utility III}
+\begin{frame}[label={sec:org2a39269}]{Cardinal utility III}
 \begin{block}{Pareto dominance}
 Alternative \(x\) is \emph{Pareto dominated} by alternative \(y\) if and only if \(y\succeq_i x\) for all agents \(i=1,..,N\) and \(y\succ_i x\) for at least one agent.
 \end{block}
@@ -345,24 +350,28 @@ Alternative \(x\) is \emph{Pareto dominated} by alternative \(y\) if and only if
 An alternative \(x\) is \emph{Pareto efficient} if there is no alternative \(y\) that Pareto dominates \(x\). 
 \end{block}
 \end{frame}
-\begin{frame}[label={sec:org9f2a716}]{Cardinal utility IV}
+\begin{frame}[label={sec:orgeac1a18}]{Cardinal utility IV}
 \begin{block}{Proposition}
 If social welfare function \(W\) is strictly increasing, then Pareto dominating alternatives are socially preferred to the alternatives they dominate.
 \end{block}
 \begin{block}{Proof}
 \begin{itemize}
 \item let \(W\) be strictly increasing and \(x\) Pareto dominate \(y\)
+\begin{itemize}
+\item then \(u_i(x)\geq u_i(y)\) for all \(i\) and strictly so for at least one agent
+\item hence the utility vector u(x)>u(y)
+\item hence \(W(u(x))> W(u(y))\) as \(W\) is strictly increasing \qed
 \end{itemize}
-
-\vspace*{2cm}
+\end{itemize}
 \end{block}
+note: \alert{weak} Pareto criterion is satisfied if \(W\) is such that for any two vectors \(u=(u_1, u_2,\dots,u_N)\) and \(u'=(u_1',\dots,u_N')\) such that \(u_i>u_i'\) for all \(i=1,\dots N\), we have \(W(u)>W(u')\).
 \end{frame}
 
-\begin{frame}[label={sec:org073a6de}]{Cardinal utility V: Rawlsian welfare}
+\begin{frame}[label={sec:orgfd8b3a7}]{Cardinal utility V: Rawlsian welfare}
 $$W_{Rawls}(u_1,\dots,u_N)=\min[u_1,\dots,u_N]$$
 
 \begin{itemize}
-\item \(W_{Rawls}\) is strictly increasing \(\Rightarrow\) satisfies Pareto criterion
+\item \(W_{Rawls}\) satisfies weak Pareto criterion
 \item \(W_{Rawls}\) is anonymous
 \item \(W_{Rawls}\) is "utility level invariant":
 \begin{itemize}
@@ -376,19 +385,19 @@ $$W_{Rawls}(u_1,\dots,u_N)=\min[u_1,\dots,u_N]$$
 \end{itemize}
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org99671b7}]{Cardinal utility VI: Rawlsian welfare}
+\begin{frame}[label={sec:org1191a91}]{Cardinal utility VI: Rawlsian welfare}
 \begin{block}{Proposition}
-A strictly increasing and continuous social welfare function \(W\) satisfies Hammond equality if and only if it can take the Rawlsian form \(W_{Rawls}(u_1,\dots,u_N)=\min[u_1,\dots,u_N]\).
+An increasing and continuous social welfare function \(W\) satisfies Hammond equality and the weak Pareto principle if and only if it can take the Rawlsian form \(W_{Rawls}(u_1,\dots,u_N)=\min[u_1,\dots,u_N]\).
 \end{block}
 \begin{itemize}
-\item \(\approx\) Rawlsian welfare is equivalent to Pareto criterion  + Hammond equity
+\item \(\approx\) Rawlsian welfare is equivalent to weak Pareto criterion  + Hammond equity
 \end{itemize}
 \begin{block}{Proof}
 see Jehle and Reny (2011), section 6.3.1
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org2af9bd8}]{Cardinal utility VII: Utilitarian welfare}
+\begin{frame}[label={sec:org625649e}]{Cardinal utility VII: Utilitarian welfare}
 $$W_{ut}(u_1,\dots,u_N)=\sum_{i=1}^N u_i$$
 \begin{itemize}
 \item most common form of welfare function (sometimes with individual weights)
@@ -401,7 +410,7 @@ $$W_{ut}(u_1,\dots,u_N)=\sum_{i=1}^N u_i$$
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org656e88b}]{Cardinal utility VIII: Utilitarian welfare}
+\begin{frame}[label={sec:orga279d63}]{Cardinal utility VIII: Utilitarian welfare}
 \begin{block}{Proposition}
 A strictly increasing and continuous social welfare function \(W\) satisfies anonymity and utility-difference invariance if and only if it can take the utilitarian form \(W_{ut}=\sum_{i=1}^N u_i\).
 \end{block}
@@ -409,7 +418,7 @@ A strictly increasing and continuous social welfare function \(W\) satisfies ano
 see Jehle and Reny (2011), section 6.3.2
 \end{block}
 \end{frame}
-\begin{frame}[label={sec:org166b085}]{Cardinal utility IX: the veil of ignorance I}
+\begin{frame}[label={sec:org3445147}]{Cardinal utility IX: the veil of ignorance I}
 \begin{itemize}
 \item thought experiment  
 \begin{itemize}
@@ -420,7 +429,7 @@ see Jehle and Reny (2011), section 6.3.2
 \end{itemize}
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org4b6c191}]{Cardinal utility X: the veil of ignorance II}
+\begin{frame}[label={sec:orgb6e5c12}]{Cardinal utility X: the veil of ignorance II}
 \begin{itemize}
 \item Harsanyi:
 \begin{itemize}
@@ -443,8 +452,8 @@ see Jehle and Reny (2011), section 6.3.2
 \end{frame}
 
 \section{Manipulability}
-\label{sec:orgbfd1aab}
-\begin{frame}[label={sec:orgae54ad7}]{Manipulability I}
+\label{sec:orgbaff1de}
+\begin{frame}[label={sec:org500d1a4}]{Manipulability I}
 \begin{itemize}
 \item so far: preferences of all players are known
 \item problem: aggregation
@@ -459,7 +468,7 @@ see Jehle and Reny (2011), section 6.3.2
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org153572e}]{Manipulability II}
+\begin{frame}[label={sec:org9f36cbb}]{Manipulability II}
 \begin{itemize}
 \item one example for manipulability
 \end{itemize}
@@ -489,7 +498,7 @@ extend decision and game theory to incomplete information
 
 
 \section{Bibliography}
-\label{sec:org5644c75}
+\label{sec:org6662438}
 \bibliographystyle{chicago}
 \bibliography{../../stuff/bibliography/references}
 \end{document}

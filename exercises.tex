@@ -1,6 +1,6 @@
 \documentclass[a4paper,12pt]{article}
 
-\usepackage{amsmath,amsthm,amssymb,ae,aecompl,sgame,natbib,sgamevar}
+\usepackage{amsmath,amsthm,amssymb,ae,aecompl,sgame,natbib,sgamevar,enumitem}
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{tikz}
 \usetikzlibrary{trees}
@@ -15,16 +15,18 @@
 \label{sec:social-choice}
 
 \begin{enumerate}
-\item Assume that there are at least 3 alternatives. Consider the following social welfare function: Alternatives are ranked according to points. The number of points of an alternative equals the number of agents that have this alternative as their top choice. Does this social welfare function satisfy (i) the weak Pareto principle, (ii) non-dictatorship, (iii) independence of irrelevant alternatives? Is it positive responsive?\footnote{For more than 2 alternatives, the definition of positive responsiveness has to be adapted: Say $x$ is weakly socially preferred, then $x$ should be strictly preferred if we improve $x$ in some agents preference order without changing the other agents preference order.}
+\item Assume that there are at least 3 alternatives. Consider the following social welfare function: Alternatives are ranked according to points. The number of points of an alternative equals the number of agents that have this alternative as their top choice. Does this social welfare function satisfy (i) the weak Pareto principle, (ii) non-dictatorship, (iii) independence of irrelevant alternatives? Is it positive responsive?\footnote{For more than 2 alternatives, the definition of positive responsiveness has to be adapted: Say $x$ is weakly socially preferred, then $x$ should be strictly preferred if we improve $x$ in some agents preference order without changing the other agents' preference orders.}
+  % violation of weak Pareto principle: let everyone have x>y>z, then y~z socially
   % violation of IIA: 2 people, 3 alternatives; preferences: x>y>z for both agents; compare to preferences z>x>y for both agents; individual ranking of x and y is same but socially we have x>y in first case and x~y in second;
   % violation positive responsiveness: agents 1: x>y>z; agent 2:y>z>x gives x~y>z socially; now change agent 2 to y>x>z then x is more preferred by him but social preference does not change
-\item Assume that there are three alternatives $X=\{x,y,z\}$ and an odd number of agents with strict preferences. Consider the following procedure: First, a challenger is determined in a majority vote between $x$ and $y$. The loser of this vote is the least preferred alternative. The winner (i.e. the challenger) is put to a majority vote with the incumbent $z$. The winner of this second vote is the socially most preferred alternative. Does this social welfare function satisfy (i) the weak Pareto principle, (ii) non-dictatorship, (iii) independence of irrelevant alternatives?
+\item Assume that there are three alternatives $X=\{x,y,z\}$ and an odd number of agents with strict preferences. Consider the following procedure: First, a challenger is determined in a majority vote between $x$ and $y$. The loser of this vote is the least preferred alternative. The winner (i.e. the challenger) is put to a majority vote with the incumbent $z$. The winner of this second vote is the socially most preferred alternative and the loser the second most preferred. Does this social welfare function satisfy (i) the weak Pareto principle, (ii) non-dictatorship, (iii) independence of irrelevant alternatives?
   % violation of weak Pareto criterion: say all agents have preference x>y>z, then socially still z>y
   % violation of IIA: Condorcet example: P1 x>y>z, P2 y>z>x, P3 z>x>y; then socially z>x>y; now move x to the bottom of all people's preferences, i.e. P1 y>z>x, P2 y>z>x, P3 z>y>x and note that this leads to y>z socially though the ranking of z and y did not change individually
 \item Let $X=\{x,y,z\}$ and $N=2$. Suppose whether $x$ or $y$ is better matters a lot for agent 1 and whether $y$ or $z$ is better matters a lot for agent 2. Therefore, the two agents have decided that the social ordering of alternatives between $x$ and $y$ should always be the ordering of agent 1 (i.e. $x\succeq_S y$ if and only if $x\succeq_1 y$) and similarly agent 2's ordering between $y$ and $z$ determines society's ordering of these two alternatives (i.e. $z\succeq_S y$ if and only if $z\succeq_2 y$). Show that given these two restrictions there is no social welfare function that satisfies the weak Pareto principle.\\(\emph{Hint: }Consider the rankings $x\succ_1 y$ and $y\succ_2 z$, determine the social preference relation and check whether there are complete preferences for the two agents such that this social welfare relation violates the weak Pareto criterion.)\footnote{This is a simplified version of exercise 6.13 in \cite{jehle2001advanced} in which you are asked to show a more general result. Armed with the solution of our exercise, you should be able to solve the more general problem if you put in a bit more work.}
   % take P1:z> x> y and P2: y>z>x; then the restrictions of the exercise imply the social preference x>y>z but x>z violates the Pareto criterion
   % for 6.13 in Jehle/Reny: let P1: z>x>y>w and P2: y>w>z>x. The Pareto criterion requires that socially z>x and y>w. As P1 is decisive for (x,y), we have socially  x>y and as P2 is decisive for (z,w)  we have w>z.But the first three relations imply by transitivity z>w. Contradiction! (Clearly, one can dd an arbitrary number of further alternatives and non-decisive agents. The latter are assigned the same preferences as either P1 or P2 in order not to interfere with the Pareto criterion. All other alternatives could, for example, be ranked below x,y,z,w by all agents.
-  \item Let $X=\{(0,0),(1,0),(0,1),(1,1)\}$, i.e. there are two related policy decisions which can be taken or not. Assume $N$ is odd. Each individual finds the first decision more important; that is, if $(x,y)\succ_i (w,z)$ and $x\neq w$, then $(x,s)\succ_i (w,t)$ for any $s\in\{0,1\}$ and $t\in\{0,1\}$. Furthermore, each individual is consistent in the following sense:  $(0,y)\succ_i (0,z)$ if and only if $(1,y)\succ_i (1,z)$. Can you find a social welfare function that is non-dictatorial, satisfies IIA and the weak Pareto criterion? If yes, why does this not contradict Arrow's theorem? 
+\item Let $X=\{(0,0),(1,0),(0,1),(1,1)\}$, i.e. there are two related policy decisions which can be taken or not. Assume $N$ is odd and preferences are strict. Each individual finds the first decision more important; that is, if $(x,y)\succ_i (w,z)$ and $x\neq w$, then $(x,s)\succ_i (w,t)$ for any $s\in\{0,1\}$ and $t\in\{0,1\}$. Furthermore, each individual is consistent in the following sense:  $(0,y)\succ_i (0,z)$ if and only if $(1,y)\succ_i (1,z)$. Can you find a social welfare function that is non-dictatorial, satisfies IIA and the weak Pareto criterion? If yes, why does this not contradict Arrow's theorem?
+  % the assumptions ensure that the outcome of pairwise majority voting are transitive, i.e. we do not run into the Condorcet problem. Say (a,b) beats (c,d) and (c,d) beats (e,f) in pairwise majority voting. We need to show that (a,b) beats (e,f). First, note that a\neq e: We cannot have a=c=e as then two of the alternatives would have to be the same. We also cannot have a=e\neq c because of the assumption that the first component is more important, i.e. if (a,b) beats (c,d) and a\neq c, then (a,f)=(e,f) beats (c,d). Second, we distinguish two cases: (i) a=c: then c\neq e and the assumption that the first dimension is more important together with the assumption that (c,d) beats (e,f) implies that (a,b)=(c,b) beats (e,f) in pairwise majority voting. (ii) a\neq c: then c=e but then the fact that (a,b) beats (c,d) and that the first dimension is more important implies that (a,b) beats (c,f)=(e,f).
 \item Are the preferences in table \ref{tab:singlePeaked} single peaked?\\ If yes, add a fifth agent such that they no longer are single peaked. If no, find a three agent subgroup such that their preferences are single peaked. 
   \begin{table}[h]
     \centering
@@ -55,7 +57,7 @@
 \section{Markets and the first fundamental theorem of welfare economics}
 \label{sec:mark-first-fund}
 
-\begin{enumerate}
+\begin{enumerate}[resume]
 \item Consider a consumer and some given price vector $p$. The consumer demands more of good 1 than he initially has at this price vector, i.e. $x^i_1(p,m^i(p))>e^i_1$. Show that this consumer is worse off if the price of good 1 increases slightly (while all other prices remain the same). Would this still be the case if the price of good 1 increases a lot?
   % as $x_1$ is continuous, also after a small price increase the consumer has positive net demand. Let y be the optimal  consumption bundle at the new price vector. Then (p_1+epsilon)*(y_1-e^i_1)+ \sum_{j=2}^n p_j (y_j-e^i_j)=0 but this and y_1\geq e^i_1 implies that y was also feasible at price vector p. As $y$ was not chosen at p and the consumer maximization problem has a unique maximum, y is worse than whatever was chosen there -> consumer worse off.
   % for large price increases the consumer can become a net supplier of the good and be better off
@@ -74,7 +76,7 @@
 \section{Decision making under uncertainty}
 \label{sec:decis-making-under}
 
-\begin{enumerate}
+\begin{enumerate}[resume]
   \item $L_1$ be throwing a fair dice: $C=\{1,2,3,4,5,6\}$, $p_i=1/6$ for $i=1,\dots,6$\\
 $L_2$ be throwing an ``unfair dice'': $p_1=p_2=1/4$ and $p_3=p_4=p_5=p_6=1/8$\\
 What is the probability that the outcome ``1'' occurs in the compound lottery $(L_1,L_2;1/2,1/2)$? Derive the reduced lottery of the compound lottery $(L_1,L_2;1/2,1/2)$.
@@ -108,7 +110,7 @@ $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
 \section{Bayesian Nash equilibrium}
 \label{sec:bayes-nash-equil}
 
-\begin{enumerate}
+\begin{enumerate}[resume]
 \item In a game show there are three closed doors. Behind one door there is a prize while there is no prize behind the other two doors. The participant will pick one door, say door 1. Then the host of the show will open another door behind which there is no prize, say door 2. The contestant can then decide whether he wants to stick to the door he initially chose (door 1) or switch to the other unopened door (door 3). He will then get what is behind the door he finally picked.
   \begin{enumerate}
   \item Assume that the prize is initially behind each door with probability 1/3. After the host opened the door, what are the probabilities that the prize is behind door 1 and door 3 respectively? Should the participant switch?
@@ -125,7 +127,7 @@ $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
 \section{Auctions}
 \label{sec:auctions}
 
-\begin{enumerate}
+\begin{enumerate}[resume]
 \item\label{ex:stratEq} Show that the following three situations are strategically equivalent, i.e. they lead to the same Bayesian game:
   \begin{enumerate}
   \item ``contest'': Each contestant $i$ (out of totally $I$ contestants) chooses how much effort $e_i$ to spend in the contest (e.g. how much time to spend on the task or how much money to spend in lobbying etc.). The contestant that spend the most effort will win the contest and receive a prize of value $v$. Effort is costly and costs contestant $i$ $\theta _ie_i$ where $\theta _i$ is private information of $i$ and drawn -- independently from other contestant's $\theta _j$ -- from a distribution $G$ with support on $[a,b]$ with $0<a<b$. The payoff of the winner is therefore $v-\theta _ie_i$ while the losers' payoff is $-\theta _ie_i$.
@@ -215,7 +217,7 @@ $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
 \section{Adverse selection}
 \label{sec:adverse-selection}
 
-\begin{enumerate}
+\begin{enumerate}[resume]
 \item In the model of insurance demand assume that $i$ is uniformly distributed on $[1/4,3/4]$ and $\alpha=3/2$.
   \begin{enumerate}
   \item Determine $\mathbb{E}[i|i\geq\alpha p]$.
@@ -236,7 +238,7 @@ $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
 \section{Weak perfect Bayesian equilibrium}
 \label{sec:weak-perf-bayes}
 
-\begin{enumerate}
+\begin{enumerate}[resume]
 \item Determine two pure strategy wPBE in the game depicted in figure \ref{fig:ex1}. Which of the two is a PBE?
   % Strategies: (L,A,l) belief: (1,0)
   % other  wPBE: (R,A,r) and belief (0,1)is  not a PBE as it does not induce a wPBE in the subgame starting at P2 (P3's belief has to be 1,0 there as only A is sequentially rational for P2)
@@ -386,7 +388,7 @@ $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
 \section{Signaling}
 \label{sec:signaling}
 
-\begin{enumerate}
+\begin{enumerate}[resume]
 \item In the job market signaling model assume $c(e,\theta )=(1-\theta) e^2/6$ together with $\lambda=1/2$, $\theta _h=3/4$ and $\theta _l=1/4$.
   \begin{enumerate}
   \item Determine the least cost separating equilibrium.

@@ -24,7 +24,7 @@
    - people have different preferences 
    - how should societal decisions be taken?
      - navigate conflicts of preferences
-     - respecting preferences
+     - respecting individual preferences
    - Examples:
      - political decisions and elections
      - a group of friends wants to go for drinks: how to aggregate the differing preferences over bars
@@ -47,13 +47,13 @@
 ** Some criteria (for 2 alternatives)
 
 *** Anonymity
-    A social choice function is /anonymous/ if the names of the agents do not matter, i.e. if a permutation of preferences across agents does not change the social preference.
+    A social welfare function is /anonymous/ if the names of the agents do not matter, i.e. if a permutation of preferences across agents does not change the social preference.
     
 *** Neutrality
     A social welfare function is /neutral/ if the names of the alternatives do not matter, i.e. the social preferences are reversed if we reverse the preferences of all agents.
 
 *** Positive responsiveness
-    A social welfare function is /positively responsive/ if the following holds: if one alternative, say $x$, is weakly socially preferred although $y\succ_i x$ for some $i\in\{1,\dots,N\}$, then $x$ is strictly socially preferred if we change $i$'s preferences (without changing anyone else's preferences).
+    A social welfare function is /positively responsive/ if the following holds: if one alternative $x$ is weakly socially preferred to $y$ although $y\succ_i x$ for some $i\in\{1,\dots,N\}$, then $x$ is strictly socially preferred if we change $i$'s preferences (without changing anyone else's preferences).
    
 ** A first theorem
 - didn't I claim that social choice starts with premises and then derives solutions?
@@ -62,7 +62,7 @@
     If there are two alternatives, a social welfare function satisfies anonymity, neutrality and positive responsiveness if and only if it is majority voting. 
 *** Proof sketch ("only if" for even $N$)
     - Anonymity: only number of people preferring alternative $x$ over $y$ matters for $\succeq_S$.
-    - Neutrality: if $N/2$ people prefer $x$ over $y$, then $x\approx_S y$.
+    - Neutrality: if $N/2$ people prefer $x$ over $y$ and $N/2$ prefer $y$ over $x$, then $x\approx_S y$.
     - Positive responsiveness: if more than $N/2$ people prefer $x$ over $y$, $x\succ_S y$ and vice versa.
 ** Majority voting with more than 2 alternatives
    - How to generalize majority voting with more than 2 alternatives?
@@ -108,7 +108,7 @@ Which alternative is Condorcet winner?
    - Borda Count:
      - turn every agent's preference order into points: the $k$ most preferred alternative receives $k$ points
      - for every alternative, sum the points it gets from all agents
-     - order alternatives according to points
+     - order alternatives according to points (less points are better)
 **  Borda and Olympic Ice Skating  competition I
    - judging in sports is similar to our problem
      - aggregation of several judges' rankings
@@ -119,7 +119,7 @@ Which alternative is Condorcet winner?
      - who came first? who came third?
 
 **  Borda and Olympic Ice Skating  competition II
-   - say, first rank gives 3 points, second 2 and third 1
+   - table contains the ranks that the 7 judges assign to the three skaters 
    |         | Kwan | Hughes | Slutskaya |
    | /       |    < |        |           |
    |---------+------+--------+-----------|
@@ -137,14 +137,14 @@ Which alternative is Condorcet winner?
 *** Weak Pareto principle (unanimity) 
     If $x\succ_i y$ for all $i=1,2,\dots,N$, then $x\succ_S y$.
 *** Non-dictatorship
-    There is no individual $i$ such that $x\succeq_S y$ if and only if $x\succeq_i y$. (no matter what other agents preferences are)
+    There is no individual $i$ such that $x\succeq_S y$ if and only if $x\succeq_i y$. (no matter what other agents' preferences are)
 *** Independence of irrelevant alternatives
     Take two profiles of preferences $(\succeq_1,\succeq_2,\dots,\succeq_N)$ and $(\succeq_1',\succeq_2',\dots,\succeq_N')$. If for every agent $i$ the ranking of $x$ and $y$ is the same under $\succeq_i$ and $\succeq_i'$, then the social ranking of $x$ and $y$ must be the same under these two preference profiles.\footnote{More formally, let the two preference profiles be such that for all agents $i$ $x\succeq_i y$ if and only if $x\succeq_i' y$. Then $x\succeq_S y$ if and only if $x \succeq_S' y$.}
    
 * Arrow's  impossibility theorem
 ** Arrow's impossibility theorem
 *** Theorem
-Let there be at least be 3 alternatives in $X$. There exists no social welfare function that satisfies all 3 criteria (weak Pareto principle, non-dictatorship and independence of irrelevant alternatives). 
+Let there be at least 3 alternatives in $X$. There exists no social welfare function that satisfies all 3 criteria (weak Pareto principle, non-dictatorship and independence of irrelevant alternatives). 
 
 *** :B_ignoreheading:BMCOL:
     :PROPERTIES:
@@ -166,7 +166,7 @@ Proof is somewhat lengthy (see textbook)
        - assuming that there is something like intensity of preferences /and this intensity is comparable across agents/ helps to aggregate preferences but is a questionable assumption
 * Domain restrictions
 ** Domain restriction: Single peaked preferences I
-- imagine alternatives are ordered on a real line $x_1<x_2<\dots <x_K$   
+- imagine alternatives are ordered on the real line: $x_1<x_2<\dots <x_K$   
 - assumptions:
   - common ordering of alternatives
   - everyone has a most preferred alternative 
@@ -213,9 +213,9 @@ Let preferences be single peaked and $i$ be a median agent, then $x^*(i)$ is a C
     :END:
 *** Proof
     to show: resulting preferences are complete and transitive
-    # - As $N$ is odd and preferences are strict, pairwise majority voting yields a strict winner between any two alternatives.
-    #  - Hence, the social preference ordering resulting from pairwise majority voting is complete and strict.
-    # - Say $x_m\succ_S x_k$ and $x_k\succ_S x_l$
+     - As $N$ is odd and preferences are strict, pairwise majority voting yields a strict winner between any two alternatives.\linebreak
+      $\Rightarrow$ social preference ordering resulting from pairwise majority voting is complete and strict. 
+     - Transitivity: let $x_m\succ_S x_k$ and $x_k\succ_S x_l$ \dots
     #   - Preferences over $X'=\{x_m,x_k,x_l\}$ only are still single peaked and therefore a Condorcet winner over the elements of $X'$ exists in $X'$.
     #   - as $x_k$ and $x_l$ cannot be Condorcet winners by $x_m\succ_S x_k$ and $x_k\succ_S x_l$, $x_m$ is the Condorcet winner
     #   - hence, $x_m\succ_S x_l$, i.e. transitivity holds
@@ -263,16 +263,21 @@ Let preferences be single peaked and $i$ be a median agent, then $x^*(i)$ is a C
     If social welfare function $W$ is strictly increasing, then Pareto dominating alternatives are socially preferred to the alternatives they dominate.
 *** Proof
     - let $W$ be strictly increasing and $x$ Pareto dominate $y$
-    #  - then $u_i(x)\geq u_i(y)$ for all $i$ and strictly so for at least one agent
-    #  - hence the utility vector u(x)>u(y)
-    #  - hence $W(u_1(x),u_2(x),\dots,u_N(x))> W(u_1(y),u_2(y),\dots,u_N(y))$ as $W$ is strictly increasing
-    #  - hence $x$ is socially preferred to $y$
- \vspace*{2cm}
+      - then $u_i(x)\geq u_i(y)$ for all $i$ and strictly so for at least one agent
+      - hence the utility vector u(x)>u(y)
+      - hence $W(u(x))> W(u(y))$ as $W$ is strictly increasing \qed
+*** :B_ignoreheading:BMCOL:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :BEAMER_col: 0.4
+    :END:
 
+note: *weak* Pareto criterion is satisfied if $W$ is such that for any two vectors $u=(u_1, u_2,\dots,u_N)$ and $u'=(u_1',\dots,u_N')$ such that $u_i>u_i'$ for all $i=1,\dots N$, we have $W(u)>W(u')$.
+    
 ** Cardinal utility V: Rawlsian welfare
    $$W_{Rawls}(u_1,\dots,u_N)=\min[u_1,\dots,u_N]$$
 
-  - $W_{Rawls}$ is strictly increasing $\Rightarrow$ satisfies Pareto criterion
+  - $W_{Rawls}$ satisfies weak Pareto criterion
   - $W_{Rawls}$ is anonymous
   - $W_{Rawls}$ is "utility level invariant":
     - social preferences remain the same if we transform all agent's utility using /the same/ strictly increasing transformation
@@ -282,13 +287,13 @@ Let preferences be single peaked and $i$ be a median agent, then $x^*(i)$ is a C
     - Hammond equity states that then $W(\hat u)> W(\bar u)$
 ** Cardinal utility VI: Rawlsian welfare
 *** Proposition
-    A strictly increasing and continuous social welfare function $W$ satisfies Hammond equality if and only if it can take the Rawlsian form $W_{Rawls}(u_1,\dots,u_N)=\min[u_1,\dots,u_N]$.
+    An increasing and continuous social welfare function $W$ satisfies Hammond equality and the weak Pareto principle if and only if it can take the Rawlsian form $W_{Rawls}(u_1,\dots,u_N)=\min[u_1,\dots,u_N]$.
 *** :B_ignoreheading:BMCOL:
     :PROPERTIES:
     :BEAMER_env: ignoreheading
     :BEAMER_col: 0.4
     :END:
-- $\approx$ Rawlsian welfare is equivalent to Pareto criterion  + Hammond equity 
+- $\approx$ Rawlsian welfare is equivalent to weak Pareto criterion  + Hammond equity 
 *** Proof      
 see Jehle and Reny (2011), section 6.3.1
 

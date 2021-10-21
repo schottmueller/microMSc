@@ -16,7 +16,7 @@
   Prerequisites: You are expected to know basic game theory (normal form games, dominant strategies, Nash equilibrium, game trees, subgame perfect Nash equilibrium) and microeconomics at Bachelor level (preferences, indifference curves, utility functions, consumer problem, Pareto efficiency). The [[https://github.com/schottmueller/microMSc/blob/main/schedule.org][schedule]] contains detailed prerequisites for each lecture in terms of economics and mathematics.
 * Material  
  - slides
-   - social choice [[https://github.com/schottmueller/microMSc/blob/main/slides/socialChoice.org][org]] [[https://github.com/schottmueller/microMSc/files/7142292/socialChoice.pdf][pdf]]
+   - social choice [[https://github.com/schottmueller/microMSc/blob/main/slides/socialChoice.org][org]] [[https://github.com/schottmueller/microMSc/files/7390788/socialChoice.pdf][pdf]]
    - markets [[https://github.com/schottmueller/microMSc/blob/main/slides/markets.org][org]] [[https://github.com/schottmueller/microMSc/files/7142289/markets.pdf][pdf]]
    - choice under uncertainty [[https://github.com/schottmueller/microMSc/blob/main/slides/vNM.org][org]] [[https://github.com/schottmueller/microMSc/files/7142294/vNM.pdf][pdf]]
    - Bayesian Nash equilibrium [[https://github.com/schottmueller/microMSc/blob/main/slides/bne.org][org]] [[https://github.com/schottmueller/microMSc/files/7142285/bne.pdf][pdf]]
