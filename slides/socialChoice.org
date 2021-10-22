@@ -279,10 +279,10 @@ note: *weak* Pareto criterion is satisfied if $W$ is such that for any two vecto
   - $W_{Rawls}$ satisfies "Hammond Equity":
     - take two utility vectors $(\bar u_1,\bar u_2,\dots,\bar u_N)$ and $(\hat u_1,\hat u_2,\dots,\hat u_N)$ and suppose $\bar u_i=\hat u_i$ for all $i$ except $j$ and $k$
     - suppose further $\bar u_j<\hat u_j<\hat u_k<\bar u_k$
-    - Hammond equity states that then $W(\hat u)> W(\bar u)$
+    - Hammond equity states that then $W(\hat u)\geq W(\bar u)$
 ** Cardinal utility VI: Rawlsian welfare
 *** Proposition
-    An increasing and continuous social welfare function $W$ satisfies Hammond equality and the weak Pareto principle if and only if it can take the Rawlsian form $W_{Rawls}(u_1,\dots,u_N)=\min[u_1,\dots,u_N]$.
+    A continuous social welfare function $W$ satisfies Hammond equality and the weak Pareto principle if and only if it can take the Rawlsian form $W_{Rawls}(u_1,\dots,u_N)=\min[u_1,\dots,u_N]$.
 *** :B_ignoreheading:BMCOL:
     :PROPERTIES:
     :BEAMER_env: ignoreheading
@@ -294,15 +294,15 @@ see Jehle and Reny (2011), section 6.3.1
 
 ** Cardinal utility VII: Utilitarian welfare
    $$W_{ut}(u_1,\dots,u_N)=\sum_{i=1}^N u_i$$
-- most common form of welfare function (sometimes with individual weights)
-- $W_{ut}$ is strictly increasing $\Rightarrow$ satisfies Pareto criterion
+- most commonly used welfare function (sometimes with individual weights)
+- $W_{ut}$ respects Pareto efficiency
 - $W_{ut}$ is anonymous (not true if weights are used)
 - $W_{ut}$ is "utility-difference invariant"
-  - social preferences are the same if we transform all agents utility using the transformation $\psi_i(u_i)=a_i+b u_i$
+  - social preferences are the same if we transform all agents utility using the transformation $\psi_i(u_i)=a_i+b u_i$ with $b>0$
 
 ** Cardinal utility VIII: Utilitarian welfare
 *** Proposition
-    A strictly increasing and continuous social welfare function $W$ satisfies anonymity and utility-difference invariance if and only if it can take the utilitarian form $W_{ut}=\sum_{i=1}^N u_i$.
+    A continuous social welfare function $W$ satisfies anonymity, Pareto efficiency and utility-difference invariance if and only if it can take the utilitarian form $W_{ut}=\sum_{i=1}^N u_i$.
 *** Proof
 see Jehle and Reny (2011), section 6.3.2
 ** Cardinal utility IX: the veil of ignorance I
