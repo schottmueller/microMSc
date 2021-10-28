@@ -15,7 +15,7 @@
 #+LaTeX_CLASS_OPTIONS: [bigger]
 #+BEAMER_FRAME_LEVEL: 2
 #+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
-#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl,sgamevar}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl,sgamevar,tikz}}
 #+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
 #+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
 
@@ -43,7 +43,7 @@
      - assumption: $u^i$ is strictly quasi-concave
      - assumption: $u^i$ is continuous
    - consumers can exchange endowments
-     - who should/will eventually consumer what?
+     - who should/will eventually consume what?
 ** Notation
    - $e=(e^1,e^2,\dots, e^I)$ is the vector of endowments
    - allocations are denoted by $x=(x^1,x^2,\dots ,x^I)$
@@ -118,7 +118,7 @@
        # excess supply of "equal value" in market 2
    - let $n>2$, if we have excess demand in good 1, $z_1(p)<0$, what can we say about other markets?
      # excess demand in market 1 is balanced by excess supply of equal value in other markets
-   - if $n-1$ markets are have zero excess demand, i.e. $z_j(p)=0$ for $j=1,\dots,n-1$, what can we say about the remaining market?
+   - if $n-1$ markets have zero excess demand, i.e. $z_j(p)=0$ for $j=1,\dots,n-1$, what can we say about the remaining market?
      # also zero excess demand
 
 ** Walrasian equilibrium
@@ -144,15 +144,45 @@
 ** Proof of the first fundamental theorem of welfare economics:
     - Suppose, to the contrary, that $y=(y^1,\dots,y^I)$ Pareto dominates $x^*$.
       - Then, $\sum_{j=1}^n p^*_j y_j^i\geq m^i(p^*)$ for all $i$ with strict inequality for at least one $i$ (Why?)
-	\vspace*{0.3cm}
+	\vspace*{-0.1cm}
 	# by strict quasiconcavity of u^i, the consumer problem has a unique solution -> as y^i is at least a good as this solution...it must be infeasible or coiniced with the solution
 	$$\Rightarrow\sum_{i=1}^I\sum_{j=1}^n p^*_j y_j^i>\sum_{i=1}^I \sum_{j=1}^n p^*_je^i_j$$
-      - $y$ must be feasible:$$\sum_{i=1}^I y^i\leq\sum_{i=1}^I e^i$$  (note: there are vectors on both sides of the inequality!)
-	- hence, $p^* \cdot \sum_{i=1}^I y^i\leq p^*\cdot\sum_{i=1}^I e^i$ as all $p^*_j>0$ \linebreak (note: this is a dot/vector product)
-	$$\Rightarrow\sum_{i=1}^I\sum_{j=1}^n p^*_j y_j^i\leq \sum_{i=1}^I \sum_{j=1}^n p^*_je^i_j$$
+      - $y$ must be feasible:$$\sum_{i=1}^I y^i\leq\sum_{i=1}^I e^i$$  \footnotesize{(note: there are vectors on both sides of the inequality!)}
+      - hence, $p^* \cdot \sum_{i=1}^I y^i\leq p^*\cdot\sum_{i=1}^I e^i$ as all $p^*_j>0$ \footnotesize{(note: this is a dot/vector product)}
+	\vspace*{-0.2cm}$$\Rightarrow\sum_{i=1}^I\sum_{j=1}^n p^*_j y_j^i\leq \sum_{i=1}^I \sum_{j=1}^n p^*_je^i_j$$
 
     
 ** Example: 2 agents, 2 goods (Edgeworth box)
+
+\begin{center}   
+\begin{tikzpicture}[scale=5]
+\draw[<->,ultra thick] (1.1,0)--(0,0)--(0,1.1);
+\node [right] at (1.1,0) {$x_1^1$};
+\node [left] at (-0.1,1) {$x_1^2$};
+\node [left] at (0,1.1) {$x_2^1$};
+\node [right] at (1,-0.1) {$x_2^2$};
+\node [below] at (.6,.3) {$e$};
+\draw[<->,ultra thick] (1,-0.1)--(1,1)--(-0.1,1);
+\draw [fill] (0.6,0.3) circle [radius=0.01];
+\node [below] at (.6,.3) {$e$};
+\draw[domain=0.053:1, red, very thin ] plot (\x, {0.23*(\x^(-0.5) }) ;
+\uncover<1>{\draw[domain=0.115:1, red, very thin ] plot (\x, {0.34*(\x^(-0.5) }) ;}
+\uncover<2>{\draw[domain=0.115:1, red, very thin ] plot (\x, {0.34*(\x^(-0.5) }) ;}
+\draw[domain=0:0.72, blue, very thin ] plot (\x, {1-0.28*((1-\x)^(-1.0) }) ;
+\uncover<1>{\draw[domain=0:0.59, blue, very thin ] plot (\x, {1-0.41*((1-\x)^(-1.0) }) ;}
+\uncover<2>{\draw[domain=0:0.59, blue, very thin ] plot (\x, {1-0.41*((1-\x)^(-1.0) }) ;}
+\uncover<1>{ \draw[domain=0:0.82, blue, very thin ] plot (\x, {1-0.18*((1-\x)^(-1.0) }) ;
+ \draw[domain=0.017:1, red, very thin ] plot (\x, {0.13*(\x^(-0.5) }) ;}
+% contract curve:
+\uncover<2>{\draw[domain=0.28:0.378, green, very thick ] plot (\x, {\x*((0.5+0.5*\x)^(-1.0))}) ;
+\draw[domain=0:1, green, very thin ] plot (\x, {\x*((0.5+0.5*\x)^(-1.0))});}
+% equilibrium indiff curves:
+\uncover<3>{\draw[domain=0:0.665, blue, very thin ] plot (\x, {1-0.335*((1-\x)^(-1.0) }) ;
+\draw[domain=0.083:1, red, very thin ] plot (\x, {0.29*(\x^(-0.5) }) ;
+\draw (1,0)--(.0,.75);
+\draw[domain=0.28:0.378, green, thick ] plot (\x, {\x*((0.5+0.5*\x)^(-1.0))}) ;}
+\end{tikzpicture}
+\end{center}
 
 ** First fundamental  theorem of welfare economics: comments
    - market system leads to efficient allocation
