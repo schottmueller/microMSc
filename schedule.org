@@ -43,6 +43,7 @@
     - games of incomplete information
     - Bayesian Nash equilibrium
     - binary public good game
+    - reading: ch. 7.2 cite:jehle2001advanced
 ** Auctions
 *** IPV setup and auctions
     - prerequisites maths: inverse functions and their derivative, linear differential equation of first order

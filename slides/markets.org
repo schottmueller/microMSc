@@ -69,22 +69,24 @@
    - consumer $i$'s problem:
      $$\max_{x^i\in\Re^n_+}u^i(x^i)\qquad s.t.:\quad \sum_{j=1}^np_jx_j^i\leq  \sum_{j=1}^np_je_j^i$$
    - think of $m^i(p)=\sum_{j=1}^np_je_j^i$ as consumer $i$'s income
-   - given our assumptions, what can we say about the solution of this problem?  
-** Solution to the consumer problem
-  - solution exists
+#   - given our assumptions, what can we say about the solution of this problem?
+   - given our assumptions a unique solution $x^i(p,m^i(p))$ exists and this function is continuous in $p$
+
+# ** Solution to the consumer problem
+#  - solution exists
     # as feasible set is compact and objective continuous 
-  - solution is unique
+#  - solution is unique
     # as $u^i$ is strictly quasi-concavity of
     # -> unique solution (graphically: strictly convex insidifference curves and linear budget constraint)
-  - denote the solution to the consumer problem as $x^i(p,m^i(p))$
-  -  $x^i(p,m^i(p))$ is continuous
+#  - denote the solution to the consumer problem as $x^i(p,m^i(p))$
+#  -  $x^i(p,m^i(p))$ is continuous
     # (in the interior of $\Re^n$) by unique solution and continuity of u^i and the constraint ("theorem of the maximum")
-  - demand is homogenous: $x^i(p,m^i(p))=x^i(\lambda p,m^i(\lambda p))$
+#  - demand is homogenous: $x^i(p,m^i(p))=x^i(\lambda p,m^i(\lambda p))$
     # as $\lambda$ does not change objective or feasible set
-  - budget constraint holds with equality
+#  - budget constraint holds with equality
     # as $u^i$ is strictly increasing in each component and $p_j>0$ for all $j$
-  - the marginal rate of substitution between any two goods equals the price ratio
-    $$MRS_{j,k}^i=-\frac{\partial u^i/\partial x^i_j}{\partial u^i/\partial x^i_k}= -\frac{p_j}{p_k}$$
+#  - the marginal rate of substitution between any two goods equals the price ratio
+#    $$MRS_{j,k}^i=-\frac{\partial u^i/\partial x^i_j}{\partial u^i/\partial x^i_k}= -\frac{p_j}{p_k}$$
     # by foc of Lagrangian
    
 ** Excess demand
@@ -95,30 +97,30 @@
    - aggregate excess demand is defined as
      $$z(p)=(z_1(p),z_2(p),\dots,z_n(p))$$  
 
-** Properties of excess demand
-*** Proposition
-    Under our assumptions, excess demand satisfies
-    - continuity: $z$ is continuous at $p$
-    - homogeneity: $z(\lambda p)=p$ for all $\lambda\in\Re_{++}$
-    - Walras' law: $\sum_{j=1}^n p_j z_j(p)=0$
-*** Proof
-    - continuity:
-      # sum of continuous functions is continuous
-    - homogeneity:
-      # as all x^i_j are homogenous, so is their sum
-    - Walras law:
-      $\sum_{j=1}^n p_j z_j(p)=\sum_{j=1}^n p_j \left( \sum_{i=1}^Ix_j^i(p,m^i(p))-\sum_{i=1}^Ie^i_j  \right)$
-      $= \sum_{i=1}^I \sum_{j=1}^n\left( p_j x_j^i(p,m^i(p))-p_je^i_j\right)$
-      $= \sum_{i=1}^I\left[ \sum_{j=1}^n\left( p_j x_j^i(p,m^i(p))\right)-m^i(p) \right]=0$ as budget constraint of each consumer holds with equality
+# ** Properties of excess demand
+# *** Proposition
+#    Under our assumptions, excess demand satisfies
+#    - continuity: $z$ is continuous at $p$
+#    - homogeneity: $z(\lambda p)=p$ for all $\lambda\in\Re_{++}$
+#    - Walras' law: $\sum_{j=1}^n p_j z_j(p)=0$
+# *** Proof
+#    - continuity:
+#      # sum of continuous functions is continuous
+#    - homogeneity:
+#      # as all x^i_j are homogenous, so is their sum
+#    - Walras law:
+#      $\sum_{j=1}^n p_j z_j(p)=\sum_{j=1}^n p_j \left( \sum_{i=1}^Ix_j^i(p,m^i(p))-\sum_{i=1}^Ie^i_j  \right)$
+#      $= \sum_{i=1}^I \sum_{j=1}^n\left( p_j x_j^i(p,m^i(p))-p_je^i_j\right)$
+#      $= \sum_{i=1}^I\left[ \sum_{j=1}^n\left( p_j x_j^i(p,m^i(p))\right)-m^i(p) \right]=0$ as budget constraint of each consumer holds with equality
       
 
-** Implications of Walras' law
-   - suppose we have only 2 goods ($n=2$) and we have at price vector $p$ excess demand in market 1, $z_1(p)<0$
-     - what can we say about market 2?
+# ** Implications of Walras' law
+#    - suppose we have only 2 goods ($n=2$) and we have at price vector $p$ excess demand in market 1, $z_1(p)<0$
+#     - what can we say about market 2?
        # excess supply of "equal value" in market 2
-   - let $n>2$, if we have excess demand in good 1, $z_1(p)<0$, what can we say about other markets?
+#   - let $n>2$, if we have excess demand in good 1, $z_1(p)<0$, what can we say about other markets?
      # excess demand in market 1 is balanced by excess supply of equal value in other markets
-   - if $n-1$ markets have zero excess demand, i.e. $z_j(p)=0$ for $j=1,\dots,n-1$, what can we say about the remaining market?
+#   - if $n-1$ markets have zero excess demand, i.e. $z_j(p)=0$ for $j=1,\dots,n-1$, what can we say about the remaining market?
      # also zero excess demand
 
 ** Walrasian equilibrium
