@@ -1,4 +1,4 @@
-#+TITLE: Markets and the First Fundamental Welfare Theorem
+#+TITLE: Markets and the First Fundamental Theorem of Welfare Economics
 #+AUTHOR:    Christoph Schottmüller
 #+DATE:       
 #+DESCRIPTION:
