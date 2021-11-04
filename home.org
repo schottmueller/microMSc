@@ -18,8 +18,8 @@
 * Material  
  - slides
    - social choice [[https://github.com/schottmueller/microMSc/blob/main/slides/socialChoice.org][org]] [[https://github.com/schottmueller/microMSc/files/7396033/socialChoice.pdf][pdf]]
-   - markets [[https://github.com/schottmueller/microMSc/blob/main/slides/markets.org][org]] [[https://github.com/schottmueller/microMSc/files/7435306/markets.pdf][pdf]]
-   - choice under uncertainty [[https://github.com/schottmueller/microMSc/blob/main/slides/vNM.org][org]] [[https://github.com/schottmueller/microMSc/files/7142294/vNM.pdf][pdf]]
+   - markets [[https://github.com/schottmueller/microMSc/blob/main/slides/markets.org][org]]  [[https://github.com/schottmueller/microMSc/files/7476051/markets.pdf][pdf]]
+   - choice under uncertainty [[https://github.com/schottmueller/microMSc/blob/main/slides/vNM.org][org]] [[https://github.com/schottmueller/microMSc/files/7476052/vNM.pdf][pdf]]
    - Bayesian Nash equilibrium [[https://github.com/schottmueller/microMSc/blob/main/slides/bne.org][org]] [[https://github.com/schottmueller/microMSc/files/7142285/bne.pdf][pdf]]
    - auctions [[https://github.com/schottmueller/microMSc/blob/main/slides/auctions.org][org]] [[https://github.com/schottmueller/microMSc/files/7142282/auctions.pdf][pdf]]
    - adverse selection [[https://github.com/schottmueller/microMSc/blob/main/slides/lemons.org][org]] [[https://github.com/schottmueller/microMSc/files/7142286/lemons.pdf][pdf]]

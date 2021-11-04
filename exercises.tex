@@ -67,7 +67,7 @@
   $$u^1(x_1,x_2)=x_1x_2 \qquad  e^1=(15,3)$$
   $$u^2(x_1,x_2)= log(x_1)+2 log(x_2) \qquad  e^2=(5,7).$$
   Derive the set of Pareto efficient allocations, determine the Walrasian equilibrium and the allocation in this equilibrium.\\
-  (\emph{Hint:} Recall that (i) all of the endowment is consumed in an efficient allocation if utility is strictly increasing in each component and (ii) the marginal rate of substitution between the two goods has to be the same for the two agents in interior efficient allocations. Note that due to Walras law $p_1^*$ can be normalized, e.g., to 1.)
+  (\emph{Hint:} Recall that (i) all of the endowment is consumed in an efficient allocation if utility is strictly increasing in each component and (ii) the marginal rate of substitution between the two goods has to be the same for the two agents in interior efficient allocations. Note that due to homogeneity of demand $p_1^*$ can be normalized, e.g., to 1. By Walras law, $z_2(p)=0$ if $z_1(p)=0$.)
   % efficiency: let $x_1$ and $x_2$ be consumption of agent 1, then agent 2 consumes 20-x_1 of good 1 and 10-x_2 in an efficient allocation. Equality of MRS gives x_2/x_1=(10-x_2)/(2*(20-x_1)) which can be rearranged as x_2=10x_1/(40-x_1). This curve goes through the two origins of the Edgeworth box and describes for x_1\in[0,20] the curve of efficient allocations.
   % The consumer problem of agent 1 has the first order conditions x_2-\lambda p_1=0 and x_1-\lambda p_2=0 which together with the budget constraint (x_1-15)p_1+(x_2-3)p_2=0 gives the solution x_1=(15p_1+3p_2)/(2p_1) and x_2=(15p_1+3p_2)/(2p_2).
   % The consumer problem for agent 2 has the focs 1/x_1-\lambda p_1=0 and 2/x_2-\lambda p_2=0 together with the budget constraint (x_1-5)p_1+(x_2-7)p_2=0 which gives the solution x_1=(5p_1+7p_2)/(3p_1) and x_2=(2*(5p_1+7p_2))/(3p_2).
@@ -82,6 +82,7 @@
   \item $L_1$ be throwing a fair dice: $C=\{1,2,3,4,5,6\}$, $p_i=1/6$ for $i=1,\dots,6$\\
 $L_2$ be throwing an ``unfair dice'': $p_1=p_2=1/4$ and $p_3=p_4=p_5=p_6=1/8$\\
 What is the probability that the outcome ``1'' occurs in the compound lottery $(L_1,L_2;1/2,1/2)$? Derive the reduced lottery of the compound lottery $(L_1,L_2;1/2,1/2)$.
+% otucome 1: 1/2 * 1/6 + 1/2 * 1/4 = 5/24, outcome 3: 1/2 * 1/6 + 1/2 * 1/8 = 7/48; reduced lottery: (5/24, 5/24,7/48,7/48,7/48,7/48)
  \item  There are three prices:
   \begin{enumerate}
   \item 2.500.000 \$
@@ -91,6 +92,9 @@ What is the probability that the outcome ``1'' occurs in the compound lottery $(
 An individual prefers the lottery $L_1=(0.1,0.8,0.1)$ to the lottery $L_1'=(0,1,0)$.\\
 If the independence axiom is satisfied (as well as transitivity and monotonicity), which of the following lotteries does the individual prefer?\\
 $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
+% L_2 = 0.5*L_1+0.5*(0.6,0.4,0) and L_2'=0.5*L_1'+0.5*(0.6,0.4,0). Hence, $L_2\succeq L_2'$ by independence axiom. 
+  \item Let the preferences of a decision maker be represented by a von Neumann-Morgenstern utility function $U$ with Bernoulli utility function $u$. Show that the decision maker's preferences are also represented by the von Neumann-Morgenstern utility function $V$ with Bernoulli utility function $v(x)=a+b*u(x)$ for $b>0$ and $a\in \Re$.\footnote{You can show that this is not true for general $v(x)=\phi(u(x))$ where $\phi$ is a strictly increasing function. Take for example $u(x)=x$ and $\phi(z)=\sqrt{z}$. The decision maker with $u$ is then risk neutral while the one with $v$ is risk averse. E.g. take the two lotteries where $L$ pays 0 and 4 each with probability 0.5 and $L'$ pays 1.5 for sure. Then a decision maker with $u$ prefers $L$ while a decision maker with $v$ prefers $L'$. }
+    % $L\succeq L'$ iff $\sum_i p_i u(x_i)\geq \sum_i p_i' u(x_i)$ which is equivalent to $a+b*\sum_i p_i u(x_i)\geq a+b* \sum_i p_i' u(x_i)$ for $a\in\Re$ and $b>0$. But the latter is equivalent to $\sum_i p_i (a+b*u(x_i))\geq \sum_i p_i' (a+b* u(x_i))$ which in turn is equivalent to $\sum_i p_i v(x_i)\geq \sum_i p_i' v(x_i)$.
 \item The Bernoulli utility over money amounts be $u(x)=\sqrt{x}$. A decision maker has wealth 25 but loses 16 units of wealth with probability $1/2$.
   \begin{enumerate}
   \item What is the decision maker's expected wealth?
@@ -106,7 +110,6 @@ $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
   \item Answer the following in the graph: If the decision maker's Bernoulli utility is ``more concave'' between $x_1$  and $x_2$, i.e. a concave function passing through the two blue dots and lying above $u$ between $x_1$ and $x_2$, is the willingness to pay for insurance higher or lower?
     % higher as the certainty equivalent is lower; this is a general result: more concave Bernoulli utility means more risk aversion and therefore higher willingness to pay for insurance  
   \end{enumerate}
-  \item Let the preferences of a decision maker be represented by a von Neumann-Morgenstern utility function $U$ with Bernoulli utility function $u$. Show that the decision maker's preferences are also represented by the von Neumann-Morgenstern utility function $V$ with Bernoulli utility function $v(x)=a+b*u(x)$ for $b>0$ and $a\in \Re$.\footnote{You can show that this is not true for general $v(x)=\phi(u(x))$ where $\phi$ is a strictly increasing function. Take for example $u(x)=x$ and $\phi(z)=\sqrt{z}$. The decision maker with $u$ is then risk neutral while the one with $v$ is risk averse. E.g. take the two lotteries where $L$ pays 0 and 4 each with probability 0.5 and $L'$ pays 1.5 for sure. Then a decision maker with $u$ prefers $L$ while a decision maker with $v$ prefers $L'$. } 
 \end{enumerate}
 
 \section{Bayesian Nash equilibrium}

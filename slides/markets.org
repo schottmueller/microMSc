@@ -219,7 +219,7 @@
        # this resource is more useful somewhere else now (others value it more or new possibility of use or less production) -> please, consume a bit less
    - do you know the famous  *[[https://youtu.be/jPbh4NyKH0M][pencil clip]]*?     
        
-** First fundamental  theorem of welfare economics: important assumptions
+** First fundamental  theorem of welfare economics: important (implicit) assumptions
      - all agents are price takers
      - complete markets
        - every good that matters for some consumer is traded on its own market
@@ -233,12 +233,14 @@
    - agents are price takers
      - examples of cases where agents are not price takers?
        \vspace*{1cm}
+       # patents and other legal monopolies, economies of scale leading to monopolies; 
    - complete markets assumption
      - a good is not traded on a market:
        \vspace*{1cm}
        # pollution, clean air, silence
      - distinct goods are traded on a common market:
        \vspace*{1cm}
+       # consumers cannot distinguish different qualities etc.
 ** The scope for policy: efficiency arguments
    - policy within model:
      - guarantee property rights + enforce contracts

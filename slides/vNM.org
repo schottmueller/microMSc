@@ -46,7 +46,7 @@ D   &3,0   & 1,1
 \end{table}
 -  What do the numbers in the game table actually mean?
 - What if the other player plays $C$ and $D$ with 50% probability? How to evaluate that?
-- can we model a rational decision maker as utility maximizer?
+- can we model a rational decision maker as expected utility maximizer?
 
 ** Setup I
 - today: no game, just decision problem of 1 decision maker under uncertainty
@@ -129,13 +129,11 @@ $$L\sim L' \quad\text{ if and only if }\quad \alpha L+(1-\alpha) L''\sim \alpha 
 $$L\succ L' \quad\text{ if and only if }\quad \alpha L+(1-\alpha) L''\succ \alpha L'+(1-\alpha) L''$$
 *** Proof (indifference)
  - let $L\sim L'$
-  - then $L\succeq L'$
-    \vspace*{0.5cm}
-    # by independence axiom equivalent to $\alpha L+(1-\alpha) L''\succeq \alpha L'+(1-\alpha) L''$
-  - then $L'\succeq L$
-    \vspace*{0.5cm}
-    # by independence axiom equivalent to $ \alpha L'+(1-\alpha) L''\succeq \alpha L+(1-\alpha) L''$
- # combined: $\alpha L+(1-\alpha) L''\sim \alpha L'+(1-\alpha) L''$   
+  - then $L\succeq L'$:
+    by independence axiom equivalent to $\alpha L+(1-\alpha) L''\succeq \alpha L'+(1-\alpha) L''$
+  - then $L'\succeq L$:
+     by independence axiom equivalent to $\alpha L'+(1-\alpha) L''\succeq \alpha L+(1-\alpha) L''$
+  combined: $\alpha L+(1-\alpha) L''\sim \alpha L'+(1-\alpha) L''$   
    
 ** Some implications II
 *** Lemma
@@ -187,9 +185,9 @@ $$ L\succeq L' \quad\text{ if and only if }U(L)\geq U(L').$$
    - suppose the outcomes are amounts of money
    - instead of $u_i$,  function  $u:\Re\ra\Re$
    - risk preferences
-     - take lottery arbitrary lottery $L$ with expected payout $\mu$
-     - risk aversion: decision maker prefers getting $\mu$ (for sure!) to $L$
-     - risk love: decision maker prefers $L$ to $\mu$
+     - take an arbitrary lottery $L$ with expected payout $\mu$
+       - risk aversion: decision maker prefers getting $\mu$ (for sure!) to $L$
+       - risk love: decision maker prefers $L$ to $\mu$
 
 *** Proposition       
 A decision maker is risk averse if and only if his Bernoulli utility function $u$ is concave.\linebreak
