@@ -37,7 +37,7 @@
 ** BNE
 *** Examples and definition
     - prerequisites economics: static games of complete information, mixed strategies, Nash equilibrium
-    - prerequisites maths: probability distributions (discrete and continuous), expected value of continuous random variables
+    - prerequisites maths: probability distributions (discrete and continuous), expected value of a random variables
     - Bayes' rule, Venn diagram
     - examples for tests/signals and belief updating
     - games of incomplete information
@@ -76,12 +76,14 @@
    - prerequisites game theory: game trees, subgame perfect Nash equilibrium
    - definition, simple discrete examples (market entry games)
    - examples of Coasian dynamics and behavior based price discrimination
+   - reading: ch. 9.C up to p. 288 in cite:mas1995microeconomic (alternative sources: ch. 4.1 in cite:gibbons1992primer but note that he defines "perfect Bayesian equilibrium" differently from the lecture; ch. 7.3.6 and 7.3.7 in cite:jehle2001advanced cover parts of the lecture but also additional topics)
 
 ** Signaling
    - discrete signaling
    - job market signaling
    - simple refinement
    - effect of taxes
+   - reading: ch. 13.C in cite:mas1995microeconomic
 
 * tba
   
