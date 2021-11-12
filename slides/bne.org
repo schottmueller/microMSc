@@ -66,7 +66,7 @@
    - an antigen test for a certain virus is 70% reliable at detecting an illness and 99.5% reliable at correctly reporting that somebody is healthy
    - suppose about 80.000 people are currently infected with the virus
    - suppose 80 million people live in Germany
-   - if a random person is takes a test and the test is positive, what is the probability that this person is infected?
+   - if a random person takes the test and the test is positive, what is the probability that this person is infected?
      # P(infect)= 80.000/80mil = 0.001 , P(pos test| infect)=0.7, P(pos test)=0.001*0.7+0.999*0.005=
      # P(infect|pos test) = 0.7*0.001/(0.005695)=0.1229 i.e. 12 %
 ** Bayes' rule: comments
@@ -121,11 +121,10 @@
 
    - we will return to this example later on!
 ** Games of incomplete information III: general thoughts
-   - say two firms do not know the cost of the respective other firm
    - the main trick:
      - add beliefs about costs of other firm (i.e. a probability distribution over possible costs)
      - maximize expected utility
-   - we might want to allow this belief to depend on own costs
+   - we might want to allow this belief to depend on own costs if both firms have private information about their costs 
      - e.g. a high cost firm may think it is more likely that the other firm has also high costs
 
 ** Games of incomplete information IV: formal description
