@@ -90,109 +90,71 @@
    - independence will often be assumed to keep the models simple   
 * Games of incomplete information
 ** Games of incomplete information I: an example
-- an incumbent decides whether to build a new plant (I for invest)  at cost $c$
-- entrant simultaneously decides whether to enter (E)
-- entrant does not know whether $c$ is "low" (/l/) or "high" (/h/)
+- two firms simultaneously decide whether to enter (E) a new market or not (N)
 
-#+Caption: Payoffs with $c=h$
-|    | E    | NE  |
-|----+------+-----|
-| /  | <    |     |
-| I  | 0,-1 | 2,0 |
-| NI | 2,1  | 3,0 |
-#+Caption: Payoffs with $c=l$
-|    | E      | NE    |
-|----+--------+-------|
-| /  | <      |       |
-| I  | 1.5,-1 | 3.5,0 |
-| NI | 2,1    | 3,0   |
+  
+#+Caption: Payoffs 
+|    | E             | N  |
+|----+---------------+-----|
+| /  | <             |     |
+| E | $t_1-3,t_2-3$ | $t_1,0$ |
+| N | $0,t_2$    | 0,0 |
 
+- $t_i$ is the quality of firm $i$'s product which is either 2 or 4
+- each firm knows its own quality but not the quality of its competitor  
 - how to solve this game?
 
-** Games of incomplete information II: an example 
-   - entrant has to think about
-     - how likely is it that incumbent has low cost or high cost?
-     - what will incumbent do if he has high cost? what if he has low cost?
-     - what should I do?
+** Games of incomplete information IV: belief/nature
+   - add a belief to the game description:
+     - with which probability does firm $i$ believe the quality of $j$ is low/high?
+     - e.g. $p(2)=p(4)=1/2$ (independent of $i$'s quality)
+     - we assume that $i$ knows or anticipates $j$'s belief
+   - alternative story:
+     - a player called /nature/ chooses in a first step the quality of both firms
+     - e.g. nature chooses $2$ and $4$ both with probability $1/2$
+     - the incumbent observes the costs chosen by nature and the entrant does not
+     - afterwards players play the game
+     - as this game description is common knowledge, each firm $i$ views both $2$ and $4$ as equally likely for $t_j$ and knows that the other firm does so as well
+   - maximize expected utility (use belief to construct expectation)
+
+** Games of incomplete information V: strategy
+   - a strategy of a player is a /complete plan of action/
+     - a pure strategy of firm $i$ consists of one action in case it has quality of 2 and one action in case it has quality 4!
+     - nature interpretation: a strategy tells you how to act at every point in the game tree!
+
        
-   - incumbent with low cost has to think about
-     - what will entrant do?
-       - partly depends on what he thinks I would do if I had high costs...
+** Games of incomplete information VI:  back to example
+   - assume that each player believes that the other player has $t_i=2$ with probability $1/2$ and $t_i=4$ with probability $1/2$ (independent of own type) 
 
-   - we will return to this example later on!
-** Games of incomplete information III: general thoughts
-   - the main trick:
-     - add beliefs about costs of other firm (i.e. a probability distribution over possible costs)
-     - maximize expected utility
-   - we might want to allow this belief to depend on own costs if both firms have private information about their costs 
-     - e.g. a high cost firm may think it is more likely that the other firm has also high costs
+#+Caption: Payoffs 
+|    | E             | N  |
+|----+---------------+-----|
+| /  | <             |     |
+| I  | $t_1-3,t_2-3$ | t_1,0 |
+| N | $0,t_2$    | 0,0 |
 
-** Games of incomplete information IV: formal description
-   - finite set of players: $i=1,\dots,N$
-   - each player has a set of pure strategies $S_i$
-   - to capture uncertainty of other players:
-     - player $i$ has a *type* $t_i$ from a set $T_i$
-     - player $i$ knows his own type $t_i$ but other players do not
-   - player $i$ maximizes expected utility with Bernoulli utility function $u_i:S\times T\ra\Re$
-     - $T=\times_{i=1}^N T_i$ is set of all type profiles
-     - $S=\times_{i=1}^N S_i$ is set of all strategy profiles
-     - actions and types of all players can affect $i$'s payoff
-   - each type of each player has a belief $p_i(t_{-i}|t_i)$ about other players' types
-     - $p_i(t_{-i}|t_i)\in[0,1]$
-     - $\sum_{t_{-i}\in T_{-i}}p_i(t_{-i}|t_i)=1$ where $T_{-i}$ is the set of type profiles of all players but $i$
-# use notation on example game
-** Games of incomplete information V:  formal description (short)
-   A /N/-player game of incomplete information can be denoted as $G=(S_i,T_i,p_i,u_i)_{i=1}^N$ where
-     - $S_i$ is the strategy set of player $i$
-     - $T_i$ is the type set of player $i$
-     - $p_i$ assigns to each $t_i\in T_i$ a belief over $T_{-i}$
-     - $u_i:S\times T\ra\Re$ is player $i$'s utility function.
-  If all $S_i$ and $T_i$ are finite, the $G$ is called a /finite game of incomplete information./     
+- what is a firm's optimal strategy if  $t_i=4$?
+- if the firm $j$ plays E with probability $s_j$ in case $t_j=2$, what is $i$'s best response if $t_i=2$?
+- what are the equilibria in this game?
 
-** Games of incomplete information VI: assumptions on beliefs
-   - usually, it is assumed that types have a joint distribution $p$ (over $T$) and beliefs are derived using Bayes' rule:
-    $$p_i(t_{-i}|t_i)=\frac{p(t_i,t_{-i})}{\sum_{t_{-i}'\in T_{-i}}p(t_i,t_{-i}')}$$
-    then $p$ is called the /common prior/
-   - often we assume independence of types, i.e. the belief $p_i(t_{-i}|t_i)$ is the same for all $t_i$
-* Bayesian Nash equilibrium
+# t_i=4 has dominant action to enter, for t_i=2 u_i^E=1/2 * (2-3) +1/2 * (s_j*(-1)+(1-s_j)*2) while u_i^N=0, hence b.r. is enter iff s_j\leq 1/3.
+# BNE: asymmetric and pure: one firm enters with both types and the other only if t_i=4; symmetric and mixed: both firms enter if $t_i=4 and enter with probability 1/3 if t_i=2
+   
+** Games of incomplete information VII: description
+   A (static) game of incomplete information consists of
+   - set of players
+   - action set for each player ($S_i$)
+   - a "type set" for each player ($T_i$)
+   - a probability distribution $p$ over types from which nature draws
+   - a utility function $u_i$ for each player that depends on chosen strategies and types
 
-** Bayesian Nash equilibrium I
-    each player maximizes expected utility given his type and others strategies\linebreak
-    $\ra$ trick:
-     - think of each type of every type as an own player maximizing expected utility (with utility function $u_i$ and beliefs $p_i(t_{-i}|t_i)$)
-     - a Bayesian Nash equilibrium consists of one strategy for each type of each player such that
-       - the strategy of type $t_i$ maximizes expected utility of player $i$ given the strategies of the others and the belief $p_i(\cdot|t_i)$
+** pure strategy Bayesian Nash equilibrium
+   - a pure strategy for each player $s_i: T_i\rightarrow A_i$
+     - recall: a pure strategy assigns to each type of a player one action
+   - the action of each type of player $i$ maximizes expected utility of player $i$ given the strategies of all the other players 
 
-** Bayesian Nash equilibrium II (formal)
-   For Bayesian game $G=(S_i,T_i,p_i,u_i)_{i=1}^N$, define the auxiliary game of complete information $G'$:
-       - set of players is $T_1\cup T_2\cup \dots\cup T_N$
-       - strategy set of player $t_i$ is $S_i$
-       - von Neumann-Morgenstern utility $v_{t_i}(s)=\mathbb{E}_{t_{-i}\in T_{-i}}[u_i(s(t_1),\dots,s(t_N),t,\dots,t_N)]$
-         - where $s(t_i)$ is the strategy of player $t_i$ and $s=(s(t_1),\dots,s(t_N))$
-	 - where expectation is take using the belief $p_i(\cdot|t_i)$
 
-*** Definition: Bayesian Nash equilibrium (BNE)
-    A (mixed) Bayesian Nash equilibrium of game $G$ is a (mixed) Nash equilibrium of the corresponding auxiliary game $G'$.
-
-** Bayesian Nash equilibrium III: back to example
-   - assume the belief $p_E(l)=p_E(h)=1/2$
-
-#+Caption: Payoffs with $c=h$
-|    | E    | NE  |
-|----+------+-----|
-| /  | <    |     |
-| I  | 0,-1 | 2,0 |
-| NI | 2,1  | 3,0 |
-#+Caption: Payoffs with $c=l$
-|    | E      | NE    |
-|----+--------+-------|
-| /  | <      |       |
-| I  | 1.5,-1 | 3.5,0 |
-| NI | 2,1    | 3,0   |
-
-- what is the optimal strategy for type $h$?
-- if type $l$ invests with probability $s(l)$, what is the entrant's best response?
-- if the entrant enters with probability $s(e)$, what is type $l$'s best response?
+* Public good example
 
 ** public good example I
    - $N$ guests at a garden party
