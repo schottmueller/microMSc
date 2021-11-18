@@ -18,7 +18,7 @@
    - markets [[https://github.com/schottmueller/microMSc/blob/main/slides/markets.org][org]]  [[https://github.com/schottmueller/microMSc/files/7476051/markets.pdf][pdf]]
    - choice under uncertainty [[https://github.com/schottmueller/microMSc/blob/main/slides/vNM.org][org]] [[https://github.com/schottmueller/microMSc/files/7476052/vNM.pdf][pdf]]
    - Bayesian Nash equilibrium [[https://github.com/schottmueller/microMSc/blob/main/slides/bne.org][org]] [[https://github.com/schottmueller/microMSc/files/7142285/bne.pdf][pdf]]
-   - auctions [[https://github.com/schottmueller/microMSc/blob/main/slides/auctions.org][org]] [[https://github.com/schottmueller/microMSc/files/7142282/auctions.pdf][pdf]]
+   - auctions [[https://github.com/schottmueller/microMSc/blob/main/slides/auctions.org][org]] [[https://github.com/schottmueller/microMSc/files/7563758/auctions.pdf][pdf]]
    - adverse selection [[https://github.com/schottmueller/microMSc/blob/main/slides/lemons.org][org]] [[https://github.com/schottmueller/microMSc/files/7142286/lemons.pdf][pdf]]
    - weak perfect Bayesian equilibrium [[https://github.com/schottmueller/microMSc/blob/main/slides/wpbe.org][org]] [[https://github.com/schottmueller/microMSc/files/7142296/wpbe.pdf][pdf]]
    - signaling [[https://github.com/schottmueller/microMSc/blob/main/slides/signal.org][org]] [[https://github.com/schottmueller/microMSc/files/7142291/signal.pdf][pdf]]    

@@ -76,8 +76,8 @@
 **  Common auction formats for a single object
 
 - sealed-bid auctions:
-  - first-price sealed-bid: Every bidder submits their offer, the highest bidder wins and pays his bid
-  - second-price sealed-bid: Every bidder submits their offer, the highest bidder wins and pays the second-highest bidder’s bid
+  - first-price sealed-bid: bidders submit their offer, the highest bidder wins and pays his bid
+  - second-price sealed-bid: bidders submit their offer, the highest bidder wins and pays the second-highest bidder’s bid
 - Open auctions:
   - descending ("Dutch"): The auctioneer announces a high price and then slowly decreases it, until a bidder says that he wants to buy at that price
   - ascending ("English"): The auctioneer starts with a low price and announces higher prices, until only one bidder remains and pays the last announced price
@@ -85,8 +85,8 @@ Which one will bring the highest revenue? \linebreak We need to understand how b
 
 ** First-price sealed-bid auction (FPA)
 
-- Every bidder submits their offer, the highest bidder wins and pays his bid.
-- If your valuation is $v_i$ , should you bid $v_i$ ?
+- Bidders submit their offer, the highest bidder wins and pays his bid.
+- If your valuation is $v_i$, should you bid $v_i$?
   \pause
 - basic trade-off for any bidder:
   - higher bid increases chance of winning...
@@ -108,7 +108,7 @@ Which one will bring the highest revenue? \linebreak We need to understand how b
 
 ** Second-price sealed-bid auction (SPA)
 
-- Every bidder submits their offer, the highest bidder wins and pays the second-highest bidder’s bid.
+- Bidders submit their offer, the highest bidder wins and pays the second-highest bidder’s bid.
 - With value $v_i$ , should you ever submit bid $b_i > v_i$ instead of $b_i = v_i$ ?
   - only changes the outcome if second-highest bid $b_j$ is between $v_i$ and $b_i$
     - if $b_j > b_i$ you don’t win either way
