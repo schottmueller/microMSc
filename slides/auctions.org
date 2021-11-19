@@ -78,7 +78,7 @@
 - sealed-bid auctions:
   - first-price sealed-bid: bidders submit their offer, the highest bidder wins and pays his bid
   - second-price sealed-bid: bidders submit their offer, the highest bidder wins and pays the second-highest bidder’s bid
-- Open auctions:
+- open auctions:
   - descending ("Dutch"): The auctioneer announces a high price and then slowly decreases it, until a bidder says that he wants to buy at that price
   - ascending ("English"): The auctioneer starts with a low price and announces higher prices, until only one bidder remains and pays the last announced price
 Which one will bring the highest revenue? \linebreak We need to understand how bidders will behave!
@@ -109,13 +109,13 @@ Which one will bring the highest revenue? \linebreak We need to understand how b
 ** Second-price sealed-bid auction (SPA)
 
 - Bidders submit their offer, the highest bidder wins and pays the second-highest bidder’s bid.
-- With value $v_i$ , should you ever submit bid $b_i > v_i$ instead of $b_i = v_i$ ?
+- With value $v_i$ , should you ever submit bid $b_i > v_i$ instead of bidding $v_i$?
   - only changes the outcome if second-highest bid $b_j$ is between $v_i$ and $b_i$
     - if $b_j > b_i$ you don’t win either way
     - if $b_j < v_i$ you win and pay $b_j$ either way
   - But then you win and pay $b_j > v_i$ and make negative surplus $\Ra$  better to bid $b_i = v_i$
     \pause
-- Should you ever bid $b_i < v_i$ instead of $b_i = v_i$ ?
+- Should you ever bid $b_i < v_i$ instead of bidding $v_i$?
     - only changes the outcome if $b_j \in (b_i , v_i )$
       - if $b_j > v_i$ you don’t win either way
       - if $b_j < b_i$ you win and pay $b_j$ either way
@@ -138,7 +138,7 @@ Which one will bring the highest revenue? \linebreak We need to understand how b
 - What is the equilibrium strategy $b_i:[\underline v,\bar v]\ra\Re_+$ in a FPA (or in a Dutch) auction?
 - We will consider a simple case:
   - two bidders have with $v_i$ independently and uniformly distributed on $[0, 1]$
-- Assume that there exists a symmetric bidding equilibrium where everybody follows the increasing bidding strategy $\beta: [\underline v,\bar v]\ra\Re_+$.
+- Assume that there exists a symmetric bidding equilibrium where everybody follows the strictly increasing bidding strategy $\beta: [\underline v,\bar v]\ra\Re_+$.
 - If $j$ follows strategy $\beta$, $i$'s expected payoff from bidding $b_i$ is
 \begin{multline*}
 Pr[b_i>\beta(v_j)]*(v_i-b_i) \\+ Pr[b_i=\beta(v_j)]\frac{1}{2}*(v_i-b_i)+Pr[b_i<\beta(v_j)]*0
@@ -222,7 +222,7 @@ gives the same revenue to the seller and the same expected utility to all types.
 ** Revenue equivalence theorem: theoretical relevance 
 - RET as a theoretical tool
   - can help us think through changes in auction format and whether they will have an effect or not
-  - helps us understand complicated auctions by relating strategies and outcomes to simpler auctions
+  - helps us to understand complicated auctions by relating strategies and outcomes to simpler auctions
   - can be used to derive equilibria in a simple manner (example for this later on)
   - is a starting point for further analysis
     - how does the comparison of revenue change if assumptions of RET fail?
@@ -234,7 +234,7 @@ gives the same revenue to the seller and the same expected utility to all types.
   - ... or that any format would be better for some people than another format.
   - One weak formulation with real-life relevance:
     - If we change the rule to increase expected payment for a given bid $b_i$, bidders will lower their bids $b_i$ to compensate for that
-    - $\Ra$ Under idealized conditions, these effects exactly cancel each other out
+    - $\Ra$ Under idealized conditions, these effects exactly cancel each other out.
 
 ** Revenue equivalence theorem: proof I
    - take an (equilibrium, auction format) pair and assume that assumptions of RET are satisfied
