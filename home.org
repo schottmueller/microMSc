@@ -3,7 +3,9 @@
 #+Options: toc:nil H:2
 
 * News
-- I added some examples of Bayesian Nash equilibrium in the lecture notes [[https://web.tresorit.com/l/sXAYt#3MXtRbZbcXY1eRYOj5VZbA][here]]. - To clarify: I do not use ILIAS (as I prefer openly accessible material and dislike parts of the terms of service) and all material for this course is available on this website.
+- I added the derivation of the symmetric equilibrium in the first price sealed bid auction for an arbitrary common type distribution [[https://web.tresorit.com/l/sXAYt#3MXtRbZbcXY1eRYOj5VZbA][here]]. (This derivation is in terms of calculation more complicated than most of the course and optional reading.)
+- In the exercise session on Nov. 25 I hope to cover exercises up to and including 19.
+- To clarify: I do not use ILIAS (as I prefer openly accessible material and dislike parts of the terms of service) and all material for this course is available on this website.
 - exam dates: Feb. 23, 2022, 9:00 (room: B) and March 30, 2022, 15:00 (room: A1)
 
 * Course setup
