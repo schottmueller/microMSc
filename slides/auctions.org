@@ -208,7 +208,7 @@ Suppose that valuations are identically and independently distributed with stric
 Then, every /(auction format, equilibrium)/ pair such that in equilibrium
 - the object is won by the bidder with the highest valuation and
 - a bidder of type $\underline v$ has zero expected utility
-gives the same revenue to the seller and the same expected utility to all types.
+gives the same expected revenue to the seller and the expected utility of a type $v_i$ is the same in every such pair.
 
 *** :B_ignoreheading:BMCOL:
     :PROPERTIES:
@@ -246,9 +246,9 @@ gives the same revenue to the seller and the same expected utility to all types.
    - define $U_i(v_i)=v_i P(v_i)- T_i(v_i)$
    - *envelope theorem:* $U_i'(v_i)=P(v_i)$
      - in equilibrium type $v_i'$ prefers his bid to the bid of type $v_i''$
-       $$U_i(v_i')\geq v_i' P(v_i'') -T_i(v_i'')=U_i(v_i'')+(v'-v'')P(v_i'')$$
+       $$U_i(v_i')\geq v_i' P(v_i'') -T_i(v_i'')=U_i(v_i'')+(v_i'-v_i'')P(v_i'')$$
      - in equilibrium type $v_i''$ prefers his bid to the bid of type $v_i'$
-       $$U_i(v_i'')\geq v_i'' P(v_i') -T_i(v_i')=U_i(v_i')-(v'-v'')P(v_i')$$
+       $$U_i(v_i'')\geq v_i'' P(v_i') -T_i(v_i')=U_i(v_i')-(v_1'-v_i'')P(v_i')$$
      - taking these two inequalities together (and let $v_i'>v_i''$)
        $$P(v_i')\geq \frac{U_i(v_i')-U_i(v_i'')}{v_i'-v_i''}\geq P(v_i'')$$
      - taking limit $v_i''\rightarrow v_i'$ gives (as $P$ is continuous)
@@ -267,7 +267,7 @@ gives the same revenue to the seller and the same expected utility to all types.
    - assumption that the lowest type has zero utility
    - together this implies that the utility of every type depends only on the type distribution (and not the auction format, equilibrium strategies etc.)
    - bidder utility only depends on the type distribution!
-   - welfare (defined as expected valuation of the person who get the good) is the same in all auctions as the highest bidder always gets the good
+   - welfare (defined as expected valuation of the person who gets the good) is the same in all auctions as the highest bidder always gets the good
    - revenue is difference between welfare and bidder utility...done!
    - note: envelope theorem does all the real work!
 
@@ -285,10 +285,10 @@ gives the same revenue to the seller and the same expected utility to all types.
 ** Applying RET IIa
 - 2 companies are engaged in a legal battle
 - each company chooses how much money to spend on lawyers
-- company that invests the more wins the battle and gets a value of $v_i$ , where $v_i$ are iid and uniform on $[0,1]$
+- company that invests more wins the battle and gets a value of $v_i$, where $v_i$ are iid and uniform on $[0,1]$
 - This is an all-pay auction: Every company chooses a bid (= how much to pay for lawyers) and pays this for sure, but only the one who pays more wins the prize.
-- How will each company spend on lawyers in equilibrium, if it only knows its own valuation $v_i$?
-- Calculating this directly would be slightly more complicated than solving a FPA ...
+- How much will each company spend on lawyers in equilibrium, if it only knows its own valuation $v_i$?
+- Calculating this directly would be as complicated as solving a FPA ...
 - ...but the RET can help us!
 
 ** Applying RET IIb
@@ -300,7 +300,7 @@ gives the same revenue to the seller and the same expected utility to all types.
      - wining probability same as in SPA for every type
      - expected payment must be the same for every type as in SPA by RET
      - equilibrium bid in all pay auction must be $v_i^2/2$! done!
-     
+
 * Choosing the right auction format
 
 ** Challenges in practical auction design
@@ -321,8 +321,7 @@ gives the same revenue to the seller and the same expected utility to all types.
 
 ** Collusion in SPA
 - consider a second-price auction
-- If bidders can ﬁgure out that $i$ has the highest valuation, the
-following is an equilibrium:
+- If bidders can ﬁgure out that $i$ has the highest valuation, the following is an equilibrium:
   - i bids $v_i$ , everybody else bids 0
   - $\Ra$ $i$ gets the object at price 0
 - Bidders can accomplish this by forming a bidding ring and running a pre-auction knock-out.
@@ -390,8 +389,8 @@ following is an equilibrium:
 ** Behavioral considerations
 
 - Many of our game-theoretic results have to be taken with a grain of salt.
-- For example, the sealed-bid FPA and the Dutch auction often give different results if played with the same people (and the same $v_i$ ).
-- Risk-aversion and similar assumptions also mean the RET does not apply. 
+- For example, the sealed-bid FPA and the Dutch auction often give different results if played with the same people (and the same $v_i$).
+- Risk-aversion and similar assumptions also imply the RET does not apply. 
 - Another consideration:
   - People may derive utility from winning (or resent losing).
   - People may be embarrassed if they win an auction and overpay $\Ra$ further bid shading.    
