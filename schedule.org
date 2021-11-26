@@ -63,9 +63,12 @@
     - example behavioral bidding (embarrassment from overbidding)
     - risk aversion
     - (almost) common value auction
+    - optional background reading: cite:mca88, ch. 1 to 4 in cite:klemperer2004auctions
 *** Market power and markets as auctions
     - revenue maximization by reserve price -> inefficiency due to market power
+    - position auctions
     - double auction with many bidders: almost efficient mechanism in dominant strategies
+    - optional background reading: cite:mcafee1987auctions, ch. 1 to 4 in cite:klemperer2004auctions, cite:edelman2007internet
 
 ** Adverse selection
     - asymmetric info can create market incompleteness
