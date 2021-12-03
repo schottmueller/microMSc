@@ -330,7 +330,7 @@ gives the same expected revenue to the seller and the expected utility of a type
 
 - Consider the following mechanism:
   1. ring organizer asks each member to report their valuation $v_i$
-  2. member with the highest announced valuation $\hat v_i$ “represents” the ring and submits his actual bid; everybody else drops out or bids 0
+  2. member with the highest announced valuation $\hat v_i$ “represents” the ring and bids his valuation; everybody else drops out or bids 0
   3. if $i$ wins the auction, he pays the amount\linebreak
      (price without ring) - (price with ring) $\geq 0$ \linebreak
      to the ring organizer
@@ -343,7 +343,7 @@ gives the same expected revenue to the seller and the expected utility of a type
    - participation in ring and truthful bidding is an equilibrium
      - implicit assumption: within ring transfers are enforceable
    - divert expected revenue from the seller to the ring members
-     - effect similar to reducing the numbers of bidders
+     - effect similar to reducing the number of bidders
        \pause
    - pre-auction knockouts exist(ed) in real-life and were one reason for the development of antitrust legislation
    - FPA seems less vulnerable to collusion (via pre-auction knockout)
@@ -397,8 +397,7 @@ gives the same expected revenue to the seller and the expected utility of a type
 
 ** Risk aversion
    - bidder $i$ derives utility $u(v_i-p)$ from the object when winning at price $p$ (and $u(-p)$ if he does not win)
-     - $u:\Re\rightarrow\Re$ is strictly increasing and strictly concave 
-     - assume $u(0)=0$ and $u'(0)=1$ for comparison with risk neutrality
+     - $u:\Re\rightarrow\Re$ is strictly increasing and strictly concave
    - SPA:
      - still optimal to bid valuation (same argument as before combined with $u$ strictly increasing)
    - FPA:
@@ -406,8 +405,8 @@ gives the same expected revenue to the seller and the expected utility of a type
      - effect of increasing bid
        - increase $Pr(b_i>b_j)$
        - decrease $v_i-b_i$ and therefore $u(v_i-b_i)$
-     - by concavity of $u$ and $u'(0)=1$, $u'(v_i-b_i)<1$ \linebreak $\Ra$ second effect is weaker than under risk neutrality
-     - indeed risk aversion leads typically to higher equilibrium bids than risk neutrality in FPA
+     - by concavity of $u$ second effect is weaker than under risk neutrality (as $u$ is quite flat at $v_i-b_i$)
+     - risk aversion leads typically to higher equilibrium bids than risk neutrality in FPA
      - $\Ra$ more revenue in FPA than in SPA 
 
 ** Example: Embarrassment from overbidding I
@@ -448,7 +447,7 @@ gives the same expected revenue to the seller and the expected utility of a type
      - ...$t_2$ is distributed, independently from $t_1$, uniformly on $[0,1]$?
        \pause
        # t_1+1/2
-   - is your expected payoff also zero if you bid your expected valuation in a common value auction?
+   - is your expected payoff also zero if you bid your expected valuation in a common value FPA?
      # no: other bidder is probably using an increasing bidding strategy -> winning the auction means that 2 was bidding low -> 2 has a low t_2 -> expected t_2 is less than 1/2 conditional on winning
     
 ** Almost common value auctions
@@ -458,8 +457,8 @@ gives the same expected revenue to the seller and the expected utility of a type
   - No: If 2 is willing to pay a price $p$, then 1 should also be willing to pay that price (and a bit more).
 - In equilibrium, 2 never wins the auction!
 - Slight modiﬁcation completely changes the result $\Ra$ 2 has no reason to even enter the auction!
-- It can be shown that first price auctions are much less affected (i.e. a change in $\varepsilon$ in 1’s valuation leads to a similarly-sized change in bidding strategies ⇒ winning probabilities do not change much).    
-
+- It can be shown that first price auctions are much less affected (i.e. a change in $\varepsilon$ in 1’s valuation leads to a similarly-sized change in bidding strategies $\rightarrow$ winning probabilities do not change much).    
+  
 ** Almost common value auctions: Application
 
 - If two bidders compete to take over a company (= common value)...
@@ -469,7 +468,7 @@ gives the same expected revenue to the seller and the expected utility of a type
 - Example: In Britain in the late 1990s, BSkyB (a TV company) tried to buy a stake in Manchester United.
   - TV licenses (for football broadcasts) are sold in an auction and the money is then distributed to the football clubs.
   - If a TV station owns a bit of a football club, they have an $\varepsilon$ advantage in bidding.
-  - $\Ra$ In an ascending auction, this can make all the difference!
+  - $\Ra$ In an ascending auction with (almost) common values, this can make all the difference!
 
 
 ** What is the right auction format?
