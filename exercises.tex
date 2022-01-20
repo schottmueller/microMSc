@@ -185,8 +185,8 @@ $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
 \item Check that the equilibrium given in the slides for the first price auction with asymmetric bidders is indeed an equilibrium.\\
   (\emph{Hint: }Recall that the derivative of expected payoff in a first price auction with respect to one's own bid is $(v_i-b_i)\partial Pr[win]/\partial b_i-Pr[win]$ and verify that the first order condition holds for all types.)
   % for those types that do not win/loose for sure, \partial Pr[win]/\partial b_i=2 as the slope of both bidding functions is 1/2 and we have uniform distributions with density 1. The probability that bidder 1 wins is the probability that $b_1>v_2/2+1/6$ which using the uniform distribution of v_2 on [1,2] is 2b_1-1/3-1; hence the derivative of payoff with respect to b_1 is 2v_1-4b_1+4/3 which indeed is zero for b_1=v_1/2+1/3. For types where this bid is below the competitive range (i.e. the range of bids of bidder 2) we have a negative derivative for all competitive bids and therefore it is best to place a bid that never wins. Similar derivation for bidder 2.
-\item Consider an independent private value auction with two bidders and uniformly distributed values on $[0,1]$. Assume that both bidders are budget constrained, i.e. they cannot pay more than 1/2. What are the implications for bidding? Will a first or a second price auction yield more revenue?  Why does the revenue equivalence theorem not hold?
-  % no effect on first price auction as bidding b(v)=v/2\leq 1/2 is equilibrium there, i.e. constraint does not bind. However in SPA bidding one's valuation is not possible for bidders with v>1/2. As they cannot pay more than 1/2 all types above 1/2 can bid only 1/2. This is less than the unconstrained bids and therefore expected revenue is lower than in the unconstrained case while the FPA yields the same revenue as unconstrained. Hence, FPA yields more rvenue and RET does not hold as allocation is differently, i.e. in the SPA the highest valuation bidder does not necessarily win if both bidders have valuation above 1/2.
+\item Consider an independent private value auction with two bidders and uniformly distributed values on $[0,1]$. Assume that both bidders are budget constrained, i.e. they cannot pay more than 1/2. (You can interpret this as meaning that they also cannot bid more than $1/2$.) What are the implications for bidding? Will a first or a second price auction yield more revenue?  Why does the revenue equivalence theorem not imply that both auctions have the same revenue?
+  % no effect on first price auction as bidding b(v)=v/2\leq 1/2 is equilibrium there, i.e. constraint does not bind. However in SPA bidding one's valuation is not possible for bidders with v>1/2. As they cannot pay more than 1/2 all types above 1/2 can bid only 1/2. This is less than the unconstrained bids and therefore expected revenue is lower than in the unconstrained case while the FPA yields the same revenue as unconstrained. Hence, FPA yields more revenue and RET does not hold as allocation is differently, i.e. in the SPA the highest valuation bidder does not necessarily win if both bidders have valuation above 1/2.
 \item Consider the setting with asymmetric bidders on the slides. In this exercise we analyze reserve prices in this setting. Assume that the good is auctioned in a second price sealed bid auction.
   \begin{enumerate}
   \item Show that the revenue maximizing reserve price in this auction is 1.
@@ -225,10 +225,14 @@ $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
 \begin{enumerate}[resume]
 \item In the model of insurance demand assume that $i$ is uniformly distributed on $[1/4,3/4]$ and $\alpha=3/2$.
   \begin{enumerate}
-  \item Determine $\mathbb{E}[i|i\geq\alpha p]$.
+  \item Determine $\mathbb{E}[i|i\geq p/ \alpha]$.
+    % E[i|i>2/3p]=(2/3 p+3/4)/2=p/3+3/8
   \item Determine the equilibrium premium.
+    % p= p/3+3/8 and hterefore p*=9/16 and \hat i=2/3 9/16=3/8 and q=3/4
   \item Determine marginal costs, average costs and inverse demand and confirm the equilibrium by determining the intersection of average costs and inverse demand.
-    \item Suppose buying insurance is subsidized by $s>0$. Determine the lowest subsidy for which full efficiency on the insurance market is reached.
+    % \hat i = p/\alpha=2/3 p; as F(x)=2x-1/2 we get q=1-F(\hat i)=1-(2 2/3 p-1/2)=3/2-4/3 p or rearranging inverse demand p=9/8-3/4 q; MC(q) is \hat i (q)=2/3(9/8-3/4 q)=3/4-q/2 and finally AC(q)=E[i|i\geq \hat i(q)]=(3/4-q/2+3/4)/2=3/4-q/4; finally eq is given by AC(q)=P(q) or 9/8-3/4 q=3/4-q/4 and therefore q*=3/4
+  \item Suppose buying insurance is subsidized by $s>0$. Determine the lowest subsidy for which full efficiency on the insurance market is reached.
+    %s=AC(1)-P(1)=1/8
     \end{enumerate}
   \item As a kid, I was told not to get into a stranger's car. In the age of Uber, Lift and so on, many of us voluntarily call strangers just to get into their cars. How does this relate to adverse selection and how did ride hailing platforms (try to) overcome this problem? Do you see similar problems and solutions outside the ride hailing sector?
     % those that want to rob/kidnap you have the highest benefits from getting you into their cars and should be the first ones to volunteer as drivers. Measures to counter this: record keeping and tracking, ratings, registration with biometrics of drivers and camera authentification of biometrics, (mic always on with automatic panic registration); registration and certification for traditional taxis
@@ -373,20 +377,12 @@ $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
 \label{fig:selten_ex}
 \end{figure}
 
-\item Take the model of ``Coasian dynamics'' on the slides but assume that $\delta=1/2$.
+\item Take the model of ``Behavior based price discrimination'' on the slides.
   \begin{enumerate}
-  \item Show that the wPBE from the lecture is no longer a wPBE if $\delta=1/2$.
-    % seller could deviate p_1=p_2=8 and sell in period 2 only to high value types which yields an exp. payoff of 0.5*(0.5*8)=2>1 and is therefore profitable. Hence seq rat is violated.  
-  \item Verify that the other strategy profile on the slides (where $p_1=8$ and $p_2=1$) is also not a wPBE.
-    % type 9 buyer could profitably deviate by choosing not to buy in period 1 but only int period 2 which gives an expected payoff of 0.5*(9-1)=4>1
-  \item Determine a wPBE in mixed strategies.\\
-    (\emph{Hint:} For which belief would the seller be willing to mix over prices in period 2? How would the buyer of type 9 have to mix in period 1 to justify this belief? Under which circumstances would a type 9 buyer be willing to mix in period 1?)
-    % seller is indifferent for \mu_2=1/8; if low value buyer does not buy in period 1 and the high value buyer buys with probability 6/7 then in \mu_2=0.5*1/7/(0.5*1/7+0.5*1)=1/8
-    % To make type 9 indifferent in period 1: p_1=8 while in period 2 seller chooses p_1=8 with probability q such that 9-8=0.5*(q*(9-8)+(1-q)*(9-1)), i.e. q=6/7.
-    % wPBE:
-       %seller: p_1=8 while p_2=8 with prob 6/7; \mu_2=1/8
-       %buyer: type 2 buys whenever price is 1, type 9 buys whenever price is 1 and with prob 6/7 in period 1 if p_1=8 and at any price in period 2
-  % note that this is seq. rational for seller, i.e. his expected profits in eq. are 8*0.5*6/7+0.5*(1*(0.5+0.5*1/7))=26/7 while deviating in period 1 to p_1=1 would yield 1  
+  \item Assume now that $v_h=6.4$ (instead of $v_h=7$). Show that the wPBE on the slides is not a wPBE then.
+    % $v_h$ would deviate by not buying in period 1 as $(6.4-5)*(1+0.75)<0.75*(6.4-3)$
+  \item Find a wPBE with $v_h=6.4$.
+    % seller: p_1=3 and p_2(5,1)=5 and otherwise p_2=3; buyer v_l: buy if p_t=3; buyer v_h: buy in period 1 if p_1=3 and in period 2 at any price; beliefs: \mu_1=1/2, \mu_2(5,1)=1 and \mu_2=1/2 otherwise
   \end{enumerate}
 \end{enumerate}
 

@@ -28,7 +28,7 @@
      - new solution concepts
        - with complete information: dynamics \rightarrow /subgame perfect/ Nash equilibrium (SPNE)
        - with incomplete information: dynamics \rightarrow /(weak) perfect/ Bayesian Nash equilibrium
-   - we introduce equilibrium concept with simpler examples this time and return to motivation next time
+   - we introduce the equilibrium concept with simpler examples this time and return to the motivation next time
        
 * Weak PBE
 
@@ -297,120 +297,54 @@ A profile of strategies $\sigma$ together with a system of beliefs $\mu$ is a we
 %\label{fig:ext_game_imperf_info}
 \end{figure}
 
-- assuming $v_h=9$, $v_l=2$, $p_h=8$ and $p_l=1$, determine wPBE
+- assuming $v_h=7$, $v_l=4$, $p_h=5$ and $p_l=3$, determine wPBE
   # seq rationality B: type v_l buys only if p_l while type v_h always buys
   # belief: by Bayes' rule: 1/2, 1/2
-  # seq rationality S: expected payoff of $p_h$ is 8/2=4 while of p_l it is 1, hence only p_h is seq rational
+  # seq rationality S: expected payoff of $p_h$ is 5/2 while of p_l it is 3, hence only p_l is seq rational
 
-* Example: "Coasian dynamics"
-** "Coasian dynamics" I
-     - we use the same buyer/seller example but now we have 2 periods
-       - buyer wants to buy only 1 unit (either in period 1 or in period 2)
-       - seller can charge different prices in periods 1 and 2
-       - discounting: payoffs realized in period 2 are discounted with discount factor $\delta=0.2$
-   
-** "Coasian dynamics" II
-   - timeline
-     - nature chooses buyer's type $v\in\{2,9\}$ (each with prob 1/2)
-     - seller chooses $p_1\in\{1,8\}$ (not observing $v$)
-     - buyer decides whether to buy at price $p_1$, i.e. $b_1\in\{0,1\}$
-     - if buyer does not buy ($b_1=0$), seller posts price $p_2$ and buyer decides whether to buy at this price
-   - wPBE components
-     - seller strategy: $p_1$ and $p_2$ 
-     - buyer strategy: $b_1(p_1)$ and $b_2(p_1,p_2)$
-     - seller beliefs: $\mu_1$ and $\mu_2(p_1)$ 
-** "Coasian dynamics" III
-   - sequential rationality: in period 2 buyer buys if and only if the price is below the valuation
-   - $\rightarrow$ sequential rationality: $p_2=8$ if and only if $\mu_2\geq 1/8$
-   - why is the following not a wPBE?
-     - seller: $p_1=8$ and $p_2=1$
-     - buyer:
-       - type 9 buys in period 1 at both prices while type 2 buys only if $p_1=1$
-       - both types buy in period 2 if price is below valuation
-     - belief: $\mu_1=1/2$ and $\mu_2=0$
-   # not seq rat: high type buyer would benefit from not buying in period 1 and waiting to period 2  as 0.2*(9-1)>9-8
-   \pause
-   - wPBE:
-     - seller: $p_1=1$ and $p_2=8$
-     - buyer:
-       - both types buy in period 1 if $p_1=1$ and do not buy if $p_1=8$
-       - both types buy in period 2 if price is below valuation
-     - belief: $\mu_1=1/2$ and $\mu_2=1/2$ (other $\mu_2$ possible as well)
- # seq rat: seller does not want to change to p_1=8 as then no one buys and his profits are 0.2*4<1
-** "Coasian dynamics" IV
-   - profits are lower than without possibility to make a second offer later on!
-     - commitment problem: seller cannot commit to not cut the price
-     - seller competes with himself (in the future)
-   - what can companies do to avoid this problem?
-# leasing instead of selling durable goods; (short term/myopic sales personal that do not care about the future)...    
-       
-* Example: behavior based price discrimination  
+* Example: Behavior based price discrimination
 
-** Behavior based price discrimination 
-  - we use the same buyer/seller example with 2 periods
-    - in /each period/ the buyer can buy one unit (repeat purchases!)
-    - the buyer's valuation is the same in both periods
-    - seller does not know valuation but knows in the second period whether the buyer bought in the first period
-    - no discounting, payoffs from two periods are just added
-  
-** Behavior based price discrimination (setup)
-- timeline:
-    - nature chooses buyer's type $v\in\{2,9\}$ (each with prob 1/2)
-    - seller chooses $p_1\in\{1,8\}$ (not observing $v$)
+** Behavior based price discrimination I
+
+  - same buyer/seller example but 2 periods
+    - buyer can buy 1 unit each period
+    - seller can charge different prices each period
+    - discounting: payoffs realized in period 2 are discounted with discount factor 3/4
+
+** Behavior based price discrimination II
+
+- timeline
+  - period 1:
+    - nature chooses buyer's type $v\in\{7,4\}$ each with probability $1/2$
+    - seller chooses $p_1\in\{5,3\}$ (not observing $v$)
     - buyer decides whether to buy at price $p_1$, i.e. $b_1\in\{0,1\}$
-    - seller observes $b_1$ and sets $p_2\in\{1,8\}$
+  - period 2:
+    - seller chooses $p_2$ (after observing $b_1$)
     - buyer decides whether to buy at price $p_2$, i.e. $b_2\in\{0,1\}$
 
-- wPBE components   
-   - seller strategy: $p_1$ and $p_2(p_1,b_1)$ 
-   - buyer strategy: $b_1(p_1)$ and $b_2(p_1,p_2,b_1)$
-   - seller beliefs: $\mu_1$ and $\mu_2(p_1,b_1)$
+- wPBE components
+  - seller strategy: $p_1$ and $p_2(p_1,b_1)$
+  - buyer strategy: $b_1(p_1)$ and $b_2(p_1,b_1,p_2)$
+  - seller beliefs: $\mu_1$ and $\mu_2(p_1,b_1)$
 
-** Behavior based price discrimination  (analysis I)
-   - it cannot be seq. rational for buyer type $2$ to buy at price $8$ in any period
-     # if he did his payoff would be at most 2+2-8-1<0 which is worse than never buying
-   - if the seller charges $p_1=1$, the only seq. rational action for type $v=9$ is to buy
-     # if he buys his payoff is at least 9-1+1>9-1 which is the maximal payoff he could get in case of not buying   
-   - suppose the seller charged $p_1=1$ and the buyer bought ($b_1=1$)
-     - what belief $\mu_2$ would the seller naturally have then?
-     - what price $p_2$ would he then charge?
-   # as the high type always buys at this price mu_2 should be at least 1/2 (it seems natural that the low type also buys at the low price in which case mu_2=1/2); in any case p_2=8 is  optimal for mu_2\geq 1/2   
-   - suppose the seller charged $p_1=8$ and the buyer bought ($b_1=1$) 
-     - what belief $\mu_2$ would the seller naturally have then?
-     - what price $p_2$ would he then charge?
-  # as a low type never buys at a high price, the natural belief would be mu_2=1 and therefore p_2=8 would be optimal
-** Behavior based price discrimination (analysis II)
-  - why is the following not a wPBE?
-    - seller strategy: $p_1=8$ and $p_2=8$ if $b_1=1$ while $p_2=1$ is $b_1=0$
-    - buyer strategy:
-      - type 2 buys in each period iff the price is 1
-      - type 9 buys in both periods no matter what the price is
-    - seller beliefs: $\mu_1=1/2$ and $\mu_2=1$ if $b_1=1$ while $\mu_2=0$ if $b_1=0$ 
-# not sequentially rational for type v=9: better not buy in period 1 and get low price in second period
-\pause
-  - wPBE
-    - seller strategy: $p_1=1$, $p_2(p_1,b_1)=8$ regardless of $b_1$ and $p_1$ 
-    - buyer strategy (both types):
-      - $b_1=1$ if and only if $p_1=1$
-      - $b_2=1$ if $p_2$ is below valuation
-    - seller belief: $\mu_1=\mu_2(1,b_1)=1/2$ regardless of $b_1$ \linebreak (for completeness: $\mu_2(8,1)=1$ and $\mu_2(8,0)=1/2$ though other beliefs are possible here as well)
-# beliefs are derived from Bayes' rule wherever possible and sequential rationality is true: if seller deviates to high price in first period, no one buys in first period and his period 2 profits are the same as without the deviation
-** Behavior based price discrimination (results)
-  - profits are less than 2 times the one-period profits!
-    - commitment problem: seller cannot commit to not cutting the price for those not buying in period 1
-      # always wants to cut price for those not buying in period 1 but then high value types do not buy in first period
-  - what can firms do to avoid this commitment problem?
-    # most favored nation clauses: if we cut the pricefor anyone we reimburse the difference for all previous customers. Note that this policy is actuall ydetrimental to consumers though it might look nice at first sight! 
-      
+** Behavior based price discrimination III
+   - sequential rationality: buyer buys in period 2 if and only if price is below his valuation
+   - sequential rationality seller: $p_2=5$ if and only if $\mu_2 5\geq 3\;\Leftrightarrow\; \mu_2\geq 3/5$
+   - why is the following not a wPBE:
+     - seller: $p_1=3$ and $p_2=3$ (regardless of $p_1$ and $b_1$)
+     - buyer: buy in each period if and only if valuation is above price
+     - beliefs: $\mu_1=\mu_2=1/2$ (regardless of $p_1$ and $b_1$)
+
+** Behavior based price discrimination IV       
+   - wPBE
+     - seller: $p_1=5$, $p_2(5,1)=5$, $p_2(5,0)=3$, $p_2(3,1)=p_2(3,0)=3$
+     - buyer: buy in each period if and only if valuation is above price
+     - beliefs: $\mu_1=1/2$, $\mu_2(5,1)=1$, $\mu_2(5,0)=0$, $\mu_2(3,1)=1/2$, $\mu_2(3,0)=1/2$
+   - seller uses period 1 to screen buyer types
+   - seller benefits in period 2 from conditioning his prices on purchase history
+
+       
 * PBE
-
-** Why "weak" PBE is (sometimes too) weak: unreasonable beliefs
-   \hspace*{1cm}\includegraphics[width=8.25cm]{pbeUnreasonableBelief}  \linebreak \tiny{Source: MasColell, Whinston, Green; "Microeconomic Theory", Oxford University Press (1995); Fig. 9.C.4}
-
-- \normalsize{why is P2's belief inconsistent?}
-# P2's info set reached if P1 plays y but as P1 doe snot know nature's move this has to be equally probable after each of nature's moves -> reasonable belief is 1/2,1/2
-\pause
-- \normalsize{(add requirement: some strategy profile leading to off path beliefs has to exist; "structural consistency")}
 
 ** Why "weak" PBE is (sometimes too) weak: unreasonable beliefs
 

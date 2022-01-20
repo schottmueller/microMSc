@@ -3,6 +3,7 @@
 #+Options: toc:nil H:2
 
 * News
+- There was a last minute update of the slides on weak perfect Bayesian equilibrium (also the exercises on this topic changed a bit). 
 - I added the derivation of the symmetric equilibrium in the first price sealed bid auction for an arbitrary common type distribution [[https://web.tresorit.com/l/sXAYt#3MXtRbZbcXY1eRYOj5VZbA][here]]. (This derivation is in terms of calculation more complicated than most of the course and optional reading.)
 - In the exercise session on Nov. 25 I hope to cover exercises up to and including 19.
 - To clarify: I do not use ILIAS (as I prefer openly accessible material and dislike parts of the terms of service) and all material for this course is available on this website.
@@ -22,7 +23,7 @@
    - Bayesian Nash equilibrium [[https://github.com/schottmueller/microMSc/blob/main/slides/bne.org][org]] [[https://github.com/schottmueller/microMSc/files/7142285/bne.pdf][pdf]]
    - auctions [[https://github.com/schottmueller/microMSc/blob/main/slides/auctions.org][org]] [[https://github.com/schottmueller/microMSc/files/7607665/auctions.pdf][pdf]]
    - adverse selection [[https://github.com/schottmueller/microMSc/blob/main/slides/lemons.org][org]] [[https://github.com/schottmueller/microMSc/files/7142286/lemons.pdf][pdf]]
-   - weak perfect Bayesian equilibrium [[https://github.com/schottmueller/microMSc/blob/main/slides/wpbe.org][org]] [[https://github.com/schottmueller/microMSc/files/7142296/wpbe.pdf][pdf]]
+   - weak perfect Bayesian equilibrium [[https://github.com/schottmueller/microMSc/blob/main/slides/wpbe.org][org]] [[https://github.com/schottmueller/microMSc/files/7907234/wpbe.pdf][pdf]]
    - signaling [[https://github.com/schottmueller/microMSc/blob/main/slides/signal.org][org]] [[https://github.com/schottmueller/microMSc/files/7142291/signal.pdf][pdf]]    
  - exercises [[https://web.tresorit.com/l/Qo4h7#k9w136JGBVYuzX4D_hW5Cg][pdf]]
  - notes [[https://web.tresorit.com/l/sXAYt#3MXtRbZbcXY1eRYOj5VZbA][pdf]]
