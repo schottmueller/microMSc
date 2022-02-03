@@ -3,6 +3,7 @@
 #+Options: toc:nil H:2
 
 * News
+- In the last lecture (Feb. 4), I will only answer questions. We will not cover the Spence signaling model and this model will not be part of the exam (the binary signaling model, i.e. the pirate story, however is relevant for the exam). If you are interested in the Spence model, you can watch this [[https://web.tresorit.com/l/pnuTt#Ykzctmj2R-PkxcosnxLLmw][screencast]] I recorded last year.   
 - There was a last minute update of the slides on weak perfect Bayesian equilibrium (also the exercises on this topic changed a bit). 
 - I added the derivation of the symmetric equilibrium in the first price sealed bid auction for an arbitrary common type distribution [[https://web.tresorit.com/l/sXAYt#3MXtRbZbcXY1eRYOj5VZbA][here]]. (This derivation is in terms of calculation more complicated than most of the course and optional reading.)
 - In the exercise session on Nov. 25 I hope to cover exercises up to and including 19.
