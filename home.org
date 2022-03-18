@@ -3,6 +3,7 @@
 #+Options: toc:nil H:2
 
 * News
+- Exam results are published on KLIPS. The exam with solution hints is posted below.  
 - Note that the registration deadline for the second exam was postponed.   
 - Some information on the exam that was given in the last lecture:
   - You are allowed to use calculators in the exam if these calculators (i) cannot store text, (ii) are not graphical and (iii) cannot solve equations for unknown variables. Put differently, your calculator should be able to do basic arithmetic of real numbers (addition, multiplication, subtraction, division and possibly also exponentiation, taking roots and logarithms as well as evaluating trigonometric functions) and nothing more. However, there is no need to have a calculator. Note that something like 3/41+5^2 is a perfectly valid answer.
@@ -33,3 +34,4 @@
  - exercises [[https://web.tresorit.com/l/Qo4h7#k9w136JGBVYuzX4D_hW5Cg][pdf]]
  - notes [[https://web.tresorit.com/l/sXAYt#3MXtRbZbcXY1eRYOj5VZbA][pdf]]
  - schedule [[https://github.com/schottmueller/microMSc/blob/main/schedule.org][org]] [[https://web.tresorit.com/l/M1vPF#qsgBnSpLwC1xwq2yNER_jA][pdf]]
+ - old [[https://web.tresorit.com/l/adtBo#vW3CitLl2joqqwhmYtUrfg][exam]]
