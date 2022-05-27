@@ -3,6 +3,7 @@
 #+Options: toc:nil H:2
 
 * News
+- The website of the examination office contains the relevant information regarding the exam inspection.  
 - Exam results are published on KLIPS. The exam with solution hints is posted below.
 - Some information on the exam that was given in the last lecture:
   - You are allowed to use calculators in the exam if these calculators (i) cannot store text, (ii) are not graphical and (iii) cannot solve equations for unknown variables. Put differently, your calculator should be able to do basic arithmetic of real numbers (addition, multiplication, subtraction, division and possibly also exponentiation, taking roots and logarithms as well as evaluating trigonometric functions) and nothing more. However, there is no need to have a calculator. Note that something like 3/41+5^2 is a perfectly valid answer.
