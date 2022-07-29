@@ -324,13 +324,36 @@ A profile of strategies $\sigma$ together with a system of beliefs $\mu$ is a we
 
 - wPBE components
   - seller strategy: $p_1$ and $p_2(p_1,b_1)$
-  - buyer strategy: $b_1(p_1)$ and $b_2(p_1,b_1,p_2)$
+  - buyer strategy: $b_1(p_1,v)$ and $b_2(p_1,b_1,p_2,v)$
   - seller beliefs: $\mu_1$ and $\mu_2(p_1,b_1)$
 
 ** Behavior based price discrimination III
-   - sequential rationality: buyer buys in period 2 if and only if price is below his valuation
-   - sequential rationality seller: $p_2=5$ if and only if $\mu_2 5\geq 3\;\Leftrightarrow\; \mu_2\geq 3/5$
+- actions in period 2:  
+  - sequential rationality: buyer buys in period 2 if and only if price is below his valuation
+  - sequential rationality seller: $p_2=5$ if and only if $\mu_2 5\geq 3\;\Leftrightarrow\; \mu_2\geq 3/5$
 
+- beliefs $\mu_2$:
+  - what are possible seller beliefs?
+    - if both types buy in period 1 (in equilibrium):
+      # 1/2 by Bayes' rule after buying; (belief after not buying not determined)
+    - if only $v_h$ buys in period 1 (in equilibrium):
+      # 1 after buying and 0 after not buying
+
+- buying decision of $v_h$ in period 1:
+  - if $p_1=5$ is it optimal to buy or not?
+    # always optimal to buy as in worst case payoff is (7-5)*(1+.75)>.75*(7-3) where the latter is the best case payoff of not buying
+  - if $p_1=3$ is it optimal to buy or not?
+    # even stronger argument as above => buy 
+
+- buying decision of $v_l$ in period 1:
+  - if $p_1=5$ is it optimal to buy or not?
+    # maximal payoff after buying in period 1 is (4-5)+.75*(4-3)<0 => better not to buy
+  - if $p_1=3$ is it optimal to buy or not?
+    # minimal payoff after buying is 4-3=1 while maximum payoff when not buying equals .75(4-3)<1 => buy 
+- what is the profit maximizing price $p_1$?
+    # p_1=3 leads to mu_2=1/2 and p_2=3 and therefore profits of 3*1.75=5.25
+    # p_1=5 leads to separation in period 2 and profits of .5*5+.75*(.5*5+.5*3)=5.5  
+    
 ** Behavior based price discrimination IV       
    - wPBE
      - seller: $p_1=5$, $p_2(5,1)=5$, $p_2(5,0)=3$, $p_2(3,1)=p_2(3,0)=3$
