@@ -3,22 +3,20 @@
 #+Options: toc:nil H:2
 
 * News
-- The website of the examination office contains the relevant information regarding the exam inspection.  
-- Exam results are published on KLIPS. The exam with solution hints is posted below.
-- Some information on the exam that was given in the last lecture:
-  - You are allowed to use calculators in the exam if these calculators (i) cannot store text, (ii) are not graphical and (iii) cannot solve equations for unknown variables. Put differently, your calculator should be able to do basic arithmetic of real numbers (addition, multiplication, subtraction, division and possibly also exponentiation, taking roots and logarithms as well as evaluating trigonometric functions) and nothing more. However, there is no need to have a calculator. Note that something like 3/41+5^2 is a perfectly valid answer.
-  - The exam consists of 2 or 3 exercises (which each may have 1-3 subquestions). Not finishing all exercises within 60 minutes is an option that should not scare you.  
-- In the last lecture (Feb. 4), I will only answer questions. We will not cover the Spence signaling model and this model will not be part of the exam (the binary signaling model, i.e. the pirate story, however is relevant for the exam). If you are interested in the Spence model, you can watch this [[https://web.tresorit.com/l/pnuTt#Ykzctmj2R-PkxcosnxLLmw][screencast]] I recorded last year.   
-- There was a last minute update of the slides on weak perfect Bayesian equilibrium (also the exercises on this topic changed a bit). 
-- I added the derivation of the symmetric equilibrium in the first price sealed bid auction for an arbitrary common type distribution [[https://web.tresorit.com/l/sXAYt#3MXtRbZbcXY1eRYOj5VZbA][here]]. (This derivation is in terms of calculation more complicated than most of the course and optional reading.)
-- In the exercise session on Nov. 25 I hope to cover exercises up to and including 19.
+# - The website of the examination office contains the relevant information regarding the exam inspection.  
+# - Exam results are published on KLIPS. The exam with solution hints is posted below.
+# - Some information on the exam that was given in the last lecture:
+ # - You are allowed to use calculators in the exam if these calculators (i) cannot store text, (ii) are not graphical and (iii) cannot solve equations for unknown variables. Put differently, your calculator should be able to do basic arithmetic of real numbers (addition, multiplication, subtraction, division and possibly also exponentiation, taking roots and logarithms as well as evaluating trigonometric functions) and nothing more. However, there is no need to have a calculator. Note that something like 3/41+5^2 is a perfectly valid answer.
+#  - The exam consists of 2 or 3 exercises (which each may have 1-3 subquestions). Not finishing all exercises within 60 minutes is an option that should not scare you.  
+# - In the last lecture (Feb. 4), I will only answer questions. We will not cover the Spence signaling model and this model will not be part of the exam (the binary signaling model, i.e. the pirate story, however is relevant for the exam). If you are interested in the Spence model, you can watch this [[https://web.tresorit.com/l/pnuTt#Ykzctmj2R-PkxcosnxLLmw][screencast]] I recorded last year.
+- Welcome to Microeconomics. The material on this page is from last year and will still be updated.
 - To clarify: I do not use ILIAS (as I prefer openly accessible material and dislike parts of the terms of service) and all material for this course is available on this website.
-- exam dates: Feb. 23, 2022, 9:00 (room: B) and March 30, 2022, 15:00 (room: A1)
+# - exam dates: Feb. 23, 2022, 9:00 (room: B) and March 30, 2022, 15:00 (room: A1)
 
 * Course setup
-  *Lecture:* Fridays, 08:00-09:30 (101/EG/27 HS XXV) (no online live stream, please study the slides and the readings indicated in the schedule if you are unable to attend)
+  *Lecture:* Thursdays, 14:00-15:30 (101 Hörsaal XXIII 101/EG/17)
   
-  *Exercise session:* Thursdays, 14:00-15:30 (zoom, room 999 6261 7147, pw six2263four) 
+  *Exercise session:* Wednesdays, 8:00-9:30 (101 Hörsaal XXIII 101/EG/17)
 
   Prerequisites: You are expected to know basic game theory (normal form games, dominant strategies, Nash equilibrium, game trees, subgame perfect Nash equilibrium) and microeconomics at Bachelor level (preferences, indifference curves, utility functions, consumer problem, Pareto efficiency). The  [[https://web.tresorit.com/l/M1vPF#qsgBnSpLwC1xwq2yNER_jA][schedule]] contains detailed prerequisites for each lecture in terms of economics and mathematics.
 * Material  
