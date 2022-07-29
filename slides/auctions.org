@@ -155,9 +155,21 @@ $$ {\beta^{-1}}'(b_i)*(v_i-b_i)-\beta^{-1}(b_i)=0$$
 $$\Lra \frac{1}{\beta'(\beta^{-1}(b_i))}*(v_i-b_i)-\beta^{-1}(b_i)=0$$
 - if $\beta$ is equilibrium, maximum is achieved at $b_i=\beta(v_i)$ and therefore
   $$\frac{v_i-\beta(v_i)}{\beta'(v_i)}-v_i=0$$
+- this is equivalent to
+  $$ v_i-\beta(v_i)-v_i\beta'(v_i)=0$$
 - this differential equation is solved by $$\beta(v_i)=v_i/2$$
 
-** Optimal bidder behavior in the ﬁrst-price auction III  
+** Optimal bidder behavior in the ﬁrst-price auction III
+$$ v_i-\beta(v_i)-v_i\beta'(v_i)=0$$
+- using the chain rule this is equivalent to
+  $$ v_i=\frac{d\;v_i\beta(v_i)}{dv_i}$$
+- integrating both sides yields
+  $$\int_0^{v_i}\tilde v_i\,d\tilde v_i=v_i\beta(v_i)$$
+  $$\Leftrightarrow v_i^2/2 = v_i \beta(v_i)$$
+- hence, the differential equation coming out of the first order condition is solved by $$\beta(v_i)=v_i/2$$
+
+   
+** Optimal bidder behavior in the ﬁrst-price auction IV   
 - both players bidding according to the strategy $\beta(v_i)=v_i/2$ is equilibrium!
   - derivation maybe tricky but... 
   - ...make sure you understand that bidding $v_i/2$ is type $v_i$'s best response if $j$ uses the strategy $b_j(v_j)=v_j/2$
@@ -233,7 +245,7 @@ gives the same expected revenue to the seller and the expected utility of a type
   - But there is no a priori reason to expect that any auction format would always be better than others ...
   - ... or that any format would be better for some people than another format.
   - One weak formulation with real-life relevance:
-    - If we change the rule to increase expected payment for a given bid $b_i$, bidders will lower their bids $b_i$ to compensate for that
+    - If we change the rule to increase expected payment for a given bid $b_i$, bidders will lower their bids $b_i$ to compensate for that.
     - $\Ra$ Under idealized conditions, these effects exactly cancel each other out.
 
 ** Revenue equivalence theorem: proof I
@@ -348,7 +360,7 @@ gives the same expected revenue to the seller and the expected utility of a type
    - pre-auction knockouts exist(ed) in real-life and were one reason for the development of antitrust legislation
    - FPA seems less vulnerable to collusion (via pre-auction knockout)
      - higher incentives to cheat on the ring if ring bidder bids very low
-     - if ring bidder bids not very low, he has to pay his bid
+     - if ring bidder does not bid very low, he has to pay his bid
 
 ** Asymmetric bidders I
    - two bidders
@@ -395,7 +407,7 @@ gives the same expected revenue to the seller and the expected utility of a type
   - People may derive utility from winning (or resent losing).
   - People may be embarrassed if they win an auction and overpay $\Ra$ further bid shading.    
 
-** Risk aversion
+**  COMMENT Risk aversion
    - bidder $i$ derives utility $u(v_i-p)$ from the object when winning at price $p$ (and $u(-p)$ if he does not win)
      - $u:\Re\rightarrow\Re$ is strictly increasing and strictly concave
    - SPA:
@@ -531,7 +543,7 @@ gives the same expected revenue to the seller and the expected utility of a type
    - however, can be substituted by "the probability of getting a good as a function of type $P_i(v_i)$ is the same in the compared (auction format, equilibrium) pairs" \linebreak (proof works similarly)
    - hence, a version of RET also holds with reserve prices (though the reserve prices may have to differ between, e.g., SPA and FPA to get the same $P_i(v_i)$)
      
-* Position auctions
+* COMMENT Position auctions
 ** Position auction I
    - ad position auction (as for Google ads)
    - $S$ ad slots on a website
@@ -574,7 +586,7 @@ gives the same expected revenue to the seller and the expected utility of a type
    - stock market:
      - buyers state a bid price 
      - sellers state an ask price
-     - assume unit demand/supply (otherwise split a buyer who demands $q$ units up into $q$ unit demand buyers etc.)
+     - assume unit demand/supply
      - stock exchange executes as many trades as possible such that bid price of buyer is above ask price of seller
        - how do you determine which trades to execute?
 
