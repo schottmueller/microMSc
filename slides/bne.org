@@ -149,7 +149,7 @@
    - a utility function $u_i$ for each player that depends on chosen strategies and types
 
 ** pure strategy Bayesian Nash equilibrium
-   - a pure strategy for each player $s_i: T_i\rightarrow A_i$
+   - a pure strategy for each player $s_i: T_i\rightarrow S_i$
      - recall: a pure strategy assigns to each type of a player one action
    - the action of each type of player $i$ maximizes expected utility of player $i$ given the strategies of all the other players 
 
@@ -164,7 +164,7 @@
      - $t_i$ if someone else brought a speaker
      - $t_i-1/2$ if person $i$ brought a speaker
    - $t_i$ are independently distributed and $1$ (high) with probability $2/3$ and $0$ (low) with probability $1/3$
-   - we want to find a /symmetric BNE/, i.e. one where all high types use one strategy and all low types use one other strategy
+   - we want to find a /symmetric BNE/, i.e. one where\linebreak (i) the high types of all players use the same action \linebreak (ii) the low types of all players use the same action
 
 ** public good example II
    - what is the optimal strategy of a low type?
@@ -197,3 +197,91 @@
       \end{figure}
 #+End_SRC
 
+
+
+* (Very) simple poker
+
+** very simple poker I
+   - 2 players
+   - each player privately observes his card/type which is either high ($t_h$) or low ($t_l$)
+   - probability of high card is $\alpha\in(0,1)$ (independent across players)
+   - players simultaneously either /raise/ ($f$) or /fold/ ($f$)
+   - payoffs:
+     - $(0,0)$ if both fold or both raise and have the same card
+     - $1$ for raising and $-1$ for folding player if actions do not coincide
+     - $2$ for high type and $-2$ for low type if both raise and cards differ
+
+** very simple poker II
+   - what should a high type play?
+     \vspace*{1.5cm}
+     # raise is dominant: if other player folds, raise is better; if other raises, raising is better (for both types of opponent)
+   - for which $\alpha$ is $s(t_h)=r$ and $s(t_l)=f$ a symmetric BNE? 
+     \vspace*{2cm}
+     # high type: $U(r,t_h)=\alpha*0+(1-\alpha)*2>\alpha*(-1)+(1-\alpha)*0=U(f,t_l)$ => high type plays b.r.; low type: $U(f,t_l)=\alpha*(-1)+(1-\alpha)*0=-\alpha$ while $U(r,t_l)=\alpha*(-2)+(1-\alpha)*1=1-3\alpha$. Therefore, BNE iff $\alpha\geq 1/2$.
+   - what it the symmetric BNE if the above strategy is not?
+     # $s(t_h)=s(t_l)=r$: low type $U(r,t_l)=\alpha*(-2)+(1-\alpha)*0$ while $U(f,t_l)=-1$; hence BNE if $\alpha\leq 1/2$
+
+* Jury voting
+** jury voting I
+   players, actions, payoffs:
+   - jury with two members ("jurors")
+   - jurors simultaneously vote whether to /acquit/ ($a$) or /convict/ ($c$)
+   - if both vote $c$, defendant is convicted; otherwise acquitted
+   - each juror has payoff
+     - 1 if the defendant is either (i) guilty and convicted or (ii) innocent and acquitted
+     - 0 otherwise
+** jury voting II
+   information:
+   - before seeing the evidence each juror thinks that the defendant is guilty with probability 0.6
+   - each juror $j$ has his own expertise in interpreting the evidence
+     - signal $t_j\in\{i,g\}$ where $\sigma_i$ "is correct" with probability $0.8$
+       - $t_j=i$ with probability $0.8$ if the defendant is innocent and with probability $0.2$ if he is guilty
+       - $t_j=g$ with probability $0.8$ if the defendant is guilty and with probability $0.2$ if he is innocent
+     - signal $t_j$ is private information of juror $j$
+     - signals are assumed to be independent conditional on the defendant's status
+** jury voting III
+   - let $\mu_j$ be juror $j$'s belief that the defendant is guilty
+   - determine $\mu_j$ after $j$ receives signal $g$
+     \vspace*{1cm}
+     # (0.6*0.8)/(0.6*0.8+0.4*0.2)=6/7
+   - determine $\mu_j$ after $j$ receives signal $i$
+     \vspace*{1cm}
+     # (0.6*0.2)/(0.6*0.2+0.4*0.8)=12/44=3/11
+   # - how would a juror vote if he had to decide on his own?
+     # acquit if signal i, convict if signal g
+   - if juror 1 knew that $t_2=g$ and $t_1=i$, what would $\mu_j$ be?
+     \vspace*{1cm}
+     # (0.6*0.8*0.2)/(0.6*0.8*0.2+0.4*0.2*0.8)=0.6
+   - is the strategy $s(i)=a$ and $s(g)=c$ a symmetric BNE?
+     # No: suppose $t_j=i$. juror $j$'s vote matters only if the other juror voted $c$, i.e. if his signal is g; but in this case his belief that the defendant is guilty is greater than 1/2...therefore a is best response!
+** jury voting IV: symmetric BNE
+   - if $t_j=g$, then $\mu_j>1/2$ even if $j$ knew that $t_{-j}=i$
+     \linebreak $\rightarrow$ $s(g)=c$
+   - let each juror vote $c$ with probability $\gamma$ after receiving signal $i$
+     - determine the probability that $j$ votes $c$
+       \vspace*{0.5cm}
+       # 0.6+0.4*\gamma
+     - determine the expected payoff of $j$ if $t_j=i$ and he votes convict
+       \vspace*{1.3cm}
+       # pivotal if other votes c; then \mu_j = (0.6*0.2*(0.8+0.2*\gamma)) / (0.6*0.2*(0.8+0.2*\gamma)+0.4*0.8*(0.2+0.8*\gamma))=(0.096+0.024\gamma) / (0.16+0.28) and payoff of c equals mu_j
+     - determine the expected payoff of $j$ if $t_j=i$ and he votes acquit
+       \vspace*{0.7cm}
+       # same mu_j but payoff is now (1-\mu_j)
+     - which $\gamma\in[0,1]$ leads to a symmetric BNE?
+       \vspace*{0.5cm}
+       # indifference condition after receiving signal i: the above calculated mu_j=1/2 which is equivalent to $\gamma=4/29$
+
+* Pricing  with private costs
+** Pricing  with private costs 
+   - 2 firms set prices, $p_i\in[0,1]$, in order to maximize profits
+   - demand of firm $i$ equals $1-p_i+p_j/2$
+   - firm $i$ has constant marginal costs $t_i\in\{0.3,0.5\}$
+   - $t_i$ is private information and both types are equally likely
+   - find a symmetric BNE
+     \vspace*{3cm}
+  # symmetric strategy: p^l, p^h;
+  # expected profit: 0.5*(p_i-t_i)(1-p_i+p^l/2)+0.5*(p_i-t_i)(1-p_i+p^h/2)
+  # foc: -(p_i-t_i)+0.5*(1-p_i+p^l/2)+0.5*(1-p_i+p^h/2)=0
+  # b.r.: p_i(t_i) = (t_i+1+p^l/4+p^h/4) / 2=1/2+t_i/2+p^l/8+p^h/8
+  # eq. conditions: p^l = 1/2+0.3/2+p^l/8+p^h/8 and p^h = 1/2+0.5/2+p^l/8+p^h/8
+  # BNE: p^l=0.88333 p^h=0.98333
