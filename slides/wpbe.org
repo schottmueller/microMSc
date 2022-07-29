@@ -330,10 +330,6 @@ A profile of strategies $\sigma$ together with a system of beliefs $\mu$ is a we
 ** Behavior based price discrimination III
    - sequential rationality: buyer buys in period 2 if and only if price is below his valuation
    - sequential rationality seller: $p_2=5$ if and only if $\mu_2 5\geq 3\;\Leftrightarrow\; \mu_2\geq 3/5$
-   - why is the following not a wPBE:
-     - seller: $p_1=3$ and $p_2=3$ (regardless of $p_1$ and $b_1$)
-     - buyer: buy in each period if and only if valuation is above price
-     - beliefs: $\mu_1=\mu_2=1/2$ (regardless of $p_1$ and $b_1$)
 
 ** Behavior based price discrimination IV       
    - wPBE

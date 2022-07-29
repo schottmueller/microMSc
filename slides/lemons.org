@@ -34,7 +34,7 @@
 - sellers' reservation price for a high quality car is higher than for a low quality car
 - at every market price $p$ only $S(p)$ /worst/ cars will be offered ("adverse selection")
 - buyers' anticipate adverse selection
-  - willing to pay is low as anticipated quality is low
+  - willingness to pay is low as anticipated quality is low
   - market breakdown as sellers are not willing to sell at these low prices
 
 ** Adverse selection: basic idea II
@@ -141,9 +141,7 @@ D(p) = \begin{cases}1 & \text{ if }\alpha \geq 2 \text{ and }p\leq \alpha/2\\ 0 
   $$p=\mathbb{E}[i|i\geq p/\alpha]$$
   solving this equation for $p$ yields the equilibrium price $p^*$
 
-- let $\hat i=p^*/\alpha$ be the marginal consumer
-  - if $\alpha i_l<\mathbb{E}[i]$, then some consumers will not buy insurance
-
+- if $\alpha i_l<\mathbb{E}[i]$, then some consumers will not buy insurance
 
 /Welfare:/
 - welfare maximizing to have everyone insured
@@ -170,7 +168,8 @@ D(p) = \begin{cases}1 & \text{ if }\alpha \geq 2 \text{ and }p\leq \alpha/2\\ 0 
 \end{figure}
 
 ** Insurance market: graph II
-similar to regular supply and demand diagram:
+- similar to regular supply and demand diagram:
+  - "marginal consumer" $\hat i=p^*/\alpha$  $\Rightarrow$ $q=1-F(\hat i)$  
   - marginal cost when quantity $q$ is traded: $MC(q)=F^{-1}(1-q)$
   - average cost: $AC(q)=\mathbb{E}[i|i\geq F^{-1}(1-q)]$
   - inverse demand (i.e willingness to pay of marginal consumer): $P(q)=\alpha F^{-1}(1-q)$

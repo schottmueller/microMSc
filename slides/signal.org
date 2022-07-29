@@ -187,7 +187,7 @@ In a separating equilibrium, $w(e(\theta_l))=\theta_l$ and $w(e(\theta_h))=\thet
 
 ** Pooling equilibria I
 
-- pooling: both types exert same education level $e^*$
+- pooling: both types obtain same education level $e^*$
 - $\mu(e^*)=\lambda$ and $w(e^*)=\mathbb{E}[\theta]=\lambda\theta_h+(1-\lambda)\theta_l$
 - which education levels can be sustained in a pooling equilibrium?
 \begin{tikzpicture}[scale=3] 
