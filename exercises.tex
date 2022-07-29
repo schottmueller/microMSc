@@ -122,11 +122,54 @@ $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
   \end{enumerate}
   % P[prize at d1|d2 open] = P[d2 open | prize at d1]*P[prize at d1]/(P[d2 open])  now:  P[d2 open | prize at d1]=1/2, P[prize at d1]=1/3, P[d2 open]=1/3*1/2+1/3*0+1/3*1=1/2 therefore P[prize at d1|d2 open]=1/3 while P[prize at d3|d2 open]=2/3 hence the participant should switch
   % intuitively compare from an ex ante point of view the two strategies "take a door and stay" and "take a door and switch". Clearly, the first strategy wins with probability 1/3 while the other strategy wins whenever the first strategy does not win, i.e. with prob 2/3.
-\item Cournot competition with uncertain cost: There are two firms and each firm chooses a quantity $q_i$. Inverse market demand is $P(q_1,q_2)=1-q_1-q_2$. Firms have no fixed costs and marginal costs are $t_i$. The profit of each firm is therefore $(1-q_1-q_2-t_i)q_i$. Assume that costs $t_i$ are private information of firm $i$ and assume that $t_i$ equals $0.2$ with probability $1/2$ and $0.3$ with probability $1/2$ (and that the marginal costs of the two firms are independent). Determine a pure strategy BNE of this game.\\
-  (\emph{Hint: }Check for a symmetric BNE in which the high types of the two players choose the same quantity, say $q^h$, and the low types of the two firms choose another quantity $q^l$.)
-  % exp utility: 0.5*(1-q_i-q^h-t_i)q_i+0.5*(1-q_i-q^l-t_i)q_i leads to first order condition: 1-t_i-2q_i-q^ĥ/2-q^l/2=0. This has to be satisfied for t_i=0.2 and q_i=q^l as well as for t_i=0.3 and q_i=q^h. The two equations can be solve for q^l and q^h which gives q^l=11/40=0.275 and q^h=9/40=0.225
 \item Take the public good example from the lecture with $N=3$. Find another BNE (this time an asymmetric one) in which player 1 never brings a speaker -- not even if he has a high type.
   % low types still never bring speaker; let \alpha be prob that P2 and P3 bring speaker if high type; then indiff condition $1/2 = 2\alpha/3$ and therefore $\alpha=3/4$, i.e. P2 and P3 bring a speaker with prob 3/4 if they are a high type and everything else never brings. Check that his strategy of not bringing is indeed optimal for the high type of P1 as given the others' strategies his expected utility of not bringing is 1-(1-2/3*3/4)^2=3/4>1/2.
+\item This exercise is about the ``very simple poker'' model. Assume now that there are three players. If one player folds and two players raise and both of the raising players have he same card, then both have a payoff of $1/2$ while the folding player loses 1. If one player folds and two players raise and the raising players have different cards, then the high card player wins 3 while the low card player loses 2 and the folding player loses 1. If one player raises and two fold, the raising player wins 2 and the others lose 1 each. If all raise, the pot of 6 is divided equally among the players with the highest cards. If all fold, all get 0.
+  \begin{enumerate}
+  \item Show that the high type has a dominant action.
+    % raise is dominant for $t_h$ as it yields a strictly positive expected payoff while fold gives a payoff of at most 0. 
+  \item For which values of $\alpha$ is $s(t_h)=r$ and $s(t_l)=f$ a symmetric BNE?
+    % $U(f,t_l)=(-1)*(1-(1-\alpha)^2)$ while $U(r,t_l)=(-2)*(1-(1-\alpha)^2)+1*(1-\alpha)^2$; hence, f is a best response for $t_l$ iff $\alpha\geq 1-1/\sqrt{2}$
+  \item Suppose the other players adopt the strategy $s(t_h)=r$ and $t_l$ folds with probability $\beta\in[0,1]$. Determine the expected payoffs of folding and raising for the remaining player if he has type $t_l$.
+    % U(f,t_l)=(-1)*(1-(1-\alpha)^2\beta^2)$ while $U(r,t_l)=(-2)*(1-(1-\alpha)^2) +  (1/2)*(1-\alpha)^2*2*\beta(1-\beta))  + (2)*(1-\alpha)^2\beta^2 $ 
+  \item Determine a symmetric BNE (for those $\alpha$ for which $s(t_h)=r$ and $s(t_l)=f$  is not a BNE).
+    % $U(f,t_l)>U(r,t_l)$ if and only if $0\leq 1-2(1-\alpha)^2-\beta(1-\alpha)^2$; that is fold is better than raise for all $\beta$ if $\alpha\leq 1-1/\sqrt{2}$ and raise is better than fold for all beta if $\alpha\geq 1-1/\sqrt{3}$. With $s(t_h)=r$ regardless of $\alpha$, the BNE are $s(t_l)=f$ if $\alpha\leq 1-1/\sqrt{2}$; $s(t_l)=r$ if $\alpha\geq 1-1/\sqrt{3}$ and $t_l$'s strategy is $\beta=-2+1/((1-\alpha)^2)$ else.
+    % the mixed strategy of $t_l$ can be interpreted as bluffing
+  \end{enumerate}
+\item Take the jury voting model on the slides but consider now a jury with $n\in\mtahbb{N}$ jurors. Assume that unanimity is needed for a conviction.
+  \begin{enumerate}
+  \item Determine the symmetric BNE of the game.
+    % say $s(g)=c$ and let a juror with signal i convict with probability \gamma.
+    % Then a juror's expected payoff after signal i if playing c   equals. \mu_j=(0.6*0.2*(0.8+0.2\gamma)^{n-1}) / (0.6*0.2*(0.8+0.2\gamma)^{n-1} + 0.4*0.8*(0.2+0.8\gamma)^{n-1})
+    % indifference requires \mu_j=1/2 which leads to \gamma =  (0.8\sqrt[n-1]{3/8}-0.2) / (0.8-0.2\sqrt[n-1]{3/8})
+  \item Determine the probability that the jury decision is correct in equilibrium. Will larger juries lead to better decisions? \\(\emph{Hint:} This latter part is hard to do analytically and it is therefore adviced to use a computer to calculate the probabilities for various $n$'s.) 
+    % if innocent, prob of conviction equals (0.2+0.8*\gamma)^n
+    % if guilty, prog of conviction equals (0.8+0.2*\gamma)^n
+    % prob of correct decision is therefore 0.4*(1-(0.2+0.8*\gamma)^n)+0.6*((0.8+0.2*\gamma)^n)
+%n: prob of correct decision    
+% 2: 0.7724137931034484
+% 3: 0.7529097908901633
+% 4: 0.7446685135758909
+% 5: 0.7401309433119831
+% 6: 0.7372597699001953
+% 7: 0.7352797321946685
+% 8: 0.7338317761331257
+% 9: 0.7327268647282968
+% 10: 0.7318560144837067
+% 11: 0.7311519810912518
+% 12: 0.7305710254283817
+% 13: 0.7300834694313227
+% 14: 0.7296684664185429
+% 15: 0.7293109437457175
+% 16: 0.7289997332644111
+% 17: 0.7287263839662146
+% 18: 0.7284843830592656
+% 19: 0.7282686304598815
+% 20: 0.7280750754622676
+  \end{enumerate}
+ \item Cournot competition with uncertain cost: There are two firms and each firm chooses a quantity $q_i$. Inverse market demand is $P(q_1,q_2)=1-q_1-q_2$. Firms have no fixed costs and marginal costs are $t_i$. The profit of each firm is therefore $(1-q_1-q_2-t_i)q_i$. Assume that costs $t_i$ are private information of firm $i$ and assume that $t_i$ equals $0.2$ with probability $1/2$ and $0.3$ with probability $1/2$ (and that the marginal costs of the two firms are independent). Determine a pure strategy BNE of this game.\\
+  (\emph{Hint: }Check for a symmetric BNE in which the high types of the two players choose the same quantity, say $q^h$, and the low types of the two firms choose another quantity $q^l$.)
+  % exp utility: 0.5*(1-q_i-q^h-t_i)q_i+0.5*(1-q_i-q^l-t_i)q_i leads to first order condition: 1-t_i-2q_i-q^ĥ/2-q^l/2=0. This has to be satisfied for t_i=0.2 and q_i=q^l as well as for t_i=0.3 and q_i=q^h. The two equations can be solve for q^l and q^h which gives q^l=11/40=0.275 and q^h=9/40=0.225 
 \end{enumerate}
 
 \section{Auctions}
@@ -390,6 +433,20 @@ $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
 \label{sec:signaling}
 
 \begin{enumerate}[resume]
+\item Imagine a market for used cars where half of the cars are ``lemons'' (i.e. low quality cars with quality $q_i=1$) and half of the cars are good (quality $q_i=2$). There is a mass 1 of sellers and a mass 1 of buyers and each seller (buyer) wants to sell (buy) one car. The seller knows the quality of his car but the buyer does not. Seller $i$'s reservation price is $q_i$ while buyer $j$'s willingness to pay for a car of quality $q$ is $1.3q$. Suppose a seller can ask an independent third party to certify the quality of their car but this certification costs them $0.5$. A seller of a low quality car can bribe this third party to certify him a high quality at cost $0.5+b$ for some bribe $b>0$.
+
+  \begin{enumerate}
+\item Try to construct an equilibrium (consisting of a price for cars with certified high quality and a price for cars of uncertified quality) in which (i) only the high quality car owners signal the quality of their car by obtaining a certification, (ii) the low quality sellers do not obtain a certificate and (iii) all sellers sell and all buyers buy. What condition on $b$ has to hold for such an equilibrium to exist?
+  % optimal for high quality cars to get certificate and sell: p_c-0.5 \geq p_u and p_c-0.5\geq 2
+  % optimal for lemons to sell without certificate: p_c-0.5-b\leq p_u and p_u\geq 1
+  % optimal for buyers to buy: p_c \leq 2.6 and p_u \leq 1.3
+  % market clearing requires that buyers are indifferent between high and low quality cars (otherwise all buyers only want to buy one type of car and we have excess demand for this type): 2.6-p_c = 1.3- p_u
+  % solving all these (in-)equalities yields that p\in[1.2,1.3] and b\geq 0.8 has to hold in an equilibrium
+\item As a comparison point, suppose there was no third party that can certify quality. Show that there is no equilibrium in which all cars are sold.
+  % if there was, average quality of cars would be 1.5 and willingness to pay of buyers is 1.95. Hence, maximal price in such an equilibrium is 1.95 but then high quality sellers do not want to sell at this price. 
+  \end{enumerate}
+\item Suppose you want to signal that you are physically strong. What could be suitable signals?
+  % not suitable: gym membership card as anyone can get this or having a triathlon starting number on your arm; suitable: carrying around dumbbells   
 \item In the job market signaling model assume $c(e,\theta )=(1-\theta) e^2/6$ together with $\lambda=1/2$, $\theta _h=3/4$ and $\theta _l=1/4$.
   \begin{enumerate}
   \item Determine the least cost separating equilibrium.
@@ -398,13 +455,11 @@ $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
     % rearranging 1/4=3/4-0.25 e^2/6 gives \bar e=\sqrt{12}. Any e_h\in[\tilde e,\bar e] together with e_l=0 and \mu(e)=0 for e< e_h and \mu(e)=1 else is sep eq.
   \item Determine all pooling equilibria.
     % E[\theta]=1/2; rearranging 1/4=1/2-0.75 e^2/6 gives e'=\sqrt{2}, hence any e_p\in[0,e'] with \mu(e)=0 for e< e_p and \mu(e)=\lambda else is pooling eq
-  \item Now concentrate on the least cost separating equilibrium. Assume a revenue neutral tax scheme with a tax on high incomes of $1/20$ is introduced. What is the subsidy on for low incomes to make the scheme revenue neutral? What is the equilibrium education level with the tax? Are high types better or worse off with the tax?
+  \item Now concentrate on the least cost separating equilibrium. Assume a revenue neutral tax scheme with a tax on high incomes of $1/20$ is introduced. What is the subsidy for low incomes to make the scheme revenue neutral? What is the equilibrium education level with the tax? Are high types better or worse off with the tax?
     % s=t*0.5/0.5=t=0.05; rearranging  1/4+0.05=3/4-0.05-0.75 e^2/6 gives e_h^t=\sqrt{3.2}; payoff of high type without tax: 3/4-0.25*4/6=7/12 while with the tax their payoff is 3/4-0.05-0.25*3.2/6=0.7-2/15=17/30<7/12 and therefore high types are better off without the tax
   \item Again focusing on least cost separating equilibria, for which values of $\lambda$ are high types better off without a tax of $t=0.05$?
     % s=0.05*\lambda/(1-\lambda). Define r=\lambda/(1-\lambda), then e_h^t is determined by 1/4+0.05r =3/4-0.05-0.75 e^2/6 or e_h^t=\sqrt{3.6-0.4r} and consequently the payoff of a high type is 3/4-0.05-0.25*(3.6-0.4r)/6=0.55+r/60; equating this with the payoff without tax, i.e. 7/12, yields the critical r=2 or equivalently the critical lambda=2/3. Hence, theta_h is better off with the tax if \lambda>2/3 and better off without the tax otherwise
   \end{enumerate}
-\item Suppose you want to signal that you are physically strong. What could be suitable signals?
-  % not suitable: gym membership card as anyone can get this or having a triathlon starting number on your arm; suitable: carrying around dumbbells 
 \end{enumerate}
 
 \newpage
