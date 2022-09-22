@@ -150,7 +150,7 @@
       - Then, $\sum_{j=1}^n p^*_j y_j^i\geq m^i(p^*)$ for all $i$ with strict inequality for at least one $i$ (Why?)
 	\vspace*{-0.1cm}
 	# by strict quasiconcavity of u^i, the consumer problem has a unique solution -> as y^i is at least a good as this solution...it must be infeasible or coinices with the solution
-	$$\Rightarrow\sum_{i=1}^I\sum_{j=1}^n p^*_j y_j^i>\sum_{i=1}^I \sum_{j=1}^n p^*_je^i_j$$
+	$$\Rightarrow \sum^I_{i=1} \sum_{j=1}^n p^*_j y_j^i>\sum_{i=1}^I \sum_{j=1}^n p^*_je^i_j$$
       - $y$ must be feasible:$$\sum_{i=1}^I y^i\leq\sum_{i=1}^I e^i$$  \footnotesize{(note: there are vectors on both sides of the inequality!)}
       - hence, $p^* \cdot \sum_{i=1}^I y^i\leq p^*\cdot\sum_{i=1}^I e^i$ as all $p^*_j>0$ \footnotesize{(note: this is a dot/vector product)}
 	\vspace*{-0.25cm}$$\Rightarrow\sum_{i=1}^I\sum_{j=1}^n p^*_j y_j^i\leq \sum_{i=1}^I \sum_{j=1}^n p^*_je^i_j$$
