@@ -314,7 +314,7 @@ see Jehle and Reny (2011), section 6.3.2
 ** Cardinal utility X: the veil of ignorance II
    - Harsanyi:
      - my chance of being agent $i$ is $1/N$
-     - my choice should maximizes the expected utility \( \sum_{i=1}^N (1/N) u_i(x) \)
+     - my choice should maximizes the expected utility $\sum_{i=1}^N (1/N) u_i(x)$
      - $\rightarrow$ utilitarian welfare
    - Rawls:
      - I do not know who I am going to be and there is no basis for assigning probabilities.
