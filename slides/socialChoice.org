@@ -166,7 +166,7 @@ Proof is somewhat lengthy (see textbook)
        - assuming that there is something like intensity of preferences /and this intensity is comparable across agents/ helps to aggregate preferences but is a questionable assumption
 * Domain restrictions
 ** Domain restriction: Single peaked preferences I
-- imagine alternatives are ordered on the real line: $x_1<x_2<\dots <x_K$   
+- imagine alternatives are ordered on the real line: $x_1 < x_2 < \dots < x_K$   
 - assumptions:
   - common ordering of alternatives
   - everyone has a most preferred alternative 
