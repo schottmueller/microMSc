@@ -71,7 +71,7 @@
      - valuation $v_i$ minus payment if he gets object
      - minus payment (if any) if he does not get the object
    - we denote $i$'s bid as $b_i$
-     - $i$'s bidding strategy is a function $b_i:\,[\underline v,\bar v]\ra \Re_+$
+     - $i$'s bidding strategy is a function $b_i:\,[\underline v,\bar v]\rightarrow \Re_+$
 
 **  Common auction formats for a single object
 
@@ -91,7 +91,7 @@ Which one will bring the highest revenue? \linebreak We need to understand how b
 - basic trade-off for any bidder:
   - higher bid increases chance of winning...
   - ...but decreases surplus in case of winning
-- $\Ra$ ”bid shading”: In equilibrium, every bid $b_i$ will be below bidder’s value $v_i$.
+- $\Rightarrow$ ”bid shading”: In equilibrium, every bid $b_i$ will be below bidder’s value $v_i$.
 
 ** Descending (“Dutch”) auction
 
@@ -99,7 +99,7 @@ Which one will bring the highest revenue? \linebreak We need to understand how b
 - Once announced price p is below $v_i$, there is a basic trade-off:
   - agreeing to pay earlier increases chance of winning (i.e. nobody else agrees before)...
   - ...but decreases surplus in case of winning
-- $\Ra$ ”Bid shading”
+- $\Rightarrow$ ”Bid shading”
 - FPA and Dutch auction require the same considerations
 - FPA and Dutch auction are actually strategically equivalent:
   - same strategy set $S_i=\Re_+$
@@ -113,14 +113,14 @@ Which one will bring the highest revenue? \linebreak We need to understand how b
   - only changes the outcome if second-highest bid $b_j$ is between $v_i$ and $b_i$
     - if $b_j > b_i$ you don’t win either way
     - if $b_j < v_i$ you win and pay $b_j$ either way
-  - But then you win and pay $b_j > v_i$ and make negative surplus $\Ra$  better to bid $b_i = v_i$
+  - But then you win and pay $b_j > v_i$ and make negative surplus $\Rightarrow$  better to bid $b_i = v_i$
     \pause
 - Should you ever bid $b_i < v_i$ instead of bidding $v_i$?
     - only changes the outcome if $b_j \in (b_i , v_i )$
       - if $b_j > v_i$ you don’t win either way
       - if $b_j < b_i$ you win and pay $b_j$ either way
-    - But then you lose, whereas with $b_i = v_i$ you would have won and made positive surplus $\Ra$ better to bid $b_i = v_i$
-- $\Ra$ It is a weakly dominant strategy to bid $b_i = v_i$    
+    - But then you lose, whereas with $b_i = v_i$ you would have won and made positive surplus $\Rightarrow$ better to bid $b_i = v_i$
+- $\Rightarrow$ It is a weakly dominant strategy to bid $b_i = v_i$    
 
 ** Ascending (“English”) auction
 
@@ -130,15 +130,15 @@ Which one will bring the highest revenue? \linebreak We need to understand how b
     \pause
 - Should you ever stay in the bidding when announced price $p$ is above $v_i$ ?
   - No: leaving guarantees zero surplus while staying in might lead to negative surplus (and never to positive)
-- $\Ra$ weakly dominant strategy to stay in the auction until $p = v_i$
+- $\Rightarrow$ weakly dominant strategy to stay in the auction until $p = v_i$
 - (with independent values) SPA and English auction are strategically equivalent
 
 ** Optimal bidder behavior in the ﬁrst-price auction I
 
-- What is the equilibrium strategy $b_i:[\underline v,\bar v]\ra\Re_+$ in a FPA (or in a Dutch) auction?
+- What is the equilibrium strategy $b_i:[\underline v,\bar v]\rightarrow\Re_+$ in a FPA (or in a Dutch) auction?
 - We will consider a simple case:
   - two bidders have with $v_i$ independently and uniformly distributed on $[0, 1]$
-- Assume that there exists a symmetric bidding equilibrium where everybody follows the strictly increasing bidding strategy $\beta: [\underline v,\bar v]\ra\Re_+$.
+- Assume that there exists a symmetric bidding equilibrium where everybody follows the strictly increasing bidding strategy $\beta: [\underline v,\bar v]\rightarrow\Re_+$.
 - If $j$ follows strategy $\beta$, $i$'s expected payoff from bidding $b_i$ is
 \begin{multline*}
 Pr[b_i>\beta(v_j)]*(v_i-b_i) \\+ Pr[b_i=\beta(v_j)]\frac{1}{2}*(v_i-b_i)+Pr[b_i<\beta(v_j)]*0
@@ -176,18 +176,18 @@ $$ v_i-\beta(v_i)-v_i\beta'(v_i)=0$$
 - a lot of bid shading in equilibrium!
   - with $I$ players (and iid uniformly distributed values) the equilibrium is
   $$\beta(v_i)=\frac{I-1}{I}v_i$$
-  - $\Ra$ bid shading decreases with number of bidders
+  - $\Rightarrow$ bid shading decreases with number of bidders
   
 ** Which auction yields higher revenue?
 
 - For $v_1 , v_2$ uniformly iid on $[0,1]$, which auction gives the higher revenue?
 - revenue of the FPA
   - expected revenue from bidder $i$:
-    $$\int_0^1 Pr[v_j<v_i]\frac{v_i}{2}\,dv_i=\int_0^1 v_i\frac{v_i}{2}\,dv_i=\frac{1}{6} $$
+    $$\int_0^1 Pr[v_j < v_i]\frac{v_i}{2}\,dv_i=\int_0^1 v_i\frac{v_i}{2}\,dv_i=\frac{1}{6} $$
   - total expected revenue: $2*1/6=1/3$
 - revenue of the SPA
   - expected revenue from bidder $i$:
-    $$\int_0^1 Pr[v_j<v_i]\mathbb{E}[v_j|v_j<v_i]\,dv_i=\int_0^1 v_i \frac{v_i}{2}\,dv_i=\frac{1}{6} $$
+    $$\int_0^1 Pr[v_j < v_i]\mathbb{E}[v_j|v_j < v_i]\,dv_i=\int_0^1 v_i \frac{v_i}{2}\,dv_i=\frac{1}{6} $$
   - total expected revenue: $2*1/6=1/3$
 
 ** Conclusions so far
@@ -246,7 +246,7 @@ gives the same expected revenue to the seller and the expected utility of a type
   - ... or that any format would be better for some people than another format.
   - One weak formulation with real-life relevance:
     - If we change the rule to increase expected payment for a given bid $b_i$, bidders will lower their bids $b_i$ to compensate for that.
-    - $\Ra$ Under idealized conditions, these effects exactly cancel each other out.
+    - $\Rightarrow$ Under idealized conditions, these effects exactly cancel each other out.
 
 ** Revenue equivalence theorem: proof I
    - take an (equilibrium, auction format) pair and assume that assumptions of RET are satisfied
@@ -305,9 +305,9 @@ gives the same expected revenue to the seller and the expected utility of a type
 
 ** Applying RET IIb
    - consider the corresponding SPA: equilibrium to bid own valuation
-   - if $i$ wins with bid $b_i=v_i$, the expected bid of $j$ is $\mathbb{E}[v_j|v_j<v_i]=v_i/2$
+   - if $i$ wins with bid $b_i=v_i$, the expected bid of $j$ is $\mathbb{E}[v_j|v_j < v_i]=v_i/2$
    - expected payment of type $v_i$ in SPA is probability of winning, i.e. $v_i$, times expected payment when winning
-     $$T_i(v_i)=\mathbb{E}[v_j|v_j<v_i]Pr[v_j<v_i]=v_i/2 * v_i=v_i^2/2$$
+     $$T_i(v_i)=\mathbb{E}[v_j|v_j < v_i]Pr[v_j < v_i]=v_i/2 * v_i=v_i^2/2$$
    - assume the all pay auction has a symmetric equilibrium in which the highest type wins
      - wining probability same as in SPA for every type
      - expected payment must be the same for every type as in SPA by RET
@@ -335,7 +335,7 @@ gives the same expected revenue to the seller and the expected utility of a type
 - consider a second-price auction
 - If bidders can ﬁgure out that $i$ has the highest valuation, the following is an equilibrium:
   - i bids $v_i$ , everybody else bids 0
-  - $\Ra$ $i$ gets the object at price 0
+  - $\Rightarrow$ $i$ gets the object at price 0
 - Bidders can accomplish this by forming a bidding ring and running a pre-auction knock-out.
 
 ** Pre-auction knockout I
@@ -405,7 +405,7 @@ gives the same expected revenue to the seller and the expected utility of a type
 - Risk-aversion and similar assumptions also imply the RET does not apply. 
 - Another consideration:
   - People may derive utility from winning (or resent losing).
-  - People may be embarrassed if they win an auction and overpay $\Ra$ further bid shading.    
+  - People may be embarrassed if they win an auction and overpay $\Rightarrow$ further bid shading.    
 
 **  COMMENT Risk aversion
    - bidder $i$ derives utility $u(v_i-p)$ from the object when winning at price $p$ (and $u(-p)$ if he does not win)
@@ -419,7 +419,7 @@ gives the same expected revenue to the seller and the expected utility of a type
        - decrease $v_i-b_i$ and therefore $u(v_i-b_i)$
      - by concavity of $u$ second effect is weaker than under risk neutrality (as $u$ is quite flat at $v_i-b_i$)
      - risk aversion leads typically to higher equilibrium bids than risk neutrality in FPA
-     - $\Ra$ more revenue in FPA than in SPA 
+     - $\Rightarrow$ more revenue in FPA than in SPA 
 
 ** Example: Embarrassment from overbidding I
 
@@ -436,7 +436,7 @@ gives the same expected revenue to the seller and the expected utility of a type
 - RET applies but "revenue" is overall expenditure by all bidders, including resources “spent” on embarrassment!
 - RET: The expected utility of each bidder is the same as in an FPA (or SPA) without the embarrassment cost.
 - RET: revenue including embarrassment costs is the same as in an FPA (or SPA) without the embarrassment cost.
-- $\Ra$ expected revenue for the seller is lower due to embarrassment costs
+- $\Rightarrow$ expected revenue for the seller is lower due to embarrassment costs
 - Running an ascending auction (where there is no overbidding embarrassment) will increase seller revenue!
 
 ** Common-value auctions 
@@ -468,7 +468,7 @@ gives the same expected revenue to the seller and the expected utility of a type
 - Is there an equilibrium in which 2 wins an ascending auction?
   - No: If 2 is willing to pay a price $p$, then 1 should also be willing to pay that price (and a bit more).
 - In equilibrium, 2 never wins the auction!
-- Slight modiﬁcation completely changes the result $\Ra$ 2 has no reason to even enter the auction!
+- Slight modiﬁcation completely changes the result $\Rightarrow$ 2 has no reason to even enter the auction!
 - It can be shown that first price auctions are much less affected (i.e. a change in $\varepsilon$ in 1’s valuation leads to a similarly-sized change in bidding strategies $\rightarrow$ winning probabilities do not change much).    
   
 ** Almost common value auctions: Application
@@ -480,7 +480,7 @@ gives the same expected revenue to the seller and the expected utility of a type
 - Example: In Britain in the late 1990s, BSkyB (a TV company) tried to buy a stake in Manchester United.
   - TV licenses (for football broadcasts) are sold in an auction and the money is then distributed to the football clubs.
   - If a TV station owns a bit of a football club, they have an $\varepsilon$ advantage in bidding.
-  - $\Ra$ In an ascending auction with (almost) common values, this can make all the difference!
+  - $\Rightarrow$ In an ascending auction with (almost) common values, this can make all the difference!
 
 
 ** What is the right auction format?
@@ -577,8 +577,8 @@ gives the same expected revenue to the seller and the expected utility of a type
        - deviating to higher bids and getting a better position $t<s$ is not profitable: deviation payoff $x_t(v_iq_i-b_tq_t)$ where $b_t$ is the /t/-highest bid under equilibrium bidding; deviation is negative as $b_tq_t$ is a higher score than $b_s=v_i q_i$
        - deviating to lower bids and getting a worse position $t>s$:
 	 - deviation payoff $x_t(v_iq_i-b_{t+1}q_{t+1})$ may be higher than $x_s(v_iq_i-b_{s+1}q_{s+1})$ (think, for example, of $t=s+1$ and $x_{s}\approx x_{t}$)
-       - $\Ra$ bid shading
-     - $\Ra$ industry has moved to first price bidding, i.e. price per click is own bid
+       - $\Rightarrow$ bid shading
+     - $\Rightarrow$ industry has moved to first price bidding, i.e. price per click is own bid
 	 
 * Markets as double auctions  
 ** Markets as auctions I
@@ -607,8 +607,8 @@ gives the same expected revenue to the seller and the expected utility of a type
     - bid shading:
       - bidding true valuation ensures that a buyer (seller) trades if and only if the trading price is below (above) valuation
       - but: positive probability that own bid determines trading price
-      - $\Ra$ buyers (sellers) bid below (above) their valuation to affect trading price favorably in this case
-      - if number of buyers and sellers is large, the chance of being buyer/seller $k$ is small $\Ra$ hardly any bid shading
+      - $\Rightarrow$ buyers (sellers) bid below (above) their valuation to affect trading price favorably in this case
+      - if number of buyers and sellers is large, the chance of being buyer/seller $k$ is small $\Rightarrow$ hardly any bid shading
       - with bid shading: possible inefficiency as, e.g., trade $k+1$ may be efficient
     - equilibrium strategies can be determined similar to first price auction but somewhat involved
 
@@ -618,7 +618,7 @@ can we do something like a second price auction?
   - first try:
     - buyers pay $b_{k+1}$ and sellers receive $a_{k+1}$
     - upside: bids of trading players do not affect price
-    - $\Ra$ no incentive for bid shading
+    - $\Rightarrow$ no incentive for bid shading
     - problem: as $a_{k+1}>b_{k+1}$, there is a deficit!
 
 ** Markets as auctions V	
@@ -629,9 +629,9 @@ can we do something like a second price auction?
     - sellers receive $a_k$
     - now: possibly surplus (say, profit of the stock exchange)
     - weakly dominant strategy to bid true valuation\linebreak for buyer:
-      - if trading price (after truthful bid) above valuation no deviation can bring price down $\Ra$ no profitable deviation
-      - if trading price (after truthful bid) below valuation, any deviation would either not affect outcome or lead to not trading $\Ra$ no profitable deviation
+      - if trading price (after truthful bid) above valuation no deviation can bring price down $\Rightarrow$ no profitable deviation
+      - if trading price (after truthful bid) below valuation, any deviation would either not affect outcome or lead to not trading $\Rightarrow$ no profitable deviation
   - inefficiency: trade $k$ not executed
-    - if many buyers and sellers $a_k$ and $b_k$ are close $\Ra$ inefficiency small
-    - for large number of buyers and sellers: no market power $\Ra$ complete market
+    - if many buyers and sellers $a_k$ and $b_k$ are close $\Rightarrow$ inefficiency small
+    - for large number of buyers and sellers: no market power $\Rightarrow$ complete market
       
