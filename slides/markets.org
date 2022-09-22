@@ -155,7 +155,8 @@
 	$$\sum_{i=1}^I y^i\leq\sum_{i=1}^I e^i$$
 	\footnotesize{(note: there are vectors on both sides of the inequality!)}
       - hence, $p^* \cdot \sum_{i=1}^I y^i \leq p^* \cdot \sum_{i=1}^I e^i$ as all $p^*_j>0$ \footnotesize{(note: this is a dot/vector product)}
-	\vspace*{-0.25cm}$$\Rightarrow \sum_{i=1}^I \sum_{j=1}^n p^*_j y_j^i\leq \sum_{i=1}^I \sum_{j=1}^n p^*_j e^i_j$$
+	\vspace*{-0.25cm}$$\Rightarrow \sum_{i=1}^I \sum_{j=1}^n p^*_j y_j^i\leq \sum_{i=1}^I \sum_{j=1}^n p^*_j e^i_j \qquad \qed$$
+	
 
     
 ** Example: 2 agents, 2 goods (Edgeworth box)
