@@ -151,9 +151,11 @@
 	\vspace*{-0.1cm}
 	# by strict quasiconcavity of u^i, the consumer problem has a unique solution -> as y^i is at least a good as this solution...it must be infeasible or coinices with the solution
 	$$\Rightarrow \sum^I_{i=1} \sum_{j=1}^n p^*_j y_j^i>\sum_{i=1}^I \sum_{j=1}^n p^*_je^i_j$$
-      - $y$ must be feasible:$$\sum_{i=1}^I y^i\leq\sum_{i=1}^I e^i$$  \footnotesize{(note: there are vectors on both sides of the inequality!)}
-      - hence, $p^* \cdot \sum_{i=1}^I y^i\leq p^*\cdot\sum_{i=1}^I e^i$ as all $p^*_j>0$ \footnotesize{(note: this is a dot/vector product)}
-	\vspace*{-0.25cm}$$\Rightarrow\sum_{i=1}^I\sum_{j=1}^n p^*_j y_j^i\leq \sum_{i=1}^I \sum_{j=1}^n p^*_je^i_j$$
+      - $y$ must be feasible:
+	$$\sum_{i=1}^I y^i\leq\sum_{i=1}^I e^i$$
+	\footnotesize{(note: there are vectors on both sides of the inequality!)}
+      - hence, $p^* \cdot \sum_{i=1}^I y^i \leq p^* \cdot \sum_{i=1}^I e^i$ as all $p^*_j>0$ \footnotesize{(note: this is a dot/vector product)}
+	\vspace*{-0.25cm}$$\Rightarrow \sum_{i=1}^I \sum_{j=1}^n p^*_j y_j^i\leq \sum_{i=1}^I \sum_{j=1}^n p^*_j e^i_j$$
 
     
 ** Example: 2 agents, 2 goods (Edgeworth box)
@@ -222,7 +224,7 @@
    - do you know the famous  *[[https://youtu.be/jPbh4NyKH0M][pencil clip]]*?     
 
 ** Aside: the role of prices III
-   - say the equilibrium price of goods $j$ and $k$ are $p_j^*$ and $p_k^*$ but a government forces the prices to be $\bar p_j$ and $\bar p_k$ such that $\bar p_j/\bar p_k<p_j^*/p_k^*$ \linebreak (for simplicity think of $\bar p_k=p^*_k$ and $\bar p_j<p^*_j$)
+   - say the equilibrium price of goods $j$ and $k$ are $p_j^*$ and $p_k^*$ but a government forces the prices to be $\bar p_j$ and $\bar p_k$ such that $\bar p_j / \bar p_k < p_j^*/p_k^*$ \linebreak (for simplicity think of $\bar p_k=p^*_k$ and $\bar p_j < p^*_j$)
      - what are the effects of such a policy?
        # starting from eq prices for other goods: excess demand for good $j$ but also effects on other goods (unless Cobb Douglas prefs) -> unclear who will get how much of good j -> rationing of  j -> unlikely that those with highest WTP for j get more -> inefficiency
      - give examples for similar interventions in practice
