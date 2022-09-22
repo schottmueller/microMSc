@@ -43,10 +43,10 @@
   - expected quality is average quality of offered cars
   - willingness to pay is average willingness to pay for cars of offered qualities
   - marginal seller (i.e. highest offered quality) may rather keep his car at such low price
-    - $\Ra$ $S-1$ cars offered
-    - $\Ra$ average quality even lower
-    - $\Ra$ willingness to pay even lower
-    - $\Ra$ another seller may decide not to sell 
+    - $\Rightarrow$ $S-1$ cars offered
+    - $\Rightarrow$ average quality even lower
+    - $\Rightarrow$ willingness to pay even lower
+    - $\Rightarrow$ another seller may decide not to sell 
     - \dots
 * Simple model
 ** Simple model 
@@ -81,7 +81,7 @@ D(p) = \begin{cases}1 & \text{ if }\alpha \geq 2 \text{ and }p\leq \alpha/2\\ 0 
 ** Analysis: equilibrium
    - If $\alpha\geq 2$, any $p\in[1,\alpha/2]$ is an equilibrium price at which all cars are sold.
    - If $\alpha<2$, no car is sold in equilibrium as demand is zero at any price. \linebreak
-     $\Ra$ $p=0$ is the equilibrium price at which demand and supply equal 0
+     $\Rightarrow$ $p=0$ is the equilibrium price at which demand and supply equal 0
 
 
 ** Results and discussion 
@@ -119,7 +119,7 @@ D(p) = \begin{cases}1 & \text{ if }\alpha \geq 2 \text{ and }p\leq \alpha/2\\ 0 
 - perfectly competitive insurance market
   - insurances have no administrative or other fixed costs
   - insurances maximize profit
-  - $\Ra$ an insurance's profit from insuring consumer $i$ at premium $p$ equals $p-i$
+  - $\Rightarrow$ an insurance's profit from insuring consumer $i$ at premium $p$ equals $p-i$
 ** Insurance market: model II
 - /information:/
   - consumers observe their risk $i$
