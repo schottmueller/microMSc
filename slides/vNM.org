@@ -147,11 +147,11 @@ $$L\succ L' \quad\text{ if and only if }\quad \alpha L+(1-\alpha) L''\succ \alph
 
 ** Utility representation
 *** Definition
-  A utility function representing the preferences $\succeq$ on $\mathcal{L}$ is a function $U:\mathcal{L}\ra \Re$ such that $U(L)\geq U(L')$ whenever $L\succeq L'$ for $L,L'\in\mathcal{L}$.
+  A utility function representing the preferences $\succeq$ on $\mathcal{L}$ is a function $U:\mathcal{L}\rightarrow \Re$ such that $U(L)\geq U(L')$ whenever $L\succeq L'$ for $L,L'\in\mathcal{L}$.
 
 ** von Neumann-Morgenstern utility
 *** Definition (von Neumann-Morgenstern utility)
-   The utility function $U:\mathcal{L}\ra \Re$ has expected utility form if there is an assignment of numbers $(u_1,\dots,u_n)$ to the $n$ outcomes in $C$ such that for any simple lottery $(p_1,\dots,p_n)$ 
+   The utility function $U:\mathcal{L}\rightarrow \Re$ has expected utility form if there is an assignment of numbers $(u_1,\dots,u_n)$ to the $n$ outcomes in $C$ such that for any simple lottery $(p_1,\dots,p_n)$ 
 $$U(L)=u_1 p_1+\dots+u_n p_n.$$
 Such a utility function $U$ is called von Neumann-Morgenstern utility function.
 
@@ -165,7 +165,7 @@ The idea is that outcome (with certainty) $c_i$ yields utility $u_i$. To evaluat
 
 ** Expected utility theorem
 *** Theorem
-      Assume that the preference relation $\succeq$ satisfies transitivity, completeness, the continuity axiom and the independence axiom. Then $\succeq$ can be represented by a von Neumann-Morgenstern utility function $U: \mathcal{L}\ra \Re$, i.e. there exists a utility function of the form $U(L)=\sum_{i=1}^nu_i p_i$ such that
+      Assume that the preference relation $\succeq$ satisfies transitivity, completeness, the continuity axiom and the independence axiom. Then $\succeq$ can be represented by a von Neumann-Morgenstern utility function $U: \mathcal{L}\rightarrow \Re$, i.e. there exists a utility function of the form $U(L)=\sum_{i=1}^nu_i p_i$ such that
 $$ L\succeq L' \quad\text{ if and only if }U(L)\geq U(L').$$
 
 *** Proof
@@ -183,7 +183,7 @@ $$ L\succeq L' \quad\text{ if and only if }U(L)\geq U(L').$$
 * Risk preferences
 ** Risk preferences
    - suppose the outcomes are amounts of money
-   - instead of $u_i$,  function  $u:\Re\ra\Re$
+   - instead of $u_i$,  function  $u:\Re\rightarrow\Re$
    - risk preferences
      - take an arbitrary lottery $L$ with expected payout $\mu$
        - risk aversion: decision maker prefers getting $\mu$ (for sure!) to $L$
