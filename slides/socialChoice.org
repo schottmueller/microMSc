@@ -175,8 +175,8 @@ Proof is somewhat lengthy (see textbook)
 
 - more precisely:
   - each agent $i$ has a most preferred alternative $x^*(i)\in\{x_1,x_2,\dots,x_K\}$
-  - if $x_k,x_m>x^*(i)$, then $x_k\succ_i x_m$ if and only if $x_k<x_m$
-  - if $x_k,x_m<x^*(i)$, then $x_k\succ_i x_m$ if and only if $x_k>x_m$
+  - if $x_k,x_m>x^*(i)$, then $x_k \succ_i x_m$ if and only if $x_k < x_m$
+  - if $x_k,x_m < x^*(i)$, then $x_k\succ_i x_m$ if and only if $x_k > x_m$
 - if we represent preferences by utility function, this function is "single peaked"
 ** Domain restriction: Single peaked preferences II
 *** Median agent for single peaked preferences
@@ -192,12 +192,12 @@ Note: a median agent always exists.
 *** Proposition
 Let preferences be single peaked and $i$ be a median agent, then $x^*(i)$ is a Condorcet winner.
 *** Proof
-  - Consider a pairwise majority vote between $x^*(i)$ and $x_m>x^*(i)$.
+  - Consider a pairwise majority vote between $x^*(i)$ and $x_m > x^*(i)$.
     # - As $i$ is a median there are at least $N/2$ agents with peak less or equal to $x^*(i)$.
     # - As $N$ is odd and $i$ is median, there is a strict majority of agents with peak less or equal to $x^*(i)$.
     # - For all agents with peak weakly below $x^*(i)$, single peakedness implies $x^*(i)\succ_i x_m$
     \vspace*{1.5cm}
-  - Consider a pairwise majority vote between $x^*(i)$ and $x_m<x^*(i)$.
+  - Consider a pairwise majority vote between $x^*(i)$ and $x_m < x^*(i)$.
     # - As $i$ is a median there are at least $N/2$ agents with peak higher or equal to $x^*(i)$.
     # - As $N$ is odd and $i$ is median, there is a strict majority of agents with peak higher or equal to $x^*(i)$.
     # - For all agents with peak weakly higher $x^*(i)$, single peakedness implies $x^*(i)\succ_i x_m$
@@ -314,7 +314,7 @@ see Jehle and Reny (2011), section 6.3.2
 ** Cardinal utility X: the veil of ignorance II
    - Harsanyi:
      - my chance of being agent $i$ is $1/N$
-     - my choice should maximizes the expected utility $\sum_{i=1}^N (1/N) u_i(x)$
+     - my choice should maximizes the expected utility \( \sum_{i=1}^N (1/N) u_i(x) \)
      - $\rightarrow$ utilitarian welfare
    - Rawls:
      - I do not know who I am going to be and there is no basis for assigning probabilities.
