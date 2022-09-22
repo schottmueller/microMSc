@@ -92,6 +92,7 @@
 ** Excess demand
    - aggregate excess demand for good $j$ is defined as
      $$z_j(p)=\sum_{i=1}^Ix_j^i(p,m^i(p))-\sum_{i=1}^Ie^i_j$$
+     
      - if $z_j(p)>0$ demand for good $j$ is higher than its supply at price $p$
      - if $z_j(p)<0$ demand for good $j$ is lower than its supply at price $p$       
    - aggregate excess demand is defined as
