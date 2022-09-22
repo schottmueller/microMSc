@@ -126,7 +126,7 @@
 
 ** Walrasian equilibrium
 *** Definition: Walrasian equilibrium
-    A vector $p^*\in\Re^n_{++}$ is called a Walrasian equilibrium if $z(p^*)=0$.
+    A vector $p^* \in \Re^n_{++}$ is called a Walrasian equilibrium if $z(p^*)=0$.
 *** :B_ignoreheading:BMCOL:
     :PROPERTIES:
     :BEAMER_env: ignoreheading
