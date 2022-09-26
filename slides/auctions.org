@@ -539,9 +539,9 @@ gives the same expected revenue to the seller and the expected utility of a type
      - market incompleteness: monopoly power!
 
 ** Reserve prices and RET
-   - RET assumption "the object is won by the bidder with the highest valuation and" no longer holds with reserve price
+   - RET assumption "the object is won by the bidder with the highest valuation" no longer holds with reserve price
    - however, can be substituted by "the probability of getting a good as a function of type $P_i(v_i)$ is the same in the compared (auction format, equilibrium) pairs" \linebreak (proof works similarly)
-   - hence, a version of RET also holds with reserve prices (though the reserve prices may have to differ between, e.g., SPA and FPA to get the same $P_i(v_i)$)
+   - hence, a version of RET also holds with reserve prices (though the reserve prices may have to differ across auction types to get the same $P_i(v_i)$)
      
 * COMMENT Position auctions
 ** Position auction I
@@ -600,7 +600,7 @@ gives the same expected revenue to the seller and the expected utility of a type
        - reminds you of anything?
 # draw suppply demand
 
-** Markets as auctions III
+** COMMENT Markets as auctions III
   - what is the trading price?
     - most natural: $(a_k+b_k)/2$
     - bidding game like first price auction
@@ -612,16 +612,16 @@ gives the same expected revenue to the seller and the expected utility of a type
       - with bid shading: possible inefficiency as, e.g., trade $k+1$ may be efficient
     - equilibrium strategies can be determined similar to first price auction but somewhat involved
 
-** Markets as auctions IV	
+** Markets as auctions III	
 can we do something like a second price auction?
-  - hopefully simpler bidding strategies etc.
+ # - hopefully simpler bidding strategies etc.
   - first try:
     - buyers pay $b_{k+1}$ and sellers receive $a_{k+1}$
     - upside: bids of trading players do not affect price
     - $\Rightarrow$ no incentive for bid shading
     - problem: as $a_{k+1}>b_{k+1}$, there is a deficit!
 
-** Markets as auctions V	
+** Markets as auctions IV	
 can we do something like a second price auction?
   - second try:
     - execute only trades 1 to $k-1$
@@ -631,7 +631,7 @@ can we do something like a second price auction?
     - weakly dominant strategy to bid true valuation\linebreak for buyer:
       - if trading price (after truthful bid) above valuation no deviation can bring price down $\Rightarrow$ no profitable deviation
       - if trading price (after truthful bid) below valuation, any deviation would either not affect outcome or lead to not trading $\Rightarrow$ no profitable deviation
-  - inefficiency: trade $k$ not executed
-    - if many buyers and sellers $a_k$ and $b_k$ are close $\Rightarrow$ inefficiency small
-    - for large number of buyers and sellers: no market power $\Rightarrow$ complete market
+    - inefficiency: trade $k$ not executed
+      - if many buyers and sellers $a_k$ and $b_k$ are close $\Rightarrow$ inefficiency small
+      - for large number of buyers and sellers: no market power $\Rightarrow$ complete market
       

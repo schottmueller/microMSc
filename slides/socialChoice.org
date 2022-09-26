@@ -282,7 +282,7 @@ note: *weak* Pareto criterion is satisfied if $W$ is such that for any two vecto
     - Hammond equity states that then $W(\hat u)\geq W(\bar u)$
 ** Cardinal utility VI: Rawlsian welfare
 *** Proposition
-    A continuous social welfare function $W$ satisfies Hammond equality and the weak Pareto principle if and only if it can take the Rawlsian form $W_{Rawls}(u_1,\dots,u_N)=\min[u_1,\dots,u_N]$.
+    A continuous social welfare function $W$ satisfies Hammond equity and the weak Pareto principle if and only if it can take the Rawlsian form $W_{Rawls}(u_1,\dots,u_N)=\min[u_1,\dots,u_N]$.
 *** :B_ignoreheading:BMCOL:
     :PROPERTIES:
     :BEAMER_env: ignoreheading

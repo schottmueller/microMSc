@@ -363,6 +363,62 @@ A profile of strategies $\sigma$ together with a system of beliefs $\mu$ is a we
    - seller benefits in period 2 from conditioning his prices on purchase history
 
        
+* Example: Privacy and donations
+** Privacy and donations I
+  - we often draw inferences about other people's attitudes/preferences/character when observing their actions
+  - if you know that others will observe and judge your behavior, will you act differently?
+  - our example:
+    - assumption 1: people donating for a good cause are viewed positively
+    - assumption 2: other people are nicer to people they view more positively
+    - how will observability of a donation affect donation behavior?
+   
+** Privacy and donations II: model    
+   - player 1 decides how much to donate: $d\in\Re_+$
+     - type $t_1$ 
+       - player 2's prior: $t_1$ uniformly distributed on $[0,1]$ 
+     - payoff: $-(t_1-d)^2+b$
+   - after player 1's donation, player 2 chooses an action $b\in[0,1]$
+     - payoff: $-(b-t_1)^2$
+   - we compare wPBE in two scenarios:
+     - player 2 observes $d$ before choosing $b$
+     - player 2 does not observe $d$ 
+
+** Privacy and donations III: no observation of $d$
+   - wPBE
+     - strategies $d(t_1)$ for P1 and $b$ for P2
+     - belief $\mu_2$ of P2
+   - wPBE belief $\mu_2$:
+     \vspace*{0.7cm}
+     # no observation => no updating => uniform on [0,1]
+   - sequentially rational $b$:
+     \vspace*{0.7cm}
+     # max_b \int_0^1 -(b-t_1)^2 dt_1 => b=1/2
+   - sequentially rational $d$:
+     \vspace*{0.7cm}
+     # max_d -(t_1-d)^2+1/2  => d=t_1
+
+** Privacy and donations III: observation of $d$
+   - wPBE
+     - strategies $d(t_1)$ for P1 and $b(d)$ for P2
+     - belief $\mu_2(d)$ of P2
+     - we will try to find a /separating wPBE/, i.e. each type chooses a different donation $d$
+   - belief $\mu_2$ in separating wPBE:
+     \vspace*{0.7cm}
+     # as every type chooses a different action, type is perfectly inferred
+     # let the inverse of d(v) be s
+     # i.e. belief puts probability 1 on s(d)
+   - sequentially rational $b$:
+     \vspace*{0.7cm}
+     # max_b -(b-s(d))^2  => b=s(d)
+   - sequentially rational $d$:
+     # max_d -(t_1-d)^2+s(d)  => first order condition: 2(t_1-d)+s'(d)=0
+     # in PBE P2's inference is correct, i.e. t_1=s(d) and the foc becomes the differential equation 2s(d)-2d+s'(d)=0 which is solved by s(d)=d-1/2; inverting gives the strategy d(t_1)=1/2+t_1
+ 
+** Privacy and donations IV
+   - same effect can also operate in opposite direction
+     - drug addicts are viewed negatively (e.g. on the labor market)
+     - should potential employers be allowed to ask for treatment of substance abuse in job interviews? what are the effects?
+     
 * PBE
 
 ** Why "weak" PBE is (sometimes too) weak: unreasonable beliefs
@@ -528,4 +584,3 @@ A perfect Bayesian equilibrium is a weak perfect Bayesian equilibrium which \lin
 - PBE in previous example?
 
 
-* Examples
