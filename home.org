@@ -18,7 +18,7 @@
   
   *Exercise session:* Wednesdays, 8:00-9:30 (101 Hörsaal XXIII 101/EG/17)
 
-  Prerequisites: You are expected to know basic game theory (normal form games, dominant strategies, Nash equilibrium, game trees, subgame perfect Nash equilibrium) and microeconomics at Bachelor level (preferences, indifference curves, utility functions, consumer problem, Pareto efficiency). The  [[https://web.tresorit.com/l/M1vPF#qsgBnSpLwC1xwq2yNER_jA][schedule]] contains detailed prerequisites for each lecture in terms of economics and mathematics.
+  *Prerequisites:* You are expected to know basic game theory (normal form games, dominant strategies, Nash equilibrium, game trees, subgame perfect Nash equilibrium) and microeconomics at Bachelor level (preferences, indifference curves, utility functions, consumer problem, Pareto efficiency). The  [[https://web.tresorit.com/l/M1vPF#qsgBnSpLwC1xwq2yNER_jA][schedule]] contains detailed prerequisites for each lecture in terms of economics and mathematics.
 * Material  
  - slides
    - social choice [[https://github.com/schottmueller/microMSc/blob/main/slides/socialChoice.org][org]] [[https://web.tresorit.com/l/3vn7X#pCuyHYev30YGnIOGNlldKQ][pdf]]
