@@ -136,7 +136,7 @@ $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
     % $U(f,t_l)>U(r,t_l)$ if and only if $0\leq 1-2(1-\alpha)^2-\beta(1-\alpha)^2$; that is fold is better than raise for all $\beta$ if $\alpha\leq 1-1/\sqrt{2}$ and raise is better than fold for all beta if $\alpha\geq 1-1/\sqrt{3}$. With $s(t_h)=r$ regardless of $\alpha$, the BNE are $s(t_l)=f$ if $\alpha\leq 1-1/\sqrt{2}$; $s(t_l)=r$ if $\alpha\geq 1-1/\sqrt{3}$ and $t_l$'s strategy is $\beta=-2+1/((1-\alpha)^2)$ else.
     % the mixed strategy of $t_l$ can be interpreted as bluffing
   \end{enumerate}
-\item Take the jury voting model on the slides but consider now a jury with $n\in\mtahbb{N}$ jurors. Assume that unanimity is needed for a conviction.
+\item Take the jury voting model on the slides but consider now a jury with $n\in\mathbb{N}$ jurors. Assume that unanimity is needed for a conviction.
   \begin{enumerate}
   \item Determine the symmetric BNE of the game.
     % say $s(g)=c$ and let a juror with signal i convict with probability \gamma.
@@ -185,7 +185,7 @@ $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
   % set of players: {1,2}; strategy set: \Re_+; in contest let v_i=v/theta_i and write payoff as v_i-e_i (dividing by a positive constant, namely theta_i - does not change preferences); writing b_i instead of e_i gives the same payoff as in all pay auction and with \lowerbar=v/b and \bar v = v/a and G(v_i)=1-F(v/\theta_i) we get the same game as in all pay auction
   % competitive lobbying/bribing, patent races, sports competition, election campaigning
 \item Derive the symmetric equilibrium of the first price auction with 2 bidders if the valuation of each bidder is drawn independently from a uniform distribution on $[0,2]$ (instead of $[0,1]$ as we did in the lecture). Do players shade their bids more or less? What is the intuition for this?\\
-  (\emph{Hint:} Use the same steps as in the lecture but note that $v_j$ has a different distribution function. ``Guess'' a linear solution to the final differential equation.)
+  (\emph{Hint:} Use the same steps as in the lecture but note that $v_j$ has a different distribution function. You can ``guess'' a linear solution to the differential equation.)
   % expected payoff is \beta^{-1}(b_i)/2 * (v_i-b_i) and the foc reads 1/(2\beta'(\beta^{-1}(b_i)))*(v_i-b_i)-\beta^{-1}(b_i)/2=0. If beta is sym. equilibrium maximum is achieved at b_i=\beta(v_i) ans therefore this can be written as $(v_i-\beta(v_i))/(\beta'(v_i))-v_i=0$. This differential equation is solved by $beta(v_i)=v_i/2$.
   % Intuition: it is like saying with prob 1/2 other's valuation is u[0,1] and with prob 1/2 other's valuation is u[1,2]. If v_i<1, then in the second case i looses anyway and therefore this has no impact on the effect of marginally changing b_i. The first case is, however, exactly the lecture!
 \item\label{ex:allPay} Take the ``all pay auction'' in exercise \ref{ex:stratEq} and assume that $F$ is the uniform distribution on $[0,1]$ and $I=2$. Determine a symmetric equilibrium in strictly increasing strategies of this all pay auction. \\
@@ -291,70 +291,7 @@ $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
 \label{sec:weak-perf-bayes}
 
 \begin{enumerate}[resume]
-\item Determine two pure strategy wPBE in the game depicted in figure \ref{fig:ex1}. Which of the two is a PBE?
-  % Strategies: (L,A,l) belief: (1,0)
-  % other  wPBE: (R,A,r) and belief (0,1)is  not a PBE as it does not induce a wPBE in the subgame starting at P2 (P3's belief has to be 1,0 there as only A is sequentially rational for P2)
-  \begin{figure}[h]
-\centering
-% First, set the overall layout of the tree
-% You might need to play with these sizes to ensure nothing overlaps.
-\tikzstyle{level 1}=[level distance=1.5cm, sibling distance=3.5cm]
-\tikzstyle{level 2}=[level distance=1.5cm, sibling distance=3.5cm]
-\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=2cm]
-\tikzstyle{level 4}=[level distance=1.5cm, sibling distance=1.5cm]
-\begin{tikzpicture}
-%Start with the parent node, and slowly build out the tree
-% with each "child" representing a new level of the diagram
-% each "node" represents a labelled (or unlabeled if you 
-% want) node in the diagram.
-\node{P1}
-    child{
-             node{P2}
-             child{
-               node(a){P3}
-                  child{
-               node{5,4,1}
-               edge from parent
-               node[left]{l}
-               }
-             child{
-               node{1,1,0}
-               edge from parent
-               node[right]{r}
-               }
-               edge from parent
-               node[left]{A}
-               }
-             child{
-               node(b){P3}
-                  child{
-               node{0,0,0}
-               edge from parent
-               node[left]{l}
-               }
-             child{
-               node{0,0,1}
-               edge from parent
-               node[right]{r}
-               }
-               edge from parent
-               node[right]{B}
-               }
-           edge from parent
-           node[left]{L}
-           }
-    child{
-         node{3,3,3}
-         edge from parent
-         node[right]{R}
-         };
-\draw [dashed](a)--(b);
-\end{tikzpicture}
-\caption{Exercise 1}
-\label{fig:ex1}
-\end{figure}
-
-  \item This exercise deals with the game of figure \ref{fig:selten_ex} which Reinhard Selten -- the only Nobel laureate in economics from Germany -- introduced to illustrate that subgame perfection was not enough to rule out non-credible threats.
+\item This exercise deals with the game of figure \ref{fig:selten_ex} which Reinhard Selten -- the only Nobel laureate in economics from Germany -- introduced to illustrate that subgame perfection was not enough to rule out non-credible threats.
     \begin{enumerate}
     \item Transform this game into its ``normal form'' (i.e. a game table) and find a pure strategy Nash equilibrium. Show that this equilibrium is subgame perfect. Show that this NE is, however, not sequentially rational. 
     \item Find a wPBE using mixed strategies.\\ (\emph{Hints:} What action is sequentially rational for player 2? For which belief is player 3 willing to mix? Under which circumstances is player 1 willing to mix?)
@@ -427,6 +364,76 @@ $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
   \item Find a wPBE with $v_h=6.4$.
     % seller: p_1=3 and p_2(5,1)=5 and otherwise p_2=3; buyer v_l: buy if p_t=3; buyer v_h: buy in period 1 if p_1=3 and in period 2 at any price; beliefs: \mu_1=1/2, \mu_2(5,1)=1 and \mu_2=1/2 otherwise
   \end{enumerate}
+\item Assume that income is distributed in a society uniformly on $[0,1]$. Every person has a payoff of $c-c^2/2+p$ where $c$ is the money the person spends on consumption of normal goods and $p$ is the prestige a person has. Every person knows its own income, $m$, and divides it into consumption of normal goods, $c$, and the purchase of a conspicuous good, $x$, (which in itself has no effect on the person's payoff!). All other members of society observe the amount a person spends on the conspicuous good but they do not observe income or consumption. The prestige a person obtains is the expected income that other people belief a person to have, i.e. the expected value of income conditional on the amount spent on the conspicuous good.
+  \begin{enumerate}
+  \item Determine a separating wPBE, i.e. an invertible function $x(m)$ and a belief $\mu(x)$ such that the conditions of wPBE hold. Can you find a Pareto improvement on this equilibrium?
+    % let the inverse of x be y. Then mu(x) assigns probability 1 to y(x). max_x (m-x)-(m-x)^2/2+y(x) which has foc: -1+(m-x)+y'(x)=0 in equilibrium m=y(x) and therefore the foc becomes -1+y(x)-x+y'(x)=0 which is solved by y(x)=x. Hence, $x(m)=m$ is optimal, i.e. all income is spent on the conspicuous good.
+    % Pareto improvement: x(m)=m/100 would still be separating, i.e. everyone has same prestige as before but clearly more consumption of normal goods
+  \item Is there also a pooling wPBE, i.e. a wPBE in which people of all income levels choose the same amount of the conspicuous good $\bar x$?
+    % in this case necessarily x=0 as inf of income distribution is zero. If this is the equilibrium than $\mu(0)$ is the uniform distribution on $[0,1]$ and everyone has prestige 1/2. No deviation is profitable if for example the off path belief \mu(x) is also the uniform on [0,1] (or any other distribution on [0,1] with expectation less than 1/2)
+  \end{enumerate}
+\item Determine two pure strategy wPBE in the game depicted in figure \ref{fig:ex1}. Which of the two is a PBE?
+  % Strategies: (L,A,l) belief: (1,0)
+  % other  wPBE: (R,A,r) and belief (0,1)is  not a PBE as it does not induce a wPBE in the subgame starting at P2 (P3's belief has to be 1,0 there as only A is sequentially rational for P2)
+  \begin{figure}[h]
+\centering
+% First, set the overall layout of the tree
+% You might need to play with these sizes to ensure nothing overlaps.
+\tikzstyle{level 1}=[level distance=1.5cm, sibling distance=3.5cm]
+\tikzstyle{level 2}=[level distance=1.5cm, sibling distance=3.5cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=2cm]
+\tikzstyle{level 4}=[level distance=1.5cm, sibling distance=1.5cm]
+\begin{tikzpicture}
+%Start with the parent node, and slowly build out the tree
+% with each "child" representing a new level of the diagram
+% each "node" represents a labelled (or unlabeled if you 
+% want) node in the diagram.
+\node{P1}
+    child{
+             node{P2}
+             child{
+               node(a){P3}
+                  child{
+               node{5,4,1}
+               edge from parent
+               node[left]{l}
+               }
+             child{
+               node{1,1,0}
+               edge from parent
+               node[right]{r}
+               }
+               edge from parent
+               node[left]{A}
+               }
+             child{
+               node(b){P3}
+                  child{
+               node{0,0,0}
+               edge from parent
+               node[left]{l}
+               }
+             child{
+               node{0,0,1}
+               edge from parent
+               node[right]{r}
+               }
+               edge from parent
+               node[right]{B}
+               }
+           edge from parent
+           node[left]{L}
+           }
+    child{
+         node{3,3,3}
+         edge from parent
+         node[right]{R}
+         };
+\draw [dashed](a)--(b);
+\end{tikzpicture}
+\caption{Exercise PBE vs. wPBE}
+\label{fig:ex1}
+\end{figure}
 \end{enumerate}
 
 \section{Signaling}

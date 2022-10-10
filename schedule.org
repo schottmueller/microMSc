@@ -32,17 +32,17 @@
     - prerequisites maths: discrete probability distributions, expected value of a discrete random variable, concavity and convexity of real functions  
     - expected utility theorem
     - risk preferences
-    - reading: cite:mas1995microeconomic ch. 6.A-6.C (or cite:jehle2001advanced ch. 2.4 )
+    - reading: cite:mas1995microeconomic ch. 6.A-6.C (or cite:jehle2001advanced ch. 2.4)
   
 ** BNE
 *** Examples and definition
     - prerequisites economics: static games of complete information, mixed strategies, Nash equilibrium
-    - prerequisites maths: probability distributions (discrete and continuous), expected value of a random variables
+    - prerequisites maths: probability distributions (discrete and continuous), expected value of a random variable
     - Bayes' rule, Venn diagram
     - examples for tests/signals and belief updating
     - games of incomplete information
     - Bayesian Nash equilibrium
-    - binary public good game
+    - examples (public good, poker, jury voting)
     - reading: ch. 7.2 cite:jehle2001advanced
 ** Auctions
 *** IPV setup and auctions
@@ -61,12 +61,10 @@
     - good auction design: stimulate entry and fight collusion
     - knock out auction as collusive device
     - example behavioral bidding (embarrassment from overbidding)
-    - risk aversion
     - (almost) common value auction
     - optional background reading:  cite:mcafee1987auctions, ch. 1 to 4 in cite:klemperer2004auctions
 *** Market power and markets as auctions
     - revenue maximization by reserve price -> inefficiency due to market power
-    - position auctions
     - double auction with many bidders: almost efficient mechanism in dominant strategies
     - optional background reading: cite:mcafee1987auctions, ch. 1 to 4 in cite:klemperer2004auctions, cite:edelman2007internet
 
@@ -78,8 +76,9 @@
 ** wPBE
    - prerequisites game theory: game trees, subgame perfect Nash equilibrium
    - definition, simple discrete examples (market entry games)
-   - examples of Coasian dynamics and behavior based price discrimination
+   - example: behavior based price discrimination, privacy and social pressure
    - reading: ch. 9.C up to p. 288 in cite:mas1995microeconomic (alternative sources: ch. 4.1 in cite:gibbons1992primer but note that he defines "perfect Bayesian equilibrium" differently from the lecture; ch. 7.3.6 and 7.3.7 in cite:jehle2001advanced cover parts of the lecture but also additional topics)
+   - optional background reading: [[cite:&daughety2010public]]
 
 ** Signaling
    - discrete signaling
@@ -96,7 +95,7 @@
 #     - risk neutrality leads to selling the firm
 #     - risk aversion trade-off
 #     - discussion whether markets with many agents would resolve inefficiency (insurance, moral hazard etc.)
-# ** Screening with 2-types (maybe skip as nothing economically after auctions)
+# ** Screening with 2-types (maybe skip as nothing economically new after auctions)
 #   - information rent
 #   - distortion of low type's contract to extract rent  
 
