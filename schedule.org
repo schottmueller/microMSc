@@ -1,3 +1,4 @@
+#+Title: Lecture Plan Microeconomics
 #+Options: toc:nil H:2
 #+Latex_Header: \usepackage{natbib}
 
@@ -65,8 +66,8 @@
     - optional background reading:  cite:mcafee1987auctions, ch. 1 to 4 in cite:klemperer2004auctions
 *** Market power and markets as auctions
     - revenue maximization by reserve price -> inefficiency due to market power
-    - double auction with many bidders: almost efficient mechanism in dominant strategies
-    - optional background reading: cite:mcafee1987auctions, ch. 1 to 4 in cite:klemperer2004auctions, cite:edelman2007internet
+   # - double auction with many bidders: almost efficient mechanism in dominant strategies
+    - optional background reading: cite:mcafee1987auctions, ch. 1 to 4 in cite:klemperer2004auctions 
 
 ** Adverse selection
     - asymmetric info can create market incompleteness
@@ -87,8 +88,6 @@
    - effect of taxes
    - reading: ch. 13.C in cite:mas1995microeconomic
 
-* tba
-  
 # * Principal agent problems 
 # ** Moral hazard
 #   - incentivizing a worker
