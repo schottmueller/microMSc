@@ -3,6 +3,7 @@
 #+Options: toc:nil H:2
 
 * News
+- The exercise class on December 14 is canceled due to an illness.  
 # - The website of the examination office contains the relevant information regarding the exam inspection.  
 # - Exam results are published on KLIPS. The exam with solution hints is posted below.
 # - Some information on the exam that was given in the last lecture:
