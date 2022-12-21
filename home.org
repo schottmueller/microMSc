@@ -3,7 +3,8 @@
 #+Options: toc:nil H:2
 
 * News
-- The exercise class on December 21 will not be held in person due to health reasons. I will record several small screen casts (and upload them on this website) in which I discuss several exercises. If you have follow up questions on these screencasts, we will discuss those in our first exercise class in January. The lecture on Thursday December 22 will take place and will be held by Marius Gramb who will cover the rest of the auctions slides and possibly also one or two exercises).   
+- The exercise class on December 21 will not be held in person due to health reasons. I will record several small screen casts (and upload them on this website) in which I discuss several exercises. If you have follow up questions on these screencasts, we will discuss those in our first exercise class in January. The lecture on Thursday December 22 will take place and will be held by Marius Gramb who will cover the rest of the auctions slides and possibly also one or two exercises).
+  - Screencasts on exercises [[https://web.tresorit.com/l/MwvWL#cGBt8FG0QCGB_gL8B2pvQw][26c]], [[https://web.tresorit.com/l/fdeXk#JRJtgz-IuaK-hzgTr6T8Iw][27]], [[https://web.tresorit.com/l/e8WnF#-qH2_6NY_MhFYopm_fZ6Zg][28]] were added.
 - The lecture on December 15 will be held as a [[https://uni-koeln.zoom.us/j/98247357978?pwd=aGF0WnhReXlOcVprdmhwVzRxY0xSdz09][zoom meeting]] online. (Meeting ID: 982 4735 7978; Password: 390800)  
 - The exercise class on December 14 is canceled due to an illness.  
 # - The website of the examination office contains the relevant information regarding the exam inspection.  
