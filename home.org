@@ -15,7 +15,7 @@
 # - In the last lecture (Feb. 4), I will only answer questions. We will not cover the Spence signaling model and this model will not be part of the exam (the binary signaling model, i.e. the pirate story, however is relevant for the exam). If you are interested in the Spence model, you can watch this [[https://web.tresorit.com/l/pnuTt#Ykzctmj2R-PkxcosnxLLmw][screencast]] I recorded last year.
 # - There is no exercise session in week 1, i.e. we will start with the lecture on Thursday.
 - To clarify: I do not use ILIAS (as I prefer openly accessible material and dislike parts of the terms of service) and all material for this course is available on this website.
-- exam dates: Feb. 1, 2023, 8:15 (room: 101 Hörsaal XXIII 101/EG/17) and March 20, 2023, 12:00 (room: Aula 1); /registration via KLIPS/
+- exam dates: Feb. 1, 2023, 8:15 (room: 101 Hörsaal XXIII 101/EG/17) and March 20, 2023, 10:00 (room: Aula 1); /registration via KLIPS/
 
 * Course setup
   *Lecture:* Thursdays, 14:00-15:30 (101 Hörsaal XXIII 101/EG/17)
