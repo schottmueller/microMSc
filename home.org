@@ -3,7 +3,7 @@
 #+Options: toc:nil H:2
 
 * News
-- Apparently, you were all so eager to download the screencasts that the provider disabled further downloads due to excessive traffic. For now, you can find the screencasts [[https://www.dropbox.com/sh/degkobjkp35drqu/AAD6kF8b2RopBFD9O7NtYamqa?dl=0][here]]. Please, download only once and not repeatedly. The lecture slides and exercises can be found [[https://www.dropbox.com/sh/rkiiiteh74tlv3u/AACK_y4nk2Dr7wB0MbBon1cta?dl=0][here]].  
+- Apparently, you were all so eager to download the screencasts that the provider disabled further downloads due to excessive traffic. For now, you can find the screencasts, lecture slides and exercises [[https://uni-koeln.sciebo.de/s/urCdimezGeZTWDu][here]]. Please, download only once and not repeatedly. 
 - The exercise class on December 21 will not be held in person due to health reasons. I will record several small screen casts (and upload them on this website) in which I discuss several exercises. If you have follow up questions on these screencasts, we will discuss those in our first exercise class in January. The lecture on Thursday December 22 will take place and will be held by Marius Gramb who will cover the rest of the auctions slides and possibly also one or two exercises).
   - Screencasts on exercises [[https://web.tresorit.com/l/MwvWL#cGBt8FG0QCGB_gL8B2pvQw][26c]], [[https://web.tresorit.com/l/fdeXk#JRJtgz-IuaK-hzgTr6T8Iw][27]], [[https://web.tresorit.com/l/e8WnF#-qH2_6NY_MhFYopm_fZ6Zg][28]], [[https://web.tresorit.com/l/HcnLl#GFudqekvaTxUJHKsRqG0zQ][29]] were added.
 - The lecture on December 15 will be held as a [[https://uni-koeln.zoom.us/j/98247357978?pwd=aGF0WnhReXlOcVprdmhwVzRxY0xSdz09][zoom meeting]] online. (Meeting ID: 982 4735 7978; Password: 390800)  
@@ -24,7 +24,8 @@
   *Exercise session:* Wednesdays, 8:00-9:30 (101 Hörsaal XXIII 101/EG/17)
 
   *Prerequisites:* You are expected to know basic game theory (normal form games, dominant strategies, Nash equilibrium, game trees, subgame perfect Nash equilibrium) and microeconomics at Bachelor level (preferences, indifference curves, utility functions, consumer problem, Pareto efficiency). The  [[https://web.tresorit.com/l/M1vPF#qsgBnSpLwC1xwq2yNER_jA][schedule]] contains detailed prerequisites for each lecture in terms of economics and mathematics.
-* Material  
+* Material
+All materials are now on [[https://uni-koeln.sciebo.de/s/urCdimezGeZTWDu][sciebo]].  
  - slides
    - social choice [[https://github.com/schottmueller/microMSc/blob/main/slides/socialChoice.org][org]] [[https://web.tresorit.com/l/3vn7X#pCuyHYev30YGnIOGNlldKQ][pdf]]
    - markets [[https://github.com/schottmueller/microMSc/blob/main/slides/markets.org][org]]  [[https://web.tresorit.com/l/mKKIm#7fISBjaqN_WYeWllpA2tdw][pdf]]
