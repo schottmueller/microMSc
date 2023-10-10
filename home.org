@@ -12,7 +12,7 @@
  # - You are allowed to use calculators in the exam if these calculators (i) cannot store text, (ii) are not graphical and (iii) cannot solve equations for unknown variables. Put differently, your calculator should be able to do basic arithmetic of real numbers (addition, multiplication, subtraction, division and possibly also exponentiation, taking roots and logarithms as well as evaluating trigonometric functions) and nothing more. However, there is no need to have a calculator. Note that something like 3/41+5^2 is a perfectly valid answer.
 #  - The exam consists of 2 or 3 exercises (which each may have 1-3 subquestions). Not finishing all exercises within 60 minutes is an option that should not scare you.  
 # - In the last lecture (Feb. 4), I will only answer questions. We will not cover the Spence signaling model and this model will not be part of the exam (the binary signaling model, i.e. the pirate story, however is relevant for the exam). If you are interested in the Spence model, you can watch this [[https://web.tresorit.com/l/pnuTt#Ykzctmj2R-PkxcosnxLLmw][screencast]] I recorded last year.
-- *There is no exercise session in week 1, i.e. we will start with the lecture on Thursday.*
+- *There is no exercise session in week 1. As the lecturer is ill, there is also no on campus lecture in week 1. More information will be published here in the evening of October 11.*
 - To clarify: I do not use ILIAS because I prefer openly accessible material and dislike parts of the terms of service. All material for this course is available on this website.
 - exam dates: Feb. 1, 2024, 14:15 (room: 101 Hörsaal XXIII 101/EG/17) and March 19, 2024, 12:00 (room: 101 Hörsaal XXIII 101/EG/17); /registration via KLIPS/
 
