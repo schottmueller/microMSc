@@ -3,6 +3,7 @@
 #+Options: toc:nil H:2
 
 * News
+- Due to a public holiday, there is no exercise session on November 1. We will therefore not cover the exercises on markets and the fundamental theorem of welfare economics and continue with the exercises on decision making under uncertainty on November 8.
 # - The exam inspection will be combined for both exam dates and  take place in April.
 #  - Screencasts on exercises are on [[https://uni-koeln.sciebo.de/s/urCdimezGeZTWDu][sciebo]].
     # [[https://web.tresorit.com/l/MwvWL#cGBt8FG0QCGB_gL8B2pvQw][26c]], [[https://web.tresorit.com/l/fdeXk#JRJtgz-IuaK-hzgTr6T8Iw][27]], [[https://web.tresorit.com/l/e8WnF#-qH2_6NY_MhFYopm_fZ6Zg][28]], [[https://web.tresorit.com/l/HcnLl#GFudqekvaTxUJHKsRqG0zQ][29]] were added.
@@ -26,7 +27,7 @@
 All materials are now also available on [[https://uni-koeln.sciebo.de/s/urCdimezGeZTWDu][sciebo]].
  - slides
    - social choice [[https://github.com/schottmueller/microMSc/blob/main/slides/socialChoice.org][org]] [[https://web.tresorit.com/l/3vn7X#pCuyHYev30YGnIOGNlldKQ][pdf]]
-   - markets [[https://github.com/schottmueller/microMSc/blob/main/slides/markets2.org][org]] [[https://web.tresorit.com/l/bHR2a#ROsbkaxwVyj0LobFy4o8CQ][pdf]]
+   - markets [[https://github.com/schottmueller/microMSc/blob/main/slides/markets2.org][org]] [[https://uni-koeln.sciebo.de/s/lVuvol95VwyDDJn][pdf]]
    - choice under uncertainty [[https://github.com/schottmueller/microMSc/blob/main/slides/vNM.org][org]] [[https://web.tresorit.com/l/TQn4j#NyY4iml3GnZnYh25-yBzsg][pdf]]
    - Bayesian Nash equilibrium [[https://github.com/schottmueller/microMSc/blob/main/slides/bne.org][org]] [[https://web.tresorit.com/l/rGMaC#JCiEcsY427d3T51Sy-5pbg][pdf]]
    - auctions [[https://github.com/schottmueller/microMSc/blob/main/slides/auctions.org][org]] [[https://web.tresorit.com/l/YupqX#k6a3U6SX91gkTb6JcDlzfw][pdf]]
