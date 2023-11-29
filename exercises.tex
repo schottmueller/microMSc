@@ -60,7 +60,7 @@
 \label{sec:mark-first-fund}
 
 \begin{enumerate}[resume]
-\item Consider a consumer and some given price vector $p$. The consumer demands more of good 1 than he initially has at this price vector, i.e. $x^i_1(p,m^i(p))>e^i_1$. Show that this consumer is worse off if the price of good 1 increases slightly (while all other prices remain the same). Would this still be the case if the price of good 1 increases a lot?
+\item Consider a consumer and some given price vector $p$. The consumer demands more of good 1 than he initially has at this price vector, i.e. $x^i_1(p,m^i(p))>e^i_1$. Show that this consumer is worse off if the price of good 1 increases slightly (while all other prices remain the same). Would this still be the case if the price of good 1 increased a lot?
   % as $x_1$ is continuous, also after a small price increase the consumer has positive net demand. Let y be the optimal  consumption bundle at the new price vector. Then (p_1+epsilon)*(y_1-e^i_1)+ \sum_{j=2}^n p_j (y_j-e^i_j)=0 but this and y_1\geq e^i_1 implies that y was also feasible at price vector p. As $y$ was not chosen at p and the consumer maximization problem has a unique maximum, y is worse than whatever was chosen there -> consumer worse off.
   % for large price increases the consumer can become a net supplier of the good and be better off
 \item Consider the following 2 agent, 2 good economy in which
@@ -90,7 +90,7 @@ What is the probability that the outcome ``1'' occurs in the compound lottery $(
   \item 0 \$
   \end{enumerate}
 An individual prefers the lottery $L_1=(0.1,0.8,0.1)$ to the lottery $L_1'=(0,1,0)$.\\
-If the independence axiom is satisfied (as well as transitivity and monotonicity), which of the following lotteries does the individual prefer?\\
+If the independence axiom is satisfied (as well as transitivity and continuity), which of the following lotteries does the individual prefer?\\
 $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
 % L_2 = 0.5*L_1+0.5*(0.6,0.4,0) and L_2'=0.5*L_1'+0.5*(0.6,0.4,0). Hence, $L_2\succeq L_2'$ by independence axiom. 
   \item Let the preferences of a decision maker be represented by a von Neumann-Morgenstern utility function $U$ with Bernoulli utility function $u$. Show that the decision maker's preferences are also represented by the von Neumann-Morgenstern utility function $V$ with Bernoulli utility function $v(x)=a+b*u(x)$ for $b>0$ and $a\in \Re$.\footnote{You can show that this is not true for general $v(x)=\phi(u(x))$ where $\phi$ is a strictly increasing function. Take for example $u(x)=x$ and $\phi(z)=\sqrt{z}$. The decision maker with $u$ is then risk neutral while the one with $v$ is risk averse. E.g. take the two lotteries where $L$ pays 0 and 4 each with probability 0.5 and $L'$ pays 1.5 for sure. Then a decision maker with $u$ prefers $L$ while a decision maker with $v$ prefers $L'$. }
@@ -122,17 +122,58 @@ $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
   \end{enumerate}
   % P[prize at d1|d2 open] = P[d2 open | prize at d1]*P[prize at d1]/(P[d2 open])  now:  P[d2 open | prize at d1]=1/2, P[prize at d1]=1/3, P[d2 open]=1/3*1/2+1/3*0+1/3*1=1/2 therefore P[prize at d1|d2 open]=1/3 while P[prize at d3|d2 open]=2/3 hence the participant should switch
   % intuitively compare from an ex ante point of view the two strategies "take a door and stay" and "take a door and switch". Clearly, the first strategy wins with probability 1/3 while the other strategy wins whenever the first strategy does not win, i.e. with prob 2/3.
+\item Consider the antigen test on the lecture slides. Suppose a randomly selected person takes two such tests and assume that the reliabilities of the two tests are independent. Compute the probability that the person is ill if (i) both tests are positive and (ii) one test is negative and one test is positive. Is the independence assumption likely to hold in reality? In which direction would positive correlation in reliability affect the probability of being ill after two positive tests?
+  % P[i|pp] = (0.001*.7*.7) / (0.001*.7*.7+0.999*.005*.005) = 0.9515
+  % P[i|np] = (0.001*.3*.7) / (0.001*.3*.7 + .999*.995*.005) = 0.04054
+  % If tests are from the same batch and there is an issue with the batch, independence will not hold. If the reliability problem is there because the test cannot detect a certain variant of the virus, we would have perfect positive correlation. Positive correlation implies that P[i|pp] is closer to P[i|p] than the number we calculated above.  
+\item For this exercise use the entry example from the lecture slides but assume now that the probabilities with which nature chooses the two firms' types are as follows: With probability $1/3$ both firms have high quality, with probability $1/3$ both firms have low quality, with probability $1/6$ firm 1 has high and firm 2 has low quality, with probability $1/6$ firm 1 has low and firm 2 has high quality.
+  \begin{enumerate}
+  \item Use Bayes' rule to determine the belief of a low quality type; i.e. if firm $i$ has low quality, how likely is it that the other firm has low quality as well?
+    % P[l|l) = (1/3) / (1/3+1/6) = 2/3;  P[h|l] = (1/6) / (1/3+1/6) = 1/3
+  \item Determine the best response of the low quality type (you can already assume that the high quality type will enter with probability 1).
+    % denote a mixed strategy of a player by (s_l,s_h) where $s_i$ is the probability of entering with type i
+    % let the low type of the other firm enter with prob s, then
+    % U_i((1,1),(s,1),2) = (1/3+2s/3)*(-1) + (2(1-s)/3)*(2)=1-2s
+    % U_i((0,1),(s,1),2) = 0
+    % for $s\leq 1/2$ entering is a best response 
+  \item Determine a Bayesian Nash equilibrium.
+    % symmetric mixed: (1/2,1)
+    % asymmetric pure: ((0,1),(1,1)) and ((1,1),(0,1))
+  \end{enumerate}
+\item An incumbent has to decide whether to invest into a new plant (I) or not (NI) while an entrant simultaneously decides whether to enter (E) or not (NE). The incumbent's costs of investing are unknown to the entrant and are represented by a type that can either be 0 or 1.5. The payoffs of the two players are given in the table below. Assume that the entrant believes that each of the two types is equally likely. 
+  \begin{table}[htbp]
+\caption{Payoffs}
+\centering
+\begin{tabular}{l|ll}
+ & E & NE\\
+\hline
+I & \(\theta,-1\) & \(\theta+2,0\)\\
+NI & $2,1$ & $3,0$\\
+\end{tabular}
+\end{table}
+\begin{enumerate}
+\item What is the optimal strategy of the incumbent if his type equals 0?
+  % NI is dominant
+\item Determine the entrant's best response if the incumbent invests with probability $s_I(1.5)$ in case his type is $1.5$.
+  % U_E(E,(0,s_I))=s_I/2(-1)+(1-s_I/2)(1)=1-s_I  U(NE,(0,s_I))=0, hence b.r. is E unless s_I=1 in which case both is b.r.
+\item Determine the best response of the incumbent with type $1.5$ if the entrant enters with probability $s_E$.
+  % U_I(I,s_E,1.5) = s_E*1.5+(1-s_E)*3.5 = 3.5-2 s_E
+  % U_I(NI,s_E,1.5) = s_E*2 +(1-s_E)*3=3-s_E
+  % b.r. is I if s_E\leq 1/2
+\item Determine all Bayesian Nash equilibria of the game.
+  % s_I=0 and s_E=1; but also s_I=1 and s_E\in[0,1/2]
+\end{enumerate}
 \item Take the public good example from the lecture with $N=3$. Find another BNE (this time an asymmetric one) in which player 1 never brings a speaker -- not even if he has a high type.
   % low types still never bring speaker; let \alpha be prob that P2 and P3 bring speaker if high type; then indiff condition $1/2 = 2\alpha/3$ and therefore $\alpha=3/4$, i.e. P2 and P3 bring a speaker with prob 3/4 if they are a high type and everything else never brings. Check that his strategy of not bringing is indeed optimal for the high type of P1 as given the others' strategies his expected utility of not bringing is 1-(1-2/3*3/4)^2=3/4>1/2.
-\item This exercise is about the ``very simple poker'' model. Assume now that there are three players. If one player folds and two players raise and both of the raising players have he same card, then both have a payoff of $1/2$ while the folding player loses 1. If one player folds and two players raise and the raising players have different cards, then the high card player wins 3 while the low card player loses 2 and the folding player loses 1. If one player raises and two fold, the raising player wins 2 and the others lose 1 each. If all raise, the pot of 6 is divided equally among the players with the highest cards. If all fold, all get 0.
+\item This exercise is about the ``very simple poker'' model. Assume now that there are three players. If one player folds and two players raise and both of the raising players have the same card, then both have a payoff of $1/2$ while the folding player loses 1. If one player folds and two players raise and the raising players have different cards, then the high card player wins 3 while the low card player loses 2 and the folding player loses 1. If one player raises and two fold, the raising player wins 2 and the others lose 1 each. If all raise, the pot of 6 is divided equally among the players with the highest cards. If all fold, all get 0.
   \begin{enumerate}
   \item Show that the high type has a dominant action.
     % raise is dominant for $t_h$ as it yields a strictly positive expected payoff while fold gives a payoff of at most 0. 
-  \item For which values of $\alpha$ is $s(t_h)=r$ and $s(t_l)=f$ a symmetric BNE?
-    % $U(f,t_l)=(-1)*(1-(1-\alpha)^2)$ while $U(r,t_l)=(-2)*(1-(1-\alpha)^2)+1*(1-\alpha)^2$; hence, f is a best response for $t_l$ iff $\alpha\geq 1-1/\sqrt{2}$
-  \item Suppose the other players adopt the strategy $s(t_h)=r$ and $t_l$ folds with probability $\beta\in[0,1]$. Determine the expected payoffs of folding and raising for the remaining player if he has type $t_l$.
+  \item For which values of $\alpha$ is $s(\theta_h)=r$ and $s(\theta_l)=f$ a symmetric BNE?
+    % $U(f,t_l)=(-1)*(1-(1-\alpha)^2)$ while $U(r,t_l)=(-2)*(1-(1-\alpha)^2)+2*(1-\alpha)^2$; hence, f is a best response for $t_l$ iff $\alpha\geq 1-1/\sqrt{1/3}$
+  \item Suppose the other players adopt the strategy $s(\theta_h)=r$ and $\theta_l$ folds with probability $\beta\in[0,1]$. Determine the expected payoffs of folding and raising for the remaining player if he has type $\theta_l$.
     % U(f,t_l)=(-1)*(1-(1-\alpha)^2\beta^2)$ while $U(r,t_l)=(-2)*(1-(1-\alpha)^2) +  (1/2)*(1-\alpha)^2*2*\beta(1-\beta))  + (2)*(1-\alpha)^2\beta^2 $ 
-  \item Determine a symmetric BNE (for those $\alpha$ for which $s(t_h)=r$ and $s(t_l)=f$  is not a BNE).
+  \item Determine a symmetric BNE (for those $\alpha$ for which $s(\theta_h)=r$ and $s(\theta_l)=f$  is not a BNE).
     % $U(f,t_l)>U(r,t_l)$ if and only if $0\leq 1-2(1-\alpha)^2-\beta(1-\alpha)^2$; that is fold is better than raise for all $\beta$ if $\alpha\leq 1-1/\sqrt{2}$ and raise is better than fold for all beta if $\alpha\geq 1-1/\sqrt{3}$. With $s(t_h)=r$ regardless of $\alpha$, the BNE are $s(t_l)=f$ if $\alpha\leq 1-1/\sqrt{2}$; $s(t_l)=r$ if $\alpha\geq 1-1/\sqrt{3}$ and $t_l$'s strategy is $\beta=-2+1/((1-\alpha)^2)$ else.
     % the mixed strategy of $t_l$ can be interpreted as bluffing
   \end{enumerate}
@@ -178,8 +219,8 @@ $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
 \begin{enumerate}[resume]
 \item\label{ex:stratEq} Show that the following two situations are strategically equivalent, i.e. they lead to the same Bayesian game:
   \begin{enumerate}
-  \item ``contest'': Each contestant $i$ (out of totally $I$ contestants) chooses how much effort $e_i$ to spend in the contest (e.g. how much time to spend on the task or how much money to spend in lobbying etc.). The contestant that spend the most effort will win the contest and receive a prize of value $v$. Effort is costly and costs contestant $i$ $\theta _ie_i$ where $\theta _i$ is private information of $i$ and drawn -- independently from other contestant's $\theta _j$ -- from a distribution $G$ with support on $[a,b]$ with $0<a<b$. The payoff of the winner is therefore $v-\theta _ie_i$ while the losers' payoff is $-\theta _ie_i$.
-  \item ``all pay auction'': $I$ bidders bid (with weakly positive bids) for an object and the highest bidders gets the object. However, all bidders have to pay their bids (yes: also the losers pay!). The payoff of the winner is $v_i -b_i$ and the payoff of the losers is $-b_i$ where $b_i$ is the bid of player $i$, $v_i$ is private information of $i$ and drawn from a distribution $F$ with support on $[\underline{v},\bar{v}]$ with $0<\underline{v}<\bar{v}$.
+  \item ``contest'': Each contestant $i$ (out of totally $I$ contestants) chooses how much effort $e_i$ to spend in the contest (e.g. how much time to spend on the task or how much money to spend in lobbying etc.). The contestant that spent the most effort will win the contest and receive a prize of value $v$. Effort is costly and costs contestant $i$ $\theta _ie_i$ where $\theta _i$ is private information of $i$ and drawn -- independently from other contestant's $\theta _j$ -- from a distribution $G$ with support on $[a,b]$ with $0<a<b$. The payoff of the winner is therefore $v-\theta _ie_i$ while the losers' payoff is $-\theta _ie_i$.
+  \item ``all pay auction'': $I$ bidders bid (with weakly positive bids) for an object and the highest bidder gets the object. However, all bidders have to pay their bids (yes: also the losers pay!). The payoff of the winner is $v_i -b_i$ and the payoff of the losers is $-b_i$ where $b_i$ is the bid of player $i$, $v_i$ is private information of $i$ and drawn from a distribution $F$ with support on $[\underline{v},\bar{v}]$ with $0<\underline{v}<\bar{v}$.
   \end{enumerate}
   Find real-life examples that resemble the two situations.
   % set of players: {1,2}; strategy set: \Re_+; in contest let v_i=v/theta_i and write payoff as v_i-e_i (dividing by a positive constant, namely theta_i - does not change preferences); writing b_i instead of e_i gives the same payoff as in all pay auction and with \lowerbar=v/b and \bar v = v/a and G(v_i)=1-F(v/\theta_i) we get the same game as in all pay auction
@@ -294,7 +335,7 @@ $L_2=(0.35,0.6,0.05)\qquad L_2'=(0.3,0.7,0)$
 \item This exercise deals with the game of figure \ref{fig:selten_ex} which Reinhard Selten -- the only Nobel laureate in economics from Germany -- introduced to illustrate that subgame perfection was not enough to rule out non-credible threats.
     \begin{enumerate}
     \item Transform this game into its ``normal form'' (i.e. a game table) and find a pure strategy Nash equilibrium. Show that this equilibrium is subgame perfect. Show that this NE is, however, not sequentially rational. 
-    \item Find a wPBE using mixed strategies.\\ (\emph{Hints:} What action is sequentially rational for player 2? For which belief is player 3 willing to mix? Under which circumstances is player 1 willing to mix?)
+    \item Find a wPBE using mixed strategies.\\ (\emph{Hints:} Which action is sequentially rational for player 2? For which belief is player 3 willing to mix? Under which circumstances is player 1 willing to mix?)
     \end{enumerate}
     \begin{figure}[h]
 \centering
