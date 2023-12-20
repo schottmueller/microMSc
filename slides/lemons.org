@@ -54,7 +54,7 @@
 - continuum of sellers 
   - uniform distribution on $[0,1]$
   - each seller $i\in[0,1]$ owns 1 car of quality $i$
-  - reservation utility of seller $i$ equals $i$
+  - reservation price of seller $i$ equals $i$
 - continuum of buyers
   - mass 1 of risk neutral buyers
   - each buyer $j$ wants to buy 1 car

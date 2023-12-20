@@ -33,7 +33,7 @@ All materials are now also available on [[https://uni-koeln.sciebo.de/s/urCdimez
    - choice under uncertainty [[https://github.com/schottmueller/microMSc/blob/main/slides/vNM.org][org]] [[https://web.tresorit.com/l/TQn4j#NyY4iml3GnZnYh25-yBzsg][pdf]]
    - Bayesian Nash equilibrium [[https://github.com/schottmueller/microMSc/blob/main/slides/bne.org][org]] [[https://uni-koeln.sciebo.de/s/VeQCuLn6bELYy6c][pdf]]
    - auctions [[https://github.com/schottmueller/microMSc/blob/main/slides/auctions.org][org]] [[https://web.tresorit.com/l/YupqX#k6a3U6SX91gkTb6JcDlzfw][pdf]]
-   - adverse selection [[https://github.com/schottmueller/microMSc/blob/main/slides/lemons.org][org]] [[https://web.tresorit.com/l/uHpHt#H4BNhZHSj9-AkWIwpG4BnQ][pdf]]
+   - adverse selection [[https://github.com/schottmueller/microMSc/blob/main/slides/lemons.org][org]] [[https://uni-koeln.sciebo.de/s/HLoSE2GQoeRglUb][pdf]]
    - weak perfect Bayesian equilibrium [[https://github.com/schottmueller/microMSc/blob/main/slides/wpbe.org][org]] [[https://web.tresorit.com/l/WrJsR#Vazt8Ue-NrQOeacc3RZMDg][pdf]]
    - signaling [[https://github.com/schottmueller/microMSc/blob/main/slides/signal.org][org]] [[https://web.tresorit.com/l/G9nZv#9mPApA8ca21xh-rnnTWj_g][pdf]]    
  - exercises [[https://web.tresorit.com/l/Qo4h7#k9w136JGBVYuzX4D_hW5Cg][pdf]]
