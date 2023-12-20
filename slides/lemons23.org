@@ -1,0 +1,276 @@
+#+TITLE: Adverse selection
+#+AUTHOR:    Christoph Schottmüller
+#+DATE:       
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger]
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl,sgamevar,tikz,istgame}}
+#+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+#+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+#+LATEX_HEADER: \newcommand{\Ra}{\Rightarrow} \newcommand{\ra}{\rightarrow} \newcommand{\Lra}{\Leftrightarrow}
+
+
+* Introduction
+** Who would you lend money to?
+- You enter a café around lunchtime where you run into a classmate with who you recently worked on a group assignment. He tells you: "I forgot his wallet. Can you lend me 15€ for lunch? I'll pay you back in tomorrow's lecture."
+- When entering a café around lunchtime an employee puts up a sign "Card machine broken, cash only!" \linebreak Someone turns away then sees and approaches you. You recognize the person from class but have never spoken to him. He asks "I have no cash. Could you lend me 15€ for lunch? I'll pay you back in tomorrow's lecture."
+
+** Who would you lend money to?   
+- You are approached by a stranger in the train station who asks "I’m sorry, I was about to go home but I have lost my wallet. Could you lend me 15€? If you give me your email address, I will send you the money on /PayPal/ when I get home."
+- You receive an email from an unknown stranger "Dear friend, I am really sorry to bother you, but I ran out of money and need 15€ to buy food for tomorrow. I’ll pay it back the day after tomorrow when I get my salary."
+
+**  Who will pay back?
+- good borrowers vs. bad borrowers
+  - likely good vs. random vs. likely bad
+- effect: underprovision
+
+  
+** Terminology
+  - /hidden/private/asymmetric information:/ person A knows something that person B does not know
+  - /adverse selection:/
+    - side A of the market has private information on some parameter $X$
+    - the value of a transaction is
+      - increasing in $X$ for one side of the market and
+      - decreasing in $X$ for the other side of the market
+    - the types of A most eager to trade are those B wants to trade with least
+  - /market breakdown:/
+    - no transaction takes place although (some) transactions would be beneficial (in expectation)
+      - possible reason: adverse selection
+
+* Interaction model      
+** Charles at the tech store I
+- Charles wants a new gaming computer and knows after some internet research exactly which graphics card, CPU, hard drive etc. he would like to have
+- Charles is not able to assemble his dream PC
+- a tech store is able to assemble but can Charles trust the store that they use the parts he wants instead of cheaper replacements?
+
+** Charles at the tech store II
+- model:
+  - Charles values his dream PC at 1200 and a PC with cheap replacement parts at 400
+  - tech store has two types:
+    - /honest:/ will never cheat and use original parts at cost 1000
+    - /shady:/ will use replacement parts that cost only 500
+  - Charles believes that both types are equally likely and he cannot observe the store type
+  - timing:
+    1. store quotes a price
+    2. Charles decides whether to buy or not
+
+** Charles at the tech store III
+\begin{figure}[h]
+  \centering
+  \begin{istgame}
+%nature     
+\xtdistance{15mm}{60mm}
+\istroot(0){nature}
+\istb{$1/2$}[left]
+\istb{$1/2$}[right]
+\endist
+%honest
+\xtdistance{20mm}{30mm}
+\istrootcntm(1)(0-1)<left>{honest}
+\istb{p}[l]
+\endist
+%shady
+\istrootcntm(2)(0-2)<right>{shady}
+\istb{p}[r]
+\endist
+%Charles left
+\xtdistance{15mm}{30mm}
+\istroot(3)(1-1)
+\istb{buy}[l]{(p-1000,1200-p)}
+\istb{not}[r]{(0,0)}
+\endist
+%Charles right
+\xtdistance{15mm}{30mm}
+\istroot(4)(2-1)
+\istb{buy}[l]{(p-500,400-p)}
+\istb{not}[r]{(0,0)}
+\endist
+\xtInfoset(3)(4){Charles}
+\end{istgame}
+  \caption{Charles at the tech store}
+  \label{fig:lemon_techStore}
+\end{figure}
+
+** Charles at the tech store IV
+- For which beliefs will Charles buy?
+  \vspace*{1cm}
+- Is there a "pooling equilibrium" in which Charles buys from both types at the same price?
+    \vspace*{1cm}
+- Is there a "separarating equilibrium" in which Charles buys form both types?
+    \vspace*{1cm}
+- Is there an equilibrium in which Charles buys from the honest type?
+    \vspace*{0.8cm}
+- Is there an equilibrium in which Charles buys from the shady type?
+
+** Charles at the tech store V
+- Example PBE:
+  - $p_h^*=p_l^*=1000$
+  - $\mu(p)=0$ if $p<1000$ while $\mu(p)=1/2$ if $p\geq 1000$
+  - Charles buys only if $p\leq 400$
+- What measures can be taken by tech shops to avoid a market breakdown?
+
+* A competitive market model  
+
+** Adverse selection on the market for "lemons"
+- sellers of used cars know something about the quality of their car that buyers do not know
+- sellers' reservation price for a high quality car is higher than for a low quality car
+- at every market price $p$ only $S(p)$ /worst/ cars will be offered ("adverse selection")
+- buyers' anticipate adverse selection
+  - willingness to pay is low as anticipated quality is low
+
+** Model
+- continuum of sellers 
+  - uniform distribution on $[0,1]$
+  - each seller $q\in[0,1]$ owns 1 car of quality $q$
+  - reservation price of seller $q$ equals $q$
+- continuum of buyers
+  - mass 1 of risk neutral buyers
+  - each buyer $j$ wants to buy 1 car
+  - willingness to pay for a car of quality $i$ equals $\alpha q$ with $\alpha>1$
+- seller $q$ knows the quality of his car
+- buyers cannot distinguish qualities at the time of purchase
+- equilibrium: a price $p$ such that supply equals demand at this price
+
+** Analysis: supply and demand
+*Supply:*
+- at price $p$, all sellers $q\leq p$ offer their car 
+$$S(p)=\begin{cases}p&\text{ if }p\in[0,1]\\1&\text{ if }p>1\end{cases}$$ 
+- average offered quality at price $p$ equals $Q(p)=p/2$
+
+*Demand:*
+- at price $p\in[0,1]$ quality offered equals $Q(p)=p/2$
+  - willingness to pay is above price if $\alpha p/2\geq p$
+  - at price $p>1$ average quality equals $Q(p)=1/2$ 
+\begin{equation*}
+  D(p)=
+  \begin{cases}
+    1 & \text{ if }p\leq 1 \text{ and } \alpha\geq 2\\
+    1 & \text{ if }p> 1 \text{ and } p\leq \alpha/2\\
+    0 & \text{ else}.
+  \end{cases}
+\end{equation*}
+
+** Analysis: equilibrium
+   - If $\alpha\geq 2$, any $p\in[1,\alpha/2]$ is an equilibrium price at which all cars are sold.
+   - If $\alpha<2$, no car is sold in equilibrium as demand is zero at any price. \linebreak
+     $\Rightarrow$ $p=0$ is the equilibrium price at which demand and supply equal 0
+
+** Intuition: The death spiral I    
+- let $\alpha=1.9$
+- try to construct equilibrium in which all cars are traded
+  - $\mathbb{E}[q]=1/2$ $\Rightarrow$ willingness to pay equals $1.9*1/2=0.95$
+  - at price $0.95$ sellers with $q>0.95$ will not sell
+- try to construct an equilibrium in which all cars with $q\leq 0.95$ are sold
+  - $\mathbb{E}[q|q\leq0.95]=0.475$ $\Rightarrow$ willingness to pay equals $1.9*0.475=0.9025$
+  - at price $0.9025$ sellers with $q>0.9025$ are not willing to sell
+- try to construct an equilibrium in which all cars with $q\leq 0.9025$ are sold
+  - \dots
+** Intuition: The death spiral II
+- try to construct an equilibrium in which all cars with $q\leq x$ are sold for some $x>0$
+  - $\mathbb{E}[q|q\leq x]=x/2$ $\Rightarrow$ willingness to pay equals $1.9*x/2=0.95x$
+  - at price $0.95 x$ sellers with quality $x$ (or slightly lower) are not willing to sell
+    
+** Results and discussion 
+
+- asymmetric information on product features can lead to market failure (if gains from trade are not too large)
+- key assumption: sellers are most reluctant to sell those cars that buyers value most
+  # (high quality is associated with high reservation price and high willingness to pay)
+- why does the first fundamental theorem of welfare economics not apply to our market?
+- what practical measures are or could be taken in used car/goods markets to avoid market failure due to asymmetric information?
+#  - warranties
+#  - quality check by experts (trusted third parties)
+#  - renting out (leasing) the good instead of selling it
+# - application: abusive drivers/consumers in ride hailing services like Uber,Lift etc.. What countermeasures did platforms take to reduce information asymmetries on the quality of the driver/consumer? (ratings, selfies to identify driver, GPS tracking and payment through platform)
+
+* Insurance market model
+** Insurance market: basic idea
+- who has the higher willingness to pay for comprehensive health insurance: a chronically ill person (diabetes, HIV\dots) or a healthy person?
+  \pause 
+- at any premium $p$, the $D(p)$ least healthy people will buy health insurance
+- the least healthy cause the highest costs to insurance companies
+- "death spiral of health insurance":
+  - start with a premium equal to the average cost of the population
+  - healthiest do not buy insurance
+  - average cost (of those that might buy insurance) increases
+  - premium has to be higher
+  - healthiest remaining consumers do not want to buy insurance
+  - repeat
+
+** Insurance market: model I
+- market for full insurance (all health care expenditures are covered 100%)
+- continuum of consumers
+  - mass 1
+  - consumer $i$ has expected health care expenditures (when insured) of $i$
+  - consumer values insurance $\alpha i$ with $\alpha>1$ (due to risk aversion)
+  - consumers are distributed on $[i_l,i_h]$ with distribution $F$ (and density $f$)
+- perfectly competitive insurance market
+  - insurances have no administrative or other fixed costs
+  - insurances maximize profit
+  - $\Rightarrow$ an insurance's profit from insuring consumer $i$ at premium $p$ equals $p-i$
+** Insurance market: model II
+- /information:/
+  - consumers observe their risk $i$
+  - insurances do not observe $i$
+- /equilibrium:/
+  - premium $p$ equals average cost of insured (due to perfect competition among insurance companies)
+  - insured are those consumers whose value is above premium
+
+** Insurance market: analysis
+
+/Demand:/
+- at premium $p$ all consumers $i$ for which $\alpha i\geq p$ buy insurance
+  $$D(p)=1-F(p/\alpha)$$
+- expected costs of insured are $\mathbb{E}[i|i\geq p/\alpha]$
+  - note: $\mathbb{E}[i|i\geq p/\alpha]$ is increasing in $p$ (/adverse selection/)
+
+/Equilibrium:/
+- in equilibrium
+  $$p=\mathbb{E}[i|i\geq p/\alpha]$$
+  solving this equation for $p$ yields the equilibrium price $p^*$
+
+/Welfare:/
+- welfare maximizing to have everyone insured
+- adverse selection leads to underinsurance if $\alpha i_l<\mathbb{E}[i]$
+** Insurance market: graph 
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=3]
+\draw[<->] (1,0)--(0,0)--(0,1);
+\node[right] at (1,0) {$p$};
+\draw[red] (0,.375)--(1,0.73);
+\node[right] at (1,0.73) {$\mathbb{E}[i|i\geq p/\alpha]$};
+\node[left] at (0,1) {$1$}; 
+\node[left] at (0,0) {$0$};
+\node[left] at (0,0.58) {$p^*$};
+\node[below] at (1,0) {$1$};
+\node[below] at (0.58,0) {$p^*$};
+\draw[dotted] (0.58,0)--(0.58,0.58)--(0,0.58);
+\draw[dotted] (0,0)--(1,1);
+\node[right] at (1,1) {\footnotesize$45^\circ$};
+\end{tikzpicture}
+%
+% \caption{Figure for $i$ uniformly distributed on $[1/4,3/4]$ and $\alpha=3/2$ implying $\mathbb{E}[i|i\geq\alpha p]=3/8+p/3$, $MC(q)=3/4-q/2$, $P(q)=1.125-3q/4$, $AC(q)=3/4-q/4$. Equilibrium: $p=9/16$, $\hat i=3/8$, $q=3/4$.}
+\end{figure}
+
+** Insurance market: policy
+- Who will benefit/lose from /mandatory insurance/ at premium $\mathbb{E}[i]$?
+  # Everyone that was insured in the market solution gains and some that were uninsured because the premium is lower, the very low risks will lose as they have to pay more than their willingness to pay as a premium.
+- Governments often /subsidize/ health insurance (using tax revenue).
+  - How does a subsidy affect welfare?
+  - Does this per se justify such subsidies?
+# move P(q) upwards parallely -> raise q^* closer to efficient level
+# taxation distorts other parts of economy, i.e. only justified if costs of taxation are not exceeding benefit
+- The Affordable Care Act in the US originally included /financial penalties/ for those not buying health insurance.
+  - What are the effects of this policy in our model?
+    # also shifts P(q) parallel up, i.e. same effect but no tax revenue spend

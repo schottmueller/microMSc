@@ -110,7 +110,7 @@ Which one will bring the highest revenue? \linebreak We need to understand how b
 
 - Bidders submit their offer, the highest bidder wins and pays the second-highest bidder’s bid.
 - With value $v_i$ , should you ever submit bid $b_i > v_i$ instead of bidding $v_i$?
-  - only changes the outcome if second-highest bid $b_j$ is between $v_i$ and $b_i$
+  - only changes the outcome if highest bid of other bidders, $b_j$, is between $v_i$ and $b_i$
     - if $b_j > b_i$ you don’t win either way
     - if $b_j < v_i$ you win and pay $b_j$ either way
   - But then you win and pay $b_j > v_i$ and make negative surplus $\Rightarrow$  better to bid $b_i = v_i$
@@ -137,7 +137,7 @@ Which one will bring the highest revenue? \linebreak We need to understand how b
 
 - What is the equilibrium strategy $b_i:[\underline v,\bar v]\rightarrow\Re_+$ in a FPA (or in a Dutch) auction?
 - We will consider a simple case:
-  - two bidders have with $v_i$ independently and uniformly distributed on $[0, 1]$
+  - two bidders with $v_i$ independently and uniformly distributed on $[0, 1]$
 - Assume that there exists a symmetric bidding equilibrium where everybody follows the strictly increasing bidding strategy $\beta: [\underline v,\bar v]\rightarrow\Re_+$.
 - If $j$ follows strategy $\beta$, $i$'s expected payoff from bidding $b_i$ is
 \begin{multline*}
@@ -145,7 +145,7 @@ Pr[b_i>\beta(v_j)]*(v_i-b_i) \\+ Pr[b_i=\beta(v_j)]\frac{1}{2}*(v_i-b_i)+Pr[b_i<
 \end{multline*}
 
 ** Optimal bidder behavior in the ﬁrst-price auction II
-- If $j$ follows strategy $\beta$, $i$'s expected payoff from bidding $b_i$ is
+- $i$'s expected payoff from bidding $b_i$ if $j$ follows strategy $\beta$:
 \begin{multline*}Pr[b_i>\beta(v_j)]*(v_i-b_i)= Pr[v_j<\beta^{-1}(b_i)]*(v_i-b_i)\\
 = \beta^{-1}(b_i)*(v_i-b_i)
 \end{multline*}
@@ -153,11 +153,8 @@ Pr[b_i>\beta(v_j)]*(v_i-b_i) \\+ Pr[b_i=\beta(v_j)]\frac{1}{2}*(v_i-b_i)+Pr[b_i<
 - first order condition of maximizing payoff over bid $b_i$
 $$ {\beta^{-1}}'(b_i)*(v_i-b_i)-\beta^{-1}(b_i)=0$$
 $$\Lra \frac{1}{\beta'(\beta^{-1}(b_i))}*(v_i-b_i)-\beta^{-1}(b_i)=0$$
-- if $\beta$ is equilibrium, maximum is achieved at $b_i=\beta(v_i)$ and therefore
-  $$\frac{v_i-\beta(v_i)}{\beta'(v_i)}-v_i=0$$
-- this is equivalent to
-  $$ v_i-\beta(v_i)-v_i\beta'(v_i)=0$$
-- this differential equation is solved by $$\beta(v_i)=v_i/2$$
+- if $\beta$ is symmetric equilibrium, maximum is achieved at $b_i=\beta(v_i)$ and therefore
+  $$\frac{v_i-\beta(v_i)}{\beta'(v_i)}-v_i=0\qquad\Leftrightarrow\qquad  v_i-\beta(v_i)-v_i\beta'(v_i)=0$$
 
 ** Optimal bidder behavior in the ﬁrst-price auction III
 $$ v_i-\beta(v_i)-v_i\beta'(v_i)=0$$
@@ -260,11 +257,11 @@ gives the same expected revenue to the seller and the expected utility of a type
      - in equilibrium type $v_i'$ prefers his bid to the bid of type $v_i''$
        $$U_i(v_i')\geq v_i' P(v_i'') -T_i(v_i'')=U_i(v_i'')+(v_i'-v_i'')P(v_i'')$$
      - in equilibrium type $v_i''$ prefers his bid to the bid of type $v_i'$
-       $$U_i(v_i'')\geq v_i'' P(v_i') -T_i(v_i')=U_i(v_i')-(v_1'-v_i'')P(v_i')$$
+       $$U_i(v_i'')\geq v_i'' P(v_i') -T_i(v_i')=U_i(v_i')-(v_i'-v_i'')P(v_i')$$
      - taking these two inequalities together (and let $v_i'>v_i''$)
        $$P(v_i')\geq \frac{U_i(v_i')-U_i(v_i'')}{v_i'-v_i''}\geq P(v_i'')$$
      - taking limit $v_i''\rightarrow v_i'$ gives (as $P$ is continuous)
-       $$U_i'(v_i')=P(v_i)$$
+       $$U_i'(v_i')=P(v_i')$$
 ** Revenue equivalence theorem: proof III
    - envelope theorem: $U_i'(v_i)=P(v_i)$
    - hence,
@@ -286,9 +283,9 @@ gives the same expected revenue to the seller and the expected utility of a type
 ** Applying RET I
 - Consider the following auction formats:
   - English (i.e. ascending) auction
-  - The highest bidder gets the object and pays twice her bid
-  - The highest bidder gets the object and pays the sum of her bid and the next-highest bid
-  - An ascending auction is held until only two bidders remain. Then these two are asked to submit sealed bids; the highest bidder gets the object and pays her bid (“Anglo-Dutch Auction”)
+  - highest bidder gets the object and pays twice his bid
+  - highest bidder gets the object and pays the sum of his bid and the next-highest bid
+  - An ascending auction is held until only two bidders remain. Then these two are asked to submit sealed bids; the highest bidder gets the object and pays his bid (“Anglo-Dutch Auction”)
 - Which one will give the highest expected revenue?
   \pause
   - It seems reasonable that there are symmetric equilibria in strictly increasing strategies.
@@ -334,7 +331,7 @@ gives the same expected revenue to the seller and the expected utility of a type
 ** Collusion in SPA
 - consider a second-price auction
 - If bidders can ﬁgure out that $i$ has the highest valuation, the following is an equilibrium:
-  - i bids $v_i$ , everybody else bids 0
+  - i bids $v_i$, everybody else bids 0
   - $\Rightarrow$ $i$ gets the object at price 0
 - Bidders can accomplish this by forming a bidding ring and running a pre-auction knock-out.
 
@@ -342,16 +339,15 @@ gives the same expected revenue to the seller and the expected utility of a type
 
 - Consider the following mechanism:
   1. ring organizer asks each member to report their valuation $v_i$
-  2. member with the highest announced valuation $\hat v_i$ “represents” the ring and bids his valuation; everybody else drops out or bids 0
-  3. if $i$ wins the auction, he pays the amount\linebreak
-     (price without ring) - (price with ring) $\geq 0$ \linebreak
-     to the ring organizer
-  4. organizer pays $t_i$ to all ring members, where\linebreak
-     $t_i$ = ($i$'s expected payment without ring)-($i$'s expected payment with ring)
+  2. member $i$ with the highest announced valuation $\hat v_i$ “represents” the ring and bids $v_i$;\linebreak all other ring members drop out or bid 0
+  3. if $\hat v_i>b_{NR}$, $i$ pays \linebreak
+     $$\hat v_{R,-i} - b_{NR} \geq 0$$
+     to the ring organizer where $\hat v_{R,-i}$ is the second highest announced valuation in the knockout and $b_{NR}$ is the highest non-ring bid
+  4. organizer pays a fixed $t_i$ to all ring members, where $t_i$ is such that the ring organizer breaks even in expectation
 
 ** Pre-auction knockout II
    - is efficient (i.e. bidder with highest valuation wins)
-   - makes ring members better off (as they sometimes get a positive payoff even when losing)
+   - makes ring members better off (as they get a positive payoff even when losing)
    - participation in ring and truthful bidding is an equilibrium
      - implicit assumption: within ring transfers are enforceable
    - divert expected revenue from the seller to the ring members
@@ -375,18 +371,16 @@ gives the same expected revenue to the seller and the expected utility of a type
    - does revenue equivalence hold between FPA and SPA?
      # no different allocations in equilibrium, i.e. different prob of getting good for some types
 ** Asymmetric bidders II
-- one equilibrium of the first price auction:
-  $$b_1(v_1)=\begin{cases}v_1 & \text{ if }v_1<2/3\\v_1/2+1/3& \text{ else }\end{cases}$$
-  $$b_2(v_2)=\begin{cases}v_2/2+1/6 & \text{ if }v_2<4/3\\ 5/6& \text{ else }\end{cases}$$
-- check that this is an equilibrium (exercise!)
+#+attr_latex: :width 6cm
+[[../asymAuctionEq.png]]
+
 - note:
-  - bidder 1 has zero probability of winning iff $v_1\leq 2/3$
-  - bidder 2 has probability 1 of winning iff $v_2\geq 4/3$
+  - bidder 1 has zero probability of winning iff $v_1\leq 0.6$
   - $b_2(1)<1$, i.e. all types of bidder 2 shade their bids!
-- what happens if $v_1=1$ and $v_2=1.1$?
+- what happens if $v_1=1$ and $v_2=1.25$?
   # person with lower valuation gets good!
 - is expected revenue lower or higher than in the second price auction?
-  # higher: with prob 2/3 bidder 2 wins with the bid 5/6; i.e expected revenue is higher than 10/18>1/2
+  # higher: bidder 2 is bidding at least 0.6 and therefore the winning price is at least 0.6
   
 ** Encouraging entry
    - higher number of bidders increases revenue

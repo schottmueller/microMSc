@@ -49,7 +49,7 @@
   - necessary to accurately reflect opportunity costs/benefits!
   
 ** Prices II
-- consumer problem of consumer $j$:
+- consumer problem of consumer $i$:
   $$\max_{x_1^i,\dots,x_n^i} u_i(x_1^i,\dots,x_n^i)\qquad s.t.:\sum_{j=1}^n x^{i}_{j} p_j\leq m^i$$
   $$\Rightarrow MRS_{km}^i=-\frac{p_k}{p_m}$$
 - at the optimal consumption bundle, each consumer's MRS between goods $k$ and $m$ is the same (and equal to price ratio)

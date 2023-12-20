@@ -190,7 +190,7 @@
     \end{game}
 \end{figure}
 
-- Nash equilibrium in this game with nature is called /Bayesian Nash equilibrium/
+- a /Bayesian Nash equilibrium/ of the original incomplete information game is a Nash equilibrium in this auxiliary game with imperfect information (and nature as a dummy player)
 
 ** Games of incomplete information V: notation
 
@@ -207,7 +207,7 @@ A (simultaneous move)  game of incomplete information consists of
   - nature chooses types according to $F$
   - each player observes his own chosen type but not the types of the other players
   - player $i$'s (pure) strategy assigns an element of $S_i$ to each $\theta_i\in\Theta_i$ 
-  - players maximize expected payoff $u_i$ (taking expectation's over other players' types)
+  - players maximize expected payoff $u_i$ (taking expectations over other players' types)
 ** Games of incomplete information VI: Bayesian Nash equilibrium II
 2 formal definitions (which are equivalent in games with finite type sets)
 - a BNE is a strategy profile $(s_1^*,\dots,s_n^*)$ where $s_i^*:\Theta_i\rightarrow S_i$ is such that

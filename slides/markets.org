@@ -47,7 +47,7 @@
 ** Notation
    - $e=(e^1,e^2,\dots, e^I)$ is the vector of endowments
    - allocations are denoted by $x=(x^1,x^2,\dots ,x^I)$
-     - $x^i\in \Re^n_+$ is agent $i$'s allocation of the $n$ good
+     - $x^i\in \Re^n_+$ is agent $i$'s allocation of the $n$ goods
    - feasible allocations:
      $$F(e)=\{x|\sum_{i=1}^Ix^i=\sum_{i=1}^Ie^i\}$$
      where each $x^i\in\Re^n_+$

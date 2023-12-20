@@ -117,7 +117,7 @@ $$L\succeq L' \quad\text{ if and only if }\quad \alpha L+(1-\alpha) L''\succeq \
   \item 0 \$
   \end{enumerate}
 An individual prefers the lottery $L_1=(0.1,0.8,0.1)$ to the lottery $L_1'=(0,1,0)$.\\
-If the independence axiom is satisfied (as well as transitivity and monotonicity), can we say which of the following lotteries the individual prefers?\\
+If the independence axiom is satisfied (as well as transitivity and continuity), can we say which of the following lotteries the individual prefers?\\
 $L_2=(0.55,0.4,0.05)\qquad L_2'=(0.5,0.5,0)$
 
 # Answer: $L_1\succ L_1'$ hence $0.5 L_1+0.5 L_3\succ 0.5 L_1'+0.5 L_3$; now take $L_3=(1,0,0)$, then the last expression says $L_2\succ L_2'$.
