@@ -23,7 +23,7 @@
 
 * Introduction
 ** Who would you lend money to?
-- You enter a café around lunchtime where you run into a classmate with who you recently worked on a group assignment. He tells you: "I forgot his wallet. Can you lend me 15€ for lunch? I'll pay you back in tomorrow's lecture."
+- You enter a café around lunchtime where you run into a classmate with who you recently worked on a group assignment. He tells you: "I forgot my wallet. Can you lend me 15€ for lunch? I'll pay you back in tomorrow's lecture."
 - When entering a café around lunchtime an employee puts up a sign "Card machine broken, cash only!" \linebreak Someone turns away then sees and approaches you. You recognize the person from class but have never spoken to him. He asks "I have no cash. Could you lend me 15€ for lunch? I'll pay you back in tomorrow's lecture."
 
 ** Who would you lend money to?   
@@ -39,11 +39,11 @@
 ** Terminology
   - /hidden/private/asymmetric information:/ person A knows something that person B does not know
   - /adverse selection:/
-    - side A of the market has private information on some parameter $X$
+    - side A of the market has private information on some parameter $X$ (hidden information)
     - the value of a transaction is
       - increasing in $X$ for one side of the market and
       - decreasing in $X$ for the other side of the market
-    - the types of A most eager to trade are those B wants to trade with least
+    - $\Rightarrow$ the types of A most eager to trade are those B wants to trade with least
   - /market breakdown:/
     - no transaction takes place although (some) transactions would be beneficial (in expectation)
       - possible reason: adverse selection
@@ -52,7 +52,7 @@
 ** Charles at the tech store I
 - Charles wants a new gaming computer and knows after some internet research exactly which graphics card, CPU, hard drive etc. he would like to have
 - Charles is not able to assemble his dream PC
-- a tech store is able to assemble but can Charles trust the store that they use the parts he wants instead of cheaper replacements?
+- A tech store is able to assemble but can Charles trust the store that they use the parts he wants instead of cheaper replacements?
 
 ** Charles at the tech store II
 - model:
@@ -114,7 +114,7 @@
 - Is there an equilibrium in which Charles buys from the shady type?
 
 ** Charles at the tech store V
-- Example PBE:
+- Example equilibrium:
   - $p_h^*=p_l^*=1000$
   - $\mu(p)=0$ if $p<1000$ while $\mu(p)=1/2$ if $p\geq 1000$
   - Charles buys only if $p\leq 400$
@@ -137,7 +137,7 @@
 - continuum of buyers
   - mass 1 of risk neutral buyers
   - each buyer $j$ wants to buy 1 car
-  - willingness to pay for a car of quality $i$ equals $\alpha q$ with $\alpha>1$
+  - willingness to pay for a car of quality $q$ equals $\alpha q$ with $\alpha>1$
 - seller $q$ knows the quality of his car
 - buyers cannot distinguish qualities at the time of purchase
 - equilibrium: a price $p$ such that supply equals demand at this price
@@ -151,7 +151,7 @@ $$S(p)=\begin{cases}p&\text{ if }p\in[0,1]\\1&\text{ if }p>1\end{cases}$$
 *Demand:*
 - at price $p\in[0,1]$ quality offered equals $Q(p)=p/2$
   - willingness to pay is above price if $\alpha p/2\geq p$
-  - at price $p>1$ average quality equals $Q(p)=1/2$ 
+- at price $p>1$ average quality equals $Q(p)=1/2$ and willingness to pay $\alpha/2$
 \begin{equation*}
   D(p)=
   \begin{cases}
@@ -202,7 +202,7 @@ $$S(p)=\begin{cases}p&\text{ if }p\in[0,1]\\1&\text{ if }p>1\end{cases}$$
 - "death spiral of health insurance":
   - start with a premium equal to the average cost of the population
   - healthiest do not buy insurance
-  - average cost (of those that might buy insurance) increases
+  - average cost (of those that still might buy insurance) increases
   - premium has to be higher
   - healthiest remaining consumers do not want to buy insurance
   - repeat

@@ -3,6 +3,7 @@
 #+Options: toc:nil H:2
 
 * News
+- [[https://uni-koeln.sciebo.de/s/Dhwc7BvEnImkUKb][Notes]] on adverse selection are available. Feedback on the notes is welcome. (Password was announced in lecture.)
 - The exercise session on Nov 15 will be taught online. See you university email account for details.
 - Please, read the [[https://uni-koeln.sciebo.de/s/ejD62JNTwxetc9V][notes]] on game theory with complete information before the lecture on November 9. (Password was announced in lecture.)
 - Due to a public holiday, there is no exercise session on November 1. We will therefore not cover the exercises on markets and the fundamental theorem of welfare economics and continue with the exercises on decision making under uncertainty on November 8.
