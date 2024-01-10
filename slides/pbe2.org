@@ -1,0 +1,232 @@
+#+Title: (weak) Perfect Bayesian equilibrium
+#+AUTHOR:    Christoph Schottmüller
+#+Date: 
+
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: 
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \mode<beamer>{\useinnertheme{rounded}\usecolortheme{rose}\usecolortheme{dolphin}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]{}}
+#+latex_header: \mode<beamer>{\usepackage{amsmath}\usepackage{ae,aecompl,tikz,istgame,sgamex}}
+#+LATEX_HEADER:\let\oldframe\frame\renewcommand\frame[1][allowframebreaks]{\oldframe[#1]}
+#+LATEX_HEADER: \setbeamertemplate{frametitle continuation}[from second]
+
+* Introduction
+** Introduction
+   - previous lecture: market can breakdown if only sellers know product attributes
+   - possible countermeasure: try to demonstrate good quality (independent tests etc.)
+     - /dynamic/ games of incomplete information
+       - dynamic: players take (partially observed) actions sequentially
+     - new solution concepts
+       - with complete information: dynamics \rightarrow /subgame perfect/ Nash equilibrium (SPNE)
+       - with incomplete information: dynamics \rightarrow /perfect/ Bayesian Nash equilibrium
+   - we introduce the equilibrium concept with simpler examples this time and return to the motivation later
+
+* Subgame perfect Nash equilibria
+
+** Subgame perfect NE and empty threats I
+- (slightly distressed) mum to 6-year old ``On the count of 3, you are going to put your jacket on, or I will leave without you!''
+
+** Subgame perfect NE and empty threats II
+\begin{figure}[h]
+  \centering
+  \begin{istgame}
+\xtdistance{20mm}{50mm}
+\istroot(0){Kevin}
+\istb{jacket\; on}[left]
+\istb{jacket\; off}[right]
+\endist
+\xtdistance{15mm}{25mm}
+\istroot(1)(0-1)<left>{Parent}
+\istb{leave\; alone}[l]{(-3,-2)}
+\istb{not}[r]{(-1,1)}
+\endist
+\istroot(2)(0-2)<right>{Parent}
+\istb{leave\; alone}[l]{(-2,-2)}
+\istb{not}[r]{(0,-1)}
+\endist
+\end{istgame}
+\linebreak
+  \begin{game}{2}{4}[Kevin][Parent]
+                   & $ll$       &  $ln$   & $nl$   & $nn$ \\
+      $jacket\;on$ & $-3,-2$    &$-3,-2$  &$-1,\phantom{-}1$  & $-1,\phantom{-}1$            \\
+      $jacket\;off$& $-2,-2$    & $\phantom{-}0,-1$ & $-2,-2$ &$\phantom{-}0,-1 $
+    \end{game}
+  \label{fig:bneNonCredibleThreats}
+\end{figure}
+
+** Subgame perfect NE and empty threats III
+- subgame: part of a game tree that is itself a game tree
+  - subgame starts at a decision node of the original game
+  - all decisions and payoffs following this node are part of the subgame
+  - subgame must not cut through information sets
+- how many subgames do we have in our parent-child example?
+- note: every game is subgame of itself!
+*** Subgame perfect Nash equilibrium
+A strategy profile that induces a Nash equilibrium in every subgame is called
+"subgame perfect Nash equilibrium".
+
+** Subgame perfect NE and empty threats IV
+- which equilibium is (not) subgame perfect in our example game?
+- backwards induction
+  - start at the bottom of the game tree (terminal decisions)
+  - determine payoff maximizing choice
+  - substitute terminal decisions with the payoffs resulting from payoff maximizing choice
+  - repeat
+
+* Imperfect information
+** Imperfect information
+\begin{figure}[h]
+  \centering
+\hspace*{-0.4cm}  \begin{istgame}
+\xtdistance{20mm}{40mm}
+\istroot(0){Kevin}
+\istb{j.\; on}[left]
+\istb{j.\; off}[right]
+\istb{j.\; off\,+\,bite}[right]
+\endist
+\xtdistance{15mm}{18mm}
+\istroot(1)(0-1)<left>{Parent}
+\istb{leave\; alone}[l]{(-3,-2)}
+\istb{not}[r]{(-1,1)}
+\endist
+\istroot(2)(0-2)
+\istb{leave\; alone}[l]{(-2,-2)}
+\istb{not}[r]{(0,-1)}
+\endist
+\istroot(3)(0-3)
+\istb{leave\; alone}[l]{(-3,-2)}
+\istb{not}[r]{(-1,-1)}
+\endist
+\xtInfoset(2)(3){Parent}
+\end{istgame}
+\linebreak
+  \begin{game}{3}{4}[Kevin][Parent]
+                   & $ll$       &  $ln$   & $nl$   & $nn$ \\
+      $jacket\;on$ & $-3,-2$    &$-3,-2$  &$-1,\phantom{-}1$  & $-1,\phantom{-}1$            \\
+      $jacket\;off$& $-2,-2$    & $\phantom{-}0,-1$ & $-2,-2$ &$\phantom{-}0,-1 $   \\
+      $jacket\;off\,+\,bite$& $-3,-2$    & $-1,-1$ & $-3,-2$ &$-1,-1 $
+    \end{game}
+\label{fig:bneNonCredibleThreatsTongue}
+\end{figure}
+
+* Sequential rationality
+** Sequential rationality I
+- threat is still not credible but subgame perfection has no bite!
+- sequential rationality: each player maximizes expected payoff at every information set
+  - player has a belief at information set
+  - player anticipates later choices of other players
+  - player computes expected payoff following each of his choices using the belief and anticipated choices
+- determine sequentially rational choice of Parent!
+
+** Sequential rationality II
+- /system of beliefs:/ one belief for each information set, i.e. a probability distribution over nodes in the information set
+- /assessment:/ a strategy profile and a system of beliefs
+
+*** Sequential rationality
+  An assessment consisting of a profile of strategies $s$ and a system of beliefs $\mu$ is called \emph{sequentially rational} if the following holds for every player $i\in I$ and every information set $\mathcal{I}$ at which player $i$ has to act:\linebreak
+Strategy $s_i$ maximizes the expected payoff of player $i$ at information set $\mathcal{I}$ taking belief $\mu_{\mathcal{I}}$ and the strategies at all other information sets as given.
+
+***                                                         :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+- which assessments are sequentially rational in our example game?
+
+* Consistency
+** Consistency
+- which beliefs are reasonable?
+  - "equilibrium": anticipating strategies of other players $\Rightarrow$ beliefs should be consistent with strategies!
+*** Consistency
+ An assessment $(s,\mu)$ is consistent if the beliefs $\mu$ are determined from the strategies $s$ using Bayes' rule wherever possible.
+***                                                         :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+- which sequentially rational assessment is consistent in our example game?
+\begin{equation*}\hspace*{-0.7cm}
+  Prob[j.\;off| j.\;off\text{ or }j.\;off+bite]=\frac{Prob[jacket\;off]}{Prob[jacket\;off]+Prob[jacket\;off+bite]} 
+\end{equation*}
+
+* Perfect Bayesian equilibrium
+**  Perfect Bayesian equilibrium (PBE)
+***  Perfect Bayesian equilibrium
+  A \emph{perfect Bayesian equilibrium} is an assessment that satisfies sequential rationality and consistency.
+***                                                         :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+- main solution concept for games of imperfect/incomplete information
+  - recall Harsanyi's trick: games of incomplete information can be transformed into games of imperfect information
+- aside:
+  - some authors call the concept "weak perfect Bayesian equilibrium" and use "perfect Bayesian equilibrium" to refer to assessments that also satisfy some additional conditions
+
+* Examples    
+    
+** Donut game I
+- Amelia has a donut and decides whether to offer it to Bilal
+- Bilal can accept or reject
+- donut might be cream-filled or mustard-filled (Amelia likes pranks!)
+- Amelia knows the filling, Bilal does not
+- Bilal considers both fillings equally likely
+- payoffs as on next slide
+
+** Donut game  II
+\begin{figure}[h]
+  \centering
+
+\begin{istgame}
+\xtdistance{20mm}{50mm}
+\istroot(0){Nature}
+\istb{Cream ($p$)}[left]
+\istb{Mustard ($1-p$)}[right]
+\endist
+\xtdistance{15mm}{25mm}
+\istroot(1)(0-1)<left>{Amelia}
+\istbA(1.5){offer}[l]
+\istbA(.5){not}[r]{(0,0)}
+\endist
+\istroot(2)(0-2)<right>{Amelia}
+\istbA(1.5){offer}[l]
+\istbA(.5){not}[r]{(0,0)}
+\endist
+\istroot(3)(1-1)<left>{$q$}
+\istb{accept}[l]{(2,2)}
+\istb{reject}[r]{(-1,0)}
+\endist
+\istroot(4)(2-1)<right>{$1-q$}
+\istb{accept}[l]{(3,-1)}
+\istb{reject}[r]{(-1,0)}
+\endist
+\xtInfoset(3)(4){Bilal}
+\end{istgame}
+\end{figure}
+
+** Donut game III
+- strategy to determine PBE
+  - guess a strategy for Amelia
+  - which beliefs are consistent with the strategy?
+  - what is Bilal's best response with these beliefs?
+  - is Amelia's initial strategy a best response to this?
+- which pure strategies does Amelia have?
+
+** Classification of PBE in games of incomplete information
+- types of equilibria according to what can be learned from the choices:
+  - /pooling/ equilibrium: all types of one player make the same choice
+    - other players cannot infer type from choice
+  - /separating/ equilibrium: each type uses a different action
+    - other players perfectly infer type from choice
+  - /partially pooling/separating:/ some but not all types use the same action
+    - choice contains some but not perfect information about type
+
+      
