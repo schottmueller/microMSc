@@ -307,17 +307,24 @@ NI & $2,1$ & $3,0$\\
 \label{sec:adverse-selection}
 
 \begin{enumerate}[resume]
-\item In the model of insurance demand assume that $i$ is uniformly distributed on $[1/4,3/4]$ and $\alpha=3/2$.
+% \item In the model of insurance demand assume that $i$ is uniformly distributed on $[1/4,3/4]$ and $\alpha=3/2$.
+%   \begin{enumerate}
+%   \item Determine $\mathbb{E}[i|i\geq p/ \alpha]$.
+%     % E[i|i>2/3p]=(2/3 p+3/4)/2=p/3+3/8
+%   \item Determine the equilibrium premium.
+%     % p= p/3+3/8 and therefore p*=9/16 and \hat i=2/3 9/16=3/8 and q=3/4
+%   \item Determine marginal costs, average costs and inverse demand and confirm the equilibrium by determining the intersection of average costs and inverse demand.
+%     % \hat i = p/\alpha=2/3 p; as F(x)=2x-1/2 we get q=1-F(\hat i)=1-(2 2/3 p-1/2)=3/2-4/3 p or rearranging inverse demand p=9/8-3/4 q; MC(q) is \hat i (q)=2/3(9/8-3/4 q)=3/4-q/2 and finally AC(q)=E[i|i\geq \hat i(q)]=(3/4-q/2+3/4)/2=3/4-q/4; finally eq is given by AC(q)=P(q) or 9/8-3/4 q=3/4-q/4 and therefore q*=3/4
+%   \item Suppose buying insurance is subsidized by $s>0$. Determine the lowest subsidy for which full efficiency on the insurance market is reached.
+%     %s=AC(1)-P(1)=1/8
+% \end{enumerate}
+\item Consider a market for insuring bikes against theft. Assume that each consumer privately knows the risk that his bike his stolen (because he knows where he parks his bike, how he locks it etc.) and call this probability that the bike of consumer $i$ is stolen $i$. Assume that $i$ is uniformly distributed on $[1/4,3/4]$. We normalize the price of a bike to 1 and assume that, due to risk aversion, consumer $i$ is willing to pay $i*3/2$ for bike insurance. There are many insurance companies in perfect competition. The expected costs of an insurance company when insuring consumer $i$ is $i$ and we assume that an insurance company has no other costs (like fixed administrative costs); that is, the profits of insuring consumer $i$ for an insurance company is the price the consumer pays minus $i$. Insurance companies cannot observe $i$. Due to the assumption of perfect competition, an equilibrium in this market is a price for insurance at which insurance companies make zero profits.
   \begin{enumerate}
-  \item Determine $\mathbb{E}[i|i\geq p/ \alpha]$.
-    % E[i|i>2/3p]=(2/3 p+3/4)/2=p/3+3/8
-  \item Determine the equilibrium premium.
-    % p= p/3+3/8 and hterefore p*=9/16 and \hat i=2/3 9/16=3/8 and q=3/4
-  \item Determine marginal costs, average costs and inverse demand and confirm the equilibrium by determining the intersection of average costs and inverse demand.
-    % \hat i = p/\alpha=2/3 p; as F(x)=2x-1/2 we get q=1-F(\hat i)=1-(2 2/3 p-1/2)=3/2-4/3 p or rearranging inverse demand p=9/8-3/4 q; MC(q) is \hat i (q)=2/3(9/8-3/4 q)=3/4-q/2 and finally AC(q)=E[i|i\geq \hat i(q)]=(3/4-q/2+3/4)/2=3/4-q/4; finally eq is given by AC(q)=P(q) or 9/8-3/4 q=3/4-q/4 and therefore q*=3/4
-  \item Suppose buying insurance is subsidized by $s>0$. Determine the lowest subsidy for which full efficiency on the insurance market is reached.
-    %s=AC(1)-P(1)=1/8
-    \end{enumerate}
+  \item Which consumers buy insurance at some price $p\in[3/8,9/8]$? Determine demand as a function of $p$.
+  \item If all consumers bought insurance, what would be an insurance company's expected costs? Would all consumers buy insurance at a price equal to these expected costs?
+  \item Determine an equilibrium price, i.e. a price $p^*$ such that the expected costs of those consumers buying at price $p^*$ equals $p^*$.
+  \item Suppose the government is subsidizing bike insurance by paying insurance companies an amount $s>0$ for every consumer they insure. Why is the equilibrium price with the subsidy not simply $p^*$ (from subquestion c) minus $s$? Determine the market equilibrium with this subsidy. 
+  \end{enumerate}
   \item As a kid, I was told not to get into a stranger's car. In the age of Uber, Lift and so on, many of us voluntarily call strangers just to get into their cars. How does this relate to adverse selection and how did ride hailing platforms (try to) overcome this problem? Do you see similar problems and solutions outside the ride hailing sector?
     % those that want to rob/kidnap you have the highest benefits from getting you into their cars and should be the first ones to volunteer as drivers. Measures to counter this: record keeping and tracking, ratings, registration with biometrics of drivers and camera authentification of biometrics, (mic always on with automatic panic registration); registration and certification for traditional taxis
     % note also vice versa: those not wanting to pay may be the ones having most to gain from ride hailing (though this is also a common problem of traditional taxi drivers). here also rating systems might help
@@ -405,7 +412,7 @@ NI & $2,1$ & $3,0$\\
   \item Find a wPBE with $v_h=6.4$.
     % seller: p_1=3 and p_2(5,1)=5 and otherwise p_2=3; buyer v_l: buy if p_t=3; buyer v_h: buy in period 1 if p_1=3 and in period 2 at any price; beliefs: \mu_1=1/2, \mu_2(5,1)=1 and \mu_2=1/2 otherwise
   \end{enumerate}
-\item Assume that income is distributed in a society uniformly on $[0,1]$. Every person has a payoff of $c-c^2/2+p$ where $c$ is the money the person spends on consumption of normal goods and $p$ is the prestige a person has. Every person knows its own income, $m$, and divides it into consumption of normal goods, $c$, and the purchase of a conspicuous good, $x$, (which in itself has no effect on the person's payoff!). All other members of society observe the amount a person spends on the conspicuous good but they do not observe income or consumption. The prestige a person obtains is the expected income that other people belief a person to have, i.e. the expected value of income conditional on the amount spent on the conspicuous good.
+\item Assume that income is distributed in a society uniformly on $[0,1]$. Every person has a payoff of $c-c^2/2+p$ where $c$ is the money the person spends on consumption of normal goods and $p$ is the prestige a person has. Every person knows its own income, $m$, and divides it into consumption of normal goods, $c$, and the purchase of a conspicuous good, $x$, (which in itself has no effect on the person's payoff!). All other members of society observe the amount a person spends on the conspicuous good but they do not observe income or consumption. The prestige a person obtains is the expected income that other people believe a person to have, i.e. the expected value of income conditional on the amount spent on the conspicuous good.
   \begin{enumerate}
   \item Determine a separating wPBE, i.e. an invertible function $x(m)$ and a belief $\mu(x)$ such that the conditions of wPBE hold. Can you find a Pareto improvement on this equilibrium?
     % let the inverse of x be y. Then mu(x) assigns probability 1 to y(x). max_x (m-x)-(m-x)^2/2+y(x) which has foc: -1+(m-x)+y'(x)=0 in equilibrium m=y(x) and therefore the foc becomes -1+y(x)-x+y'(x)=0 which is solved by y(x)=x. Hence, $x(m)=m$ is optimal, i.e. all income is spent on the conspicuous good.
