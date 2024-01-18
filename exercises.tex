@@ -335,14 +335,14 @@ NI & $2,1$ & $3,0$\\
     % other decisions: suppose a political party (or other institution) changes an important policy stand: some opposing the change will leave and others welcoming the change will join the party, i.e. the fraction of party members welcoming the change will ex post be larger than ex ante (e.g. suppose the Catholic church allowed women to become priests etc. or the green party recategorised nuclear energy as "climate friendly" and supported it); think about a car manufacturer asking its customers whether they would buy an electric car -> after introducing it customer profile changes...
 \end{enumerate}
 
-\section{Weak perfect Bayesian equilibrium}
-\label{sec:weak-perf-bayes}
+\section{Perfect Bayesian equilibrium}
+\label{sec:perf-bayes}
 
 \begin{enumerate}[resume]
 \item This exercise deals with the game of figure \ref{fig:selten_ex} which Reinhard Selten -- the only Nobel laureate in economics from Germany -- introduced to illustrate that subgame perfection was not enough to rule out non-credible threats.
     \begin{enumerate}
     \item Transform this game into its ``normal form'' (i.e. a game table) and find a pure strategy Nash equilibrium. Show that this equilibrium is subgame perfect. Show that this NE is, however, not sequentially rational. 
-    \item Find a wPBE using mixed strategies.\\ (\emph{Hints:} Which action is sequentially rational for player 2? For which belief is player 3 willing to mix? Under which circumstances is player 1 willing to mix?)
+    \item Find a PBE using mixed strategies.\\ (\emph{Hints:} Which action is sequentially rational for player 2? For which belief is player 3 willing to mix? Under which circumstances is player 1 willing to mix?)
     \end{enumerate}
     \begin{figure}[h]
 \centering
@@ -405,22 +405,14 @@ NI & $2,1$ & $3,0$\\
 \label{fig:selten_ex}
 \end{figure}
 
-\item Take the model of ``Behavior based price discrimination'' on the slides.
-  \begin{enumerate}
-  \item Assume now that $v_h=6.4$ (instead of $v_h=7$). Show that the wPBE on the slides is not a wPBE then.
-    % $v_h$ would deviate by not buying in period 1 as $(6.4-5)*(1+0.75)<0.75*(6.4-3)$
-  \item Find a wPBE with $v_h=6.4$.
-    % seller: p_1=3 and p_2(5,1)=5 and otherwise p_2=3; buyer v_l: buy if p_t=3; buyer v_h: buy in period 1 if p_1=3 and in period 2 at any price; beliefs: \mu_1=1/2, \mu_2(5,1)=1 and \mu_2=1/2 otherwise
-  \end{enumerate}
-\item Assume that income is distributed in a society uniformly on $[0,1]$. Every person has a payoff of $c-c^2/2+p$ where $c$ is the money the person spends on consumption of normal goods and $p$ is the prestige a person has. Every person knows its own income, $m$, and divides it into consumption of normal goods, $c$, and the purchase of a conspicuous good, $x$, (which in itself has no effect on the person's payoff!). All other members of society observe the amount a person spends on the conspicuous good but they do not observe income or consumption. The prestige a person obtains is the expected income that other people believe a person to have, i.e. the expected value of income conditional on the amount spent on the conspicuous good.
-  \begin{enumerate}
-  \item Determine a separating wPBE, i.e. an invertible function $x(m)$ and a belief $\mu(x)$ such that the conditions of wPBE hold. Can you find a Pareto improvement on this equilibrium?
-    % let the inverse of x be y. Then mu(x) assigns probability 1 to y(x). max_x (m-x)-(m-x)^2/2+y(x) which has foc: -1+(m-x)+y'(x)=0 in equilibrium m=y(x) and therefore the foc becomes -1+y(x)-x+y'(x)=0 which is solved by y(x)=x. Hence, $x(m)=m$ is optimal, i.e. all income is spent on the conspicuous good.
-    % Pareto improvement: x(m)=m/100 would still be separating, i.e. everyone has same prestige as before but clearly more consumption of normal goods
-  \item Is there also a pooling wPBE, i.e. a wPBE in which people of all income levels choose the same amount of the conspicuous good $\bar x$?
-    % in this case necessarily x=0 as inf of income distribution is zero. If this is the equilibrium than $\mu(0)$ is the uniform distribution on $[0,1]$ and everyone has prestige 1/2. No deviation is profitable if for example the off path belief \mu(x) is also the uniform on [0,1] (or any other distribution on [0,1] with expectation less than 1/2)
-  \end{enumerate}
-\item Determine two pure strategy wPBE in the game depicted in figure \ref{fig:ex1}. Which of the two is a PBE?
+% \item Take the model of ``Behavior based price discrimination'' on the slides.
+%   \begin{enumerate}
+%   \item Assume now that $v_h=6.4$ (instead of $v_h=7$). Show that the wPBE on the slides is not a wPBE then.
+%     % $v_h$ would deviate by not buying in period 1 as $(6.4-5)*(1+0.75)<0.75*(6.4-3)$
+%   \item Find a wPBE with $v_h=6.4$.
+%     % seller: p_1=3 and p_2(5,1)=5 and otherwise p_2=3; buyer v_l: buy if p_t=3; buyer v_h: buy in period 1 if p_1=3 and in period 2 at any price; beliefs: \mu_1=1/2, \mu_2(5,1)=1 and \mu_2=1/2 otherwise
+% \end{enumerate}
+\item Determine two pure strategy PBE in the game depicted in figure \ref{fig:ex1}.
   % Strategies: (L,A,l) belief: (1,0)
   % other  wPBE: (R,A,r) and belief (0,1)is  not a PBE as it does not induce a wPBE in the subgame starting at P2 (P3's belief has to be 1,0 there as only A is sequentially rational for P2)
   \begin{figure}[h]
@@ -479,9 +471,18 @@ NI & $2,1$ & $3,0$\\
          };
 \draw [dashed](a)--(b);
 \end{tikzpicture}
-\caption{Exercise PBE vs. wPBE}
+\caption{PBE and its problems}
 \label{fig:ex1}
 \end{figure}
+\item Assume that income is distributed in a society uniformly on $[0,1]$. Every person has a payoff of $c-c^2/2+p$ where $c$ is the money the person spends on consumption of normal goods and $p$ is the prestige a person has. Every person knows its own income, $m$, and divides it into consumption of normal goods, $c$, and the purchase of a conspicuous good, $x$, (which in itself has no effect on the person's payoff!). All other members of society observe the amount a person spends on the conspicuous good but they do not observe income or consumption. The prestige a person obtains is the expected income that other people believe a person to have, i.e. the expected value of income conditional on the amount spent on the conspicuous good.
+  \begin{enumerate}
+  \item Determine a separating PBE, i.e. an invertible function $x(m)$ and a belief $\mu(x)$ such that the conditions of PBE hold. Can you find a Pareto improvement on this equilibrium?
+    % let the inverse of x be y. Then mu(x) assigns probability 1 to y(x). max_x (m-x)-(m-x)^2/2+y(x) which has foc: -1+(m-x)+y'(x)=0 in equilibrium m=y(x) and therefore the foc becomes -1+y(x)-x+y'(x)=0 which is solved by y(x)=x. Hence, $x(m)=m$ is optimal, i.e. all income is spent on the conspicuous good.
+    % Pareto improvement: x(m)=m/100 would still be separating, i.e. everyone has same prestige as before but clearly more consumption of normal goods
+  \item Is there also a pooling PBE, i.e. a PBE in which people of all income levels choose the same amount of the conspicuous good $\bar x$?
+    % in this case necessarily x=0 as inf of income distribution is zero. If this is the equilibrium than $\mu(0)$ is the uniform distribution on $[0,1]$ and everyone has prestige 1/2. No deviation is profitable if for example the off path belief \mu(x) is also the uniform on [0,1] (or any other distribution on [0,1] with expectation less than 1/2)
+  \end{enumerate}
+
 \end{enumerate}
 
 \section{Signaling}
