@@ -41,5 +41,5 @@ All materials are now also available on [[https://uni-koeln.sciebo.de/s/urCdimez
  - week 1 [[https://uni-koeln.sciebo.de/s/RFvzedbEsMiQ0wN][screencast]] lecture    
  - notes [[https://web.tresorit.com/l/sXAYt#3MXtRbZbcXY1eRYOj5VZbA][pdf]]
  - schedule [[https://github.com/schottmueller/microMSc/blob/main/schedule.org][org]] [[https://web.tresorit.com/l/M1vPF#qsgBnSpLwC1xwq2yNER_jA][pdf]]
- - old [[https://web.tresorit.com/l/adtBo#vW3CitLl2joqqwhmYtUrfg][exam]]
+ - old [[https://web.tresorit.com/l/r4RHi#M7EwaRvrKsf0iJEqHlh0Mg][exam]]
 
