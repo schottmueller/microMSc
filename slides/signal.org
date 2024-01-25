@@ -84,7 +84,8 @@ Payoffs:
 ** Job market signaling
 - worker has type $\theta\in\{\theta_l,\theta_h\}$ with $\theta_h>\theta_l>0$
   - interpret $\theta$ as productivity/ability
-- worker chooses education level $e$ at cost $c(e,\theta )$ with  - education is costly: $c_e>0$
+- worker chooses education level $e$ at cost $c(e,\theta )$ with
+  - education is costly: $c_e>0$
   - marginal costs are increasing: $c_{ee}>0$
   - no education has no costs: $c(0,\theta)=0$
   - higher $\theta$ (productivity/ability) implies lower marginal costs: $c_{e\theta }<0$

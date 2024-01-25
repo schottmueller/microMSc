@@ -1,4 +1,4 @@
-#+Title: (weak) Perfect Bayesian equilibrium
+#+Title: Perfect Bayesian equilibrium
 #+AUTHOR:    Christoph Schottmüller
 #+Date: 
 
@@ -8,7 +8,6 @@
 #+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
 #+EXPORT_SELECT_TAGS: export
 #+EXPORT_EXCLUDE_TAGS: noexport
-
 
 #+startup: beamer
 #+LaTeX_CLASS: beamer
@@ -54,7 +53,7 @@
 \istb{not}[r]{(0,-1)}
 \endist
 \end{istgame}
-\linebreak
+\linebreak \linebreak
   \begin{game}{2}{4}[Kevin][Parent]
                    & $ll$       &  $ln$   & $nl$   & $nn$ \\
       $jacket\;on$ & $-3,-2$    &$-3,-2$  &$-1,\phantom{-}1$  & $-1,\phantom{-}1$            \\
@@ -153,9 +152,13 @@ Strategy $s_i$ maximizes the expected payoff of player $i$ at information set $\
 :BEAMER_env: ignoreheading
 :END:
 - which sequentially rational assessment is consistent in our example game?
-\begin{equation*}\hspace*{-0.7cm}
-  Prob[j.\;off| j.\;off\text{ or }j.\;off+bite]=\frac{Prob[jacket\;off]}{Prob[jacket\;off]+Prob[jacket\;off+bite]} 
+\begin{equation*}\hspace*{-0.3cm}
+  Prob[j.\;off| j.\;off\text{ or }j.\;off+bite]=\frac{Prob[j.\;off]}{Prob[j.\;off]+Prob[j.\;off+bite]} 
 \end{equation*}
+
+- "wherever possible":
+  - beliefs are not determined by Bayes' rule "off the equilibrium path"
+  - modeler can choose beliefs freely there (choose in a way that makes deviations from equilibrium play unattractive) 
 
 * Perfect Bayesian equilibrium
 **  Perfect Bayesian equilibrium (PBE)
@@ -188,17 +191,17 @@ Strategy $s_i$ maximizes the expected payoff of player $i$ at information set $\
 \begin{istgame}
 \xtdistance{20mm}{50mm}
 \istroot(0){Nature}
-\istb{Cream ($p$)}[left]
-\istb{Mustard ($1-p$)}[right]
+\istb{Cream ($1/2$)}[left]
+\istb{Mustard ($1/2$)}[right]
 \endist
 \xtdistance{15mm}{25mm}
 \istroot(1)(0-1)<left>{Amelia}
 \istbA(1.5){offer}[l]
-\istbA(.5){not}[r]{(0,0)}
+\istbA(.6){not}[r]{(0,0)}
 \endist
 \istroot(2)(0-2)<right>{Amelia}
 \istbA(1.5){offer}[l]
-\istbA(.5){not}[r]{(0,0)}
+\istbA(.6){not}[r]{(0,0)}
 \endist
 \istroot(3)(1-1)<left>{$q$}
 \istb{accept}[l]{(2,2)}
@@ -213,8 +216,8 @@ Strategy $s_i$ maximizes the expected payoff of player $i$ at information set $\
 \end{figure}
 
 ** Donut game III
-- strategy to determine PBE
-  - guess a strategy for Amelia
+- one strategy to determine PBE
+  - guess a strategy for Amelia (or try all pure strategies one by one)
   - which beliefs are consistent with the strategy?
   - what is Bilal's best response with these beliefs?
   - is Amelia's initial strategy a best response to this?
