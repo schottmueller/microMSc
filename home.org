@@ -3,7 +3,7 @@
 #+Options: toc:nil H:2
 
 * News
-- The optional exam inspection is planned to take place on June 5, 10:00-10:30 in SSC 4.210.
+- The optional exam inspection is planned to take place on June 5, 10:00-10:30 in SSC 4.210. Please, register between April 26 and May 10 with an email to /ndiaye at wiso.uni-koeln dot de/ inclusing your name, student number and examination date.
 - The place of examination for the second exam date was changed to HS B.
 - The [[https://uni-koeln.sciebo.de/s/x11iTai5SSTkq4v][notes]] on game theory were updated to include (perfect) Bayesian Nash equilibrium. Feedback on the notes is very welcome! (Password was announced in lecture.)
 - [[https://uni-koeln.sciebo.de/s/Dhwc7BvEnImkUKb][Notes]] on adverse selection are available. Feedback on the notes is welcome. (Password was announced in lecture.)
